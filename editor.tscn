@@ -1,0 +1,107 @@
+[gd_scene load_steps=7 format=3 uid="uid://bs4k256ad277m"]
+
+[ext_resource type="Script" uid="uid://b471rqmp7x52o" path="res://editor.gd" id="1_gbsbp"]
+[ext_resource type="PackedScene" uid="uid://c7uvpsnt6urh7" path="res://pen.tscn" id="2_t27w5"]
+[ext_resource type="Texture2D" uid="uid://b3u7own4a62cj" path="res://Resources/Drawing Masks/bat_template_white.png" id="4_8yjtx"]
+[ext_resource type="Script" uid="uid://c4fy3hkko5nfn" path="res://tool_button.gd" id="5_3btpq"]
+[ext_resource type="Script" uid="uid://d4cf4m8sui35w" path="res://swatch_selector.gd" id="6_7py46"]
+[ext_resource type="Script" uid="uid://x6e3qri4aas5" path="res://swatch_button.gd" id="7_kwc7g"]
+
+[node name="Editor" type="Node2D"]
+script = ExtResource("1_gbsbp")
+
+[node name="Line" parent="." instance=ExtResource("2_t27w5")]
+width = null
+
+[node name="Template" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Mask" type="TextureRect" parent="Template"]
+modulate = Color(0.509613, 0.378769, 0.662518, 1)
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 1921.22
+offset_bottom = 1080.0
+texture = ExtResource("4_8yjtx")
+expand_mode = 3
+
+[node name="Pen Tool UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+
+[node name="Pen Button" type="Button" parent="Pen Tool UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+flat = true
+script = ExtResource("5_3btpq")
+slide = Vector2(50, 0)
+color = Color(0.85098, 0.172549, 0.533333, 1)
+
+[node name="Swatch Selector" type="GridContainer" parent="Pen Tool UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = 3.0
+offset_right = 291.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+script = ExtResource("6_7py46")
+
+[node name="Swatch 1" type="Button" parent="Pen Tool UI/Swatch Selector"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+script = ExtResource("7_kwc7g")
+color = Color(0.85098, 0.172549, 0.533333, 1)
+
+[node name="Swatch 2" type="Button" parent="Pen Tool UI/Swatch Selector"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+script = ExtResource("7_kwc7g")
+color = Color(0.188235, 0.188235, 0.490196, 1)
+
+[node name="Swatch 3" type="Button" parent="Pen Tool UI/Swatch Selector"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+script = ExtResource("7_kwc7g")
+color = Color(0.745098, 0.87451, 0.0627451, 1)
+
+[node name="Swatch 4" type="Button" parent="Pen Tool UI/Swatch Selector"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+script = ExtResource("7_kwc7g")
+color = Color(0.988235, 0.45098, 0.266667, 1)
+
+[node name="Swatch 5" type="Button" parent="Pen Tool UI/Swatch Selector"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+script = ExtResource("7_kwc7g")
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="Pen Tool UI/Pen Button" to="Pen Tool UI/Pen Button" method="_on_pressed"]
+[connection signal="pressed" from="Pen Tool UI/Pen Button" to="Pen Tool UI/Swatch Selector" method="_on_pen_button_pressed"]
+[connection signal="color_selected" from="Pen Tool UI/Swatch Selector" to="Line" method="_on_swatch_selector_color_selected"]
+[connection signal="color_selected" from="Pen Tool UI/Swatch Selector" to="Pen Tool UI/Pen Button" method="_on_swatch_selector_color_selected"]
