@@ -2,6 +2,8 @@ class_name Editor extends Node2D
 
 var ssCount = 1  #screenshot count
 
+@export var currently_editing : Creature
+
 func _ready():
 	
 	# create screenshot directory
@@ -16,16 +18,18 @@ func _input(event):
 		screenshot()
 	
 func screenshot():
-	await RenderingServer.frame_post_draw
+	#await RenderingServer.frame_post_draw
+	#
+	#var viewport = get_viewport()
+	#var img = viewport.get_texture().get_image()
+	#img.save_png("user://screenshots/ss"+str(ssCount)+".png")
+	#ssCount += 1
 	
-	var viewport = get_viewport()
-	var img = viewport.get_texture().get_image()
-	img.save_png("user://screenshots/ss"+str(ssCount)+".png")
-	ssCount += 1
-	
-	# Assuming you have a resource named 'my_resource'
-var duplicated_resource = Global.currently_editing.duplicate()
+	# Duplicate resource
+	var duplicated_resource : Creature = currently_editing.duplicate(true)
+	#duplicated_resource.palette = currently_editing.palette # not duplicated without this line?
+	# Save the duplicated resource
+	#var save_path = "res://resources/exports/saved_bat_%s.tres" % duplicated_resource.get_rid()
 
-# Save the duplicated resource
-var save_path = "user://my_saved_resource.tres"  # Change this to your desired path
-ResourceSaver.save(duplicated_resource, save_path)
+	print (typeof(duplicated_resource.get_rid())) 
+	#ResourceSaver.save(duplicated_resource, save_path)

@@ -9,7 +9,8 @@ var _current_line: Line2D = null
 var line_color : Color
 
 func _ready():
-	line_color = Editor.editing.palette
+	pass
+	#line_color = Editor.editing.palette
 
 func _process(_delta):
 	var pos = get_global_mouse_position()
