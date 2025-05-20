@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bs4k256ad277m"]
+[gd_scene load_steps=7 format=3 uid="uid://bs4k256ad277m"]
 
 [ext_resource type="Script" uid="uid://b471rqmp7x52o" path="res://editor.gd" id="1_gbsbp"]
-[ext_resource type="Resource" uid="uid://7ifrpi4w2ff6" path="res://Resources/Creatures/Bat.tres" id="2_gbsbp"]
 [ext_resource type="PackedScene" uid="uid://c7uvpsnt6urh7" path="res://pen.tscn" id="2_t27w5"]
 [ext_resource type="Texture2D" uid="uid://b3u7own4a62cj" path="res://Resources/Drawing Masks/bat_template_white.png" id="4_8yjtx"]
 [ext_resource type="Script" uid="uid://c4fy3hkko5nfn" path="res://tool_button.gd" id="5_3btpq"]
@@ -10,7 +9,6 @@
 
 [node name="Editor" type="Node2D"]
 script = ExtResource("1_gbsbp")
-currently_editing = ExtResource("2_gbsbp")
 
 [node name="Line" parent="." instance=ExtResource("2_t27w5")]
 

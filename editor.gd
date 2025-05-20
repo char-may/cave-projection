@@ -1,35 +1,41 @@
 class_name Editor extends Node2D
 
-var ssCount = 1  #screenshot count
-
-@export var currently_editing : Creature
+var exports = 0
 
 func _ready():
 	
-	# create screenshot directory
-	var dir = DirAccess.open("user://")
-	dir.make_dir("screenshots")
-	dir = DirAccess.open("user://screenshots")
+	# Check
+	var dir = load("res://Resources/Creatures/Exported")
 	for n in dir.get_files():
-		ssCount += 1
+		exports += 1
 
+	print ("Number of files: " + exports)
+	
 func _input(event):
 	if event.is_action_pressed("screenshot"):
 		screenshot()
 	
 func screenshot():
+	print ("Camera sound")
+	
+	## Creature new creature
+	#var newCreature = Creature.new()
+	#newCreature.type = currently_editing.type
+	#newCreature.drawing_mask = currently_editing.drawing_mask
+	#newCreature.palette = currently_editing.palette
+	#newCreature.texture = currently_editing.texture #change this
+	#newCreature.secret = "I'm the copy, yay!"
+#
 	#await RenderingServer.frame_post_draw
 	#
 	#var viewport = get_viewport()
 	#var img = viewport.get_texture().get_image()
 	#img.save_png("user://screenshots/ss"+str(ssCount)+".png")
 	#ssCount += 1
-	
-	# Duplicate resource
-	var duplicated_resource : Creature = currently_editing.duplicate(true)
-	#duplicated_resource.palette = currently_editing.palette # not duplicated without this line?
-	# Save the duplicated resource
-	#var save_path = "res://resources/exports/saved_bat_%s.tres" % duplicated_resource.get_rid()
-
-	print (typeof(duplicated_resource.get_rid())) 
-	#ResourceSaver.save(duplicated_resource, save_path)
+	#
+	## Duplicate resource
+	#var duplicated_resource = currently_editing.duplicate(true)
+	#
+	## Save the duplicated resource
+	#var save_path = "res://resources/creatures/exports/saved_bat.tres"
+	#ResourceSaver.save(newCreature, save_path)
