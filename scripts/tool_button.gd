@@ -5,10 +5,9 @@ class_name ToolButton extends SwatchButton
 @export var transition_type : Tween.TransitionType
 @export var slide : Vector2
 var default_size : Vector2
-var out : bool = false # state
+var out : bool = false # state TODO: rename to active or something
 
 # TODO: Need default color for pen/drawing
-
 # TODO: Set palette resource and default based on creature type editing
 
 func _ready() -> void:

@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Creature" load_steps=4 format=3 uid="uid://7ifrpi4w2ff6"]
 
-[ext_resource type="Texture2D" uid="uid://b3u7own4a62cj" path="res://Resources/Drawing Masks/bat_template_white.png" id="1_ngh48"]
-[ext_resource type="Resource" uid="uid://bijw1n8mua3f1" path="res://Resources/Palettes/Bat.tres" id="1_pse0i"]
-[ext_resource type="Script" uid="uid://c4encqrccdc7l" path="res://Resources/Creatures/Creature.gd" id="2_ngh48"]
+[ext_resource type="Texture2D" uid="uid://b3u7own4a62cj" path="res://resources/drawing_masks/bat_template_white.png" id="1_ngh48"]
+[ext_resource type="Resource" uid="uid://bijw1n8mua3f1" path="res://resources/palettes/bat_palette.tres" id="1_pse0i"]
+[ext_resource type="Script" uid="uid://c4encqrccdc7l" path="res://resources/creatures/creature.gd" id="2_ngh48"]
 
 [resource]
 resource_local_to_scene = true

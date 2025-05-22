@@ -1,11 +1,10 @@
 extends Node2D
 
 @onready var _lines: Node2D = $Line2D
+@export var width = 25
 
 var _pressed: bool = false
 var _current_line: Line2D = null
-@export var width = 25
-
 var line_color : Color
 
 func _ready():

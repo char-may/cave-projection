@@ -1,7 +1,7 @@
 class_name SwatchSelector extends GridContainer
 
 signal color_selected(color:Color)
-var out : bool = false #state
+var out : bool = false # TODO: rename this
 
 # TODO: Set # of columns based on size of palette
 # set color of each swatch from palette
