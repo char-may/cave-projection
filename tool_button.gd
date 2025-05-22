@@ -9,6 +9,8 @@ var out : bool = false # state
 
 # TODO: Need default color for pen/drawing
 
+# TODO: Set palette resource and default based on creature type editing
+
 func _ready() -> void:
 	default_size = size
 	slide_in()

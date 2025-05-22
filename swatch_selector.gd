@@ -3,6 +3,9 @@ class_name SwatchSelector extends GridContainer
 signal color_selected(color:Color)
 var out : bool = false #state
 
+# TODO: Set # of columns based on size of palette
+# set color of each swatch from palette
+
 func _ready() -> void:
 	for child in get_children():
 		if child is SwatchButton:
