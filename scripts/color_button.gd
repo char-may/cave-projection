@@ -1,5 +1,5 @@
 @tool
-class_name SwatchButton extends Button
+class_name ColorButton extends Button
 
 @export var color:Color = Color.WHITE:
 	set(value):

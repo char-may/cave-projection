@@ -1,5 +1,5 @@
 @tool
-class_name ToolButton extends SwatchButton
+class_name DrawingToolButton extends ColorButton
 
 @export var time : float = 0.1
 @export var transition_type : Tween.TransitionType

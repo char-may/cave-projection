@@ -1,4 +1,4 @@
-class_name SwatchSelector extends GridContainer
+class_name ColorSwatchSelector extends GridContainer
 
 signal color_selected(color:Color)
 var out : bool = false # TODO: rename this
@@ -8,14 +8,14 @@ var out : bool = false # TODO: rename this
 
 func _ready() -> void:
 	for child in get_children():
-		if child is SwatchButton:
+		if child is ColorButton:
 			child.hide() # Hide palette until tool is pressed
 			
 			# Connect the pressed signal to our function
 			# Bind the ColorButton to it so we can access the color.
 			child.pressed.connect(_on_color_button_pressed.bind(child))
 
-func _on_color_button_pressed(button:SwatchButton) -> void:
+func _on_color_button_pressed(button:ColorButton) -> void:
 	# Emit the color_selected signal with the color of the ColorButton
 	color_selected.emit(button.color)
 	collapse_palette()
@@ -30,12 +30,12 @@ func _on_pen_button_pressed() -> void:
 func expand_palette() -> void:
 	out = true
 	for child in get_children():
-		if child is SwatchButton:
+		if child is ColorButton:
 			await get_tree().create_timer(.01).timeout
 			child.show()
 
 func collapse_palette() -> void:
 	out = false
 	for child in get_children():
-		if child is SwatchButton:
+		if child is ColorButton:
 			child.hide()
