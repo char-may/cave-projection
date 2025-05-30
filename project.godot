@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="cave-draw"
+config/name="cave-projection"
 run/main_scene="res://editor.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Cave draw"
@@ -42,4 +42,4 @@ screenshot={
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0.833098, 0.790214, 0.731426, 1)
+environment/defaults/default_clear_color=Color(0.843184, 0.843184, 0.843184, 1)

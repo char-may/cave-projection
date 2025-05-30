@@ -21,7 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Mask" type="TextureRect" parent="Template"]
-modulate = Color(0.509613, 0.378769, 0.662518, 1)
+modulate = Color(0.184314, 0.4, 0.592157, 1)
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 0
 offset_right = 1921.22

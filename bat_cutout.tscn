@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=3 uid="uid://cin42v75e75s1"]
+
+[ext_resource type="Texture2D" uid="uid://b2q40xqyjjph6" path="res://cutout_test/head.png" id="1_1sxjy"]
+[ext_resource type="Texture2D" uid="uid://bwv0ga11ofe72" path="res://cutout_test/wing.png" id="2_cxud7"]
+[ext_resource type="Texture2D" uid="uid://lg4skflacft4" path="res://cutout_test/eye.png" id="3_xbhy3"]
+[ext_resource type="Texture2D" uid="uid://ddgehhoiig3ry" path="res://cutout_test/foot.png" id="4_okcrh"]
+
+[sub_resource type="Animation" id="Animation_1sxjy"]
+resource_name = "Hover"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.733333, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(958, 534), Vector2(958, 500), Vector2(958, 534)]
+}
+
+[sub_resource type="Animation" id="Animation_cxud7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(958, 534)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xbhy3"]
+_data = {
+&"Hover": SubResource("Animation_1sxjy"),
+&"RESET": SubResource("Animation_cxud7")
+}
+
+[node name="BatCutout" type="Node2D"]
+
+[node name="Head" type="Sprite2D" parent="."]
+position = Vector2(958, 534)
+texture = ExtResource("1_1sxjy")
+
+[node name="LeftWing" type="Sprite2D" parent="Head"]
+show_behind_parent = true
+position = Vector2(-80, 20)
+rotation = 0.0061054
+texture = ExtResource("2_cxud7")
+offset = Vector2(-169, -44)
+
+[node name="RightWing" type="Sprite2D" parent="Head"]
+show_behind_parent = true
+position = Vector2(91, 11)
+texture = ExtResource("2_cxud7")
+offset = Vector2(147, -38)
+flip_h = true
+
+[node name="LeftEye" type="Sprite2D" parent="Head"]
+position = Vector2(-38, 14)
+scale = Vector2(0.857, 0.857)
+texture = ExtResource("3_xbhy3")
+
+[node name="RightEye" type="Sprite2D" parent="Head"]
+position = Vector2(57, 16)
+scale = Vector2(0.825396, 0.857143)
+texture = ExtResource("3_xbhy3")
+
+[node name="LeftFoot" type="Sprite2D" parent="Head"]
+show_behind_parent = true
+position = Vector2(-66, 87)
+texture = ExtResource("4_okcrh")
+offset = Vector2(0, 18)
+
+[node name="LeftFoot2" type="Sprite2D" parent="Head"]
+show_behind_parent = true
+position = Vector2(53, 92)
+texture = ExtResource("4_okcrh")
+offset = Vector2(1, 12)
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xbhy3")
+}
+autoplay = "Hover"
