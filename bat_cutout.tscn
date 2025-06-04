@@ -1,93 +1,58 @@
-[gd_scene load_steps=8 format=3 uid="uid://cin42v75e75s1"]
+[gd_scene load_steps=2 format=3 uid="uid://cin42v75e75s1"]
 
-[ext_resource type="Texture2D" uid="uid://b2q40xqyjjph6" path="res://cutout_test/head.png" id="1_1sxjy"]
-[ext_resource type="Texture2D" uid="uid://bwv0ga11ofe72" path="res://cutout_test/wing.png" id="2_cxud7"]
-[ext_resource type="Texture2D" uid="uid://lg4skflacft4" path="res://cutout_test/eye.png" id="3_xbhy3"]
-[ext_resource type="Texture2D" uid="uid://ddgehhoiig3ry" path="res://cutout_test/foot.png" id="4_okcrh"]
+[ext_resource type="Texture2D" uid="uid://cmd4wnx708a68" path="res://cutout_test/bat_atlus.png" id="1_fu0ma"]
 
-[sub_resource type="Animation" id="Animation_1sxjy"]
-resource_name = "Hover"
-length = 1.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Head:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.733333, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(958, 534), Vector2(958, 500), Vector2(958, 534)]
-}
+[node name="Bat Cutout" type="Node2D"]
 
-[sub_resource type="Animation" id="Animation_cxud7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Head:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(958, 534)]
-}
+[node name="Polygons" type="Node2D" parent="."]
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xbhy3"]
-_data = {
-&"Hover": SubResource("Animation_1sxjy"),
-&"RESET": SubResource("Animation_cxud7")
-}
+[node name="FootL" type="Polygon2D" parent="Polygons"]
+position = Vector2(483, -118)
+texture = ExtResource("1_fu0ma")
+polygon = PackedVector2Array(425.154, 613.825, 465.154, 624.825, 449.154, 683.825, 421.154, 670.825)
+uv = PackedVector2Array(425.154, 613.825, 465.154, 624.825, 449.154, 683.825, 421.154, 670.825)
+polygons = [PackedInt32Array(0, 1, 2, 3)]
 
-[node name="BatCutout" type="Node2D"]
+[node name="FootR" type="Polygon2D" parent="Polygons"]
+position = Vector2(461, -120)
+texture = ExtResource("1_fu0ma")
+polygon = PackedVector2Array(574.764, 626.981, 607.822, 611.954, 620.594, 671.308, 582.277, 678.821)
+uv = PackedVector2Array(574.764, 626.981, 607.822, 611.954, 620.594, 671.308, 582.277, 678.821)
+polygons = [PackedInt32Array(1, 2, 3, 0)]
 
-[node name="Head" type="Sprite2D" parent="."]
-position = Vector2(958, 534)
-texture = ExtResource("1_1sxjy")
+[node name="WingL" type="Polygon2D" parent="Polygons"]
+position = Vector2(522, 18)
+texture = ExtResource("1_fu0ma")
+polygon = PackedVector2Array(403.724, 402.76, 366.724, 467.76, 301.724, 465.76, 242.724, 528.76, 151.724, 457.76, 10.724, 455.76, 52.724, 341.76, -7.276, 224.76, 158.724, 227.76, 255.724, 283.76, 312.724, 316.76, 192.724, 357.76)
+uv = PackedVector2Array(403.724, 402.76, 366.724, 467.76, 301.724, 465.76, 242.724, 528.76, 151.724, 457.76, 10.724, 455.76, 52.724, 341.76, -7.276, 224.76, 158.724, 227.76, 255.724, 283.76, 312.724, 316.76, 192.724, 357.76)
+polygons = [PackedInt32Array(0, 11, 1), PackedInt32Array(1, 11, 2), PackedInt32Array(11, 3, 2), PackedInt32Array(11, 4, 3), PackedInt32Array(11, 5, 4), PackedInt32Array(11, 6, 5), PackedInt32Array(11, 7, 6), PackedInt32Array(11, 8, 7), PackedInt32Array(11, 9, 8), PackedInt32Array(11, 10, 9), PackedInt32Array(11, 0, 10)]
+internal_vertex_count = 1
 
-[node name="LeftWing" type="Sprite2D" parent="Head"]
-show_behind_parent = true
-position = Vector2(-80, 20)
-rotation = 0.0061054
-texture = ExtResource("2_cxud7")
-offset = Vector2(-169, -44)
+[node name="WingR" type="Polygon2D" parent="Polygons"]
+position = Vector2(426, 12)
+texture = ExtResource("1_fu0ma")
+polygon = PackedVector2Array(620.428, 400, 655.428, 466, 725.428, 463, 785.428, 529, 880.428, 459, 1015.43, 455, 970.428, 347, 1031.43, 228, 855.428, 230, 772.428, 282, 700.428, 329, 825.428, 362)
+uv = PackedVector2Array(620.428, 400, 655.428, 466, 725.428, 463, 785.428, 529, 880.428, 459, 1015.43, 455, 970.428, 347, 1031.43, 228, 855.428, 230, 772.428, 282, 700.428, 329, 825.428, 362)
+polygons = [PackedInt32Array(0, 11, 1), PackedInt32Array(0, 10, 11), PackedInt32Array(10, 9, 11), PackedInt32Array(9, 8, 11), PackedInt32Array(11, 7, 8), PackedInt32Array(11, 6, 7), PackedInt32Array(11, 5, 6), PackedInt32Array(11, 4, 5), PackedInt32Array(11, 3, 4), PackedInt32Array(11, 2, 3), PackedInt32Array(11, 1, 2)]
+internal_vertex_count = 1
 
-[node name="RightWing" type="Sprite2D" parent="Head"]
-show_behind_parent = true
-position = Vector2(91, 11)
-texture = ExtResource("2_cxud7")
-offset = Vector2(147, -38)
-flip_h = true
+[node name="Head" type="Polygon2D" parent="Polygons"]
+position = Vector2(472, -87)
+texture = ExtResource("1_fu0ma")
+polygon = PackedVector2Array(571.87, 381.988, 504.87, 434.988, 449.87, 377.988, 389.87, 437.988, 378.87, 515.988, 408.87, 607.988, 514.87, 633.988, 626.87, 599.988, 645.87, 501.988, 624.87, 413.988, 509.87, 517.988)
+uv = PackedVector2Array(571.87, 381.988, 504.87, 434.988, 449.87, 377.988, 389.87, 437.988, 378.87, 515.988, 408.87, 607.988, 514.87, 633.988, 626.87, 599.988, 645.87, 501.988, 624.87, 413.988, 509.87, 517.988)
+polygons = [PackedInt32Array(1, 10, 2), PackedInt32Array(2, 10, 3), PackedInt32Array(10, 4, 3), PackedInt32Array(10, 5, 4), PackedInt32Array(10, 6, 5), PackedInt32Array(10, 6, 7), PackedInt32Array(10, 7, 8), PackedInt32Array(10, 8, 9), PackedInt32Array(10, 9, 0), PackedInt32Array(10, 0, 1)]
+internal_vertex_count = 1
 
-[node name="LeftEye" type="Sprite2D" parent="Head"]
-position = Vector2(-38, 14)
-scale = Vector2(0.857, 0.857)
-texture = ExtResource("3_xbhy3")
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
 
-[node name="RightEye" type="Sprite2D" parent="Head"]
-position = Vector2(57, 16)
-scale = Vector2(0.825396, 0.857143)
-texture = ExtResource("3_xbhy3")
+[node name="Head" type="Bone2D" parent="Skeleton2D"]
+position = Vector2(986, 529)
+rotation = -1.58315
 
-[node name="LeftFoot" type="Sprite2D" parent="Head"]
-show_behind_parent = true
-position = Vector2(-66, 87)
-texture = ExtResource("4_okcrh")
-offset = Vector2(0, 18)
-
-[node name="LeftFoot2" type="Sprite2D" parent="Head"]
-show_behind_parent = true
-position = Vector2(53, 92)
-texture = ExtResource("4_okcrh")
-offset = Vector2(1, 12)
-flip_h = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_xbhy3")
-}
-autoplay = "Hover"
+[node name="WingL" type="Bone2D" parent="Skeleton2D/Head"]
+position = Vector2(110.437, -115.645)
+rotation = -1.21636
+auto_calculate_length_and_angle = false
+length = 283.27
+bone_angle = -6.486
