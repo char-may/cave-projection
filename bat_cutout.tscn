@@ -1,58 +1,223 @@
-[gd_scene load_steps=2 format=3 uid="uid://cin42v75e75s1"]
+[gd_scene load_steps=5 format=3 uid="uid://cin42v75e75s1"]
 
-[ext_resource type="Texture2D" uid="uid://cmd4wnx708a68" path="res://cutout_test/bat_atlus.png" id="1_fu0ma"]
+[ext_resource type="Texture2D" uid="uid://di3io1lregpsv" path="res://cutout_test/bat_atlus_new.png" id="1_fu0ma"]
+
+[sub_resource type="Animation" id="Animation_fu0ma"]
+resource_name = "bat_flying_animation"
+length = 1.5771
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton2D/Head/WingL:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.88473e-05, 0.2, 0.4, 0.602833, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.558593, -1.21636, -2.0953, -1.21636, -0.558593, -1.21636, -2.0953, -1.21636]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skeleton2D/Head/WingR:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.88473e-05, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.616486, 1.3107, 2.22069, 1.3107, 0.616486, 1.3107, 2.22069, 1.3107]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skeleton2D/Head:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(986, 529), Vector2(985, 437), Vector2(986, 529), Vector2(985, 437)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Skeleton2D/Head:scale")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.800719, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.921489), Vector2(1, 1), Vector2(1, 0.921489)]
+}
+
+[sub_resource type="Animation" id="Animation_7ccfr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton2D/Head/WingL:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.21636]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skeleton2D/Head/WingR:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.3107]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skeleton2D/Head:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(986, 529)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Skeleton2D/Head:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d041s"]
+_data = {
+&"RESET": SubResource("Animation_7ccfr"),
+&"bat_flying_animation": SubResource("Animation_fu0ma")
+}
 
 [node name="Bat Cutout" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_d041s")
+}
+autoplay = "bat_flying_animation"
+speed_scale = 1.3
 
 [node name="Polygons" type="Node2D" parent="."]
 
 [node name="FootL" type="Polygon2D" parent="Polygons"]
-position = Vector2(483, -118)
+position = Vector2(483, -119)
 texture = ExtResource("1_fu0ma")
+skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(425.154, 613.825, 465.154, 624.825, 449.154, 683.825, 421.154, 670.825)
 uv = PackedVector2Array(425.154, 613.825, 465.154, 624.825, 449.154, 683.825, 421.154, 670.825)
 polygons = [PackedInt32Array(0, 1, 2, 3)]
+bones = ["Head", PackedFloat32Array(0, 0, 0, 0), "Head/WingL", PackedFloat32Array(0, 0, 0, 0), "Head/WingR", PackedFloat32Array(0, 0, 0, 0), "Head/FootL", PackedFloat32Array(1, 1, 1, 1), "Head/FootR", PackedFloat32Array(0, 0, 0, 0)]
 
 [node name="FootR" type="Polygon2D" parent="Polygons"]
-position = Vector2(461, -120)
+position = Vector2(715, 844)
+offset = Vector2(-254, -964)
 texture = ExtResource("1_fu0ma")
+skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(574.764, 626.981, 607.822, 611.954, 620.594, 671.308, 582.277, 678.821)
 uv = PackedVector2Array(574.764, 626.981, 607.822, 611.954, 620.594, 671.308, 582.277, 678.821)
 polygons = [PackedInt32Array(1, 2, 3, 0)]
+bones = ["Head", PackedFloat32Array(0, 0, 0, 0), "Head/WingL", PackedFloat32Array(0, 0, 0, 0), "Head/WingR", PackedFloat32Array(0, 0, 0, 0), "Head/FootL", PackedFloat32Array(0, 0, 0, 0), "Head/FootR", PackedFloat32Array(1, 1, 1, 1)]
 
 [node name="WingL" type="Polygon2D" parent="Polygons"]
 position = Vector2(522, 18)
 texture = ExtResource("1_fu0ma")
+skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(403.724, 402.76, 366.724, 467.76, 301.724, 465.76, 242.724, 528.76, 151.724, 457.76, 10.724, 455.76, 52.724, 341.76, -7.276, 224.76, 158.724, 227.76, 255.724, 283.76, 312.724, 316.76, 192.724, 357.76)
 uv = PackedVector2Array(403.724, 402.76, 366.724, 467.76, 301.724, 465.76, 242.724, 528.76, 151.724, 457.76, 10.724, 455.76, 52.724, 341.76, -7.276, 224.76, 158.724, 227.76, 255.724, 283.76, 312.724, 316.76, 192.724, 357.76)
 polygons = [PackedInt32Array(0, 11, 1), PackedInt32Array(1, 11, 2), PackedInt32Array(11, 3, 2), PackedInt32Array(11, 4, 3), PackedInt32Array(11, 5, 4), PackedInt32Array(11, 6, 5), PackedInt32Array(11, 7, 6), PackedInt32Array(11, 8, 7), PackedInt32Array(11, 9, 8), PackedInt32Array(11, 10, 9), PackedInt32Array(11, 0, 10)]
+bones = ["Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Head/WingL", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Head/WingR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Head/FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Head/FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 internal_vertex_count = 1
 
 [node name="WingR" type="Polygon2D" parent="Polygons"]
 position = Vector2(426, 12)
 texture = ExtResource("1_fu0ma")
+skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(620.428, 400, 655.428, 466, 725.428, 463, 785.428, 529, 880.428, 459, 1015.43, 455, 970.428, 347, 1031.43, 228, 855.428, 230, 772.428, 282, 700.428, 329, 825.428, 362)
 uv = PackedVector2Array(620.428, 400, 655.428, 466, 725.428, 463, 785.428, 529, 880.428, 459, 1015.43, 455, 970.428, 347, 1031.43, 228, 855.428, 230, 772.428, 282, 700.428, 329, 825.428, 362)
 polygons = [PackedInt32Array(0, 11, 1), PackedInt32Array(0, 10, 11), PackedInt32Array(10, 9, 11), PackedInt32Array(9, 8, 11), PackedInt32Array(11, 7, 8), PackedInt32Array(11, 6, 7), PackedInt32Array(11, 5, 6), PackedInt32Array(11, 4, 5), PackedInt32Array(11, 3, 4), PackedInt32Array(11, 2, 3), PackedInt32Array(11, 1, 2)]
+bones = ["Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Head/WingL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Head/WingR", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Head/FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Head/FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 internal_vertex_count = 1
 
 [node name="Head" type="Polygon2D" parent="Polygons"]
-position = Vector2(472, -87)
+position = Vector2(550, 787)
+offset = Vector2(-78, -874)
 texture = ExtResource("1_fu0ma")
+skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(571.87, 381.988, 504.87, 434.988, 449.87, 377.988, 389.87, 437.988, 378.87, 515.988, 408.87, 607.988, 514.87, 633.988, 626.87, 599.988, 645.87, 501.988, 624.87, 413.988, 509.87, 517.988)
 uv = PackedVector2Array(571.87, 381.988, 504.87, 434.988, 449.87, 377.988, 389.87, 437.988, 378.87, 515.988, 408.87, 607.988, 514.87, 633.988, 626.87, 599.988, 645.87, 501.988, 624.87, 413.988, 509.87, 517.988)
 polygons = [PackedInt32Array(1, 10, 2), PackedInt32Array(2, 10, 3), PackedInt32Array(10, 4, 3), PackedInt32Array(10, 5, 4), PackedInt32Array(10, 6, 5), PackedInt32Array(10, 6, 7), PackedInt32Array(10, 7, 8), PackedInt32Array(10, 8, 9), PackedInt32Array(10, 9, 0), PackedInt32Array(10, 0, 1)]
+bones = ["Head", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Head/WingL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Head/WingR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Head/FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Head/FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 internal_vertex_count = 1
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
+visible = false
 
 [node name="Head" type="Bone2D" parent="Skeleton2D"]
 position = Vector2(986, 529)
 rotation = -1.58315
+rest = Transform2D(-0.0123534, -0.999924, 0.999924, -0.0123534, 986, 529)
 
 [node name="WingL" type="Bone2D" parent="Skeleton2D/Head"]
-position = Vector2(110.437, -115.645)
+position = Vector2(92.2284, -98.8682)
 rotation = -1.21636
+scale = Vector2(1, 1)
+rest = Transform2D(0.347062, -0.937842, 0.937842, 0.347062, 92.2284, -98.8682)
 auto_calculate_length_and_angle = false
-length = 283.27
+length = 301.702
 bone_angle = -6.486
+
+[node name="WingR" type="Bone2D" parent="Skeleton2D/Head"]
+position = Vector2(92.6957, 106.153)
+rotation = 1.3107
+scale = Vector2(1, 1)
+rest = Transform2D(0.257172, 0.966366, -0.966366, 0.257172, 92.6957, 106.153)
+auto_calculate_length_and_angle = false
+length = 301.793
+bone_angle = 0.0
+
+[node name="FootL" type="Bone2D" parent="Skeleton2D/Head"]
+position = Vector2(20.7644, -61.7482)
+rotation = -3.04885
+rest = Transform2D(-0.995702, -0.0926147, 0.0926147, -0.995702, 21.7643, -61.7358)
+auto_calculate_length_and_angle = false
+length = 43.648
+bone_angle = 0.0
+
+[node name="FootR" type="Bone2D" parent="Skeleton2D/Head"]
+position = Vector2(22.1335, 70.2788)
+rotation = -3.09618
+rest = Transform2D(-0.998704, 0.0509013, -0.0509013, -0.998704, 22.1335, 70.2788)
+auto_calculate_length_and_angle = false
+length = 43.648
+bone_angle = 0.0
