@@ -48,12 +48,25 @@ func screenshot():
 	
 	var rect := Rect2i(450,26,1024,1024)
 	var viewport = get_viewport()
-	var img = viewport.get_texture().get_image().get_region(rect)
 	
+	#var img = viewport.get_texture().get_image().get_region(rect)
+	var img = viewport.get_texture().get_image()
+	img.convert(Image.FORMAT_RGBA8)
+
 	# look at Image.blit_rect_mask to mask image
 	# still trying to find a good example of how this works
+	var mask = Image.new().create(1024,1024,false,Image.FORMAT_RGBA8)
+	mask.load("res://cutout_test/export_mask.png")
+	mask.convert(Image.FORMAT_RGBA8)
+	
 
-	img.save_png("user://exports/export"+str(export_count)+".png")
+	var test = Image.new().create(1024,1024,false,Image.FORMAT_RGBA8)
+	test.blit_rect(img,rect,Vector2(0,0))
+	
+	var mask_rect := Rect2i(0,0,1024,1024)
+	test.blit_rect_mask(test,mask,mask_rect,Vector2(0,0))
+
+	test.save_png("user://exports/export"+str(export_count)+".png")
 	export_count += 1
 	
 	# Show ui
