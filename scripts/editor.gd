@@ -1,5 +1,7 @@
 class_name Editor extends Node2D
 
+@export var ui : Control
+
 var export_count = 0
 
 # TODO: Set template/mask based on currently editing creature
@@ -28,18 +30,32 @@ func _input(event):
 	
 func screenshot():
 	print ("Camera sound!") # Confirm action
-	
+
+	if ui:
+		ui.visible = false
+		
 	await RenderingServer.frame_post_draw
 	
+	# Make sure stretch mode is set to viewport
+	# and aspect is set to keep in project settings
+	# this keeps the viewport img captured a consistent size
+	# and doesn't seem to behave any differently when resized
+	
+	# I fudged the numbers of this rect until it captured the
+	# 1024, 1024 rect containing the part that will be used
+	# as the creature UV as close as possible
+	# would be better if these numbers made sense... 
+	
+	var rect := Rect2i(450,26,1024,1024)
 	var viewport = get_viewport()
-	var img = viewport.get_texture().get_image()
+	var img = viewport.get_texture().get_image().get_region(rect)
+	
+	# look at Image.blit_rect_mask to mask image
+	# still trying to find a good example of how this works
+
 	img.save_png("user://exports/export"+str(export_count)+".png")
 	export_count += 1
 	
-	## Creature new creature
-	#var new_creature = Creature.new()
-	#new_creature.type = currently_editing.type
-	#new_creature.drawing_mask = currently_editing.drawing_mask
-	#new_creature.palette = currently_editing.palette
-	#new_creature.texture = currently_editing.texture #change this
-	#new_creature.secret = "I'm the copy, yay!"
+	# Show ui
+	if ui:
+		ui.visible = true
