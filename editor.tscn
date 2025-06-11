@@ -1,16 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://bs4k256ad277m"]
+[gd_scene load_steps=7 format=3 uid="uid://bs4k256ad277m"]
 
 [ext_resource type="Script" uid="uid://b471rqmp7x52o" path="res://scripts/editor.gd" id="1_gbsbp"]
 [ext_resource type="PackedScene" uid="uid://c7uvpsnt6urh7" path="res://pen.tscn" id="2_t27w5"]
-[ext_resource type="Texture2D" uid="uid://stb57lyylxi2" path="res://cutout_test/bat_mask_new.png" id="3_1ys5w"]
-[ext_resource type="Texture2D" uid="uid://ekevflvnqwjl" path="res://cutout_test/background_mask.png" id="3_gbsbp"]
+[ext_resource type="Texture2D" uid="uid://bkp4dnahmoncc" path="res://cutout_test/bat_full_mask.png" id="3_1ys5w"]
 [ext_resource type="Script" uid="uid://c4fy3hkko5nfn" path="res://scripts/drawing_tool_button.gd" id="5_3btpq"]
 [ext_resource type="Script" uid="uid://d4cf4m8sui35w" path="res://scripts/color_swatch_selector.gd" id="6_7py46"]
 [ext_resource type="Script" uid="uid://x6e3qri4aas5" path="res://scripts/color_button.gd" id="7_kwc7g"]
 
-[node name="Editor" type="Node2D" node_paths=PackedStringArray("ui")]
+[node name="Editor" type="Node2D" node_paths=PackedStringArray("ui", "template")]
 script = ExtResource("1_gbsbp")
 ui = NodePath("PenToolUI")
+template = NodePath("Template")
 
 [node name="Pen" parent="." instance=ExtResource("2_t27w5")]
 
@@ -22,22 +22,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background Mask" type="TextureRect" parent="Template"]
-modulate = Color(0.423796, 0.660197, 0.882621, 1)
-custom_minimum_size = Vector2(1024, 1024)
-layout_mode = 0
-offset_right = 1921.22
-offset_bottom = 1080.0
-texture = ExtResource("3_gbsbp")
-expand_mode = 3
-stretch_mode = 3
-
 [node name="Bat Mask" type="TextureRect" parent="Template"]
-modulate = Color(0.288962, 0.545092, 0.778007, 1)
+modulate = Color(0.0470588, 0.145098, 0.231373, 1)
 custom_minimum_size = Vector2(1024, 1024)
 layout_mode = 0
 offset_right = 1921.22
 offset_bottom = 1080.0
+pivot_offset = Vector2(958, 549)
 texture = ExtResource("3_1ys5w")
 expand_mode = 3
 stretch_mode = 3

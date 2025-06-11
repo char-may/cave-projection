@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cin42v75e75s1"]
+[gd_scene load_steps=7 format=3 uid="uid://cin42v75e75s1"]
 
-[ext_resource type="Texture2D" uid="uid://di3io1lregpsv" path="res://cutout_test/bat_atlus_new.png" id="1_fu0ma"]
+[ext_resource type="Script" uid="uid://bj4xoxso15sex" path="res://scripts/cutout.gd" id="1_7ccfr"]
+[ext_resource type="Texture2D" uid="uid://81c3qrrb8hgt" path="res://cutout_test/export3.png" id="2_d041s"]
+[ext_resource type="Texture2D" uid="uid://dh0hwx2ojhmep" path="res://cutout_test/export0.png" id="3_d041s"]
 
 [sub_resource type="Animation" id="Animation_7ccfr"]
 length = 0.001
@@ -112,10 +114,12 @@ _data = {
 &"bat_flying_animation": SubResource("Animation_fu0ma")
 }
 
-[node name="Bat Cutout" type="Node2D"]
+[node name="Bat Cutout" type="Node2D" node_paths=PackedStringArray("polygons")]
+script = ExtResource("1_7ccfr")
+polygons = NodePath("Polygons")
+atlus = ExtResource("2_d041s")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 custom_minimum_size = Vector2(1920, 1080)
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -132,7 +136,7 @@ speed_scale = 1.3
 
 [node name="FootL" type="Polygon2D" parent="Polygons"]
 position = Vector2(483, -119)
-texture = ExtResource("1_fu0ma")
+texture = ExtResource("3_d041s")
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(425.154, 613.825, 465.154, 624.825, 449.154, 683.825, 421.154, 670.825)
 uv = PackedVector2Array(425.154, 613.825, 465.154, 624.825, 449.154, 683.825, 421.154, 670.825)
@@ -142,7 +146,7 @@ bones = ["Head", PackedFloat32Array(0, 0, 0, 0), "Head/WingL", PackedFloat32Arra
 [node name="FootR" type="Polygon2D" parent="Polygons"]
 position = Vector2(715, 844)
 offset = Vector2(-254, -964)
-texture = ExtResource("1_fu0ma")
+texture = ExtResource("3_d041s")
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(574.764, 626.981, 607.822, 611.954, 620.594, 671.308, 582.277, 678.821)
 uv = PackedVector2Array(574.764, 626.981, 607.822, 611.954, 620.594, 671.308, 582.277, 678.821)
@@ -151,7 +155,7 @@ bones = ["Head", PackedFloat32Array(0, 0, 0, 0), "Head/WingL", PackedFloat32Arra
 
 [node name="WingL" type="Polygon2D" parent="Polygons"]
 position = Vector2(522, 18)
-texture = ExtResource("1_fu0ma")
+texture = ExtResource("3_d041s")
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(403.724, 402.76, 366.724, 467.76, 301.724, 465.76, 242.724, 528.76, 151.724, 457.76, 10.724, 455.76, 52.724, 341.76, -7.276, 224.76, 158.724, 227.76, 255.724, 283.76, 312.724, 316.76, 192.724, 357.76)
 uv = PackedVector2Array(403.724, 402.76, 366.724, 467.76, 301.724, 465.76, 242.724, 528.76, 151.724, 457.76, 10.724, 455.76, 52.724, 341.76, -7.276, 224.76, 158.724, 227.76, 255.724, 283.76, 312.724, 316.76, 192.724, 357.76)
@@ -161,7 +165,7 @@ internal_vertex_count = 1
 
 [node name="WingR" type="Polygon2D" parent="Polygons"]
 position = Vector2(426, 12)
-texture = ExtResource("1_fu0ma")
+texture = ExtResource("3_d041s")
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(620.428, 400, 655.428, 466, 725.428, 463, 785.428, 529, 880.428, 459, 1015.43, 455, 970.428, 347, 1031.43, 228, 855.428, 230, 772.428, 282, 700.428, 329, 825.428, 362)
 uv = PackedVector2Array(620.428, 400, 655.428, 466, 725.428, 463, 785.428, 529, 880.428, 459, 1015.43, 455, 970.428, 347, 1031.43, 228, 855.428, 230, 772.428, 282, 700.428, 329, 825.428, 362)
@@ -172,7 +176,7 @@ internal_vertex_count = 1
 [node name="Head" type="Polygon2D" parent="Polygons"]
 position = Vector2(550, 787)
 offset = Vector2(-78, -874)
-texture = ExtResource("1_fu0ma")
+texture = ExtResource("3_d041s")
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(571.87, 381.988, 504.87, 434.988, 449.87, 377.988, 389.87, 437.988, 378.87, 515.988, 408.87, 607.988, 514.87, 633.988, 626.87, 599.988, 645.87, 501.988, 624.87, 413.988, 509.87, 517.988)
 uv = PackedVector2Array(571.87, 381.988, 504.87, 434.988, 449.87, 377.988, 389.87, 437.988, 378.87, 515.988, 408.87, 607.988, 514.87, 633.988, 626.87, 599.988, 645.87, 501.988, 624.87, 413.988, 509.87, 517.988)
