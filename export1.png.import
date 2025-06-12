@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sgega747s4v1"
-path="res://.godot/imported/export_mask_3.png-8f200d566c5760db9c9b6c4755167299.ctex"
+uid="uid://dts2caxnvjvg1"
+path="res://.godot/imported/export1.png-a2b916179ad018c69e7d4374760d24e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cutout_test/export_mask_3.png"
-dest_files=["res://.godot/imported/export_mask_3.png-8f200d566c5760db9c9b6c4755167299.ctex"]
+source_file="res://export1.png"
+dest_files=["res://.godot/imported/export1.png-a2b916179ad018c69e7d4374760d24e2.ctex"]
 
 [params]
 

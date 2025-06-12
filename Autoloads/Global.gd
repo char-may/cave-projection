@@ -5,3 +5,4 @@ enum CreatureType {
 	TARDIGRADE,
 }
 var currently_editing : CreatureType = CreatureType.BAT
+var atlas_texture : ImageTexture = null
