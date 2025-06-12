@@ -4,8 +4,8 @@ extends Node2D
 
 # Set texture of all polygons in the scene to global atlus
 func _ready():	
-
-	if polygons:
-		for p in polygons.get_children():
-			if p is Polygon2D:
-				p.texture = Global.atlas_texture
+	pass
+#	if polygons:
+#		for p in polygons.get_children():
+#			if p is Polygon2D:
+#				p.texture = Global.atlas_texture

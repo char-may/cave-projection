@@ -11,15 +11,17 @@ config_version=5
 [application]
 
 config/name="cave-projection"
-run/main_scene="res://editor.tscn"
+run/main_scene="uid://c3656hxqib1hs"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Cave draw"
 config/features=PackedStringArray("4.4", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*res://autoloads/global.gd"
+Global="*res://scripts/global.gd"
 
 [display]
 

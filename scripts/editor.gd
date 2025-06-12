@@ -42,11 +42,11 @@ func screenshot():
 	var path = "user://exports/export"+str(export_count)+".png"
 	img.save_png(path)
 	
-	# Save image texture to global
+	# Save image texture to global                     <-- work on this
 	var image = Image.new()
 	var load_err := image.load(path)
 	assert(load_err == OK, "Failed to load image at: ")
-	Global.atlas_texture = ImageTexture.create_from_image(image)
+	#Global.atlas_texture = ImageTexture.create_from_image(image)
 	
 	show_ui()
 #	get_tree().change_scene(confirm_scene)
