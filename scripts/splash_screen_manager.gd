@@ -1,5 +1,8 @@
 extends Control
 
+# Splash screen manager:
+# Plays splash screen animation and handles scene transition
+
 @export var in_time : float = 0.2
 @export var fade_in_time : float = 0.3
 @export var pause_time : float = 1.25

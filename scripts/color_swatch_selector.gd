@@ -1,9 +1,17 @@
 class_name ColorSwatchSelector extends GridContainer
 
+# Color swatch selector:
+# A grid container that shows and hides a palette of 
+# color buttons when the pen tool button is pressed
+
+# Signals:
+# Recieve -> Color button pressed, Pen button pressed
+# Emit -> Color selected
+
 signal color_selected(color:Color)
 var out : bool = false # TODO: rename this
 
-# TODO: Set # of columns based on size of palette
+# TODO: Dynamic size, set # of columns based on size of palette
 # set color of each swatch from palette
 
 func _ready() -> void:
@@ -12,15 +20,15 @@ func _ready() -> void:
 			child.hide() # Hide palette until tool is pressed
 			
 			# Connect the pressed signal to our function
-			# Bind the ColorButton to it so we can access the color.
+			# Bind the ColorButton to it so we can access the color
 			child.pressed.connect(_on_color_button_pressed.bind(child))
 
 func _on_color_button_pressed(button:ColorButton) -> void:
-	# Emit the color_selected signal with the color of the ColorButton
-	color_selected.emit(button.color)
+	# Emit color selected signal
+	GlobalSignal.swatch_color_selected.emit(button.color)
 	collapse_palette()
 
-func _on_pen_button_pressed() -> void:
+func on_drawing_tool_selected(_type, _size) -> void:
 	if out:
 		collapse_palette()
 	else:
@@ -39,3 +47,10 @@ func collapse_palette() -> void:
 	for child in get_children():
 		if child is ColorButton:
 			child.hide()
+
+func _on_tree_entered() -> void:
+	GlobalSignal.drawing_tool_selected.connect(on_drawing_tool_selected)
+
+
+func _on_tree_exited() -> void:
+	GlobalSignal.drawing_tool_selected.disconnect(on_drawing_tool_selected)

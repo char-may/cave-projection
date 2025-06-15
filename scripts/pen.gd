@@ -1,8 +1,14 @@
 extends Node2D
 
-@onready var _lines: Node2D = $Line2D
-@export var width = 25
+# Pen:
+# Draws lines with mouse input
 
+# Signals:
+# Recieves -> Swatch color selected, Drawing tool selected
+
+@onready var _lines: Node2D = $Line2D
+
+var width = 25
 var _pressed: bool = false
 var _current_line: Line2D = null
 var line_color : Color
@@ -33,5 +39,16 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and _pressed:
 		_current_line.add_point(event.position)
 
-func _on_swatch_selector_color_selected(color: Color) -> void:
+func on_swatch_color_selected(color: Color) -> void:
 	line_color = color
+
+func on_drawing_tool_selected(_selected_type, size) -> void:
+		width = size
+
+func _on_tree_entered() -> void:
+	GlobalSignal.drawing_tool_selected.connect(on_drawing_tool_selected)
+	GlobalSignal.swatch_color_selected.connect(on_swatch_color_selected)
+
+func _on_tree_exited() -> void:
+	GlobalSignal.drawing_tool_selected.disconnect(on_drawing_tool_selected)
+	GlobalSignal.swatch_color_selected.disconnect(on_swatch_color_selected)

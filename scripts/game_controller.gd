@@ -1,7 +1,10 @@
 class_name GameController extends Node2D
 
+# Game controller:
+# Handles all global scene transitions
+
 @export var world_2d : Node2D
-@export var gui : Control
+@export var gui : Node
 
 var current_2d_scene
 var current_gui_scene
@@ -10,6 +13,8 @@ func _init() -> void:
 	Global.game_controller = self
 
 func _ready() -> void:
+	#Add exports for default 2d and gui scene to load
+	
 	Global.game_controller.change_gui_scene("res://scenes/splash_screen_manager.tscn")
 
 func change_gui_scene(new_scene: String, delete: bool = true, keep_running: bool = false) -> void:
@@ -23,6 +28,8 @@ func change_gui_scene(new_scene: String, delete: bool = true, keep_running: bool
 		var new = load(new_scene).instantiate()
 		gui.add_child(new)
 		current_gui_scene = new
+		
+# Add clear_gui_scene which just does delete, keep_running, and remove without setting a new scene
 
 func change_2d_scene(new_scene: String, delete: bool = true, keep_running: bool = false) -> void:
 		if current_2d_scene != null:

@@ -1,5 +1,8 @@
 class_name AnimationComponent extends Node
 
+# Animation component:
+# Create tween animations on a parent control node.
+
 @export var from_center : bool = true
 #@export var hover_scale : Vector2 = Vector2(1,1)
 @export var time : float = 0.1

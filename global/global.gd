@@ -5,6 +5,11 @@ enum CreatureType {
 	TARDIGRADE,
 }
 
+enum ToolType {
+	PEN,
+	ROLLER,
+	ERASER
+}
+
 var game_controller : GameController
 var creature_editing : CreatureType = CreatureType.BAT
-var atlas_texture : CompressedTexture2D

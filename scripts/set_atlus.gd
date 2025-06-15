@@ -1,5 +1,9 @@
 extends Node2D
 
+# Set atlas:
+# Util to set the texture altus for 
+# all polygons in the scene at once
+
 @export var polygons : Node2D
 
 # Set texture of all polygons in the scene to global atlus

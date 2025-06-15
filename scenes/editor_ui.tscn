@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0th37sj1iex5"]
+
+[ext_resource type="Script" uid="uid://c4fy3hkko5nfn" path="res://scripts/drawing_tool_button.gd" id="1_vfx3x"]
+[ext_resource type="Script" uid="uid://d4cf4m8sui35w" path="res://scripts/color_swatch_selector.gd" id="2_tq8du"]
+[ext_resource type="Script" uid="uid://x6e3qri4aas5" path="res://scripts/color_button.gd" id="3_wa8u6"]
+
+[node name="EditorUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PenButton" type="Button" parent="."]
+layout_mode = 0
+offset_top = 28.0
+offset_right = 40.0
+offset_bottom = 68.0
+scale = Vector2(1.5, 1.5)
+flat = true
+script = ExtResource("1_vfx3x")
+tool_size = 100
+slide_offset = Vector2(50, 0)
+color = Color(0.85098, 0.172549, 0.533333, 1)
+
+[node name="SwatchSelector" type="GridContainer" parent="PenButton"]
+layout_mode = 1
+offset_left = 100.0
+offset_top = 2.0
+offset_right = 291.0
+offset_bottom = 37.0
+columns = 5
+script = ExtResource("2_tq8du")
+
+[node name="Swatch1" type="Button" parent="PenButton/SwatchSelector"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+script = ExtResource("3_wa8u6")
+color = Color(0.85098, 0.172549, 0.533333, 1)
+
+[node name="Swatch2" type="Button" parent="PenButton/SwatchSelector"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+script = ExtResource("3_wa8u6")
+color = Color(0.188235, 0.188235, 0.490196, 1)
+
+[node name="Swatch3" type="Button" parent="PenButton/SwatchSelector"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+script = ExtResource("3_wa8u6")
+color = Color(0.745098, 0.87451, 0.0627451, 1)
+
+[node name="Swatch4" type="Button" parent="PenButton/SwatchSelector"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+script = ExtResource("3_wa8u6")
+color = Color(0.988235, 0.45098, 0.266667, 1)
+
+[node name="Swatch5" type="Button" parent="PenButton/SwatchSelector"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+script = ExtResource("3_wa8u6")
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="PenButton" to="PenButton" method="_on_pressed"]
+[connection signal="tree_entered" from="PenButton" to="PenButton" method="_on_tree_entered"]
+[connection signal="tree_exited" from="PenButton" to="PenButton" method="_on_tree_exited"]
+[connection signal="tree_entered" from="PenButton/SwatchSelector" to="PenButton/SwatchSelector" method="_on_tree_entered"]
+[connection signal="tree_exited" from="PenButton/SwatchSelector" to="PenButton/SwatchSelector" method="_on_tree_exited"]

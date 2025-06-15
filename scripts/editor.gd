@@ -1,6 +1,8 @@
 class_name Editor extends Node2D
 
-@export var ui : Control
+# Editor:
+# Exports drawings, loads scene ui and handles transitions
+
 @export var mask : Control
 @export var confirm_scene : PackedScene
 
@@ -10,6 +12,8 @@ var export_count = 0
 # just store all 4 masks as editor properties
 
 func _ready():
+	# Add editor UI to game
+	Global.game_controller.change_gui_scene("res://scenes/editor_ui.tscn", true, false)
 	
 	# Create export directory
 	var dir = DirAccess.open("user://")
@@ -20,10 +24,7 @@ func _ready():
 	for n in dir.get_files():
 		export_count += 1
 
-	# TODO: print currently editing/other game state here
-	# Output to test
 	print ("Number of files already in exports folder: %d" % export_count)
-	
 	
 func _input(event):
 	# TODO Change this action to something like "export" when UI is finished
@@ -31,7 +32,7 @@ func _input(event):
 		screenshot()
 	
 func screenshot():
-	hide_ui()
+	#hide_ui()
 	await RenderingServer.frame_post_draw
 	
 	export_count += 1
@@ -48,19 +49,21 @@ func screenshot():
 	assert(load_err == OK, "Failed to load image at: ")
 	#Global.atlas_texture = ImageTexture.create_from_image(image)
 	
-	show_ui()
+	#show_ui()
+	# TODO: Need to load "Done?" ui
+	
 #	get_tree().change_scene(confirm_scene)
 
-func hide_ui():
-	if ui:
-		ui.visible = false
+#func hide_ui():
+#	if ui:
+#		ui.visible = false
 	
-	if mask:
-		mask.visible = false
+#	if mask:
+#		mask.visible = false
 
-func show_ui():
-	if ui:
-		ui.visible = true
+#func show_ui():
+#	if ui:
+#		ui.visible = true
 	
-	if mask:
-		mask.visible = true
+#	if mask:
+#		mask.visible = true
