@@ -13,3 +13,4 @@ enum ToolType {
 
 var game_controller : GameController
 var creature_editing : CreatureType = CreatureType.BAT
+var finished_atlus : ImageTexture = null

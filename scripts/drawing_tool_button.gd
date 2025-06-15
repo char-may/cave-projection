@@ -26,6 +26,7 @@ var out : bool = false # state TODO: rename to active or something
 # TODO: Set palette resource and default based on creature type editing
 
 func _ready() -> void:
+	GlobalSignal.swatch_color_selected.connect(on_swatch_color_selected)
 	button_size = size
 	slide_in()
 	
@@ -53,8 +54,6 @@ func add_tween(property: String, value, seconds: float) -> void:
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, property, value, seconds).set_trans(transition_type)
 
-func _on_tree_entered() -> void:
-	GlobalSignal.swatch_color_selected.connect(on_swatch_color_selected)
-
-func _on_tree_exited() -> void:
-	GlobalSignal.swatch_color_selected.disconnect(on_swatch_color_selected)
+func _on_tree_exiting() -> void:
+	if GlobalSignal.swatch_color_selected:
+		GlobalSignal.swatch_color_selected.disconnect(on_swatch_color_selected)

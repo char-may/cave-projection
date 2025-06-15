@@ -14,7 +14,7 @@ confirm_scene = ExtResource("2_5tm2q")
 custom_minimum_size = Vector2(1900, 1060)
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0.287248, 0.615755, 0.821802, 1)
+color = Color(0.514224, 0.311505, 0.570662, 1)
 
 [node name="Pen" parent="." instance=ExtResource("3_j8y2p")]
 

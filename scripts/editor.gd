@@ -32,9 +32,7 @@ func _input(event):
 		screenshot()
 	
 func screenshot():
-	#hide_ui()
 	await RenderingServer.frame_post_draw
-	
 	export_count += 1
 	
 	# Save image to the user directory
@@ -43,27 +41,11 @@ func screenshot():
 	var path = "user://exports/export"+str(export_count)+".png"
 	img.save_png(path)
 	
-	# Save image texture to global                     <-- work on this
+	# Save image texture to global
 	var image = Image.new()
 	var load_err := image.load(path)
 	assert(load_err == OK, "Failed to load image at: ")
-	#Global.atlas_texture = ImageTexture.create_from_image(image)
+	Global.finished_atlus = ImageTexture.create_from_image(image)
 	
-	#show_ui()
-	# TODO: Need to load "Done?" ui
-	
-#	get_tree().change_scene(confirm_scene)
-
-#func hide_ui():
-#	if ui:
-#		ui.visible = false
-	
-#	if mask:
-#		mask.visible = false
-
-#func show_ui():
-#	if ui:
-#		ui.visible = true
-	
-#	if mask:
-#		mask.visible = true
+	Global.game_controller.change_2d_scene("res://scenes/polygon_bat.tscn", true, false)
+	Global.game_controller.change_gui_scene("res://scenes/empty_gui.tscn", true, false)
