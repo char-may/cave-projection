@@ -20,8 +20,9 @@ offset_bottom = 68.0
 scale = Vector2(1.5, 1.5)
 flat = true
 script = ExtResource("1_vfx3x")
-tool_size = 20
+tool_size = 15
 slide_offset = Vector2(50, 0)
+inactive_color = Color(0.552956, 0.552956, 0.552956, 1)
 color = Color(0.85098, 0.172549, 0.533333, 1)
 
 [node name="SwatchSelector" type="GridContainer" parent="PenButton"]
@@ -68,7 +69,69 @@ flat = true
 script = ExtResource("3_wa8u6")
 color = Color(0, 0, 0, 1)
 
+[node name="RollerButton" type="Button" parent="."]
+layout_mode = 0
+offset_top = 150.0
+offset_right = 40.0
+offset_bottom = 190.0
+scale = Vector2(1.5, 1.5)
+flat = true
+script = ExtResource("1_vfx3x")
+type = 1
+tool_size = 55
+slide_offset = Vector2(50, 0)
+inactive_color = Color(0.552941, 0.552941, 0.552941, 1)
+color = Color(0.85098, 0.172549, 0.533333, 1)
+
+[node name="SwatchSelector" type="GridContainer" parent="RollerButton"]
+layout_mode = 1
+offset_left = 100.0
+offset_top = 2.0
+offset_right = 291.0
+offset_bottom = 37.0
+columns = 5
+script = ExtResource("2_tq8du")
+
+[node name="Swatch1" type="Button" parent="RollerButton/SwatchSelector"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+script = ExtResource("3_wa8u6")
+color = Color(0.85098, 0.172549, 0.533333, 1)
+
+[node name="Swatch2" type="Button" parent="RollerButton/SwatchSelector"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+script = ExtResource("3_wa8u6")
+color = Color(0.188235, 0.188235, 0.490196, 1)
+
+[node name="Swatch3" type="Button" parent="RollerButton/SwatchSelector"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+script = ExtResource("3_wa8u6")
+color = Color(0.745098, 0.87451, 0.0627451, 1)
+
+[node name="Swatch4" type="Button" parent="RollerButton/SwatchSelector"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+script = ExtResource("3_wa8u6")
+color = Color(0.988235, 0.45098, 0.266667, 1)
+
+[node name="Swatch5" type="Button" parent="RollerButton/SwatchSelector"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+script = ExtResource("3_wa8u6")
+color = Color(0, 0, 0, 1)
+
 [connection signal="pressed" from="PenButton" to="PenButton" method="_on_pressed"]
 [connection signal="tree_exiting" from="PenButton" to="PenButton" method="_on_tree_exiting"]
 [connection signal="tree_entered" from="PenButton/SwatchSelector" to="PenButton/SwatchSelector" method="_on_tree_entered"]
 [connection signal="tree_exited" from="PenButton/SwatchSelector" to="PenButton/SwatchSelector" method="_on_tree_exited"]
+[connection signal="pressed" from="RollerButton" to="RollerButton" method="_on_pressed"]
+[connection signal="tree_exiting" from="RollerButton" to="RollerButton" method="_on_tree_exiting"]
+[connection signal="tree_entered" from="RollerButton/SwatchSelector" to="RollerButton/SwatchSelector" method="_on_tree_entered"]
+[connection signal="tree_exited" from="RollerButton/SwatchSelector" to="RollerButton/SwatchSelector" method="_on_tree_exited"]

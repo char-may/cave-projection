@@ -42,7 +42,7 @@ func _input(event: InputEvent) -> void:
 func on_swatch_color_selected(color: Color) -> void:
 	line_color = color
 
-func on_drawing_tool_selected(_selected_type, size) -> void:
+func on_drawing_tool_selected(size) -> void:
 		width = size
 
 func _on_tree_entered() -> void:

@@ -9,16 +9,19 @@ class_name DrawingToolButton extends ColorButton
 # Emit -> Drawing tool selected (tool type, size)
 # Recieve -> Swatch color selected
 
-@export var type : Global.ToolType = Global.ToolType.PEN
+@export var type : Global.ToolType
 @export var tool_size : int
 
 @export var slide_time : float = 0.1
 @export var transition_type : Tween.TransitionType
 @export var slide_offset : Vector2
 
-#TODO: add unselected default color...
-#TODO: load a default selected color...
+@export var inactive_color : Color
 
+# TODO: add unselected default color...
+# TODO: load a default selected color...
+
+var active : bool = false # Tool active/selected
 var button_size : Vector2
 var out : bool = false # state TODO: rename to active or something
 
@@ -28,15 +31,27 @@ var out : bool = false # state TODO: rename to active or something
 func _ready() -> void:
 	GlobalSignal.swatch_color_selected.connect(on_swatch_color_selected)
 	button_size = size
-	slide_in()
+	if !active:
+		color = inactive_color
+		slide_in()
+
+func _process(_delta: float) -> void:
+	if Global.selected_tool == type:
+		active = true
+	else:
+		active = false
+		color = inactive_color
+		slide_in()
 	
 func on_swatch_color_selected(selectedColor: Color) -> void:
-	color = selectedColor
-	await get_tree().create_timer(.01).timeout
-	slide_in()
+	if active:
+		color = selectedColor
+		await get_tree().create_timer(.01).timeout
+		slide_in()
 
 func _on_pressed() -> void:
-	GlobalSignal.drawing_tool_selected.emit(type, tool_size)
+	Global.selected_tool = type
+	GlobalSignal.drawing_tool_selected.emit(tool_size)
 	if out:
 		slide_in()
 	else:

@@ -6,13 +6,12 @@ class_name ColorSwatchSelector extends GridContainer
 
 # Signals:
 # Recieve -> Color button pressed, Pen button pressed
-# Emit -> Color selected
+# Emit -> Swatch color selected
 
-signal color_selected(color:Color)
+#signal color_selected(color:Color)
 var out : bool = false # TODO: rename this
 
-# TODO: Dynamic size, set # of columns based on size of palette
-# set color of each swatch from palette
+# TODO: Create swatches dynamically based on palette resource size
 
 func _ready() -> void:
 	for child in get_children():
@@ -23,17 +22,22 @@ func _ready() -> void:
 			# Bind the ColorButton to it so we can access the color
 			child.pressed.connect(_on_color_button_pressed.bind(child))
 
+func _process(delta: float) -> void:
+	if !get_parent().active:
+		collapse_palette()
+	
 func _on_color_button_pressed(button:ColorButton) -> void:
-	# Emit color selected signal
-	GlobalSignal.swatch_color_selected.emit(button.color)
-	collapse_palette()
+	if get_parent().active:
+		GlobalSignal.swatch_color_selected.emit(button.color)
+		collapse_palette()
 
-func on_drawing_tool_selected(_type, _size) -> void:
-	if out:
+func on_drawing_tool_selected(_size) -> void:
+	if get_parent().active && out:
 		collapse_palette()
 	else:
-		await get_tree().create_timer(.05).timeout
-		expand_palette()
+		if get_parent().type == Global.selected_tool:
+			await get_tree().create_timer(.05).timeout
+			expand_palette()
 	
 func expand_palette() -> void:
 	out = true
