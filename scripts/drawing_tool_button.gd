@@ -1,4 +1,4 @@
-@tool
+#@tool
 class_name DrawingToolButton extends ColorButton
 
 # Drawing tool button:
@@ -29,11 +29,12 @@ var out : bool = false # state TODO: rename to active or something
 # TODO: Set palette resource and default based on creature type editing
 
 func _ready() -> void:
-	GlobalSignal.swatch_color_selected.connect(on_swatch_color_selected)
 	button_size = size
 	if !active:
 		color = inactive_color
 		slide_in()
+	#if type != Global.ToolType.ERASER:
+		GlobalSignal.swatch_color_selected.connect(on_swatch_color_selected)
 
 func _process(_delta: float) -> void:
 	if Global.selected_tool == type:

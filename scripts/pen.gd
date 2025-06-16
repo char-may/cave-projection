@@ -15,7 +15,6 @@ var line_color : Color
 
 func _ready():
 	pass
-	#line_color = Editor.editing.palette
 
 func _process(_delta):
 	var pos = get_global_mouse_position()
