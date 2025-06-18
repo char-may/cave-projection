@@ -6,7 +6,7 @@ class_name DrawingToolButton extends ColorButton
 # Does a slide in/out tween animation when pressed
 
 # Signals:
-# Emit -> Drawing tool selected (tool type, size)
+# Emit -> Drawing tool selected, Swatch color selected
 # Recieve -> Swatch color selected
 
 @export var type : Global.ToolType
@@ -17,9 +17,7 @@ class_name DrawingToolButton extends ColorButton
 @export var slide_offset : Vector2
 
 @export var inactive_color : Color
-
-# TODO: add unselected default color...
-# TODO: load a default selected color...
+var default_color : Color
 
 var active : bool = false # Tool active/selected
 var button_size : Vector2
@@ -29,13 +27,23 @@ var out : bool = false # state TODO: rename to active or something
 # TODO: Set palette resource and default based on creature type editing
 
 func _ready() -> void:
+	GlobalSignal.swatch_color_selected.connect(on_swatch_color_selected)
 	button_size = size
+	
+	# Set tool defaults
+	if type == Global.selected_tool:
+		active = true
+		var swatch_selector = get_node("SwatchSelector")
+		default_color = swatch_selector.active_palette.color1
+		color = default_color
+		GlobalSignal.set_default_color.emit(color)
+		GlobalSignal.set_default_size.emit(tool_size)
+		slide_in()
+	
 	if !active:
 		color = inactive_color
 		slide_in()
-	#if type != Global.ToolType.ERASER:
-		GlobalSignal.swatch_color_selected.connect(on_swatch_color_selected)
-
+	
 func _process(_delta: float) -> void:
 	if Global.selected_tool == type:
 		active = true

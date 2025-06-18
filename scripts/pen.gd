@@ -8,7 +8,7 @@ extends Node2D
 
 @onready var _lines: Node2D = $Line2D
 
-var width = 25
+var width : int = 5
 var _pressed: bool = false
 var _current_line: Line2D = null
 var line_color : Color
@@ -44,10 +44,20 @@ func on_swatch_color_selected(color: Color) -> void:
 func on_drawing_tool_selected(size) -> void:
 		width = size
 
+func on_set_default_size(size) -> void:
+	width = size
+	
+func on_set_default_color(color) -> void:
+	line_color = color
+
 func _on_tree_entered() -> void:
 	GlobalSignal.drawing_tool_selected.connect(on_drawing_tool_selected)
 	GlobalSignal.swatch_color_selected.connect(on_swatch_color_selected)
+	GlobalSignal.set_default_color.connect(on_set_default_color)
+	GlobalSignal.set_default_size.connect(on_set_default_size)
 
 func _on_tree_exited() -> void:
 	GlobalSignal.drawing_tool_selected.disconnect(on_drawing_tool_selected)
 	GlobalSignal.swatch_color_selected.disconnect(on_swatch_color_selected)
+	GlobalSignal.set_default_color.disconnect(on_set_default_color)
+	GlobalSignal.set_default_size.disconnect(on_set_default_size)

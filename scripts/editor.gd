@@ -49,3 +49,13 @@ func screenshot():
 	
 	Global.game_controller.change_2d_scene("res://scenes/polygon_bat.tscn", true, false)
 	Global.game_controller.change_gui_scene("res://scenes/empty_gui.tscn", true, false)
+
+func _on_tree_entered() -> void:
+	GlobalSignal.set_background_color.connect(on_set_background_color)
+
+func _on_tree_exited() -> void:
+	GlobalSignal.set_background_color.disconnect(on_set_background_color)
+	
+func on_set_background_color(color) -> void:
+	var background = get_node("Background")
+	background.color = color

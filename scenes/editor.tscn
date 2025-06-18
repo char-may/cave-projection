@@ -27,3 +27,6 @@ pivot_offset = Vector2(912, 1560)
 texture = ExtResource("4_o435n")
 expand_mode = 3
 stretch_mode = 3
+
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

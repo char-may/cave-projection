@@ -7,3 +7,4 @@ extends Resource
 @export var color3 : Color
 @export var color4 : Color
 @export var color5 : Color
+@export var background : Color

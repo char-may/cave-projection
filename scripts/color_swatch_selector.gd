@@ -8,12 +8,21 @@ class_name ColorSwatchSelector extends GridContainer
 # Recieve -> Color button pressed, Pen button pressed
 # Emit -> Swatch color selected
 
-#signal color_selected(color:Color)
-var out : bool = false # TODO: rename this
+@export_group("Color Palettes")
+@export var bat_palette : Resource
+@export var tardigrade_palette : Resource
+@export var salamander_palette : Resource
+@export var monster_palette : Resource
 
-# TODO: Create swatches dynamically based on palette resource size
+var active_palette : Palette
+var expanded : bool = false
 
 func _ready() -> void:
+	set_active_palette()
+	if active_palette:
+		var b : Color = active_palette.background
+		GlobalSignal.set_background_color.emit(b)
+	
 	for child in get_children():
 		if child is ColorButton:
 			child.hide() # Hide palette until tool is pressed
@@ -32,7 +41,7 @@ func _on_color_button_pressed(button:ColorButton) -> void:
 		collapse_palette()
 
 func on_drawing_tool_selected(_size) -> void:
-	if get_parent().active && out:
+	if get_parent().active && expanded:
 		collapse_palette()
 	else:
 		if get_parent().type == Global.selected_tool:
@@ -40,17 +49,28 @@ func on_drawing_tool_selected(_size) -> void:
 			expand_palette()
 	
 func expand_palette() -> void:
-	out = true
+	expanded = true
 	for child in get_children():
 		if child is ColorButton:
 			await get_tree().create_timer(.01).timeout
 			child.show()
 
 func collapse_palette() -> void:
-	out = false
+	expanded = false
 	for child in get_children():
 		if child is ColorButton:
 			child.hide()
+
+func set_active_palette() -> void:
+	match Global.creature_editing:
+		Global.CreatureType.BAT:
+			active_palette = bat_palette
+		Global.CreatureType.TARDIGRADE:
+			active_palette = tardigrade_palette
+		Global.CreatureType.SALAMANDER:
+			active_palette = salamander_palette
+		Global.CreatureType.MONSTER:
+			active_palette = monster_palette
 
 func _on_tree_entered() -> void:
 	GlobalSignal.drawing_tool_selected.connect(on_drawing_tool_selected)
