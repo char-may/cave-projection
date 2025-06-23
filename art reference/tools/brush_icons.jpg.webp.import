@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://datvq2o5wc4wg"
-path="res://.godot/imported/beglitched1.jpeg-fd83e6e951bfdb5f237660d5cb2ba976.ctex"
+uid="uid://chn1otw2e6b2q"
+path="res://.godot/imported/brush_icons.jpg.webp-b1279666761d1a7de32c497898ef047e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art reference/beglitched1.jpeg"
-dest_files=["res://.godot/imported/beglitched1.jpeg-fd83e6e951bfdb5f237660d5cb2ba976.ctex"]
+source_file="res://art reference/tools/brush_icons.jpg.webp"
+dest_files=["res://.godot/imported/brush_icons.jpg.webp-b1279666761d1a7de32c497898ef047e.ctex"]
 
 [params]
 

@@ -1,5 +1,4 @@
-#@tool
-class_name DrawingToolButton extends ColorButton
+class_name DrawingToolButton extends Button
 
 # Drawing tool button:
 # Represents drawing tool as a color button
@@ -9,21 +8,25 @@ class_name DrawingToolButton extends ColorButton
 # Emit -> Drawing tool selected, Swatch color selected
 # Recieve -> Swatch color selected
 
+# Tool type stuff
 @export var type : Global.ToolType
 @export var tool_size : int
 
+# Animation stuff
 @export var slide_time : float = 0.1
 @export var transition_type : Tween.TransitionType
 @export var slide_offset : Vector2
 
+# Color stuff
 @export var inactive_color : Color
 var default_color : Color
+var active_color : Color
 
-var active : bool = false # Tool active/selected
+# Tool state
+var active : bool = false
 var button_size : Vector2
-var out : bool = false # state TODO: rename to active or something
+var currently_out : bool = false
 
-# TODO: Need default color for pen/drawing
 # TODO: Set palette resource and default based on creature type editing
 
 func _ready() -> void:
@@ -35,13 +38,13 @@ func _ready() -> void:
 		active = true
 		var swatch_selector = get_node("SwatchSelector")
 		default_color = swatch_selector.active_palette.color1
-		color = default_color
-		GlobalSignal.set_default_color.emit(color)
+		active_color = default_color
+		GlobalSignal.set_default_color.emit(default_color)
 		GlobalSignal.set_default_size.emit(tool_size)
 		slide_in()
 	
 	if !active:
-		color = inactive_color
+		active_color = inactive_color
 		slide_in()
 	
 func _process(_delta: float) -> void:
@@ -49,30 +52,30 @@ func _process(_delta: float) -> void:
 		active = true
 	else:
 		active = false
-		color = inactive_color
+		active_color = inactive_color
 		slide_in()
 	
 func on_swatch_color_selected(selectedColor: Color) -> void:
 	if active:
-		color = selectedColor
+		active_color = selectedColor
 		await get_tree().create_timer(.01).timeout
 		slide_in()
 
 func _on_pressed() -> void:
 	Global.selected_tool = type
 	GlobalSignal.drawing_tool_selected.emit(tool_size)
-	if out:
+	if currently_out:
 		slide_in()
 	else:
 		slide_out()
 	
 func slide_in() -> void:
 	add_tween("size", button_size, slide_time)
-	out = false
+	currently_out = false
 
 func slide_out() -> void:
 	add_tween("size", button_size + slide_offset, slide_time)
-	out = true
+	currently_out = true
 
 func add_tween(property: String, value, seconds: float) -> void:
 	var tween = get_tree().create_tween()

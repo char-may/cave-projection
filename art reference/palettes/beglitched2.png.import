@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfy2awa1067ay"
-path="res://.godot/imported/beglitched2.png-880a5d25ab732b708394f6393c181778.ctex"
+path="res://.godot/imported/beglitched2.png-b6d0032332948c7c2130a6fa53d93558.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art reference/beglitched2.png"
-dest_files=["res://.godot/imported/beglitched2.png-880a5d25ab732b708394f6393c181778.ctex"]
+source_file="res://art reference/palettes/beglitched2.png"
+dest_files=["res://.godot/imported/beglitched2.png-b6d0032332948c7c2130a6fa53d93558.ctex"]
 
 [params]
 

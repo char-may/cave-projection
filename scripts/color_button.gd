@@ -1,4 +1,3 @@
-#@tool
 class_name ColorButton extends Button
 
 # Color button:

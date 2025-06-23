@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0th37sj1iex5"]
+[gd_scene load_steps=11 format=3 uid="uid://d0th37sj1iex5"]
 
 [ext_resource type="Script" uid="uid://c4fy3hkko5nfn" path="res://scripts/drawing_tool_button.gd" id="1_vfx3x"]
 [ext_resource type="Script" uid="uid://d4cf4m8sui35w" path="res://scripts/color_swatch_selector.gd" id="2_tq8du"]
@@ -7,6 +7,9 @@
 [ext_resource type="Resource" uid="uid://0iyp6dvv8no8" path="res://resources/palettes/tardigrade_palette.tres" id="4_ei1dg"]
 [ext_resource type="Resource" uid="uid://ireoi6w82o7i" path="res://resources/palettes/salamander_palette.tres" id="5_rgfrj"]
 [ext_resource type="Resource" uid="uid://cvo2xbkjteglr" path="res://resources/palettes/monster_palette.tres" id="6_wfy3c"]
+[ext_resource type="Texture2D" uid="uid://bnrhu3ihh8bp4" path="res://illustrator/crayon_tip_fill.png" id="8_wfy3c"]
+[ext_resource type="Texture2D" uid="uid://cxc4atq8bofhu" path="res://illustrator/crayon_body_fill.png" id="9_ihtbp"]
+[ext_resource type="Texture2D" uid="uid://c7rh63urob7l1" path="res://illustrator/crayon_outlines.png" id="10_887lv"]
 
 [node name="EditorUI" type="Control"]
 layout_mode = 3
@@ -27,7 +30,6 @@ script = ExtResource("1_vfx3x")
 tool_size = 15
 slide_offset = Vector2(50, 0)
 inactive_color = Color(0.552956, 0.552956, 0.552956, 1)
-color = Color(0.85098, 0.172549, 0.533333, 1)
 
 [node name="SwatchSelector" type="GridContainer" parent="CrayonButton"]
 layout_mode = 1
@@ -77,6 +79,19 @@ flat = true
 script = ExtResource("3_wa8u6")
 color = Color(0, 0, 0, 1)
 
+[node name="CrayonSprites" type="Node2D" parent="CrayonButton"]
+position = Vector2(-95, 20)
+scale = Vector2(0.25, 0.25)
+
+[node name="TipFill" type="Sprite2D" parent="CrayonButton/CrayonSprites"]
+texture = ExtResource("8_wfy3c")
+
+[node name="BodyFill" type="Sprite2D" parent="CrayonButton/CrayonSprites"]
+texture = ExtResource("9_ihtbp")
+
+[node name="Outlines" type="Sprite2D" parent="CrayonButton/CrayonSprites"]
+texture = ExtResource("10_887lv")
+
 [node name="BrushButton" type="Button" parent="."]
 layout_mode = 0
 offset_top = 150.0
@@ -89,7 +104,6 @@ type = 1
 tool_size = 55
 slide_offset = Vector2(50, 0)
 inactive_color = Color(0.552941, 0.552941, 0.552941, 1)
-color = Color(0.85098, 0.172549, 0.533333, 1)
 
 [node name="SwatchSelector" type="GridContainer" parent="BrushButton"]
 layout_mode = 1
