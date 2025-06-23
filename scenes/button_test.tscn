@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bibgvxgs8mtvv"]
+
+[ext_resource type="Texture2D" uid="uid://c7rh63urob7l1" path="res://illustrator/crayon_outlines.png" id="1_mlrhc"]
+[ext_resource type="Texture2D" uid="uid://cxc4atq8bofhu" path="res://illustrator/crayon_body_fill.png" id="2_ypgbu"]
+[ext_resource type="Texture2D" uid="uid://bnrhu3ihh8bp4" path="res://illustrator/crayon_tip_fill.png" id="3_4hi1t"]
+
+[node name="ButtonTest" type="Node2D"]
+
+[node name="CrayonButton" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_mlrhc")
+
+[node name="Body" type="Sprite2D" parent="CrayonButton"]
+show_behind_parent = true
+texture = ExtResource("2_ypgbu")
+centered = false
+
+[node name="Tip" type="Sprite2D" parent="CrayonButton"]
+show_behind_parent = true
+texture = ExtResource("3_4hi1t")
+centered = false
