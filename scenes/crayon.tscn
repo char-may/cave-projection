@@ -1,0 +1,95 @@
+[gd_scene load_steps=11 format=3 uid="uid://bibgvxgs8mtvv"]
+
+[ext_resource type="Texture2D" uid="uid://c7rh63urob7l1" path="res://illustrator/crayon_outlines.png" id="1_mlrhc"]
+[ext_resource type="Script" uid="uid://bepnbpq84bgwi" path="res://scripts/crayon_button.gd" id="2_75xud"]
+[ext_resource type="Texture2D" uid="uid://cxc4atq8bofhu" path="res://illustrator/crayon_body_fill.png" id="2_ypgbu"]
+[ext_resource type="Texture2D" uid="uid://bnrhu3ihh8bp4" path="res://illustrator/crayon_tip_fill.png" id="3_4hi1t"]
+[ext_resource type="Script" uid="uid://d4cf4m8sui35w" path="res://scripts/color_swatch_selector.gd" id="4_jxclw"]
+[ext_resource type="Resource" uid="uid://bijw1n8mua3f1" path="res://resources/palettes/bat_palette.tres" id="5_75xud"]
+[ext_resource type="Resource" uid="uid://0iyp6dvv8no8" path="res://resources/palettes/tardigrade_palette.tres" id="6_e1d6b"]
+[ext_resource type="Resource" uid="uid://ireoi6w82o7i" path="res://resources/palettes/salamander_palette.tres" id="7_go2pc"]
+[ext_resource type="Resource" uid="uid://cvo2xbkjteglr" path="res://resources/palettes/monster_palette.tres" id="8_l6q72"]
+[ext_resource type="Script" uid="uid://x6e3qri4aas5" path="res://scripts/color_button.gd" id="9_dkyp4"]
+
+[node name="Crayon" type="Node2D"]
+
+[node name="CrayonButton" type="TextureButton" parent="." node_paths=PackedStringArray("body_bg", "body", "tip")]
+offset_left = -525.0
+offset_right = 802.0
+offset_bottom = 149.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("1_mlrhc")
+script = ExtResource("2_75xud")
+body_bg = NodePath("BodyBG")
+body = NodePath("Body")
+tip = NodePath("Tip")
+tool_size = 20
+slide_offset = Vector2(100, 0)
+inactive_color = Color(0.458405, 0.458405, 0.458405, 1)
+
+[node name="BodyBG" type="Sprite2D" parent="CrayonButton"]
+show_behind_parent = true
+texture = ExtResource("2_ypgbu")
+centered = false
+
+[node name="Body" type="Sprite2D" parent="CrayonButton"]
+show_behind_parent = true
+texture = ExtResource("2_ypgbu")
+centered = false
+
+[node name="Tip" type="Sprite2D" parent="CrayonButton"]
+show_behind_parent = true
+texture = ExtResource("3_4hi1t")
+centered = false
+
+[node name="SwatchSelector" type="GridContainer" parent="CrayonButton"]
+offset_left = 1385.0
+offset_top = 20.0
+offset_right = 1576.0
+offset_bottom = 55.0
+scale = Vector2(3, 3)
+theme_override_constants/h_separation = 10
+columns = 5
+script = ExtResource("4_jxclw")
+bat_palette = ExtResource("5_75xud")
+tardigrade_palette = ExtResource("6_e1d6b")
+salamander_palette = ExtResource("7_go2pc")
+monster_palette = ExtResource("8_l6q72")
+
+[node name="Swatch1" type="Button" parent="CrayonButton/SwatchSelector"]
+layout_mode = 2
+flat = true
+script = ExtResource("9_dkyp4")
+color = Color(0.85098, 0.172549, 0.533333, 1)
+
+[node name="Swatch2" type="Button" parent="CrayonButton/SwatchSelector"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+script = ExtResource("9_dkyp4")
+color = Color(0.188235, 0.188235, 0.490196, 1)
+
+[node name="Swatch3" type="Button" parent="CrayonButton/SwatchSelector"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+script = ExtResource("9_dkyp4")
+color = Color(0.745098, 0.87451, 0.0627451, 1)
+
+[node name="Swatch4" type="Button" parent="CrayonButton/SwatchSelector"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+script = ExtResource("9_dkyp4")
+color = Color(0.988235, 0.45098, 0.266667, 1)
+
+[node name="Swatch5" type="Button" parent="CrayonButton/SwatchSelector"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+script = ExtResource("9_dkyp4")
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="CrayonButton" to="CrayonButton" method="_on_pressed"]
+[connection signal="tree_entered" from="CrayonButton/SwatchSelector" to="CrayonButton/SwatchSelector" method="_on_tree_entered"]
+[connection signal="tree_exited" from="CrayonButton/SwatchSelector" to="CrayonButton/SwatchSelector" method="_on_tree_exited"]

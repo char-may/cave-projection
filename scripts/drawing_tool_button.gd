@@ -1,4 +1,4 @@
-class_name DrawingToolButton extends Button
+class_name DrawingToolButton extends TextureButton
 
 # Drawing tool button:
 # Represents drawing tool as a color button
@@ -24,14 +24,14 @@ var active_color : Color
 
 # Tool state
 var active : bool = false
-var button_size : Vector2
+var button_pos : Vector2
 var currently_out : bool = false
 
 # TODO: Set palette resource and default based on creature type editing
 
 func _ready() -> void:
 	GlobalSignal.swatch_color_selected.connect(on_swatch_color_selected)
-	button_size = size
+	button_pos = position
 	
 	# Set tool defaults
 	if type == Global.selected_tool:
@@ -70,11 +70,11 @@ func _on_pressed() -> void:
 		slide_out()
 	
 func slide_in() -> void:
-	add_tween("size", button_size, slide_time)
+	add_tween("position", button_pos, slide_time)
 	currently_out = false
 
 func slide_out() -> void:
-	add_tween("size", button_size + slide_offset, slide_time)
+	add_tween("position", position + slide_offset, slide_time)
 	currently_out = true
 
 func add_tween(property: String, value, seconds: float) -> void:

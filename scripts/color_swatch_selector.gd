@@ -31,7 +31,7 @@ func _ready() -> void:
 			# Bind the ColorButton to it so we can access the color
 			child.pressed.connect(_on_color_button_pressed.bind(child))
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if !get_parent().active:
 		collapse_palette()
 	
