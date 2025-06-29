@@ -1,6 +1,5 @@
 Todo:
 Set up individual scenes for each drawing tool, combine them in editor_ui
-Make swatch/color buttons draw circles instead of squares
 Palettes need to change based on creature type
 Rename Pen.gd to be less confusing, Pen makes it sound like it's a specific tool
 	when it's more like ink or paint
@@ -19,9 +18,7 @@ You can still easily get both tools greyed out (maybe fix with a tool_mode_activ
 from drawing when buttons active?)
 If you expand palette and don't select a color it stays out while you draw
 Pen.gd color can be set/used while tool is greyed out
+When making dots (clicking mouse without movement), Pen.gd doesn't draw
 
 Today notes:
-will make drawing tool button handle animation correctly but
 make class for each tool that inherits drawing tool button so we can handle coloring differently
-for each
-OR handle the 3 types in a switch statement 

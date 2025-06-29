@@ -1,0 +1,111 @@
+[gd_scene load_steps=13 format=3 uid="uid://dph6j3f84v3jn"]
+
+[ext_resource type="Texture2D" uid="uid://hhbvvjn3fl4h" path="res://illustrator/paintbrush_outlines.png" id="1_adoyo"]
+[ext_resource type="Script" uid="uid://bynw437tk7ohd" path="res://scripts/paintbrush_button.gd" id="2_v6q2q"]
+[ext_resource type="Texture2D" uid="uid://d17fiq67m7djl" path="res://illustrator/paintbrush_handle.png" id="3_y60ff"]
+[ext_resource type="Texture2D" uid="uid://b4l00my1d5mic" path="res://illustrator/paintbrush_bristles.png" id="4_t1yp5"]
+[ext_resource type="Texture2D" uid="uid://ceoubugywsihl" path="res://illustrator/paintbrush_ferrule.png" id="5_px1jp"]
+[ext_resource type="Script" uid="uid://d4cf4m8sui35w" path="res://scripts/color_swatch_selector.gd" id="5_t1yp5"]
+[ext_resource type="Texture2D" uid="uid://dv65lujpgq0jy" path="res://illustrator/paintbrush_paint.png" id="6_4almj"]
+[ext_resource type="Resource" uid="uid://bijw1n8mua3f1" path="res://resources/palettes/bat_palette.tres" id="6_px1jp"]
+[ext_resource type="Resource" uid="uid://0iyp6dvv8no8" path="res://resources/palettes/tardigrade_palette.tres" id="7_4almj"]
+[ext_resource type="Resource" uid="uid://ireoi6w82o7i" path="res://resources/palettes/salamander_palette.tres" id="8_5fxjs"]
+[ext_resource type="Resource" uid="uid://cvo2xbkjteglr" path="res://resources/palettes/monster_palette.tres" id="9_csnck"]
+[ext_resource type="Script" uid="uid://x6e3qri4aas5" path="res://scripts/color_button.gd" id="10_76iw3"]
+
+[node name="Paintbrush" type="Node2D"]
+
+[node name="PaintbrushButton" type="TextureButton" parent="." node_paths=PackedStringArray("paint", "handle", "bristles", "ferrule")]
+offset_left = -160.0
+offset_right = 716.0
+offset_bottom = 394.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("1_adoyo")
+script = ExtResource("2_v6q2q")
+paint = NodePath("Paint")
+handle = NodePath("Handle")
+bristles = NodePath("Bristles")
+ferrule = NodePath("Ferrule")
+handle_color = Color(0.560784, 0.380392, 0.294118, 1)
+bristles_color = Color(0.317647, 0.317647, 0.317647, 1)
+ferrule_color = Color(0.72549, 0.713726, 0.709804, 1)
+type = 1
+tool_size = 90
+slide_offset = Vector2(100, 0)
+inactive_color = Color(1, 1, 1, 1)
+
+[node name="Handle" type="Sprite2D" parent="PaintbrushButton"]
+modulate = Color(0.559052, 0.378803, 0.294799, 1)
+show_behind_parent = true
+texture = ExtResource("3_y60ff")
+centered = false
+
+[node name="Bristles" type="Sprite2D" parent="PaintbrushButton"]
+modulate = Color(0.31802, 0.31802, 0.31802, 1)
+show_behind_parent = true
+texture = ExtResource("4_t1yp5")
+centered = false
+
+[node name="Ferrule" type="Sprite2D" parent="PaintbrushButton"]
+modulate = Color(0.724405, 0.714057, 0.70961, 1)
+show_behind_parent = true
+texture = ExtResource("5_px1jp")
+centered = false
+
+[node name="Paint" type="Sprite2D" parent="PaintbrushButton"]
+show_behind_parent = true
+texture = ExtResource("6_4almj")
+centered = false
+
+[node name="SwatchSelector" type="GridContainer" parent="PaintbrushButton"]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 75.0
+offset_right = 988.0
+offset_bottom = 110.0
+scale = Vector2(4, 4)
+theme_override_constants/h_separation = 10
+columns = 5
+script = ExtResource("5_t1yp5")
+bat_palette = ExtResource("6_px1jp")
+tardigrade_palette = ExtResource("7_4almj")
+salamander_palette = ExtResource("8_5fxjs")
+monster_palette = ExtResource("9_csnck")
+
+[node name="Swatch1" type="Button" parent="PaintbrushButton/SwatchSelector"]
+layout_mode = 2
+flat = true
+script = ExtResource("10_76iw3")
+color = Color(0.85098, 0.172549, 0.533333, 1)
+
+[node name="Swatch2" type="Button" parent="PaintbrushButton/SwatchSelector"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+script = ExtResource("10_76iw3")
+color = Color(0.188235, 0.188235, 0.490196, 1)
+
+[node name="Swatch3" type="Button" parent="PaintbrushButton/SwatchSelector"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+script = ExtResource("10_76iw3")
+color = Color(0.745098, 0.87451, 0.0627451, 1)
+
+[node name="Swatch4" type="Button" parent="PaintbrushButton/SwatchSelector"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+script = ExtResource("10_76iw3")
+color = Color(0.988235, 0.45098, 0.266667, 1)
+
+[node name="Swatch5" type="Button" parent="PaintbrushButton/SwatchSelector"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+script = ExtResource("10_76iw3")
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="PaintbrushButton" to="PaintbrushButton" method="_on_pressed"]
+[connection signal="tree_entered" from="PaintbrushButton/SwatchSelector" to="PaintbrushButton/SwatchSelector" method="_on_tree_entered"]
+[connection signal="tree_exited" from="PaintbrushButton/SwatchSelector" to="PaintbrushButton/SwatchSelector" method="_on_tree_exited"]

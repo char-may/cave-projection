@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0th37sj1iex5"]
+[gd_scene load_steps=3 format=3 uid="uid://d0th37sj1iex5"]
 
 [ext_resource type="PackedScene" uid="uid://bibgvxgs8mtvv" path="res://scenes/crayon.tscn" id="1_7k3nc"]
+[ext_resource type="PackedScene" uid="uid://dph6j3f84v3jn" path="res://scenes/paintbrush.tscn" id="2_41ahv"]
 
 [node name="EditorUI" type="Control"]
 layout_mode = 3
@@ -11,3 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Crayon" parent="." instance=ExtResource("1_7k3nc")]
+position = Vector2(0, 20)
+
+[node name="Paintbrush" parent="." instance=ExtResource("2_41ahv")]
+position = Vector2(0, 150)
