@@ -25,7 +25,6 @@ body = NodePath("Body")
 tip = NodePath("Tip")
 tool_size = 20
 slide_offset = Vector2(100, 0)
-inactive_color = Color(1, 1, 1, 1)
 
 [node name="BodyBG" type="Sprite2D" parent="CrayonButton"]
 show_behind_parent = true

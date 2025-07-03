@@ -8,27 +8,24 @@ class_name Paintbrush extends DrawingToolButton
 @export var handle_color : Color
 @export var bristles_color : Color
 @export var ferrule_color : Color
-
+	
 func _process(_delta: float) -> void:
 	super(_delta)
 
-# default colors:
+# default brush colors:
 # handle: 8f614b
 # bristles: 515151
 # ferrule: b9b6b5
 #
-#
 	if !active:
 		paint.visible = false
-		handle.modulate = Color.WHITE
-		bristles.modulate = Color.WHITE
-		ferrule.modulate = Color.WHITE
+		handle.modulate = Global.environment_color
+		bristles.modulate = Global.environment_color
+		ferrule.modulate = Global.environment_color
 	else:
-		if active_color == inactive_color:
-			paint.visible = false
-		else:
-			paint.modulate = active_color
-			handle.modulate = handle_color
-			bristles.modulate = bristles_color
-			ferrule.modulate = ferrule_color
-			paint.visible = true
+		handle.modulate = handle_color
+		bristles.modulate = bristles_color
+		ferrule.modulate = ferrule_color
+		
+		paint.modulate = Global.active_color
+		paint.visible = true

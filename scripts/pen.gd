@@ -3,9 +3,6 @@ extends Node2D
 # Pen:
 # Draws lines with mouse input
 
-# Signals:
-# Recieves -> Swatch color selected, Drawing tool selected
-
 @onready var _lines: Node2D = $Line2D
 
 var width : int = 5

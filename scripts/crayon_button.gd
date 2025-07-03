@@ -11,10 +11,12 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	super(_delta)
 	if !active:
-		tip.modulate = Color.WHITE
+		tip.modulate = Global.environment_color
+		body_bg.modulate = Global.environment_color
 		body.visible = false
 	else:
-		tip.modulate = active_color
-		var body_color = Color(active_color, .5)
+		body_bg.modulate = Color.WHITE
+		tip.modulate = Global.active_color
+		var body_color = Color(Global.active_color, .5)
 		body.modulate = body_color
 		body.visible = true

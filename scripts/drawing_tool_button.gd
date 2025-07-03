@@ -1,12 +1,8 @@
 class_name DrawingToolButton extends TextureButton
 
 # Drawing tool button:
-# Represents drawing tool as a color button
+# Represents drawing tool as a texture button
 # Does a slide in/out tween animation when pressed
-
-# Signals:
-# Emit -> Drawing tool selected, Swatch color selected
-# Recieve -> Swatch color selected
 
 # Tool type stuff
 @export var type : Global.ToolType
@@ -18,9 +14,7 @@ class_name DrawingToolButton extends TextureButton
 @export var slide_offset : Vector2
 
 # Color stuff
-@export var inactive_color : Color
 var default_color : Color
-var active_color : Color
 
 # Tool state
 var active : bool = false
@@ -28,6 +22,9 @@ var button_pos : Vector2
 var currently_out : bool = false
 
 # TODO: Set palette resource and default based on creature type editing
+#
+# Also - have this detect input and slide in if not pressed?
+#
 
 func _ready() -> void:
 	GlobalSignal.swatch_color_selected.connect(on_swatch_color_selected)
@@ -38,13 +35,12 @@ func _ready() -> void:
 		active = true
 		var swatch_selector = get_node("SwatchSelector")
 		default_color = swatch_selector.active_palette.color1
-		active_color = default_color
+		Global.active_color = default_color
 		GlobalSignal.set_default_color.emit(default_color)
 		GlobalSignal.set_default_size.emit(tool_size)
 		slide_in()
 	
 	if !active:
-		active_color = inactive_color
 		slide_in()
 	
 func _process(_delta: float) -> void:
@@ -52,18 +48,18 @@ func _process(_delta: float) -> void:
 		active = true
 	else:
 		active = false
-		active_color = inactive_color
 		slide_in()
 	
 func on_swatch_color_selected(selectedColor: Color) -> void:
 	if active:
-		active_color = selectedColor
+		Global.active_color = selectedColor
 		await get_tree().create_timer(.01).timeout
 		slide_in()
 
 func _on_pressed() -> void:
 	Global.selected_tool = type
 	GlobalSignal.drawing_tool_selected.emit(tool_size)
+	active = true
 	if currently_out:
 		slide_in()
 	else:

@@ -32,7 +32,6 @@ ferrule_color = Color(0.72549, 0.713726, 0.709804, 1)
 type = 1
 tool_size = 90
 slide_offset = Vector2(100, 0)
-inactive_color = Color(1, 1, 1, 1)
 
 [node name="Handle" type="Sprite2D" parent="PaintbrushButton"]
 modulate = Color(0.559052, 0.378803, 0.294799, 1)

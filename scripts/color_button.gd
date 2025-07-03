@@ -1,7 +1,7 @@
 class_name ColorButton extends Button
 
 # Color button:
-# Draws a flat rectangle button with customizable color.
+# Draws a flat circular button with customizable color.
 
 var circle_radius : float = 20
 
@@ -16,5 +16,5 @@ func _ready() -> void:
 	custom_minimum_size = Vector2(circle_radius * 2, circle_radius * 2)
 
 func _draw() -> void:
-	# Draw a rectangle with the color
+	# Draw a cirle with the color
 	draw_circle(Vector2.ZERO + Vector2(circle_radius, circle_radius), circle_radius, color, true)

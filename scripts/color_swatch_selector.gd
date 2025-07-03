@@ -4,10 +4,6 @@ class_name ColorSwatchSelector extends GridContainer
 # A grid container that shows and hides a palette of 
 # color buttons when the pen tool button is pressed
 
-# Signals:
-# Recieve -> Color button pressed, Pen button pressed
-# Emit -> Swatch color selected
-
 @export_group("Color Palettes")
 @export var bat_palette : Resource
 @export var tardigrade_palette : Resource

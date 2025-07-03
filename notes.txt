@@ -16,6 +16,7 @@ Create other creature puppets
 Issues:
 You can still easily get both tools greyed out (maybe fix with a tool_mode_active bool, could also keep pen.gd
 from drawing when buttons active?)
+
 If you expand palette and don't select a color it stays out while you draw
 Pen.gd color can be set/used while tool is greyed out
 When making dots (clicking mouse without movement), Pen.gd doesn't draw
