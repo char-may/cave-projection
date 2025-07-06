@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://eaolgqxnb08"]
 
-[ext_resource type="Texture2D" uid="uid://dg2whdriwrga3" path="res://illustrator/pencil_eraser/pencil_eraser_outlines.png" id="1_cfnx8"]
+[ext_resource type="Texture2D" uid="uid://o4l31s76wq54" path="res://illustrator/pencil_eraser/pencil_eraser_outlines.png" id="1_cfnx8"]
 [ext_resource type="Script" uid="uid://dkfx8o0mlla7p" path="res://scripts/drawing_tools/eraser_button.gd" id="2_4rain"]
 [ext_resource type="Texture2D" uid="uid://wmjqg3ym2s3b" path="res://illustrator/pencil_eraser/pencil_eraser_body.png" id="2_kwyrk"]
 [ext_resource type="Texture2D" uid="uid://c262bn4p6y3he" path="res://illustrator/pencil_eraser/pencil_eraser_ring.png" id="3_gpcru"]
@@ -10,8 +10,8 @@
 
 [node name="EraserButton" type="TextureButton" parent="." node_paths=PackedStringArray("body", "ring", "tip")]
 self_modulate = Color(0.2, 0.2, 0.2, 1)
-offset_left = -330.0
-offset_right = 594.0
+offset_left = -323.0
+offset_right = 601.0
 offset_bottom = 193.0
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("1_cfnx8")

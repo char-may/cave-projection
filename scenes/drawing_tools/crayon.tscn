@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bibgvxgs8mtvv"]
 
-[ext_resource type="Texture2D" uid="uid://c7rh63urob7l1" path="res://illustrator/crayon/crayon_outlines.png" id="1_mlrhc"]
+[ext_resource type="Texture2D" uid="uid://ba0e23abh8woj" path="res://illustrator/crayon/crayon_outlines.png" id="1_5fxo6"]
 [ext_resource type="Script" uid="uid://bepnbpq84bgwi" path="res://scripts/drawing_tools/crayon_button.gd" id="2_75xud"]
 [ext_resource type="Texture2D" uid="uid://cxc4atq8bofhu" path="res://illustrator/crayon/crayon_body_fill.png" id="2_ypgbu"]
 [ext_resource type="Texture2D" uid="uid://bnrhu3ihh8bp4" path="res://illustrator/crayon/crayon_tip_fill.png" id="3_4hi1t"]
@@ -14,11 +14,12 @@
 [node name="Crayon" type="Node2D"]
 
 [node name="CrayonButton" type="TextureButton" parent="." node_paths=PackedStringArray("body_bg", "body", "tip")]
+self_modulate = Color(0.2, 0.2, 0.2, 1)
 offset_left = -525.0
 offset_right = 802.0
 offset_bottom = 149.0
 scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("1_mlrhc")
+texture_normal = ExtResource("1_5fxo6")
 script = ExtResource("2_75xud")
 body_bg = NodePath("BodyBG")
 body = NodePath("Body")

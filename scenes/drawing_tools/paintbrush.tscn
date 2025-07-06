@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://dph6j3f84v3jn"]
 
-[ext_resource type="Texture2D" uid="uid://hhbvvjn3fl4h" path="res://illustrator/paintbrush/paintbrush_outlines.png" id="1_adoyo"]
+[ext_resource type="Texture2D" uid="uid://bi3qwrwxrc4y8" path="res://illustrator/paintbrush/paintbrush_outlines.png" id="1_27f68"]
 [ext_resource type="Script" uid="uid://bynw437tk7ohd" path="res://scripts/drawing_tools/paintbrush_button.gd" id="2_v6q2q"]
 [ext_resource type="Texture2D" uid="uid://d17fiq67m7djl" path="res://illustrator/paintbrush/paintbrush_handle.png" id="3_y60ff"]
 [ext_resource type="Texture2D" uid="uid://b4l00my1d5mic" path="res://illustrator/paintbrush/paintbrush_bristles.png" id="4_t1yp5"]
@@ -16,11 +16,12 @@
 [node name="Paintbrush" type="Node2D"]
 
 [node name="PaintbrushButton" type="TextureButton" parent="." node_paths=PackedStringArray("paint", "handle", "bristles", "ferrule")]
-offset_left = -240.0
-offset_right = 504.0
+self_modulate = Color(0.2, 0.2, 0.2, 1)
+offset_left = -232.0
+offset_right = 512.0
 offset_bottom = 278.0
 scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("1_adoyo")
+texture_normal = ExtResource("1_27f68")
 script = ExtResource("2_v6q2q")
 paint = NodePath("Paint")
 handle = NodePath("Handle")
