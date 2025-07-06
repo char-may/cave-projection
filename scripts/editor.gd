@@ -6,7 +6,7 @@ class_name Editor extends Node2D
 
 @export var mask : Control
 @export var confirm_scene : PackedScene
-
+var background
 var export_count = 0
 
 # TODO: Set template/mask based on currently editing creature
@@ -15,6 +15,8 @@ var export_count = 0
 func _ready():
 	# Add editor UI to game
 	Global.game_controller.change_gui_scene("res://scenes/editor_ui.tscn", true, false)
+	
+	background = get_node("Background")
 	
 	# Create export directory
 	var dir = DirAccess.open("user://")
@@ -26,6 +28,10 @@ func _ready():
 		export_count += 1
 
 	print ("Number of files already in exports folder: %d" % export_count)
+	
+func _process(delta: float) -> void:
+	background.color = Global.background_color
+	
 	
 func _input(event):
 	# TODO Change this action to something like "export" when UI is finished

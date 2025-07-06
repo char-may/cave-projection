@@ -6,11 +6,6 @@ Rename Pen.gd to be less confusing, Pen makes it sound like it's a specific tool
 	when it's more like ink or paint
 
 Do good comments for all the finished code blocks
-
-Add eraser
-
-Add tool graphics
-
 Test palette loading for different creatures
 
 When all that is working:
@@ -20,5 +15,6 @@ Create other creature puppets
 
 Issues:
 
+Redo eraser and possible brush graphics
 If you expand palette and don't select a color it stays out while you draw
 When making dots (clicking mouse without movement), Pen.gd doesn't draw

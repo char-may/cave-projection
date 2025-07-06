@@ -17,7 +17,7 @@ func _ready() -> void:
 	set_active_palette()
 	if active_palette:
 		var b : Color = active_palette.background
-		GlobalSignal.set_background_color.emit(b)
+		Global.background_color = b
 	
 	for child in get_children():
 		if child is ColorButton:

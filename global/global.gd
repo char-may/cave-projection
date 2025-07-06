@@ -14,12 +14,12 @@ enum ToolType {
 }
 
 var game_controller : GameController
-var creature_editing : CreatureType = CreatureType.BAT
-var finished_atlus : ImageTexture = null
 
 # Editor stuff
+var environment_color = Color("d7d7d7") # for deselected tools, does not set actual settings to match
+var creature_editing : CreatureType = CreatureType.BAT
+var finished_atlus : ImageTexture = null
 var selected_tool : ToolType = ToolType.CRAYON
-var environment_color = Color("d7d7d7") #does not set color, just a copy of what is in settings
 var active_color : Color
 var tool_size : int
 var background_color : Color

@@ -45,4 +45,4 @@ screenshot={
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0.843184, 0.843184, 0.843184, 1)
+environment/defaults/default_clear_color=Color(0.843137, 0.843137, 0.843137, 1)

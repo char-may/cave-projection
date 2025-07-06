@@ -16,10 +16,10 @@
 [node name="Paintbrush" type="Node2D"]
 
 [node name="PaintbrushButton" type="TextureButton" parent="." node_paths=PackedStringArray("paint", "handle", "bristles", "ferrule")]
-offset_left = -160.0
-offset_right = 716.0
-offset_bottom = 394.0
-scale = Vector2(0.4, 0.4)
+offset_left = -240.0
+offset_right = 504.0
+offset_bottom = 278.0
+scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("1_adoyo")
 script = ExtResource("2_v6q2q")
 paint = NodePath("Paint")
@@ -59,10 +59,10 @@ centered = false
 [node name="SwatchSelector" type="GridContainer" parent="PaintbrushButton"]
 layout_mode = 0
 offset_left = 800.0
-offset_top = 75.0
+offset_top = 90.0
 offset_right = 988.0
-offset_bottom = 110.0
-scale = Vector2(4, 4)
+offset_bottom = 125.0
+scale = Vector2(3, 3)
 theme_override_constants/h_separation = 10
 columns = 5
 script = ExtResource("5_t1yp5")
