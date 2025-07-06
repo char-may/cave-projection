@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ionqm57j5ip4"
-path="res://.godot/imported/brush_mockup.png-fd6d5d5199cee61e78f65f7a28bd3bc3.ctex"
+path="res://.godot/imported/brush_mockup.png-ee52bb2b24feb0b8101be59dec7d8702.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://illustrator/brush_mockup.png"
-dest_files=["res://.godot/imported/brush_mockup.png-fd6d5d5199cee61e78f65f7a28bd3bc3.ctex"]
+source_file="res://illustrator/paintbrush/brush_mockup.png"
+dest_files=["res://.godot/imported/brush_mockup.png-ee52bb2b24feb0b8101be59dec7d8702.ctex"]
 
 [params]
 

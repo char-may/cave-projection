@@ -36,8 +36,7 @@ func _ready() -> void:
 		var swatch_selector = get_node("SwatchSelector")
 		default_color = swatch_selector.active_palette.color1
 		Global.active_color = default_color
-		GlobalSignal.set_default_color.emit(default_color)
-		GlobalSignal.set_default_size.emit(tool_size)
+		Global.tool_size = tool_size
 		slide_in()
 	
 	if !active:
@@ -58,7 +57,8 @@ func on_swatch_color_selected(selectedColor: Color) -> void:
 
 func _on_pressed() -> void:
 	Global.selected_tool = type
-	GlobalSignal.drawing_tool_selected.emit(tool_size)
+	Global.tool_size = tool_size
+	GlobalSignal.drawing_tool_selected.emit()
 	active = true
 	if currently_out:
 		slide_in()

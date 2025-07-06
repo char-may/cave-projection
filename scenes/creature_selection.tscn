@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dpu57xn8vy7bo"]
 
-[ext_resource type="Script" uid="uid://x6e3qri4aas5" path="res://scripts/color_button.gd" id="1_jhymh"]
+[ext_resource type="Script" uid="uid://x6e3qri4aas5" path="res://scripts/drawing_tools/color_button.gd" id="1_jhymh"]
 
 [node name="CenterContainer" type="CenterContainer"]
 anchors_preset = 15

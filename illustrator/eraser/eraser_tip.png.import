@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv65lujpgq0jy"
-path="res://.godot/imported/paintbrush_paint.png-576ab0af9ab22b8b23070792c08f4a5d.ctex"
+uid="uid://3f8exb3sg0sx"
+path="res://.godot/imported/eraser_tip.png-46179c9ae597a95df14fef627f649caa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://illustrator/paintbrush_paint.png"
-dest_files=["res://.godot/imported/paintbrush_paint.png-576ab0af9ab22b8b23070792c08f4a5d.ctex"]
+source_file="res://illustrator/eraser/eraser_tip.png"
+dest_files=["res://.godot/imported/eraser_tip.png-46179c9ae597a95df14fef627f649caa.ctex"]
 
 [params]
 

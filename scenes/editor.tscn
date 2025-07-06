@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b471rqmp7x52o" path="res://scripts/editor.gd" id="1_5lcyj"]
 [ext_resource type="PackedScene" uid="uid://be5j41pobgpmj" path="res://scenes/polygon_bat.tscn" id="2_5tm2q"]
 [ext_resource type="PackedScene" uid="uid://c7uvpsnt6urh7" path="res://scenes/pen.tscn" id="3_j8y2p"]
-[ext_resource type="Texture2D" uid="uid://dxp38i6vlaoeh" path="res://illustrator/bat_mask.png" id="4_o435n"]
+[ext_resource type="Texture2D" uid="uid://dxp38i6vlaoeh" path="res://illustrator/bat/bat_mask.png" id="4_o435n"]
 
 [node name="Editor" type="Node2D" node_paths=PackedStringArray("mask")]
 script = ExtResource("1_5lcyj")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d17fiq67m7djl"
-path="res://.godot/imported/paintbrush_handle.png-ae2f8b2e10a634df40cfc177b9102ba8.ctex"
+uid="uid://pfxd7e5dd6lx"
+path="res://.godot/imported/eraser_sleeve.png-4ff2d80b3f9bcf775c3943b20a596507.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://illustrator/paintbrush_handle.png"
-dest_files=["res://.godot/imported/paintbrush_handle.png-ae2f8b2e10a634df40cfc177b9102ba8.ctex"]
+source_file="res://illustrator/eraser/eraser_sleeve.png"
+dest_files=["res://.godot/imported/eraser_sleeve.png-4ff2d80b3f9bcf775c3943b20a596507.ctex"]
 
 [params]
 

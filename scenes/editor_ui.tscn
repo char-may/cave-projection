@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d0th37sj1iex5"]
 
-[ext_resource type="PackedScene" uid="uid://bibgvxgs8mtvv" path="res://scenes/crayon.tscn" id="1_7k3nc"]
-[ext_resource type="PackedScene" uid="uid://dph6j3f84v3jn" path="res://scenes/paintbrush.tscn" id="2_41ahv"]
+[ext_resource type="PackedScene" uid="uid://bibgvxgs8mtvv" path="res://scenes/drawing_tools/crayon.tscn" id="1_7k3nc"]
+[ext_resource type="PackedScene" uid="uid://dph6j3f84v3jn" path="res://scenes/drawing_tools/paintbrush.tscn" id="2_41ahv"]
 
 [node name="EditorUI" type="Control"]
 layout_mode = 3

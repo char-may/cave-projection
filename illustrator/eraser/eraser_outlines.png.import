@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nvc8butcfe72"
-path="res://.godot/imported/bat_atlas_ref.png-65e70227cd0e3a3154c0e8acc5315335.ctex"
+uid="uid://dbx1v3lxtmiai"
+path="res://.godot/imported/eraser_outlines.png-11788145c6678d9d849514b6bcb4d653.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://illustrator/bat_atlas_ref.png"
-dest_files=["res://.godot/imported/bat_atlas_ref.png-65e70227cd0e3a3154c0e8acc5315335.ctex"]
+source_file="res://illustrator/eraser/eraser_outlines.png"
+dest_files=["res://.godot/imported/eraser_outlines.png-11788145c6678d9d849514b6bcb4d653.ctex"]
 
 [params]
 

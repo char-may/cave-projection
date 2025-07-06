@@ -15,6 +15,8 @@ func _ready():
 
 func _process(_delta):
 	var pos = get_global_mouse_position()
+	line_color = Global.active_color
+	width = Global.tool_size
 	
 	if Input.is_action_pressed("ui_left_click"):
 		_pressed = true
@@ -34,27 +36,3 @@ func _process(_delta):
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and _pressed:
 		_current_line.add_point(event.position)
-
-func on_swatch_color_selected(color: Color) -> void:
-	line_color = color
-
-func on_drawing_tool_selected(size) -> void:
-		width = size
-
-func on_set_default_size(size) -> void:
-	width = size
-	
-func on_set_default_color(color) -> void:
-	line_color = color
-
-func _on_tree_entered() -> void:
-	GlobalSignal.drawing_tool_selected.connect(on_drawing_tool_selected)
-	GlobalSignal.swatch_color_selected.connect(on_swatch_color_selected)
-	GlobalSignal.set_default_color.connect(on_set_default_color)
-	GlobalSignal.set_default_size.connect(on_set_default_size)
-
-func _on_tree_exited() -> void:
-	GlobalSignal.drawing_tool_selected.disconnect(on_drawing_tool_selected)
-	GlobalSignal.swatch_color_selected.disconnect(on_swatch_color_selected)
-	GlobalSignal.set_default_color.disconnect(on_set_default_color)
-	GlobalSignal.set_default_size.disconnect(on_set_default_size)

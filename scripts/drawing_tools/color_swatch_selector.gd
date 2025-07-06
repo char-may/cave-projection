@@ -36,7 +36,7 @@ func _on_color_button_pressed(button:ColorButton) -> void:
 		GlobalSignal.swatch_color_selected.emit(button.color)
 		collapse_palette()
 
-func on_drawing_tool_selected(_size) -> void:
+func on_drawing_tool_selected() -> void:
 	if get_parent().active && expanded:
 		collapse_palette()
 	else:

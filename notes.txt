@@ -1,11 +1,16 @@
 Todo:
-Set up individual scenes for each drawing tool, combine them in editor_ui
+
 Palettes need to change based on creature type
+
 Rename Pen.gd to be less confusing, Pen makes it sound like it's a specific tool
 	when it's more like ink or paint
+
 Do good comments for all the finished code blocks
+
 Add eraser
+
 Add tool graphics
+
 Test palette loading for different creatures
 
 When all that is working:
@@ -14,12 +19,6 @@ Create other creature templates
 Create other creature puppets
 
 Issues:
-You can still easily get both tools greyed out (maybe fix with a tool_mode_active bool, could also keep pen.gd
-from drawing when buttons active?)
 
 If you expand palette and don't select a color it stays out while you draw
-Pen.gd color can be set/used while tool is greyed out
 When making dots (clicking mouse without movement), Pen.gd doesn't draw
-
-Today notes:
-make class for each tool that inherits drawing tool button so we can handle coloring differently
