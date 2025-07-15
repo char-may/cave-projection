@@ -1,44 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://eaolgqxnb08"]
+[gd_scene load_steps=4 format=3 uid="uid://eaolgqxnb08"]
 
-[ext_resource type="Texture2D" uid="uid://o4l31s76wq54" path="res://illustrator/pencil_eraser/pencil_eraser_outlines.png" id="1_cfnx8"]
 [ext_resource type="Script" uid="uid://dkfx8o0mlla7p" path="res://scripts/drawing_tools/eraser_button.gd" id="2_4rain"]
-[ext_resource type="Texture2D" uid="uid://wmjqg3ym2s3b" path="res://illustrator/pencil_eraser/pencil_eraser_body.png" id="2_kwyrk"]
-[ext_resource type="Texture2D" uid="uid://c262bn4p6y3he" path="res://illustrator/pencil_eraser/pencil_eraser_ring.png" id="3_gpcru"]
-[ext_resource type="Texture2D" uid="uid://b5y3s7hpxwio5" path="res://illustrator/pencil_eraser/pencil_eraser_tip.png" id="4_7pjwv"]
+[ext_resource type="Texture2D" uid="uid://ddvko7gttsjeq" path="res://procreate/eraser/eraser_outlines.png" id="2_37wdm"]
+[ext_resource type="Texture2D" uid="uid://cjlfyehdfjdbj" path="res://procreate/eraser/eraser_filled.png" id="3_kwyrk"]
 
 [node name="Eraser" type="Node2D"]
 
-[node name="EraserButton" type="TextureButton" parent="." node_paths=PackedStringArray("body", "ring", "tip")]
+[node name="EraserButton" type="TextureButton" parent="." node_paths=PackedStringArray("outlines", "filled")]
 self_modulate = Color(0.2, 0.2, 0.2, 1)
 offset_left = -323.0
 offset_right = 601.0
 offset_bottom = 193.0
 scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("1_cfnx8")
 script = ExtResource("2_4rain")
-body = NodePath("Body")
-ring = NodePath("Ring")
-tip = NodePath("Tip")
-body_color = Color(0.92549, 0.737255, 0.407843, 1)
-ring_color = Color(0.992157, 0.972549, 0.854902, 1)
-tip_color = Color(0.972549, 0.666667, 0.666667, 1)
+outlines = NodePath("Outlines")
+filled = NodePath("Filled")
 type = 2
 tool_size = 50
 slide_offset = Vector2(100, 0)
 
-[node name="Body" type="Sprite2D" parent="EraserButton"]
+[node name="Outlines" type="Sprite2D" parent="EraserButton"]
 show_behind_parent = true
-texture = ExtResource("2_kwyrk")
+texture = ExtResource("2_37wdm")
 centered = false
 
-[node name="Ring" type="Sprite2D" parent="EraserButton"]
-show_behind_parent = true
-texture = ExtResource("3_gpcru")
-centered = false
-
-[node name="Tip" type="Sprite2D" parent="EraserButton"]
-show_behind_parent = true
-texture = ExtResource("4_7pjwv")
+[node name="Filled" type="Sprite2D" parent="EraserButton"]
+texture = ExtResource("3_kwyrk")
 centered = false
 
 [connection signal="pressed" from="EraserButton" to="EraserButton" method="_on_pressed"]

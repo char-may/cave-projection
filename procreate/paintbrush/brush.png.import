@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c262bn4p6y3he"
-path="res://.godot/imported/pencil_eraser_ring.png-aed97808123f7f01431dbadaeeb7fbc4.ctex"
+uid="uid://bwn4okrfbad8u"
+path="res://.godot/imported/brush.png-17dc0f384e4da7ea8babdfd13ec6c1d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://illustrator/pencil_eraser/pencil_eraser_ring.png"
-dest_files=["res://.godot/imported/pencil_eraser_ring.png-aed97808123f7f01431dbadaeeb7fbc4.ctex"]
+source_file="res://procreate/paintbrush/brush.png"
+dest_files=["res://.godot/imported/brush.png-17dc0f384e4da7ea8babdfd13ec6c1d5.ctex"]
 
 [params]
 

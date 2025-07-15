@@ -15,7 +15,7 @@ func _ready():
 
 func _process(_delta):
 	var pos = get_global_mouse_position()
-	line_color = Global.active_color
+	line_color = Global.get_drawing_color()
 	width = Global.tool_size
 	
 	if Input.is_action_pressed("ui_left_click"):

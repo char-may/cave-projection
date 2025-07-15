@@ -29,8 +29,9 @@ func _ready():
 
 	print ("Number of files already in exports folder: %d" % export_count)
 	
-func _process(delta: float) -> void:
-	background.color = Global.background_color
+# todo : why am i doing this?
+#func _process(_delta: float) -> void:
+	#background.color = Global.background_color
 	
 	
 func _input(event):
@@ -57,12 +58,6 @@ func screenshot():
 	Global.game_controller.change_2d_scene("res://scenes/polygon_bat.tscn", true, false)
 	Global.game_controller.change_gui_scene("res://scenes/empty_gui.tscn", true, false)
 
-#func _on_tree_entered() -> void:
-	#GlobalSignal.set_background_color.connect(on_set_background_color)
-
-#func _on_tree_exited() -> void:
-	#GlobalSignal.set_background_color.disconnect(on_set_background_color)
-	
 func on_set_background_color(color) -> void:
 	var background = get_node("Background")
 	background.color = color

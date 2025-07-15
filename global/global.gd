@@ -16,10 +16,15 @@ enum ToolType {
 var game_controller : GameController
 
 # Editor stuff
-var environment_color = Color("d7d7d7") # for deselected tools, does not set actual settings to match
 var creature_editing : CreatureType = CreatureType.BAT
 var finished_atlus : ImageTexture = null
 var selected_tool : ToolType = ToolType.CRAYON
 var active_color : Color
 var tool_size : int
-var background_color : Color
+var background_color : Color = "2f589e" #set via palette and load palette in editor not drawing tools
+
+func get_drawing_color() -> Color:
+	if selected_tool == ToolType.ERASER:
+		return background_color
+	else:
+		return active_color

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi3qwrwxrc4y8"
-path="res://.godot/imported/paintbrush_outlines.png-e89ad2917ea44a5f7ed1444c8f8d80f8.ctex"
+uid="uid://cae3c13mi25k2"
+path="res://.godot/imported/crayon_band.png-b6209e7c3b6698c14934714b516e621c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://illustrator/paintbrush/paintbrush_outlines.png"
-dest_files=["res://.godot/imported/paintbrush_outlines.png-e89ad2917ea44a5f7ed1444c8f8d80f8.ctex"]
+source_file="res://procreate/crayon/crayon_band.png"
+dest_files=["res://.godot/imported/crayon_band.png-b6209e7c3b6698c14934714b516e621c.ctex"]
 
 [params]
 

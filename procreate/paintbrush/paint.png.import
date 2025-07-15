@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv65lujpgq0jy"
-path="res://.godot/imported/paintbrush_paint.png-875ad6f4e5b8e5eb8c3fbadf2bd74833.ctex"
+uid="uid://5vbi2ep32met"
+path="res://.godot/imported/paint.png-06ad9415bc50e3c62146ee06b562c91e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://illustrator/paintbrush/paintbrush_paint.png"
-dest_files=["res://.godot/imported/paintbrush_paint.png-875ad6f4e5b8e5eb8c3fbadf2bd74833.ctex"]
+source_file="res://procreate/paintbrush/paint.png"
+dest_files=["res://.godot/imported/paint.png-06ad9415bc50e3c62146ee06b562c91e.ctex"]
 
 [params]
 

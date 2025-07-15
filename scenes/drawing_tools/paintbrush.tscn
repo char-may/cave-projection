@@ -1,12 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://dph6j3f84v3jn"]
+[gd_scene load_steps=11 format=3 uid="uid://dph6j3f84v3jn"]
 
-[ext_resource type="Texture2D" uid="uid://bi3qwrwxrc4y8" path="res://illustrator/paintbrush/paintbrush_outlines.png" id="1_27f68"]
+[ext_resource type="Texture2D" uid="uid://gue7dfo3i8f0" path="res://procreate/paintbrush/outline.png" id="2_rep74"]
 [ext_resource type="Script" uid="uid://bynw437tk7ohd" path="res://scripts/drawing_tools/paintbrush_button.gd" id="2_v6q2q"]
-[ext_resource type="Texture2D" uid="uid://d17fiq67m7djl" path="res://illustrator/paintbrush/paintbrush_handle.png" id="3_y60ff"]
-[ext_resource type="Texture2D" uid="uid://b4l00my1d5mic" path="res://illustrator/paintbrush/paintbrush_bristles.png" id="4_t1yp5"]
-[ext_resource type="Texture2D" uid="uid://ceoubugywsihl" path="res://illustrator/paintbrush/paintbrush_ferrule.png" id="5_px1jp"]
+[ext_resource type="Texture2D" uid="uid://bwn4okrfbad8u" path="res://procreate/paintbrush/brush.png" id="3_ob0yx"]
+[ext_resource type="Texture2D" uid="uid://5vbi2ep32met" path="res://procreate/paintbrush/paint.png" id="4_27f68"]
 [ext_resource type="Script" uid="uid://d4cf4m8sui35w" path="res://scripts/drawing_tools/color_swatch_selector.gd" id="5_t1yp5"]
-[ext_resource type="Texture2D" uid="uid://dv65lujpgq0jy" path="res://illustrator/paintbrush/paintbrush_paint.png" id="6_4almj"]
 [ext_resource type="Resource" uid="uid://bijw1n8mua3f1" path="res://resources/palettes/bat_palette.tres" id="6_px1jp"]
 [ext_resource type="Resource" uid="uid://0iyp6dvv8no8" path="res://resources/palettes/tardigrade_palette.tres" id="7_4almj"]
 [ext_resource type="Resource" uid="uid://ireoi6w82o7i" path="res://resources/palettes/salamander_palette.tres" id="8_5fxjs"]
@@ -15,46 +13,32 @@
 
 [node name="Paintbrush" type="Node2D"]
 
-[node name="PaintbrushButton" type="TextureButton" parent="." node_paths=PackedStringArray("paint", "handle", "bristles", "ferrule")]
+[node name="PaintbrushButton" type="TextureButton" parent="." node_paths=PackedStringArray("outlines", "brush", "paint")]
 self_modulate = Color(0.2, 0.2, 0.2, 1)
 offset_left = -232.0
 offset_right = 512.0
 offset_bottom = 278.0
 scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("1_27f68")
 script = ExtResource("2_v6q2q")
+outlines = NodePath("Outlines")
+brush = NodePath("Brush")
 paint = NodePath("Paint")
-handle = NodePath("Handle")
-bristles = NodePath("Bristles")
-ferrule = NodePath("Ferrule")
-handle_color = Color(0.560784, 0.380392, 0.294118, 1)
-bristles_color = Color(0.317647, 0.317647, 0.317647, 1)
-ferrule_color = Color(0.72549, 0.713726, 0.709804, 1)
 type = 1
 tool_size = 90
 slide_offset = Vector2(100, 0)
 
-[node name="Handle" type="Sprite2D" parent="PaintbrushButton"]
-modulate = Color(0.559052, 0.378803, 0.294799, 1)
-show_behind_parent = true
-texture = ExtResource("3_y60ff")
+[node name="Outlines" type="Sprite2D" parent="PaintbrushButton"]
+visible = false
+texture = ExtResource("2_rep74")
 centered = false
 
-[node name="Bristles" type="Sprite2D" parent="PaintbrushButton"]
-modulate = Color(0.31802, 0.31802, 0.31802, 1)
+[node name="Brush" type="Sprite2D" parent="PaintbrushButton"]
 show_behind_parent = true
-texture = ExtResource("4_t1yp5")
-centered = false
-
-[node name="Ferrule" type="Sprite2D" parent="PaintbrushButton"]
-modulate = Color(0.724405, 0.714057, 0.70961, 1)
-show_behind_parent = true
-texture = ExtResource("5_px1jp")
+texture = ExtResource("3_ob0yx")
 centered = false
 
 [node name="Paint" type="Sprite2D" parent="PaintbrushButton"]
-show_behind_parent = true
-texture = ExtResource("6_4almj")
+texture = ExtResource("4_27f68")
 centered = false
 
 [node name="SwatchSelector" type="GridContainer" parent="PaintbrushButton"]

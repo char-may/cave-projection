@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ionqm57j5ip4"
-path="res://.godot/imported/brush_mockup.png-ee52bb2b24feb0b8101be59dec7d8702.ctex"
+uid="uid://cyx5v4u8v2pjk"
+path="res://.godot/imported/crayon_outlines.png-6ee6914ff06b7ecb3fbcea9ded4083f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://illustrator/paintbrush/brush_mockup.png"
-dest_files=["res://.godot/imported/brush_mockup.png-ee52bb2b24feb0b8101be59dec7d8702.ctex"]
+source_file="res://procreate/crayon/crayon_outlines.png"
+dest_files=["res://.godot/imported/crayon_outlines.png-6ee6914ff06b7ecb3fbcea9ded4083f2.ctex"]
 
 [params]
 

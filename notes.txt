@@ -14,7 +14,6 @@ Create other creature templates
 Create other creature puppets
 
 Issues:
-
-Eraser sets bg color as active tool color but doesn't store/save previous active
+	
 If you expand palette and don't select a color it stays out while you draw
 When making dots (clicking mouse without movement), Pen.gd doesn't draw

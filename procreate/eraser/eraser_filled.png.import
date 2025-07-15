@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o4l31s76wq54"
-path="res://.godot/imported/pencil_eraser_outlines.png-7c8ee4aa7c7c55457dce821a55ba9b6a.ctex"
+uid="uid://cjlfyehdfjdbj"
+path="res://.godot/imported/eraser_filled.png-c51b25c43ed8b674a40158455f31c8dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://illustrator/pencil_eraser/pencil_eraser_outlines.png"
-dest_files=["res://.godot/imported/pencil_eraser_outlines.png-7c8ee4aa7c7c55457dce821a55ba9b6a.ctex"]
+source_file="res://procreate/eraser/eraser_filled.png"
+dest_files=["res://.godot/imported/eraser_filled.png-c51b25c43ed8b674a40158455f31c8dd.ctex"]
 
 [params]
 

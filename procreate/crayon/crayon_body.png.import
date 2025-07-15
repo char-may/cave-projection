@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wmjqg3ym2s3b"
-path="res://.godot/imported/pencil_eraser_body.png-2092e74d3d4d6c11148e12ce1857dfe9.ctex"
+uid="uid://dfecrqtvpawrp"
+path="res://.godot/imported/crayon_body.png-4f0035dcc6d0610250f82ede5af04e8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://illustrator/pencil_eraser/pencil_eraser_body.png"
-dest_files=["res://.godot/imported/pencil_eraser_body.png-2092e74d3d4d6c11148e12ce1857dfe9.ctex"]
+source_file="res://procreate/crayon/crayon_body.png"
+dest_files=["res://.godot/imported/crayon_body.png-4f0035dcc6d0610250f82ede5af04e8a.ctex"]
 
 [params]
 

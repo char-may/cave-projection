@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba0e23abh8woj"
-path="res://.godot/imported/crayon_outlines.png-ed934d3fea40e14ce37dee57eaec342b.ctex"
+uid="uid://gue7dfo3i8f0"
+path="res://.godot/imported/outline.png-d4c9c111b375b4c696c12a992c06bcd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://illustrator/crayon/crayon_outlines.png"
-dest_files=["res://.godot/imported/crayon_outlines.png-ed934d3fea40e14ce37dee57eaec342b.ctex"]
+source_file="res://procreate/paintbrush/outline.png"
+dest_files=["res://.godot/imported/outline.png-d4c9c111b375b4c696c12a992c06bcd7.ctex"]
 
 [params]
 
