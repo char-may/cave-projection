@@ -59,5 +59,5 @@ func screenshot():
 	Global.game_controller.change_gui_scene("res://scenes/empty_gui.tscn", true, false)
 
 func on_set_background_color(color) -> void:
-	var background = get_node("Background")
+	background = get_node("Background")
 	background.color = color
