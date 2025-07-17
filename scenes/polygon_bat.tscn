@@ -203,7 +203,6 @@ bone_angle = 0.0
 [node name="WingR" type="Bone2D" parent="Skeleton2D/Head"]
 position = Vector2(112.208, 106.838)
 rotation = 0.780032
-scale = Vector2(1, 1)
 rest = Transform2D(0.23193, 0.972733, -0.972733, 0.23193, 112.208, 106.838)
 auto_calculate_length_and_angle = false
 length = 375.432

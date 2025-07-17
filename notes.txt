@@ -1,6 +1,7 @@
 Todo:
 
 Palettes need to change based on creature type
+Handle setting background/environment color better (in one location)
 
 Rename Pen.gd to be less confusing, Pen makes it sound like it's a specific tool
 	when it's more like ink or paint
