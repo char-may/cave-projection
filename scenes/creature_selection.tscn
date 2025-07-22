@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpu57xn8vy7bo"]
+[gd_scene load_steps=5 format=3 uid="uid://dpu57xn8vy7bo"]
 
-[ext_resource type="Script" uid="uid://x6e3qri4aas5" path="res://scripts/drawing_tools/color_button.gd" id="1_jhymh"]
+[ext_resource type="Texture2D" uid="uid://c7rqrtgvnvmw2" path="res://procreate/menu_buttons/bat_button/bat_button_1.png" id="1_mowrr"]
+[ext_resource type="Texture2D" uid="uid://bej880ibcf5xf" path="res://procreate/menu_buttons/salamander_button/salamander_button_1.png" id="2_nb3ya"]
+[ext_resource type="Texture2D" uid="uid://cd4cl4yyvuybb" path="res://procreate/menu_buttons/tardigrade_button/tardigrade_button_1.png" id="3_xe51t"]
+[ext_resource type="Texture2D" uid="uid://bkxjgr42iks0j" path="res://procreate/menu_buttons/monster_button/monster_button_1.png" id="4_1jc2d"]
 
 [node name="CenterContainer" type="CenterContainer"]
 anchors_preset = 15
@@ -11,38 +14,22 @@ grow_vertical = 2
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 2
-theme_override_constants/h_separation = 20
-theme_override_constants/v_separation = 20
+theme_override_constants/h_separation = 100
+theme_override_constants/v_separation = 100
 columns = 2
 
-[node name="ColorButton" type="Button" parent="GridContainer"]
-custom_minimum_size = Vector2(200, 200)
+[node name="TextureButton" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
-flat = true
-script = ExtResource("1_jhymh")
-color = Color(0.395634, 0.466658, 0.474809, 1)
-metadata/_custom_type_script = "uid://x6e3qri4aas5"
+texture_normal = ExtResource("1_mowrr")
 
-[node name="ColorButton2" type="Button" parent="GridContainer"]
-custom_minimum_size = Vector2(200, 200)
+[node name="TextureButton2" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
-flat = true
-script = ExtResource("1_jhymh")
-color = Color(0.395634, 0.466658, 0.474809, 1)
-metadata/_custom_type_script = "uid://x6e3qri4aas5"
+texture_normal = ExtResource("2_nb3ya")
 
-[node name="ColorButton3" type="Button" parent="GridContainer"]
-custom_minimum_size = Vector2(200, 200)
+[node name="TextureButton3" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
-flat = true
-script = ExtResource("1_jhymh")
-color = Color(0.395634, 0.466658, 0.474809, 1)
-metadata/_custom_type_script = "uid://x6e3qri4aas5"
+texture_normal = ExtResource("3_xe51t")
 
-[node name="ColorButton4" type="Button" parent="GridContainer"]
-custom_minimum_size = Vector2(200, 200)
+[node name="TextureButton4" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
-flat = true
-script = ExtResource("1_jhymh")
-color = Color(0.395634, 0.466658, 0.474809, 1)
-metadata/_custom_type_script = "uid://x6e3qri4aas5"
+texture_normal = ExtResource("4_1jc2d")
