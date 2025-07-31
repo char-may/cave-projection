@@ -20,3 +20,6 @@ If you expand palette and don't select a color it stays out while you draw
 - this might be okay? it doesn't break any functionality
 
 When making dots (clicking mouse without movement), Pen.gd doesn't draw
+
+Ideas:
+	Stamp tool - dots, hearts, smily faces, stars, eyeballs
