@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcpk73isrwd28"
-path="res://.godot/imported/bat_button_2.png-75ec0483b142b561a46969ff9db541f0.ctex"
+uid="uid://cacmorqh86ene"
+path="res://.godot/imported/speech_bubble_2.png-27e85ff016bb0de14ff09e1aaab009c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://procreate/menu_buttons/bat_button/bat_button_2.png"
-dest_files=["res://.godot/imported/bat_button_2.png-75ec0483b142b561a46969ff9db541f0.ctex"]
+source_file="res://procreate/speech_bubble/speech_bubble_2.png"
+dest_files=["res://.godot/imported/speech_bubble_2.png-27e85ff016bb0de14ff09e1aaab009c2.ctex"]
 
 [params]
 

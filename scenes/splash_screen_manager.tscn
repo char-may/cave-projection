@@ -1,7 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://do7821ibxfo4l"]
+[gd_scene load_steps=6 format=3 uid="uid://do7821ibxfo4l"]
 
 [ext_resource type="Script" uid="uid://ds1hurflnoefj" path="res://scripts/splash_screen_manager.gd" id="1_e2qbx"]
-[ext_resource type="Texture2D" uid="uid://co32ujmydj81j" path="res://2d_pete.png" id="2_kkrr7"]
+[ext_resource type="Texture2D" uid="uid://bjft60yw4ftdp" path="res://procreate/splash_logo/lights_out_1.png" id="2_dpkmb"]
+[ext_resource type="Texture2D" uid="uid://t02y8jj1t10u" path="res://procreate/splash_logo/lights_out_2.png" id="3_f3wds"]
+[ext_resource type="Texture2D" uid="uid://c42biwwt3wwpv" path="res://procreate/splash_logo/lights_out_3.png" id="4_7px8g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5how5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dpkmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f3wds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7px8g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="SplashScreenManager" type="Control" node_paths=PackedStringArray("splash_screen")]
 layout_mode = 3
@@ -11,16 +30,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e2qbx")
-splash_screen = NodePath("CenterContainer/TextureRect")
+pause_time = 2.25
+splash_screen = NodePath("AnimatedSprite2D")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
-layout_mode = 2
-texture = ExtResource("2_kkrr7")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_5how5")
+frame_progress = 0.133076

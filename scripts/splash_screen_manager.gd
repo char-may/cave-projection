@@ -8,9 +8,10 @@ extends Control
 @export var pause_time : float = 1.25
 @export var fade_out_time : float = 0.3
 @export var out_time : float = 0.6
-@export var splash_screen : TextureRect
+@export var splash_screen : AnimatedSprite2D
 
 func _ready() -> void:
+	splash_screen.play()
 	fade()
 	
 func fade() -> void:

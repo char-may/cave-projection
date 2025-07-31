@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcpk73isrwd28"
-path="res://.godot/imported/bat_button_2.png-75ec0483b142b561a46969ff9db541f0.ctex"
+uid="uid://t02y8jj1t10u"
+path="res://.godot/imported/lights_out_2.png-0c3c0539d34b27d8620c58fbb257df82.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://procreate/menu_buttons/bat_button/bat_button_2.png"
-dest_files=["res://.godot/imported/bat_button_2.png-75ec0483b142b561a46969ff9db541f0.ctex"]
+source_file="res://procreate/splash_logo/lights_out_2.png"
+dest_files=["res://.godot/imported/lights_out_2.png-0c3c0539d34b27d8620c58fbb257df82.ctex"]
 
 [params]
 
