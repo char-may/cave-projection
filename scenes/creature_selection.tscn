@@ -1,54 +1,78 @@
-[gd_scene load_steps=7 format=3 uid="uid://dpu57xn8vy7bo"]
+[gd_scene load_steps=11 format=3 uid="uid://dpu57xn8vy7bo"]
 
+[ext_resource type="Script" uid="uid://i4ndouy1ceos" path="res://scripts/selection_grid.gd" id="1_ilmm2"]
 [ext_resource type="Texture2D" uid="uid://bsuh2a3l6pvry" path="res://procreate/menu_buttons/bat_button/bat_button_1.png" id="1_mowrr"]
 [ext_resource type="Texture2D" uid="uid://dcpk73isrwd28" path="res://procreate/menu_buttons/bat_button/bat_button_2.png" id="2_mowrr"]
 [ext_resource type="Texture2D" uid="uid://dv8xath4vgxfp" path="res://procreate/menu_buttons/salamander_button/salamander_button_1.png" id="2_nb3ya"]
-[ext_resource type="Texture2D" uid="uid://d3hd71lia71cf" path="res://procreate/menu_buttons/salamander_button/salamander_button_2.png" id="4_nb3ya"]
+[ext_resource type="Script" uid="uid://cgdixm5l5s44n" path="res://scripts/creature_select_button.gd" id="2_xe51t"]
+[ext_resource type="Texture2D" uid="uid://bqf4rqv3tcd01" path="res://procreate/menu_buttons/tardigrade_button/tardigrade_button_1.png" id="3_mowrr"]
+[ext_resource type="Texture2D" uid="uid://c6fvwwu8nfj0o" path="res://procreate/menu_buttons/monster_button/monster_button_1.png" id="4_mowrr"]
+[ext_resource type="Texture2D" uid="uid://cxjfk45amwng5" path="res://procreate/menu_buttons/tardigrade_button/tardigrade_button_2.png" id="4_nb3ya"]
+[ext_resource type="Texture2D" uid="uid://d3hd71lia71cf" path="res://procreate/menu_buttons/salamander_button/salamander_button_2.png" id="7_h6ysv"]
+[ext_resource type="Texture2D" uid="uid://ygqg6shqgngr" path="res://procreate/menu_buttons/monster_button/monster_button_2.png" id="9_ilmm2"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_xe51t"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_mowrr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_mowrr")
-}],
-"loop": true,
-"name": &"default",
-"speed": 3.0
-}]
+[node name="Node" type="Node"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_1jc2d"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_nb3ya")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_nb3ya")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[node name="CenterContainer" type="CenterContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
 layout_mode = 2
-theme_override_constants/h_separation = 100
-theme_override_constants/v_separation = 100
 columns = 2
+script = ExtResource("1_ilmm2")
 
-[node name="BatAnimation" type="AnimatedSprite2D" parent="GridContainer"]
-sprite_frames = SubResource("SpriteFrames_xe51t")
-frame_progress = 0.750845
+[node name="BatButton" type="TextureButton" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("1_mowrr")
+stretch_mode = 3
+script = ExtResource("2_xe51t")
+frame_a = ExtResource("1_mowrr")
+frame_b = ExtResource("2_mowrr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GridContainer"]
-sprite_frames = SubResource("SpriteFrames_1jc2d")
+[node name="TardigradeButton" type="TextureButton" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("3_mowrr")
+stretch_mode = 3
+script = ExtResource("2_xe51t")
+creature_type = 1
+frame_a = ExtResource("3_mowrr")
+frame_b = ExtResource("4_nb3ya")
+
+[node name="SalamanderButton" type="TextureButton" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_nb3ya")
+stretch_mode = 3
+script = ExtResource("2_xe51t")
+creature_type = 2
+frame_a = ExtResource("2_nb3ya")
+frame_b = ExtResource("7_h6ysv")
+
+[node name="MonsterButton" type="TextureButton" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_mowrr")
+stretch_mode = 3
+script = ExtResource("2_xe51t")
+creature_type = 3
+frame_a = ExtResource("4_mowrr")
+frame_b = ExtResource("9_ilmm2")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="pressed" from="CenterContainer/GridContainer/BatButton" to="CenterContainer/GridContainer/BatButton" method="_on_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/TardigradeButton" to="CenterContainer/GridContainer/TardigradeButton" method="_on_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/SalamanderButton" to="CenterContainer/GridContainer/SalamanderButton" method="_on_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/MonsterButton" to="CenterContainer/GridContainer/MonsterButton" method="_on_pressed"]
+[connection signal="timeout" from="Timer" to="CenterContainer/GridContainer/BatButton" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="CenterContainer/GridContainer/TardigradeButton" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="CenterContainer/GridContainer/SalamanderButton" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="CenterContainer/GridContainer/MonsterButton" method="_on_timer_timeout"]
