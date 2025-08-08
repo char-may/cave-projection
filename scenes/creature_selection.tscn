@@ -1,6 +1,5 @@
-[gd_scene load_steps=11 format=3 uid="uid://dpu57xn8vy7bo"]
+[gd_scene load_steps=10 format=3 uid="uid://dpu57xn8vy7bo"]
 
-[ext_resource type="Script" uid="uid://i4ndouy1ceos" path="res://scripts/selection_grid.gd" id="1_ilmm2"]
 [ext_resource type="Texture2D" uid="uid://bsuh2a3l6pvry" path="res://procreate/menu_buttons/bat_button/bat_button_1.png" id="1_mowrr"]
 [ext_resource type="Texture2D" uid="uid://dcpk73isrwd28" path="res://procreate/menu_buttons/bat_button/bat_button_2.png" id="2_mowrr"]
 [ext_resource type="Texture2D" uid="uid://dv8xath4vgxfp" path="res://procreate/menu_buttons/salamander_button/salamander_button_1.png" id="2_nb3ya"]
@@ -13,19 +12,29 @@
 
 [node name="Node" type="Node"]
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -652.0
+offset_top = -426.0
+offset_right = 652.0
+offset_bottom = 426.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
-layout_mode = 2
+scale = Vector2(0.8, 0.8)
+pivot_offset = Vector2(652, 426)
+size_flags_horizontal = 3
+size_flags_vertical = 3
 columns = 2
-script = ExtResource("1_ilmm2")
 
-[node name="BatButton" type="TextureButton" parent="CenterContainer/GridContainer"]
+[node name="BatButton" type="TextureButton" parent="GridContainer" node_paths=PackedStringArray("bat_button", "tardigrade_button", "salamander_button", "monster_button")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -34,8 +43,12 @@ stretch_mode = 3
 script = ExtResource("2_xe51t")
 frame_a = ExtResource("1_mowrr")
 frame_b = ExtResource("2_mowrr")
+bat_button = NodePath(".")
+tardigrade_button = NodePath("../TardigradeButton")
+salamander_button = NodePath("../SalamanderButton")
+monster_button = NodePath("../MonsterButton")
 
-[node name="TardigradeButton" type="TextureButton" parent="CenterContainer/GridContainer"]
+[node name="TardigradeButton" type="TextureButton" parent="GridContainer" node_paths=PackedStringArray("bat_button", "tardigrade_button", "salamander_button", "monster_button")]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -45,34 +58,61 @@ script = ExtResource("2_xe51t")
 creature_type = 1
 frame_a = ExtResource("3_mowrr")
 frame_b = ExtResource("4_nb3ya")
+bat_button = NodePath("../BatButton")
+tardigrade_button = NodePath(".")
+salamander_button = NodePath("../SalamanderButton")
+monster_button = NodePath("../MonsterButton")
 
-[node name="SalamanderButton" type="TextureButton" parent="CenterContainer/GridContainer"]
+[node name="SalamanderButton" type="TextureButton" parent="GridContainer" node_paths=PackedStringArray("bat_button", "tardigrade_button", "salamander_button", "monster_button")]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture_normal = ExtResource("2_nb3ya")
 stretch_mode = 3
 script = ExtResource("2_xe51t")
 creature_type = 2
 frame_a = ExtResource("2_nb3ya")
 frame_b = ExtResource("7_h6ysv")
+bat_button = NodePath("../BatButton")
+tardigrade_button = NodePath("../TardigradeButton")
+salamander_button = NodePath(".")
+monster_button = NodePath("../MonsterButton")
 
-[node name="MonsterButton" type="TextureButton" parent="CenterContainer/GridContainer"]
+[node name="MonsterButton" type="TextureButton" parent="GridContainer" node_paths=PackedStringArray("bat_button", "tardigrade_button", "salamander_button", "monster_button")]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture_normal = ExtResource("4_mowrr")
 stretch_mode = 3
 script = ExtResource("2_xe51t")
 creature_type = 3
 frame_a = ExtResource("4_mowrr")
 frame_b = ExtResource("9_ilmm2")
+bat_button = NodePath("../BatButton")
+tardigrade_button = NodePath("../TardigradeButton")
+salamander_button = NodePath("../SalamanderButton")
+monster_button = NodePath(".")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
-autostart = true
+[node name="ConfirmLabel" type="Label" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -245.5
+offset_top = 200.0
+offset_right = 245.5
+offset_bottom = 303.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 75
+text = "Are you sure?"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[connection signal="pressed" from="CenterContainer/GridContainer/BatButton" to="CenterContainer/GridContainer/BatButton" method="_on_pressed"]
-[connection signal="pressed" from="CenterContainer/GridContainer/TardigradeButton" to="CenterContainer/GridContainer/TardigradeButton" method="_on_pressed"]
-[connection signal="pressed" from="CenterContainer/GridContainer/SalamanderButton" to="CenterContainer/GridContainer/SalamanderButton" method="_on_pressed"]
-[connection signal="pressed" from="CenterContainer/GridContainer/MonsterButton" to="CenterContainer/GridContainer/MonsterButton" method="_on_pressed"]
-[connection signal="timeout" from="Timer" to="CenterContainer/GridContainer/BatButton" method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer" to="CenterContainer/GridContainer/TardigradeButton" method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer" to="CenterContainer/GridContainer/SalamanderButton" method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer" to="CenterContainer/GridContainer/MonsterButton" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="GridContainer/BatButton" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="GridContainer/TardigradeButton" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="GridContainer/SalamanderButton" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="GridContainer/MonsterButton" method="_on_timer_timeout"]
+[connection signal="pressed" from="GridContainer/BatButton" to="GridContainer/BatButton" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/TardigradeButton" to="GridContainer/TardigradeButton" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/SalamanderButton" to="GridContainer/SalamanderButton" method="_on_pressed"]
+[connection signal="pressed" from="GridContainer/MonsterButton" to="GridContainer/MonsterButton" method="_on_pressed"]
