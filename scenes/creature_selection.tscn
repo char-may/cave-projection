@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dpu57xn8vy7bo"]
+[gd_scene load_steps=11 format=3 uid="uid://dpu57xn8vy7bo"]
 
 [ext_resource type="Texture2D" uid="uid://bsuh2a3l6pvry" path="res://procreate/menu_buttons/bat_button/bat_button_1.png" id="1_mowrr"]
 [ext_resource type="Texture2D" uid="uid://dcpk73isrwd28" path="res://procreate/menu_buttons/bat_button/bat_button_2.png" id="2_mowrr"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cxjfk45amwng5" path="res://procreate/menu_buttons/tardigrade_button/tardigrade_button_2.png" id="4_nb3ya"]
 [ext_resource type="Texture2D" uid="uid://d3hd71lia71cf" path="res://procreate/menu_buttons/salamander_button/salamander_button_2.png" id="7_h6ysv"]
 [ext_resource type="Texture2D" uid="uid://ygqg6shqgngr" path="res://procreate/menu_buttons/monster_button/monster_button_2.png" id="9_ilmm2"]
+[ext_resource type="FontFile" uid="uid://dfl6qybu25wok" path="res://fonts/Chubby Fun Regular.ttf" id="10_ilmm2"]
 
 [node name="Node" type="Node"]
 
@@ -34,7 +35,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 2
 
-[node name="BatButton" type="TextureButton" parent="GridContainer" node_paths=PackedStringArray("bat_button", "tardigrade_button", "salamander_button", "monster_button")]
+[node name="BatButton" type="TextureButton" parent="GridContainer" node_paths=PackedStringArray("poly1", "poly2", "bat_button", "tardigrade_button", "salamander_button", "monster_button")]
+self_modulate = Color(0.235294, 0.388235, 0.698039, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -43,27 +45,54 @@ stretch_mode = 3
 script = ExtResource("2_xe51t")
 frame_a = ExtResource("1_mowrr")
 frame_b = ExtResource("2_mowrr")
+poly1 = NodePath("Poly1")
+poly2 = NodePath("Poly2")
 bat_button = NodePath(".")
 tardigrade_button = NodePath("../TardigradeButton")
 salamander_button = NodePath("../SalamanderButton")
 monster_button = NodePath("../MonsterButton")
 
-[node name="TardigradeButton" type="TextureButton" parent="GridContainer" node_paths=PackedStringArray("bat_button", "tardigrade_button", "salamander_button", "monster_button")]
+[node name="Poly1" type="Polygon2D" parent="GridContainer/BatButton"]
+show_behind_parent = true
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(60.7501, 208.5, 57.0001, 283.5, 152, 294.75, 208.25, 321, 249.5, 287.25, 295.75, 324.75, 335.75, 309.75, 357, 331, 434.5, 292.25, 487, 311, 544.5, 292.25, 610.75, 296, 613.25, 202.25, 643.25, 96, 534.5, 104.75, 433.25, 151, 379.5, 122.25, 338.25, 149.75, 298.25, 119.75, 247, 154.75, 129.5, 102.25, 34.5001, 97.25)
+
+[node name="Poly2" type="Polygon2D" parent="GridContainer/BatButton"]
+visible = false
+show_behind_parent = true
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(60.7501, 193.5, 25.7501, 246, 80.7501, 283.5, 122, 331, 177, 296, 228.25, 307.25, 257, 264.75, 295.75, 299.75, 338.25, 284.75, 388.25, 301, 422, 283.5, 448.25, 302.25, 500.75, 296, 560.75, 334.75, 597, 273.5, 643.25, 252.25, 630.75, 197.25, 550.75, 156, 447, 152.25, 380.75, 109.75, 340.75, 141, 299.5, 108.5, 242, 152.25, 195.75, 147.25, 142, 152.25)
+
+[node name="TardigradeButton" type="TextureButton" parent="GridContainer" node_paths=PackedStringArray("poly1", "poly2", "bat_button", "tardigrade_button", "salamander_button", "monster_button")]
+self_modulate = Color(0.235294, 0.388235, 0.698039, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture_normal = ExtResource("3_mowrr")
+texture_normal = ExtResource("4_nb3ya")
 stretch_mode = 3
 script = ExtResource("2_xe51t")
 creature_type = 1
 frame_a = ExtResource("3_mowrr")
 frame_b = ExtResource("4_nb3ya")
+poly1 = NodePath("Poly1")
+poly2 = NodePath("Poly2")
 bat_button = NodePath("../BatButton")
 tardigrade_button = NodePath(".")
 salamander_button = NodePath("../SalamanderButton")
 monster_button = NodePath("../MonsterButton")
 
-[node name="SalamanderButton" type="TextureButton" parent="GridContainer" node_paths=PackedStringArray("bat_button", "tardigrade_button", "salamander_button", "monster_button")]
+[node name="Poly1" type="Polygon2D" parent="GridContainer/TardigradeButton"]
+show_behind_parent = true
+polygon = PackedVector2Array(142.75, 87.25, 260.25, 27.25, 397.75, 46, 470.25, -0.249985, 570.25, 36, 634, 76, 611.5, 148.5, 592.75, 213.5, 552.75, 246, 575.25, 336, 500.25, 363.5, 409, 318.5, 395.25, 386, 312.75, 398.5, 280.25, 342.25, 225.25, 413.5, 145.25, 412.25, 149, 343.5, 67.75, 408.5, 7.75, 378.5, 41.5, 262.25, 66.5, 173.5)
+
+[node name="Poly2" type="Polygon2D" parent="GridContainer/TardigradeButton"]
+visible = false
+show_behind_parent = true
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(142.75, 87.25, 261.5, 33.5, 389, 42.25, 489, -1.49998, 570.25, 36, 622.75, 66, 611.5, 148.5, 592.75, 213.5, 552.75, 246, 570.25, 306, 521.5, 351, 414, 299.75, 405.25, 372.25, 356.5, 398.5, 280.25, 339.75, 209, 414.75, 130.25, 399.75, 136.5, 343.5, 44, 401, -9.75, 346, 35.25, 296, 87.75, 148.5)
+
+[node name="SalamanderButton" type="TextureButton" parent="GridContainer" node_paths=PackedStringArray("poly1", "poly2", "bat_button", "tardigrade_button", "salamander_button", "monster_button")]
+self_modulate = Color(0.235294, 0.388235, 0.698039, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -73,12 +102,25 @@ script = ExtResource("2_xe51t")
 creature_type = 2
 frame_a = ExtResource("2_nb3ya")
 frame_b = ExtResource("7_h6ysv")
+poly1 = NodePath("Poly1")
+poly2 = NodePath("Poly2")
 bat_button = NodePath("../BatButton")
 tardigrade_button = NodePath("../TardigradeButton")
 salamander_button = NodePath(".")
 monster_button = NodePath("../MonsterButton")
 
-[node name="MonsterButton" type="TextureButton" parent="GridContainer" node_paths=PackedStringArray("bat_button", "tardigrade_button", "salamander_button", "monster_button")]
+[node name="Poly1" type="Polygon2D" parent="GridContainer/SalamanderButton"]
+show_behind_parent = true
+polygon = PackedVector2Array(103.25, 59.2501, 193.25, 96.7501, 210.75, 129.25, 227, 86.7501, 298.25, 98.0001, 308.25, 121.75, 402, 134.25, 397, 106.75, 478.25, 45.5001, 518.25, 63.0001, 543.25, 36.7501, 603.25, 9.25006, 659.5, 41.7501, 654.5, 118, 618.25, 183, 577, 205.5, 607, 230.5, 577, 285.5, 473.25, 294.25, 454.5, 285.5, 395.75, 304.25, 333.25, 301.75, 338.25, 346.75, 293.25, 384.25, 257, 366.75, 194.5, 300.5, 102, 301.75, 25.7501, 229.25, 12.0001, 128)
+
+[node name="Poly2" type="Polygon2D" parent="GridContainer/SalamanderButton"]
+visible = false
+show_behind_parent = true
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(134.5, 31.75, 163.25, 91.75, 107, 159.25, 134.5, 184.25, 200.75, 140.5, 214.5, 93, 260.75, 89.25, 298.25, 98.0001, 308.25, 121.75, 402, 134.25, 397, 106.75, 447, 43, 517, 53, 543.25, 23, 617, 18, 659.5, 41.7501, 654.5, 118, 618.25, 183, 577, 205.5, 607, 230.5, 578.25, 311.75, 519.5, 296.75, 454.5, 285.5, 395.75, 304.25, 312, 296.75, 333.25, 350.5, 312, 384.25, 249.5, 391.75, 184.5, 304.25, 94.5001, 296.75, 25.7501, 229.25, 12.0001, 128)
+
+[node name="MonsterButton" type="TextureButton" parent="GridContainer" node_paths=PackedStringArray("poly1", "poly2", "bat_button", "tardigrade_button", "salamander_button", "monster_button")]
+self_modulate = Color(0.235294, 0.388235, 0.698039, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -88,13 +130,24 @@ script = ExtResource("2_xe51t")
 creature_type = 3
 frame_a = ExtResource("4_mowrr")
 frame_b = ExtResource("9_ilmm2")
+poly1 = NodePath("Poly1")
+poly2 = NodePath("Poly2")
 bat_button = NodePath("../BatButton")
 tardigrade_button = NodePath("../TardigradeButton")
 salamander_button = NodePath("../SalamanderButton")
 monster_button = NodePath(".")
 
-[node name="ConfirmLabel" type="Label" parent="."]
+[node name="Poly1" type="Polygon2D" parent="GridContainer/MonsterButton"]
+show_behind_parent = true
+polygon = PackedVector2Array(479, 140.5, 499, 250.5, 499, 308, 589, 315.5, 616.5, 349.25, 580.25, 389.25, 499, 386.75, 451.5, 373, 132.75, 378, 107.75, 398, 46.5, 385.5, 15.25, 345.5, 51.5, 314.25, 120.25, 313, 132.75, 221.75, 117.75, 190.5, 154, 100.5, 216.5, 41.7501, 332.75, 16.7501, 329, 48.0001, 421.5, 64.2501)
+
+[node name="Poly2" type="Polygon2D" parent="GridContainer/MonsterButton"]
 visible = false
+show_behind_parent = true
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(465.25, 120.5, 496.5, 200.5, 505.25, 256.75, 486.5, 275.5, 495.25, 315.5, 589, 315.5, 607.75, 348, 580.25, 381.75, 499, 386.75, 451.5, 373, 132.75, 378, 91.5, 389.25, 46.5, 385.5, 15.25, 345.5, 51.5, 314.25, 120.25, 313, 126.5, 223, 134, 166.75, 179, 90.5, 261.5, 45.5, 310.25, 36.75, 331.5, 61.75, 405.25, 73)
+
+[node name="ConfirmLabel" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -103,7 +156,8 @@ offset_top = 200.0
 offset_right = 245.5
 offset_bottom = 303.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 75
+theme_override_fonts/font = ExtResource("10_ilmm2")
+theme_override_font_sizes/font_size = 70
 text = "Are you sure?"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -3,6 +3,8 @@ class_name CreatureSelectButton extends TextureButton
 @export var creature_type : Global.CreatureType
 @export var frame_a : Texture2D
 @export var frame_b : Texture2D
+@export var poly1 : Polygon2D
+@export var poly2 : Polygon2D
 @export var bat_button : CreatureSelectButton
 @export var tardigrade_button : CreatureSelectButton
 @export var salamander_button : CreatureSelectButton
@@ -25,8 +27,12 @@ func _process(_delta: float) -> void:
 func _on_timer_timeout() -> void:
 	if current_frame == frame_a:
 		current_frame = frame_b
+		poly1.visible = false
+		poly2.visible = true
 	else:
 		current_frame = frame_a
+		poly1.visible = true
+		poly2.visible = false
 	
 	texture_normal = current_frame
 
@@ -45,8 +51,9 @@ func bat_selected():
 	tardigrade_button.visible = false
 	salamander_button.visible = false
 	monster_button.visible = false
-	grid_tween()
 	grid.columns = 1
+	poly1.position = Vector2(320,215)
+	poly2.position = Vector2(320,215)
 	grid_tween()
 	
 func tardigrade_selected():
@@ -54,6 +61,8 @@ func tardigrade_selected():
 	salamander_button.visible = false
 	monster_button.visible = false
 	grid.columns = 1
+	poly1.position = Vector2(340,215)
+	poly2.position = Vector2(340,215)
 	grid_tween()
 
 func salamander_selected():
@@ -61,6 +70,8 @@ func salamander_selected():
 	tardigrade_button.visible = false
 	monster_button.visible = false
 	grid.columns = 1
+	poly1.position = Vector2(315,215)
+	poly2.position = Vector2(315,215)
 	grid_tween()
 
 func monster_selected():
@@ -68,6 +79,8 @@ func monster_selected():
 	tardigrade_button.visible = false
 	salamander_button.visible = false
 	grid.columns = 1
+	poly1.position = Vector2(340,215)
+	poly2.position = Vector2(340,215)
 	grid_tween()
 
 func grid_tween():
