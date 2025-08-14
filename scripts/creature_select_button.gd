@@ -12,7 +12,7 @@ class_name CreatureSelectButton extends TextureButton
 
 @onready var grid = $".."
 @onready var confirm_label = $"../../ConfirmLabel"
-
+@onready var select_label = $"../../SelectLabel"
 var current_frame : Texture2D
 
 
@@ -20,6 +20,7 @@ func _ready() -> void:
 	current_frame = frame_a
 	texture_normal = current_frame
 	confirm_label.visible = false
+	select_label.visible = true
 
 func _process(_delta: float) -> void:
 	pass
@@ -48,6 +49,7 @@ func _on_pressed() -> void:
 			monster_selected()
 
 func bat_selected():
+	select_label.visible = false
 	tardigrade_button.visible = false
 	salamander_button.visible = false
 	monster_button.visible = false
@@ -57,6 +59,7 @@ func bat_selected():
 	grid_tween()
 	
 func tardigrade_selected():
+	select_label.visible = false
 	bat_button.visible = false
 	salamander_button.visible = false
 	monster_button.visible = false
@@ -66,6 +69,7 @@ func tardigrade_selected():
 	grid_tween()
 
 func salamander_selected():
+	select_label.visible = false
 	bat_button.visible = false
 	tardigrade_button.visible = false
 	monster_button.visible = false
@@ -75,6 +79,7 @@ func salamander_selected():
 	grid_tween()
 
 func monster_selected():
+	select_label.visible = false
 	bat_button.visible = false
 	tardigrade_button.visible = false
 	salamander_button.visible = false

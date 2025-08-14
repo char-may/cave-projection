@@ -24,9 +24,9 @@ func fade() -> void:
 	tween.tween_interval(out_time)
 	await tween.finished
 	Global.game_controller.change_gui_scene("res://scenes/empty_gui.tscn", true, false)
-	Global.game_controller.change_2d_scene("res://scenes/editor.tscn")
+	Global.game_controller.change_2d_scene("res://scenes/creature_selection.tscn")
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_pressed():
 		Global.game_controller.change_gui_scene("res://scenes/empty_gui.tscn", true, false)
-		Global.game_controller.change_2d_scene("res://scenes/editor.tscn", true, false)
+		Global.game_controller.change_2d_scene("res://scenes/creature_selection", true, false)

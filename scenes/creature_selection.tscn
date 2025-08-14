@@ -148,6 +148,7 @@ scale = Vector2(1, 1)
 polygon = PackedVector2Array(465.25, 120.5, 496.5, 200.5, 505.25, 256.75, 486.5, 275.5, 495.25, 315.5, 589, 315.5, 607.75, 348, 580.25, 381.75, 499, 386.75, 451.5, 373, 132.75, 378, 91.5, 389.25, 46.5, 385.5, 15.25, 345.5, 51.5, 314.25, 120.25, 313, 126.5, 223, 134, 166.75, 179, 90.5, 261.5, 45.5, 310.25, 36.75, 331.5, 61.75, 405.25, 73)
 
 [node name="ConfirmLabel" type="Label" parent="."]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -159,6 +160,21 @@ grow_horizontal = 2
 theme_override_fonts/font = ExtResource("10_ilmm2")
 theme_override_font_sizes/font_size = 70
 text = "Are you sure?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SelectLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -343.0
+offset_top = 50.0
+offset_right = 343.0
+offset_bottom = 153.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("10_ilmm2")
+theme_override_font_sizes/font_size = 70
+text = "Select a creature!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
