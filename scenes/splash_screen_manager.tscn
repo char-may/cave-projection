@@ -38,3 +38,12 @@ position = Vector2(960, 540)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_5how5")
 frame_progress = 0.133076
+
+[node name="bg1" type="Polygon2D" parent="."]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(807, 1108, 894, 806, 811, 840, 731, 778, 742, 720, 710, 710, 671, 602, 697, 540, 654, 459, 667, 337, 761, 234, 781, 304, 798, 240, 817, 270, 845, 240, 935, 251, 1036, 249, 1062, 289, 1066, 244, 1096, 309, 1102, 257, 1227, 328, 1169, 394, 1184, 442, 1194, 491, 1235, 574, 1218, 641, 1229, 712, 1192, 812, 1032, 821, 1010, 780, 991, 825, 944, 789, 942, 830, 907, 851, 837, 1102, 2003, 1102, 1977, -39, -60, -32, -27, 1110)
+
+[node name="bg_fill" type="Polygon2D" parent="."]
+position = Vector2(32, -60)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(856, 868, 942, 896, 910, 1162, 740, 1166)
