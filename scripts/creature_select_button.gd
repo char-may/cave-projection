@@ -18,7 +18,6 @@ var current_frame : Texture2D
 
 func _ready() -> void:	
 	pressed.connect(_on_pressed)
-	print("button connected")
 	current_frame = frame_a
 	texture_normal = current_frame
 	confirm_label.visible = false
@@ -40,7 +39,6 @@ func _on_timer_timeout() -> void:
 	texture_normal = current_frame
 
 func _on_pressed() -> void:
-	print("button pressed")
 	match creature_type:
 		Global.CreatureType.BAT:
 			bat_selected()
