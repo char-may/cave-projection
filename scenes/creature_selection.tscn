@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dpu57xn8vy7bo"]
+[gd_scene load_steps=14 format=3 uid="uid://dpu57xn8vy7bo"]
 
 [ext_resource type="Texture2D" uid="uid://bsuh2a3l6pvry" path="res://procreate/menu_buttons/bat_button/bat_button_1.png" id="1_mowrr"]
 [ext_resource type="Texture2D" uid="uid://dcpk73isrwd28" path="res://procreate/menu_buttons/bat_button/bat_button_2.png" id="2_mowrr"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://d3hd71lia71cf" path="res://procreate/menu_buttons/salamander_button/salamander_button_2.png" id="7_h6ysv"]
 [ext_resource type="Texture2D" uid="uid://ygqg6shqgngr" path="res://procreate/menu_buttons/monster_button/monster_button_2.png" id="9_ilmm2"]
 [ext_resource type="FontFile" uid="uid://dfl6qybu25wok" path="res://fonts/Chubby Fun Regular.ttf" id="10_ilmm2"]
+[ext_resource type="Texture2D" uid="uid://cia25qrfkyyl7" path="res://resources/art/cloudbutton.png" id="11_dpfqc"]
+[ext_resource type="Script" uid="uid://d4gu6mv5g4k6i" path="res://scenes/yep_button.gd" id="12_gs76d"]
+[ext_resource type="Script" uid="uid://blabtspyn1x67" path="res://scenes/nope_button.gd" id="13_hijbh"]
 
 [node name="CreatureSelection" type="Node"]
 
@@ -152,7 +155,6 @@ show_behind_parent = true
 polygon = PackedVector2Array(465.25, 120.5, 496.5, 200.5, 505.25, 256.75, 486.5, 275.5, 495.25, 315.5, 589, 315.5, 607.75, 348, 580.25, 381.75, 499, 386.75, 451.5, 373, 132.75, 378, 91.5, 389.25, 46.5, 385.5, 15.25, 345.5, 51.5, 314.25, 120.25, 313, 126.5, 223, 134, 166.75, 179, 90.5, 261.5, 45.5, 310.25, 36.75, 331.5, 61.75, 405.25, 73)
 
 [node name="ConfirmLabel" type="Label" parent="."]
-visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -182,7 +184,55 @@ text = "Select a creature!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="YepButton" type="TextureButton" parent="."]
+offset_left = 1379.0
+offset_top = 396.0
+offset_right = 1863.0
+offset_bottom = 743.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("11_dpfqc")
+script = ExtResource("12_gs76d")
+
+[node name="Label" type="Label" parent="YepButton"]
+self_modulate = Color(0.128419, 0.237052, 0.459198, 1)
+layout_mode = 0
+offset_left = 150.0
+offset_top = 115.0
+offset_right = 348.0
+offset_bottom = 236.0
+theme_override_fonts/font = ExtResource("10_ilmm2")
+theme_override_font_sizes/font_size = 103
+text = "Yep"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NopeButton" type="TextureButton" parent="."]
+offset_left = 190.0
+offset_top = 396.0
+offset_right = 674.0
+offset_bottom = 743.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("11_dpfqc")
+script = ExtResource("13_hijbh")
+
+[node name="Label" type="Label" parent="NopeButton"]
+self_modulate = Color(0.128419, 0.237052, 0.459198, 1)
+layout_mode = 0
+offset_left = 115.0
+offset_top = 115.0
+offset_right = 378.0
+offset_bottom = 236.0
+theme_override_fonts/font = ExtResource("10_ilmm2")
+theme_override_font_sizes/font_size = 103
+text = "Nope"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="timeout" from="Timer" to="GridContainer/BatButton" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="GridContainer/TardigradeButton" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="GridContainer/SalamanderButton" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="GridContainer/MonsterButton" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="YepButton" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="NopeButton" method="_on_timer_timeout"]
+[connection signal="pressed" from="YepButton" to="YepButton" method="_on_pressed"]
+[connection signal="pressed" from="NopeButton" to="NopeButton" method="_on_pressed"]

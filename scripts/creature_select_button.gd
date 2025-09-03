@@ -13,6 +13,8 @@ class_name CreatureSelectButton extends TextureButton
 @onready var grid = $".."
 @onready var confirm_label = $"../../ConfirmLabel"
 @onready var select_label = $"../../SelectLabel"
+@onready var yep_button = $"../../YepButton"
+@onready var nope_button = $"../../NopeButton"
 var current_frame : Texture2D
 
 
@@ -22,6 +24,8 @@ func _ready() -> void:
 	texture_normal = current_frame
 	confirm_label.visible = false
 	select_label.visible = true
+	yep_button.visible = false
+	nope_button.visible = false
 
 func _process(_delta: float) -> void:
 	pass
@@ -94,3 +98,6 @@ func grid_tween():
 	tween.tween_property(grid, "rotation_degrees", 360.0, .7).set_trans(Tween.TRANS_EXPO)
 	await get_tree().create_timer(.5).timeout
 	confirm_label.visible = true
+	yep_button.visible = true
+	nope_button.visible = true
+	
