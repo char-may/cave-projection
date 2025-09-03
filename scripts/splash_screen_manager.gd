@@ -5,14 +5,15 @@ extends Control
 
 @export var in_time : float = 0.2
 @export var fade_in_time : float = 0.3
-@export var pause_time : float = 1.25
+@export var pause_time : float = 0.25
 @export var fade_out_time : float = 0.3
-@export var out_time : float = 0.6
+@export var out_time : float = 0.3
 @export var splash_screen : AnimatedSprite2D
 
 func _ready() -> void:
 	splash_screen.play()
 	fade()
+	pass
 	
 func fade() -> void:
 	splash_screen.modulate.a = 0.0
