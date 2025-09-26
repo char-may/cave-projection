@@ -16,6 +16,8 @@ Create other creature puppets
 
 Issues:
 	
+Have pen palette come out on scene load?
+	
 If you expand palette and don't select a color it stays out while you draw
 - this might be okay? it doesn't break any functionality
 
