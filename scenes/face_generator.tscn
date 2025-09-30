@@ -1,28 +1,302 @@
-[gd_scene load_steps=4 format=3 uid="uid://baya7flibfovb"]
+[gd_scene load_steps=24 format=3 uid="uid://baya7flibfovb"]
 
+[ext_resource type="Script" uid="uid://r2gaoqcbr0gf" path="res://scenes/face_generator.gd" id="1_q1vyb"]
 [ext_resource type="Texture2D" uid="uid://cx7oono5wb47b" path="res://resources/art/face_generator/eyes/eye_1.png" id="1_xrwa7"]
+[ext_resource type="Texture2D" uid="uid://bdmmswedayym3" path="res://resources/art/face_generator/noses/nose_1.png" id="3_vvk83"]
 [ext_resource type="Texture2D" uid="uid://ng61eh5523sv" path="res://resources/art/face_generator/mouths/mouth_10.png" id="3_vw64w"]
 [ext_resource type="Texture2D" uid="uid://dkxx3j6vls7im" path="res://resources/art/face_generator/noses/nose_6.png" id="4_sdmm7"]
+[ext_resource type="Texture2D" uid="uid://dhn8e6b3xgse1" path="res://resources/art/face_generator/eyes/eye_9.png" id="4_v07fr"]
+[ext_resource type="Texture2D" uid="uid://75svwag4y1m4" path="res://resources/art/face_generator/noses/nose_3.png" id="5_w00jv"]
+[ext_resource type="Texture2D" uid="uid://bmevhm5wcag1i" path="res://resources/art/face_generator/mouths/mouth_4.png" id="6_b8e7t"]
+[ext_resource type="Texture2D" uid="uid://h4usc23stfdo" path="res://resources/art/face_generator/eyes/eye_2.png" id="7_jt6in"]
+[ext_resource type="Texture2D" uid="uid://d2ajv3wv71ala" path="res://resources/art/face_generator/mouths/mouth_3.png" id="9_hs85i"]
+[ext_resource type="Texture2D" uid="uid://b57lbp6bidjrb" path="res://resources/art/face_generator/eyes/eye_12.png" id="10_6elnc"]
+[ext_resource type="Texture2D" uid="uid://5tljqht0mnss" path="res://resources/art/face_generator/noses/nose_5.png" id="11_61k1n"]
+[ext_resource type="Texture2D" uid="uid://b40n4ujv6ngub" path="res://resources/art/face_generator/eyes/eye_5.png" id="12_sa5y5"]
+[ext_resource type="Texture2D" uid="uid://bg6pmfakr35jt" path="res://resources/art/face_generator/noses/nose_4.png" id="13_0k44r"]
+[ext_resource type="Texture2D" uid="uid://dr31pp7f3lro6" path="res://resources/art/face_generator/eyes/eye_10.png" id="15_uxy66"]
+[ext_resource type="Texture2D" uid="uid://bahhro257nc6f" path="res://resources/art/face_generator/mouths/mouth_9.png" id="16_3u4vu"]
+[ext_resource type="Texture2D" uid="uid://c3kcyjshp2n4u" path="res://resources/art/face_generator/eyes/eye_13.png" id="17_fuiwj"]
+[ext_resource type="Texture2D" uid="uid://7asqhq7uvjm1" path="res://resources/art/face_generator/mouths/mouth_1.png" id="18_48n6e"]
+[ext_resource type="Texture2D" uid="uid://dm10siidk10se" path="res://resources/art/face_generator/eyes/eye_3.png" id="19_j7yw1"]
+[ext_resource type="Texture2D" uid="uid://b2h1sogwlm40l" path="res://resources/art/face_generator/noses/nose_2.png" id="20_iav20"]
+[ext_resource type="Texture2D" uid="uid://drgni4p27a1n3" path="res://resources/art/face_generator/mouths/mouth_5.png" id="21_2mqfm"]
+[ext_resource type="Texture2D" uid="uid://fp3f5778p8lp" path="res://resources/art/face_generator/eyes/eye_11.png" id="22_c23gw"]
+[ext_resource type="Texture2D" uid="uid://cuwkdamdhbous" path="res://resources/art/face_generator/eyes/eye_8.png" id="23_c3860"]
 
 [node name="FaceGenerator" type="Node2D"]
+script = ExtResource("1_q1vyb")
 
-[node name="LeftEye" type="Sprite2D" parent="."]
+[node name="Face1" type="Node2D" parent="."]
+visible = false
+
+[node name="RightEye" type="Sprite2D" parent="Face1"]
+position = Vector2(133, 0)
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_xrwa7")
 centered = false
 
-[node name="RightEye" type="Sprite2D" parent="."]
+[node name="LeftEye" type="Sprite2D" parent="Face1"]
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_xrwa7")
 centered = false
-offset = Vector2(135, 0)
 
-[node name="Mouth" type="Sprite2D" parent="."]
-texture = ExtResource("3_vw64w")
+[node name="Mouth" type="Sprite2D" parent="Face1"]
+position = Vector2(76, 86)
+texture = ExtResource("3_vvk83")
 centered = false
-offset = Vector2(65, 142)
 
-[node name="Nose" type="Sprite2D" parent="."]
-self_modulate = Color(0.963892, 0.353964, 0.339539, 1)
+[node name="Face2" type="Node2D" parent="."]
+visible = false
+
+[node name="RightEye" type="Sprite2D" parent="Face2"]
+position = Vector2(153, 0)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_v07fr")
+centered = false
+
+[node name="LeftEye" type="Sprite2D" parent="Face2"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_v07fr")
+centered = false
+
+[node name="Nose" type="Sprite2D" parent="Face2"]
+self_modulate = Color(0.932877, 0.416693, 0.653703, 1)
+position = Vector2(99, 96)
+texture = ExtResource("5_w00jv")
+centered = false
+
+[node name="Mouth" type="Sprite2D" parent="Face2"]
+position = Vector2(34, 167)
+texture = ExtResource("6_b8e7t")
+centered = false
+
+[node name="Face3" type="Node2D" parent="."]
+visible = false
+
+[node name="RightEye" type="Sprite2D" parent="Face3"]
+position = Vector2(153, 0)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_jt6in")
+centered = false
+
+[node name="LeftEye" type="Sprite2D" parent="Face3"]
+position = Vector2(-1, 0)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_jt6in")
+centered = false
+
+[node name="Nose" type="Sprite2D" parent="Face3"]
+self_modulate = Color(0.932877, 0.416693, 0.653703, 1)
+position = Vector2(113, 63)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_sdmm7")
 centered = false
-offset = Vector2(200, 170)
+
+[node name="Mouth" type="Sprite2D" parent="Face3"]
+position = Vector2(87, 130)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("9_hs85i")
+centered = false
+
+[node name="Face4" type="Node2D" parent="."]
+visible = false
+
+[node name="RightEye" type="Sprite2D" parent="Face4"]
+position = Vector2(153, 0)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_6elnc")
+centered = false
+
+[node name="LeftEye" type="Sprite2D" parent="Face4"]
+position = Vector2(-1, 0)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_6elnc")
+centered = false
+
+[node name="Nose" type="Sprite2D" parent="Face4"]
+self_modulate = Color(0.932877, 0.416693, 0.653703, 1)
+position = Vector2(123, 63)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_61k1n")
+centered = false
+
+[node name="Mouth" type="Sprite2D" parent="Face4"]
+position = Vector2(87, 130)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_b8e7t")
+centered = false
+
+[node name="Face5" type="Node2D" parent="."]
+visible = false
+
+[node name="RightEye" type="Sprite2D" parent="Face5"]
+position = Vector2(153, 0)
+texture = ExtResource("12_sa5y5")
+centered = false
+
+[node name="LeftEye" type="Sprite2D" parent="Face5"]
+position = Vector2(-1, 0)
+texture = ExtResource("12_sa5y5")
+centered = false
+
+[node name="Nose" type="Sprite2D" parent="Face5"]
+self_modulate = Color(0.932877, 0.416693, 0.653703, 1)
+position = Vector2(125, 63)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_0k44r")
+centered = false
+
+[node name="Mouth" type="Sprite2D" parent="Face5"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(98, 130)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_vw64w")
+centered = false
+
+[node name="Face6" type="Node2D" parent="."]
+visible = false
+
+[node name="RightEye" type="Sprite2D" parent="Face6"]
+position = Vector2(153, 0)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("15_uxy66")
+centered = false
+
+[node name="LeftEye" type="Sprite2D" parent="Face6"]
+position = Vector2(-1, 0)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("15_uxy66")
+centered = false
+
+[node name="Nose" type="Sprite2D" parent="Face6"]
+self_modulate = Color(0.932877, 0.416693, 0.653703, 1)
+position = Vector2(123, 97)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_vvk83")
+centered = false
+
+[node name="Mouth" type="Sprite2D" parent="Face6"]
+position = Vector2(76, 130)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("16_3u4vu")
+centered = false
+
+[node name="Face7" type="Node2D" parent="."]
+visible = false
+
+[node name="RightEye" type="Sprite2D" parent="Face7"]
+position = Vector2(136, 16)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("17_fuiwj")
+centered = false
+
+[node name="LeftEye" type="Sprite2D" parent="Face7"]
+position = Vector2(16, 17)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("17_fuiwj")
+centered = false
+
+[node name="Nose" type="Sprite2D" parent="Face7"]
+self_modulate = Color(0.932877, 0.416693, 0.653703, 1)
+position = Vector2(107, 68)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_sdmm7")
+centered = false
+
+[node name="Mouth" type="Sprite2D" parent="Face7"]
+position = Vector2(83, 109)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("18_48n6e")
+centered = false
+
+[node name="Face8" type="Node2D" parent="."]
+visible = false
+
+[node name="RightEye" type="Sprite2D" parent="Face8"]
+position = Vector2(144, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_j7yw1")
+centered = false
+
+[node name="LeftEye" type="Sprite2D" parent="Face8"]
+position = Vector2(11, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_j7yw1")
+centered = false
+
+[node name="Nose" type="Sprite2D" parent="Face8"]
+self_modulate = Color(0.932877, 0.416693, 0.653703, 1)
+position = Vector2(129, 51)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("20_iav20")
+centered = false
+
+[node name="Mouth" type="Sprite2D" parent="Face8"]
+self_modulate = Color(0.933333, 0.415686, 0.654902, 1)
+position = Vector2(114, 77)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("21_2mqfm")
+centered = false
+
+[node name="Face9" type="Node2D" parent="."]
+visible = false
+
+[node name="RightEye" type="Sprite2D" parent="Face9"]
+position = Vector2(109, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("22_c23gw")
+centered = false
+
+[node name="LeftEye" type="Sprite2D" parent="Face9"]
+position = Vector2(11, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("22_c23gw")
+centered = false
+
+[node name="Mouth" type="Sprite2D" parent="Face9"]
+position = Vector2(15, 95)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("16_3u4vu")
+centered = false
+
+[node name="Nose" type="Sprite2D" parent="Face9"]
+self_modulate = Color(0.932877, 0.416693, 0.653703, 1)
+position = Vector2(72, 51)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_0k44r")
+centered = false
+
+[node name="Face10" type="Node2D" parent="."]
+
+[node name="RightEye" type="Sprite2D" parent="Face10"]
+position = Vector2(109, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("23_c3860")
+centered = false
+
+[node name="MiddleEye" type="Sprite2D" parent="Face10"]
+position = Vector2(61, 2)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("23_c3860")
+centered = false
+
+[node name="LeftEye" type="Sprite2D" parent="Face10"]
+position = Vector2(11, 15)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("23_c3860")
+centered = false
+
+[node name="Mouth" type="Sprite2D" parent="Face10"]
+position = Vector2(33, 76)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_vw64w")
+centered = false
+flip_v = true
+
+[node name="Nose" type="Sprite2D" parent="Face10"]
+self_modulate = Color(0.932877, 0.416693, 0.653703, 1)
+position = Vector2(70, 71)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_sdmm7")
+centered = false

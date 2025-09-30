@@ -10,8 +10,7 @@ enum CreatureType {
 enum ToolType {
 	CRAYON,
 	BRUSH,
-	ERASER,
-	EYE_STAMP
+	ERASER
 }
 
 var game_controller : GameController

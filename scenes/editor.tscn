@@ -30,8 +30,8 @@ expand_mode = 3
 stretch_mode = 3
 
 [node name="FaceGenerator" parent="." instance=ExtResource("5_xg7d5")]
-position = Vector2(867, 543)
-scale = Vector2(0.5, 0.5)
+position = Vector2(898, 550)
+scale = Vector2(0.8, 0.8)
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
