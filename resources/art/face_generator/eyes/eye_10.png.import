@@ -3,21 +3,23 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dr31pp7f3lro6"
-path="res://.godot/imported/eye_10.png-92a17fbd9b7bad3b35978e206e9c5f2e.ctex"
+path="res://.godot/imported/eye_10.png-429fe8fcd96ebf5822ce034e9f465646.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/art/face_generator/eyes/eye_10.png"
-dest_files=["res://.godot/imported/eye_10.png-92a17fbd9b7bad3b35978e206e9c5f2e.ctex"]
+source_file="res://Resources/art/face_generator/eyes/eye_10.png"
+dest_files=["res://.godot/imported/eye_10.png-429fe8fcd96ebf5822ce034e9f465646.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -25,6 +27,10 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
