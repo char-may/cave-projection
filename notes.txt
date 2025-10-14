@@ -15,7 +15,8 @@ Create other creature templates
 Create other creature puppets
 
 Issues:
-	
+Where the heck is the user exports on windows, files saved but can't find on filesystem
+
 Have pen palette come out on scene load?
 	
 If you expand palette and don't select a color it stays out while you draw

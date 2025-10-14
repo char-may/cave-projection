@@ -21,7 +21,6 @@ func _ready():
 	var dir = DirAccess.open("user://")
 	dir.make_dir("exports")
 	dir = DirAccess.open("user://exports")
-	
 	# Set counter to the current number of files
 	for n in dir.get_files():
 		export_count += 1
