@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3u7own4a62cj"
-path="res://.godot/imported/bat_template_white.png-45de88f179a56a08a06c0f2542e088c9.ctex"
+uid="uid://3th61nhp4ra8"
+path="res://.godot/imported/polybat.png-f7d96e71801f2e476d8c593a090ab646.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/drawing_masks/bat_template_white.png"
-dest_files=["res://.godot/imported/bat_template_white.png-45de88f179a56a08a06c0f2542e088c9.ctex"]
+source_file="res://resources/misc_art/polybat.png"
+dest_files=["res://.godot/imported/polybat.png-f7d96e71801f2e476d8c593a090ab646.ctex"]
 
 [params]
 

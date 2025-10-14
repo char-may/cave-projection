@@ -4,6 +4,7 @@
 [ext_resource type="Resource" uid="uid://bijw1n8mua3f1" path="res://resources/palettes/bat_palette.tres" id="1_pse0i"]
 [ext_resource type="Script" uid="uid://c4encqrccdc7l" path="res://resources/creatures/creature.gd" id="2_ngh48"]
 
+
 [resource]
 resource_local_to_scene = true
 script = ExtResource("2_ngh48")

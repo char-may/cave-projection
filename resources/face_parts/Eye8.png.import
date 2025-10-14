@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3u7own4a62cj"
-path="res://.godot/imported/bat_template_white.png-45de88f179a56a08a06c0f2542e088c9.ctex"
+uid="uid://dbyfalssbav11"
+path="res://.godot/imported/Eye8.png-47b3b7e6b5c3efa1e8c5f6d9e6e79430.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/drawing_masks/bat_template_white.png"
-dest_files=["res://.godot/imported/bat_template_white.png-45de88f179a56a08a06c0f2542e088c9.ctex"]
+source_file="res://resources/face_parts/Eye8.png"
+dest_files=["res://.godot/imported/Eye8.png-47b3b7e6b5c3efa1e8c5f6d9e6e79430.ctex"]
 
 [params]
 

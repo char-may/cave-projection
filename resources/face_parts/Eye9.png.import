@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3th61nhp4ra8"
-path="res://.godot/imported/polybat.png-819ffd50ad3888853e3e850a392169ba.ctex"
+uid="uid://b0l4438ipb8yu"
+path="res://.godot/imported/Eye9.png-8281528d117ddaea64e3c6af336413c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/art/polybat.png"
-dest_files=["res://.godot/imported/polybat.png-819ffd50ad3888853e3e850a392169ba.ctex"]
+source_file="res://resources/face_parts/Eye9.png"
+dest_files=["res://.godot/imported/Eye9.png-8281528d117ddaea64e3c6af336413c3.ctex"]
 
 [params]
 

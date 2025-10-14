@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cia25qrfkyyl7"
-path="res://.godot/imported/cloudbutton.png-5a53caa560877bdb51e7973fe14fa807.ctex"
+uid="uid://c04b2eguo3rem"
+path="res://.godot/imported/Mouth12.png-4497ce025d700be47a186f7207ddaabf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/art/cloudbutton.png"
-dest_files=["res://.godot/imported/cloudbutton.png-5a53caa560877bdb51e7973fe14fa807.ctex"]
+source_file="res://resources/face_parts/Mouth12.png"
+dest_files=["res://.godot/imported/Mouth12.png-4497ce025d700be47a186f7207ddaabf.ctex"]
 
 [params]
 
