@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://baya7flibfovb"]
+[gd_scene load_steps=48 format=3 uid="uid://baya7flibfovb"]
 
 [ext_resource type="Script" uid="uid://r2gaoqcbr0gf" path="res://scenes/face_generator.gd" id="1_q1vyb"]
 [ext_resource type="Texture2D" uid="uid://drdmy8ohfmqyu" path="res://resources/face_parts/Eye1.png" id="2_vvk83"]
@@ -47,9 +47,6 @@
 [ext_resource type="Texture2D" uid="uid://c80bkau3s6hqv" path="res://resources/face_parts/Mouth13.png" id="45_bl41g"]
 [ext_resource type="Texture2D" uid="uid://bca5nw6u2unvm" path="res://resources/face_parts/Mouth14.png" id="46_ge0ud"]
 [ext_resource type="Texture2D" uid="uid://fk2ge4blw21y" path="res://resources/face_parts/Mouth15.png" id="47_rvpwg"]
-[ext_resource type="Texture2D" uid="uid://cd6qxhdl6xbxp" path="res://resources/face_parts/EyeBounds.png" id="48_43c17"]
-[ext_resource type="Texture2D" uid="uid://cjn2sgnxxtyne" path="res://resources/face_parts/MouthBounds.png" id="49_84uct"]
-[ext_resource type="Texture2D" uid="uid://dve3vsp2ihlhw" path="res://resources/face_parts/NoseBounds.png" id="50_dpy2o"]
 
 [node name="FaceGenerator" type="Node2D" node_paths=PackedStringArray("left_eye", "right_eye", "nose", "mouth")]
 script = ExtResource("1_q1vyb")
@@ -62,20 +59,18 @@ nose = NodePath("Nose")
 mouth = NodePath("Mouth")
 
 [node name="LeftEye" type="Sprite2D" parent="."]
-texture = ExtResource("48_43c17")
 centered = false
 
 [node name="RightEye" type="Sprite2D" parent="."]
 position = Vector2(190, 0)
-texture = ExtResource("48_43c17")
 centered = false
 
 [node name="Mouth" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.5411765, 0.74509805, 1)
 position = Vector2(30, 190)
-texture = ExtResource("49_84uct")
 centered = false
 
 [node name="Nose" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.4745098, 0.3647059, 1)
 position = Vector2(125, 120)
-texture = ExtResource("50_dpy2o")
 centered = false
