@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b471rqmp7x52o" path="res://scripts/editor.gd" id="1_5lcyj"]
 [ext_resource type="PackedScene" uid="uid://be5j41pobgpmj" path="res://scenes/polygon_bat.tscn" id="2_5tm2q"]
 [ext_resource type="PackedScene" uid="uid://c7uvpsnt6urh7" path="res://scenes/pen.tscn" id="3_j8y2p"]
-[ext_resource type="Texture2D" uid="uid://dxp38i6vlaoeh" path="res://illustrator/bat/bat_mask.png" id="4_o435n"]
+[ext_resource type="Texture2D" uid="uid://ck8e311k81e2c" path="res://resources/illustrator/even_larger_bat_mask.png" id="4_xg7d5"]
 [ext_resource type="PackedScene" uid="uid://baya7flibfovb" path="res://scenes/face_generator.tscn" id="5_xg7d5"]
 
 [node name="Editor" type="Node2D" node_paths=PackedStringArray("mask")]
@@ -25,13 +25,13 @@ custom_minimum_size = Vector2(1024, 1024)
 offset_right = 1921.22
 offset_bottom = 1080.0
 pivot_offset = Vector2(912, 1560)
-texture = ExtResource("4_o435n")
+texture = ExtResource("4_xg7d5")
 expand_mode = 3
 stretch_mode = 3
 
 [node name="FaceGenerator" parent="." instance=ExtResource("5_xg7d5")]
-position = Vector2(850, 550)
-scale = Vector2(0.6, 0.6)
+position = Vector2(830, 550)
+scale = Vector2(0.7, 0.7)
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

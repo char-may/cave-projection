@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://be5j41pobgpmj"]
 
-[ext_resource type="Texture2D" uid="uid://nvc8butcfe72" path="res://illustrator/bat/bat_atlas_ref.png" id="1_j8733"]
+[ext_resource type="Texture2D" uid="uid://nvc8butcfe72" path="res://resources/illustrator/bat/bat_atlas_ref.png" id="1_j8733"]
 [ext_resource type="Script" uid="uid://bj4xoxso15sex" path="res://scripts/set_atlus.gd" id="1_pfbev"]
 
 [sub_resource type="Animation" id="Animation_pfbev"]

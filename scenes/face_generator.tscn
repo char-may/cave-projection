@@ -72,5 +72,5 @@ centered = false
 
 [node name="Nose" type="Sprite2D" parent="."]
 self_modulate = Color(1, 0.4745098, 0.3647059, 1)
-position = Vector2(125, 120)
+position = Vector2(125, 100)
 centered = false

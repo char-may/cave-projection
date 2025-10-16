@@ -1,14 +1,14 @@
 [gd_scene load_steps=13 format=3 uid="uid://dpu57xn8vy7bo"]
 
-[ext_resource type="Texture2D" uid="uid://bsuh2a3l6pvry" path="res://procreate/menu_buttons/bat_button/bat_button_1.png" id="1_mowrr"]
-[ext_resource type="Texture2D" uid="uid://dcpk73isrwd28" path="res://procreate/menu_buttons/bat_button/bat_button_2.png" id="2_mowrr"]
-[ext_resource type="Texture2D" uid="uid://dv8xath4vgxfp" path="res://procreate/menu_buttons/salamander_button/salamander_button_1.png" id="2_nb3ya"]
+[ext_resource type="Texture2D" uid="uid://bsuh2a3l6pvry" path="res://resources/procreate/menu_buttons/bat_button/bat_button_1.png" id="1_mowrr"]
+[ext_resource type="Texture2D" uid="uid://dcpk73isrwd28" path="res://resources/procreate/menu_buttons/bat_button/bat_button_2.png" id="2_mowrr"]
+[ext_resource type="Texture2D" uid="uid://dv8xath4vgxfp" path="res://resources/procreate/menu_buttons/salamander_button/salamander_button_1.png" id="2_nb3ya"]
 [ext_resource type="Script" uid="uid://cgdixm5l5s44n" path="res://scripts/creature_select_button.gd" id="2_xe51t"]
-[ext_resource type="Texture2D" uid="uid://bqf4rqv3tcd01" path="res://procreate/menu_buttons/tardigrade_button/tardigrade_button_1.png" id="3_mowrr"]
-[ext_resource type="Texture2D" uid="uid://c6fvwwu8nfj0o" path="res://procreate/menu_buttons/monster_button/monster_button_1.png" id="4_mowrr"]
-[ext_resource type="Texture2D" uid="uid://cxjfk45amwng5" path="res://procreate/menu_buttons/tardigrade_button/tardigrade_button_2.png" id="4_nb3ya"]
-[ext_resource type="Texture2D" uid="uid://d3hd71lia71cf" path="res://procreate/menu_buttons/salamander_button/salamander_button_2.png" id="7_h6ysv"]
-[ext_resource type="Texture2D" uid="uid://ygqg6shqgngr" path="res://procreate/menu_buttons/monster_button/monster_button_2.png" id="9_ilmm2"]
+[ext_resource type="Texture2D" uid="uid://bqf4rqv3tcd01" path="res://resources/procreate/menu_buttons/tardigrade_button/tardigrade_button_1.png" id="3_mowrr"]
+[ext_resource type="Texture2D" uid="uid://c6fvwwu8nfj0o" path="res://resources/procreate/menu_buttons/monster_button/monster_button_1.png" id="4_mowrr"]
+[ext_resource type="Texture2D" uid="uid://cxjfk45amwng5" path="res://resources/procreate/menu_buttons/tardigrade_button/tardigrade_button_2.png" id="4_nb3ya"]
+[ext_resource type="Texture2D" uid="uid://d3hd71lia71cf" path="res://resources/procreate/menu_buttons/salamander_button/salamander_button_2.png" id="7_h6ysv"]
+[ext_resource type="Texture2D" uid="uid://ygqg6shqgngr" path="res://resources/procreate/menu_buttons/monster_button/monster_button_2.png" id="9_ilmm2"]
 [ext_resource type="FontFile" uid="uid://dfl6qybu25wok" path="res://fonts/Chubby Fun Regular.ttf" id="10_ilmm2"]
 [ext_resource type="Texture2D" uid="uid://cia25qrfkyyl7" path="res://resources/misc_art/cloudbutton.png" id="11_dpfqc"]
 [ext_resource type="Script" uid="uid://blabtspyn1x67" path="res://scripts/confirm_button.gd" id="13_hijbh"]
@@ -187,10 +187,10 @@ vertical_alignment = 1
 
 [node name="YepButton" type="TextureButton" parent="."]
 offset_left = 1200.0
-offset_top = 396.0
+offset_top = 410.0
 offset_right = 1684.0
-offset_bottom = 743.0
-scale = Vector2(0.7, 0.7)
+offset_bottom = 757.0
+scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("11_dpfqc")
 script = ExtResource("13_hijbh")
 
@@ -208,11 +208,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="NopeButton" type="TextureButton" parent="."]
-offset_left = 350.0
-offset_top = 396.0
-offset_right = 834.0
-offset_bottom = 743.0
-scale = Vector2(0.7, 0.7)
+offset_left = 450.0
+offset_top = 410.0
+offset_right = 934.0
+offset_bottom = 757.0
+scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("11_dpfqc")
 script = ExtResource("13_hijbh")
 button_confirms = false
