@@ -27,7 +27,7 @@ body_bg = NodePath("BodyBg")
 body = NodePath("Body")
 band = NodePath("Band")
 tip = NodePath("Tip")
-tool_size = 20
+tool_size = 8
 slide_offset = Vector2(100, 0)
 
 [node name="Outlines" type="Sprite2D" parent="CrayonButton"]

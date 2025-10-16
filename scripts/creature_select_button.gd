@@ -59,8 +59,8 @@ func bat_selected():
 	salamander_button.visible = false
 	monster_button.visible = false
 	grid.columns = 1
-	poly1.position = Vector2(320,215)
-	poly2.position = Vector2(320,215)
+	poly1.position = Vector2(365,260)
+	poly2.position = Vector2(365,260)
 	grid_tween()
 	
 func tardigrade_selected():
@@ -69,8 +69,8 @@ func tardigrade_selected():
 	salamander_button.visible = false
 	monster_button.visible = false
 	grid.columns = 1
-	poly1.position = Vector2(340,215)
-	poly2.position = Vector2(340,215)
+	poly1.position = Vector2(380,260)
+	poly2.position = Vector2(380,260)
 	grid_tween()
 
 func salamander_selected():
@@ -79,8 +79,8 @@ func salamander_selected():
 	tardigrade_button.visible = false
 	monster_button.visible = false
 	grid.columns = 1
-	poly1.position = Vector2(315,215)
-	poly2.position = Vector2(315,215)
+	poly1.position = Vector2(365,265)
+	poly2.position = Vector2(365,265)
 	grid_tween()
 
 func monster_selected():
@@ -89,8 +89,8 @@ func monster_selected():
 	tardigrade_button.visible = false
 	salamander_button.visible = false
 	grid.columns = 1
-	poly1.position = Vector2(340,215)
-	poly2.position = Vector2(340,215)
+	poly1.position = Vector2(385,265)
+	poly2.position = Vector2(385,265)
 	grid_tween()
 
 func grid_tween():
@@ -100,4 +100,3 @@ func grid_tween():
 	confirm_label.visible = true
 	yep_button.visible = true
 	nope_button.visible = true
-	

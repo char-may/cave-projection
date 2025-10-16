@@ -18,11 +18,5 @@ Issues:
 Where the heck is the user exports on windows, files saved but can't find on filesystem
 
 Have pen palette come out on scene load?
-	
-If you expand palette and don't select a color it stays out while you draw
-- this might be okay? it doesn't break any functionality
 
 When making dots (clicking mouse without movement), Pen.gd doesn't draw
-
-Ideas:
-	Stamp tool - dots, hearts, smily faces, stars, eyeballs

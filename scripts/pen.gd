@@ -5,7 +5,7 @@ extends Node2D
 
 @onready var _lines: Node2D = $Line2D
 
-var width : int = 5
+var width : int = 2
 var _pressed: bool = false
 var _current_line: Line2D = null
 var line_color : Color
