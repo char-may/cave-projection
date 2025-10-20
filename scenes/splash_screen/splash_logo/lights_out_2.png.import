@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjft60yw4ftdp"
-path="res://.godot/imported/lights_out_1.png-28875f8fbf3af897a98c16341be009a2.ctex"
+uid="uid://t02y8jj1t10u"
+path="res://.godot/imported/lights_out_2.png-fa7a02d9d4720b3138eb7e1600adef5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/procreate/splash_logo/lights_out_1.png"
-dest_files=["res://.godot/imported/lights_out_1.png-28875f8fbf3af897a98c16341be009a2.ctex"]
+source_file="res://scenes/splash_screen/splash_logo/lights_out_2.png"
+dest_files=["res://.godot/imported/lights_out_2.png-fa7a02d9d4720b3138eb7e1600adef5d.ctex"]
 
 [params]
 

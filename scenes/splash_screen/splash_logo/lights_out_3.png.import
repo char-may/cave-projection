@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c42biwwt3wwpv"
-path="res://.godot/imported/lights_out_3.png-d89cad84be36eea3b07f1bd54dfccc81.ctex"
+path="res://.godot/imported/lights_out_3.png-0ca997ebeae8ac0af8408d80c68e1e78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/procreate/splash_logo/lights_out_3.png"
-dest_files=["res://.godot/imported/lights_out_3.png-d89cad84be36eea3b07f1bd54dfccc81.ctex"]
+source_file="res://scenes/splash_screen/splash_logo/lights_out_3.png"
+dest_files=["res://.godot/imported/lights_out_3.png-0ca997ebeae8ac0af8408d80c68e1e78.ctex"]
 
 [params]
 

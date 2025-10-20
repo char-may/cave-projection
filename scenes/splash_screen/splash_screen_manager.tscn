@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://do7821ibxfo4l"]
 
-[ext_resource type="Script" uid="uid://ds1hurflnoefj" path="res://scripts/splash_screen_manager.gd" id="1_e2qbx"]
-[ext_resource type="Texture2D" uid="uid://bjft60yw4ftdp" path="res://resources/procreate/splash_logo/lights_out_1.png" id="2_dpkmb"]
-[ext_resource type="Texture2D" uid="uid://t02y8jj1t10u" path="res://resources/procreate/splash_logo/lights_out_2.png" id="3_f3wds"]
-[ext_resource type="Texture2D" uid="uid://c42biwwt3wwpv" path="res://resources/procreate/splash_logo/lights_out_3.png" id="4_7px8g"]
+[ext_resource type="Script" uid="uid://ds1hurflnoefj" path="res://scenes/splash_screen/splash_screen_manager.gd" id="1_e2qbx"]
+[ext_resource type="Texture2D" uid="uid://bjft60yw4ftdp" path="res://scenes/splash_screen/splash_logo/lights_out_1.png" id="2_dpkmb"]
+[ext_resource type="Texture2D" uid="uid://t02y8jj1t10u" path="res://scenes/splash_screen/splash_logo/lights_out_2.png" id="3_f3wds"]
+[ext_resource type="Texture2D" uid="uid://c42biwwt3wwpv" path="res://scenes/splash_screen/splash_logo/lights_out_3.png" id="4_7px8g"]
 [ext_resource type="Texture2D" uid="uid://cgjgw1806afhh" path="res://resources/illustrator/splashcutout.png" id="5_f3wds"]
-[ext_resource type="PackedScene" uid="uid://ccvp4u5y1fcjd" path="res://scenes/poly_bat.tscn" id="6_7px8g"]
+[ext_resource type="PackedScene" uid="uid://ccvp4u5y1fcjd" path="res://scenes/splash_screen/poly_bat/poly_bat.tscn" id="6_7px8g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5how5"]
 animations = [{
