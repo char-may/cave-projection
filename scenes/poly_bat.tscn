@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ccvp4u5y1fcjd"]
 
-[ext_resource type="Texture2D" uid="uid://3th61nhp4ra8" path="res://resources/art/polybat.png" id="1_sc4lw"]
-[ext_resource type="Script" uid="uid://c0sk1o7m4r2ee" path="res://scenes/poly_bat.gd" id="2_82uf7"]
+[ext_resource type="Texture2D" uid="uid://3th61nhp4ra8" path="res://resources/misc_art/polybat.png" id="1_sc4lw"]
+[ext_resource type="Script" uid="uid://c0sk1o7m4r2ee" path="res://scripts/poly_bat.gd" id="2_82uf7"]
 
 [node name="PolyBat" type="Node2D"]
 
