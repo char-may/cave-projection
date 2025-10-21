@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Palette" load_steps=2 format=3 uid="uid://ireoi6w82o7i"]
+
+[ext_resource type="Script" uid="uid://dvu6vb20cod4n" path="res://screens/3_editor_screen/swatches/palettes/Palette.gd" id="1_rkpdl"]
+
+[resource]
+script = ExtResource("1_rkpdl")
+color1 = Color(0.185372, 0.481904, 0, 1)
+color2 = Color(0.188235, 0.188235, 0.490196, 1)
+color3 = Color(0.745098, 0.87451, 0.0627451, 1)
+color4 = Color(0.988235, 0.45098, 0.266667, 1)
+background = Color(0.277336, 0.000861974, 0.483485, 1)
+metadata/_custom_type_script = "uid://dvu6vb20cod4n"

@@ -1,0 +1,76 @@
+[gd_scene load_steps=48 format=3 uid="uid://baya7flibfovb"]
+
+[ext_resource type="Script" uid="uid://r2gaoqcbr0gf" path="res://screens/3_editor_screen/face_generator/face_generator.gd" id="1_q1vyb"]
+[ext_resource type="Texture2D" uid="uid://drdmy8ohfmqyu" path="res://screens/3_editor_screen/face_generator/face_parts/Eye1.png" id="2_vvk83"]
+[ext_resource type="Texture2D" uid="uid://cjm3vb16pxxrx" path="res://screens/3_editor_screen/face_generator/face_parts/Eye2.png" id="3_v07fr"]
+[ext_resource type="Texture2D" uid="uid://nvhfqr44cj3g" path="res://screens/3_editor_screen/face_generator/face_parts/Eye3.png" id="4_w00jv"]
+[ext_resource type="Texture2D" uid="uid://cu4cfs6r8ggga" path="res://screens/3_editor_screen/face_generator/face_parts/Eye4.png" id="5_b8e7t"]
+[ext_resource type="Texture2D" uid="uid://bv3x2uw2gk2gq" path="res://screens/3_editor_screen/face_generator/face_parts/Eye5.png" id="6_jt6in"]
+[ext_resource type="Texture2D" uid="uid://civ4p0w6yhybf" path="res://screens/3_editor_screen/face_generator/face_parts/Eye6.png" id="7_hs85i"]
+[ext_resource type="Texture2D" uid="uid://bc48tltox73db" path="res://screens/3_editor_screen/face_generator/face_parts/Eye7.png" id="8_6elnc"]
+[ext_resource type="Texture2D" uid="uid://c4w323vdp0kyi" path="res://screens/3_editor_screen/face_generator/face_parts/Eye8.png" id="9_61k1n"]
+[ext_resource type="Texture2D" uid="uid://bw77t2ducfxwy" path="res://screens/3_editor_screen/face_generator/face_parts/Eye9.png" id="10_sa5y5"]
+[ext_resource type="Texture2D" uid="uid://c46pchdt3sxb8" path="res://screens/3_editor_screen/face_generator/face_parts/Eye10.png" id="11_0k44r"]
+[ext_resource type="Texture2D" uid="uid://sgfqnmoyefk6" path="res://screens/3_editor_screen/face_generator/face_parts/Eye11.png" id="12_uxy66"]
+[ext_resource type="Texture2D" uid="uid://cc8mvjyhoxe11" path="res://screens/3_editor_screen/face_generator/face_parts/Eye12.png" id="13_3u4vu"]
+[ext_resource type="Texture2D" uid="uid://b6idu4ssh8wpe" path="res://screens/3_editor_screen/face_generator/face_parts/Eye13.png" id="14_fuiwj"]
+[ext_resource type="Texture2D" uid="uid://vshi6swwbsqt" path="res://screens/3_editor_screen/face_generator/face_parts/Eye14.png" id="15_48n6e"]
+[ext_resource type="Texture2D" uid="uid://cjf7nye48x5e3" path="res://screens/3_editor_screen/face_generator/face_parts/Eye15.png" id="16_j7yw1"]
+[ext_resource type="Texture2D" uid="uid://dnhifvy275j5o" path="res://screens/3_editor_screen/face_generator/face_parts/Eye16.png" id="17_iav20"]
+[ext_resource type="Texture2D" uid="uid://ulu3sro741rx" path="res://screens/3_editor_screen/face_generator/face_parts/Eye17.png" id="18_2mqfm"]
+[ext_resource type="Texture2D" uid="uid://bx66bjak1ff7o" path="res://screens/3_editor_screen/face_generator/face_parts/Eye18.png" id="19_c23gw"]
+[ext_resource type="Texture2D" uid="uid://cuabonc1boikl" path="res://screens/3_editor_screen/face_generator/face_parts/Eye19.png" id="20_c3860"]
+[ext_resource type="Texture2D" uid="uid://cq7gn2jbbrbeo" path="res://screens/3_editor_screen/face_generator/face_parts/Eye20.png" id="21_bjpf5"]
+[ext_resource type="Texture2D" uid="uid://ck0cd61al06mo" path="res://screens/3_editor_screen/face_generator/face_parts/Eye21.png" id="22_x5hnl"]
+[ext_resource type="Texture2D" uid="uid://dwyjfd68xo2dv" path="res://screens/3_editor_screen/face_generator/face_parts/Eye22.png" id="23_l47u8"]
+[ext_resource type="Texture2D" uid="uid://buar5g20b32co" path="res://screens/3_editor_screen/face_generator/face_parts/Nose1.png" id="24_0k44r"]
+[ext_resource type="Texture2D" uid="uid://wrmn5yyo1b81" path="res://screens/3_editor_screen/face_generator/face_parts/Nose2.png" id="25_uxy66"]
+[ext_resource type="Texture2D" uid="uid://c0kks7g8lidy5" path="res://screens/3_editor_screen/face_generator/face_parts/Nose3.png" id="26_3u4vu"]
+[ext_resource type="Texture2D" uid="uid://bc7lxbeavun1m" path="res://screens/3_editor_screen/face_generator/face_parts/Nose4.png" id="27_fuiwj"]
+[ext_resource type="Texture2D" uid="uid://gr0q76j24kjn" path="res://screens/3_editor_screen/face_generator/face_parts/Nose5.png" id="28_48n6e"]
+[ext_resource type="Texture2D" uid="uid://da5g7dt21g1er" path="res://screens/3_editor_screen/face_generator/face_parts/Nose6.png" id="29_j7yw1"]
+[ext_resource type="Texture2D" uid="uid://dokfgrfaxoklg" path="res://screens/3_editor_screen/face_generator/face_parts/Nose7.png" id="30_iav20"]
+[ext_resource type="Texture2D" uid="uid://bta7smuuv3bcv" path="res://screens/3_editor_screen/face_generator/face_parts/Nose8.png" id="31_2mqfm"]
+[ext_resource type="Texture2D" uid="uid://nq4io8kn1enl" path="res://screens/3_editor_screen/face_generator/face_parts/Nose9.png" id="32_c23gw"]
+[ext_resource type="Texture2D" uid="uid://duetqt63a4w70" path="res://screens/3_editor_screen/face_generator/face_parts/Mouth1.png" id="33_dga7v"]
+[ext_resource type="Texture2D" uid="uid://ktox3br1m2wg" path="res://screens/3_editor_screen/face_generator/face_parts/Mouth2.png" id="34_i8hud"]
+[ext_resource type="Texture2D" uid="uid://mx3h3hu52s71" path="res://screens/3_editor_screen/face_generator/face_parts/Mouth3.png" id="35_ebily"]
+[ext_resource type="Texture2D" uid="uid://xy0mm8hdihpb" path="res://screens/3_editor_screen/face_generator/face_parts/Mouth4.png" id="36_43c17"]
+[ext_resource type="Texture2D" uid="uid://dloj80g4b5bif" path="res://screens/3_editor_screen/face_generator/face_parts/Mouth5.png" id="37_84uct"]
+[ext_resource type="Texture2D" uid="uid://bwoadt3kgvr2" path="res://screens/3_editor_screen/face_generator/face_parts/Mouth6.png" id="38_dpy2o"]
+[ext_resource type="Texture2D" uid="uid://dw8t1oshtmrp4" path="res://screens/3_editor_screen/face_generator/face_parts/Mouth7.png" id="39_be8bq"]
+[ext_resource type="Texture2D" uid="uid://crym5u5g8ect2" path="res://screens/3_editor_screen/face_generator/face_parts/Mouth8.png" id="40_k21tt"]
+[ext_resource type="Texture2D" uid="uid://b12qit71wr8qv" path="res://screens/3_editor_screen/face_generator/face_parts/Mouth9.png" id="41_wu6oc"]
+[ext_resource type="Texture2D" uid="uid://bpgivey8ehg7h" path="res://screens/3_editor_screen/face_generator/face_parts/Mouth10.png" id="42_t7duo"]
+[ext_resource type="Texture2D" uid="uid://bg6ojrbteqt2f" path="res://screens/3_editor_screen/face_generator/face_parts/Mouth11.png" id="43_yra4x"]
+[ext_resource type="Texture2D" uid="uid://bhsna8ah14r8u" path="res://screens/3_editor_screen/face_generator/face_parts/Mouth12.png" id="44_3w7yq"]
+[ext_resource type="Texture2D" uid="uid://c80bkau3s6hqv" path="res://screens/3_editor_screen/face_generator/face_parts/Mouth13.png" id="45_bl41g"]
+[ext_resource type="Texture2D" uid="uid://bca5nw6u2unvm" path="res://screens/3_editor_screen/face_generator/face_parts/Mouth14.png" id="46_ge0ud"]
+[ext_resource type="Texture2D" uid="uid://fk2ge4blw21y" path="res://screens/3_editor_screen/face_generator/face_parts/Mouth15.png" id="47_rvpwg"]
+
+[node name="FaceGenerator" type="Node2D" node_paths=PackedStringArray("left_eye", "right_eye", "nose", "mouth")]
+script = ExtResource("1_q1vyb")
+eye_textures = Array[Texture2D]([ExtResource("2_vvk83"), ExtResource("3_v07fr"), ExtResource("4_w00jv"), ExtResource("5_b8e7t"), ExtResource("6_jt6in"), ExtResource("7_hs85i"), ExtResource("8_6elnc"), ExtResource("9_61k1n"), ExtResource("10_sa5y5"), ExtResource("11_0k44r"), ExtResource("12_uxy66"), ExtResource("13_3u4vu"), ExtResource("14_fuiwj"), ExtResource("15_48n6e"), ExtResource("16_j7yw1"), ExtResource("17_iav20"), ExtResource("18_2mqfm"), ExtResource("19_c23gw"), ExtResource("20_c3860"), ExtResource("21_bjpf5"), ExtResource("22_x5hnl"), ExtResource("23_l47u8")])
+nose_textures = Array[Texture2D]([ExtResource("24_0k44r"), ExtResource("25_uxy66"), ExtResource("26_3u4vu"), ExtResource("27_fuiwj"), ExtResource("28_48n6e"), ExtResource("29_j7yw1"), ExtResource("30_iav20"), ExtResource("31_2mqfm"), ExtResource("32_c23gw")])
+mouth_textures = Array[Texture2D]([ExtResource("33_dga7v"), ExtResource("34_i8hud"), ExtResource("35_ebily"), ExtResource("36_43c17"), ExtResource("37_84uct"), ExtResource("38_dpy2o"), ExtResource("39_be8bq"), ExtResource("40_k21tt"), ExtResource("41_wu6oc"), ExtResource("42_t7duo"), ExtResource("43_yra4x"), ExtResource("44_3w7yq"), ExtResource("45_bl41g"), ExtResource("46_ge0ud"), ExtResource("47_rvpwg")])
+left_eye = NodePath("LeftEye")
+right_eye = NodePath("RightEye")
+nose = NodePath("Nose")
+mouth = NodePath("Mouth")
+
+[node name="LeftEye" type="Sprite2D" parent="."]
+centered = false
+
+[node name="RightEye" type="Sprite2D" parent="."]
+position = Vector2(190, 0)
+centered = false
+
+[node name="Mouth" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.5411765, 0.74509805, 1)
+position = Vector2(30, 190)
+centered = false
+
+[node name="Nose" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.4745098, 0.3647059, 1)
+position = Vector2(125, 100)
+centered = false

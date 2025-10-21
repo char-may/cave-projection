@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0th37sj1iex5"]
+
+[ext_resource type="PackedScene" uid="uid://bibgvxgs8mtvv" path="res://screens/3_editor_screen/tools/crayon/crayon.tscn" id="1_7k3nc"]
+[ext_resource type="PackedScene" uid="uid://dph6j3f84v3jn" path="res://screens/3_editor_screen/tools/paintbrush/paintbrush.tscn" id="2_41ahv"]
+[ext_resource type="PackedScene" uid="uid://eaolgqxnb08" path="res://screens/3_editor_screen/tools/eraser/eraser.tscn" id="3_vfx3x"]
+
+
+[node name="EditorUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 600.0
+offset_right = 10.0
+offset_bottom = 600.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_vertical_guides_ = [137.0]
+
+[node name="Crayon" parent="." instance=ExtResource("1_7k3nc")]
+position = Vector2(0, 20)
+
+[node name="Paintbrush" parent="." instance=ExtResource("2_41ahv")]
+position = Vector2(0, 143)
+
+[node name="Eraser" parent="." instance=ExtResource("3_vfx3x")]
+position = Vector2(0, 320)
