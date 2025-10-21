@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dp1joi70rlqgt" path="res://pete.png" id="1_waooh"]
 [ext_resource type="Script" uid="uid://b26mnkmlfkueb" path="res://screens/3_editor_screen/face_generator/generate_face_button.gd" id="2_6gjhm"]
-[ext_resource type="Script" uid="uid://bas0dj70l2tum" path="res://screens/remove_face_button.gd" id="3_6gjhm"]
+[ext_resource type="Script" uid="uid://bas0dj70l2tum" path="res://screens/3_editor_screen/face_generator/remove_face_button.gd" id="3_6gjhm"]
 
 
 [node name="RandomFaceUI" type="Node2D"]

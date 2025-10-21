@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://cgjgw1806afhh" path="res://screens/1_splash_screen/splashcutout.png" id="5_f3wds"]
 [ext_resource type="PackedScene" uid="uid://ccvp4u5y1fcjd" path="res://screens/1_splash_screen/poly_bat/poly_bat.tscn" id="6_7px8g"]
 
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_5how5"]
 animations = [{
 "frames": [{

@@ -13,7 +13,7 @@ var export_count = 0
 
 func _ready():
 	# Add editor UI to game
-	Global.game_controller.change_gui_scene("res://scenes/editor_ui.tscn", true, false)
+	Global.game_controller.change_gui_scene("res://screens/3_editor_screen/editor_ui.tscn", true, false)
 	
 	background = get_node("Background")
 	
@@ -53,8 +53,8 @@ func screenshot():
 	assert(load_err == OK, "Failed to load image at: ")
 	Global.finished_atlus = ImageTexture.create_from_image(image)
 	
-	Global.game_controller.change_2d_scene("res://scenes/polygon_bat.tscn", true, false)
-	Global.game_controller.change_gui_scene("res://scenes/empty_gui.tscn", true, false)
+	Global.game_controller.change_2d_scene("res://screens/4_finished_screen/polygon_bat.tscn", true, false)
+	Global.game_controller.change_gui_scene("res://screens/empty_gui.tscn", true, false)
 
 func on_set_background_color(color) -> void:
 	background = get_node("Background")
