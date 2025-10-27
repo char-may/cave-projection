@@ -11,6 +11,7 @@ extends Node2D
 
 func _process(_delta):
 	if Input.is_action_just_pressed("generate_face"):
+		print("event triggered")
 		#Set random eyes
 		var random_eye_index = randi_range(0, eye_textures.size() - 1)
 		left_eye.texture = eye_textures[random_eye_index]

@@ -16,6 +16,7 @@ func _ready():
 	Global.game_controller.change_gui_scene("res://screens/3_editor_screen/editor_ui.tscn", true, false)
 	
 	background = get_node("Background")
+	background.color = Global.background_color
 	
 	# Create export directory
 	var dir = DirAccess.open("user://")

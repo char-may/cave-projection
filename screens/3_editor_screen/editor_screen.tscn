@@ -21,7 +21,7 @@ color = Color(0.184314, 0.345098, 0.619608, 1)
 [node name="Pen" parent="." instance=ExtResource("3_uu0r8")]
 
 [node name="Bat Mask" type="TextureRect" parent="."]
-modulate = Color(0.121569, 0.152941, 0.341176, 1)
+modulate = Color(0.20784314, 0.050980393, 0.34509805, 1)
 custom_minimum_size = Vector2(1024, 1024)
 offset_right = 1921.22
 offset_bottom = 1080.0
@@ -35,8 +35,8 @@ position = Vector2(830, 550)
 scale = Vector2(0.7, 0.7)
 
 [node name="RandomFaceUI" parent="." instance=ExtResource("6_ecjwu")]
-position = Vector2(784.99994, 181.99998)
-scale = Vector2(0.7, 0.7)
+visible = false
+position = Vector2(381, 294)
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

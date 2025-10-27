@@ -10,12 +10,28 @@ class_name ColorSwatchSelector extends GridContainer
 @export var salamander_palette : Resource
 @export var monster_palette : Resource
 
+@export var swatch_1 : ColorButton
+@export var swatch_2 : ColorButton
+@export var swatch_3 : ColorButton
+@export var swatch_4 : ColorButton
+@export var swatch_5 : ColorButton
+@export var swatch_6 : ColorButton
+
 var active_palette : Palette
 var expanded : bool = false
 
 func _ready() -> void:
 	set_active_palette()
+	# Set swatches to palette here!
 	if active_palette:
+		swatch_1.color = active_palette.color1
+		swatch_2.color = active_palette.color2
+		swatch_3.color = active_palette.color3
+		swatch_4.color = active_palette.color4
+		swatch_5.color = Color.WHITE
+		swatch_6.color = Color.BLACK
+		
+		# Set background color
 		var b : Color = active_palette.background
 		Global.background_color = b
 	

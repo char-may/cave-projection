@@ -1,25 +1,53 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhj8uojynvwvp"]
+[gd_scene load_steps=5 format=3 uid="uid://bhj8uojynvwvp"]
 
-[ext_resource type="Texture2D" uid="uid://dp1joi70rlqgt" path="res://pete.png" id="1_waooh"]
+[ext_resource type="Texture2D" uid="uid://c61sp40j7mgnh" path="res://screens/3_editor_screen/face_generator/face_button/button_background.png" id="1_mxg2y"]
 [ext_resource type="Script" uid="uid://b26mnkmlfkueb" path="res://screens/3_editor_screen/face_generator/generate_face_button.gd" id="2_6gjhm"]
 [ext_resource type="Script" uid="uid://bas0dj70l2tum" path="res://screens/3_editor_screen/face_generator/remove_face_button.gd" id="3_6gjhm"]
-
+[ext_resource type="FontFile" uid="uid://dfl6qybu25wok" path="res://fonts/Chubby Fun Regular.ttf" id="6_f451q"]
 
 [node name="RandomFaceUI" type="Node2D"]
 
 [node name="GenerateFaceButton" type="TextureButton" parent="."]
+self_modulate = Color(0, 0.6062226, 0.6070126, 1)
 offset_right = 40.0
 offset_bottom = 40.0
-texture_normal = ExtResource("1_waooh")
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("1_mxg2y")
 script = ExtResource("2_6gjhm")
 
+[node name="RandomFace" type="Label" parent="GenerateFaceButton"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 65.0
+offset_right = 304.0
+offset_bottom = 278.0
+theme_override_fonts/font = ExtResource("6_f451q")
+theme_override_font_sizes/font_size = 58
+text = "Random
+Face!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="RemoveFaceButton" type="TextureButton" parent="."]
-self_modulate = Color(0.44975764, 0.016982261, 0.1897611, 1)
-offset_left = 250.0
-offset_right = 467.0
-offset_bottom = 212.0
-texture_normal = ExtResource("1_waooh")
+self_modulate = Color(0, 0.60784316, 0.60784316, 1)
+offset_left = 150.0
+offset_right = 483.0
+offset_bottom = 334.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("1_mxg2y")
 script = ExtResource("3_6gjhm")
+
+[node name="Off" type="Label" parent="RemoveFaceButton"]
+layout_mode = 0
+offset_left = 25.000008
+offset_top = 65.0
+offset_right = 299.0
+offset_bottom = 278.0
+theme_override_fonts/font = ExtResource("6_f451q")
+theme_override_font_sizes/font_size = 58
+text = "Off"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="GenerateFaceButton" to="GenerateFaceButton" method="_on_pressed"]
 [connection signal="pressed" from="RemoveFaceButton" to="RemoveFaceButton" method="_on_pressed"]
