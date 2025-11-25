@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhj8uojynvwvp"]
+[gd_scene load_steps=6 format=3 uid="uid://bhj8uojynvwvp"]
 
 [ext_resource type="Texture2D" uid="uid://c61sp40j7mgnh" path="res://screens/3_editor_screen/face_generator/face_button/button_background.png" id="1_mxg2y"]
 [ext_resource type="Script" uid="uid://b26mnkmlfkueb" path="res://screens/3_editor_screen/face_generator/generate_face_button.gd" id="2_6gjhm"]
 [ext_resource type="Script" uid="uid://bas0dj70l2tum" path="res://screens/3_editor_screen/face_generator/remove_face_button.gd" id="3_6gjhm"]
+[ext_resource type="Texture2D" uid="uid://drdmy8ohfmqyu" path="res://screens/3_editor_screen/face_generator/face_parts/eye_1.png" id="3_mxg2y"]
 [ext_resource type="FontFile" uid="uid://dfl6qybu25wok" path="res://fonts/Chubby Fun Regular.ttf" id="6_f451q"]
 
 [node name="RandomFaceUI" type="Node2D"]
@@ -15,18 +16,15 @@ scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("1_mxg2y")
 script = ExtResource("2_6gjhm")
 
-[node name="RandomFace" type="Label" parent="GenerateFaceButton"]
-layout_mode = 0
-offset_left = 30.0
-offset_top = 65.0
-offset_right = 304.0
-offset_bottom = 278.0
-theme_override_fonts/font = ExtResource("6_f451q")
-theme_override_font_sizes/font_size = 58
-text = "Random
-Face!"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Sprite2D" type="Sprite2D" parent="GenerateFaceButton"]
+position = Vector2(0, 50)
+texture = ExtResource("3_mxg2y")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="GenerateFaceButton"]
+position = Vector2(140, 50)
+texture = ExtResource("3_mxg2y")
+centered = false
 
 [node name="RemoveFaceButton" type="TextureButton" parent="."]
 self_modulate = Color(0, 0.60784316, 0.60784316, 1)
