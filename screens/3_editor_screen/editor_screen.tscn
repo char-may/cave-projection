@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bs4k256ad277m"]
+[gd_scene load_steps=6 format=3 uid="uid://bs4k256ad277m"]
 
 [ext_resource type="Script" uid="uid://b471rqmp7x52o" path="res://screens/3_editor_screen/editor.gd" id="1_31cdr"]
 [ext_resource type="PackedScene" uid="uid://be5j41pobgpmj" path="res://screens/4_finished_screen/polygon_bat.tscn" id="2_vxveq"]
 [ext_resource type="PackedScene" uid="uid://c7uvpsnt6urh7" path="res://screens/3_editor_screen/pen.tscn" id="3_uu0r8"]
 [ext_resource type="Texture2D" uid="uid://ck8e311k81e2c" path="res://screens/3_editor_screen/bat/even_larger_bat_mask.png" id="4_qshlb"]
 [ext_resource type="PackedScene" uid="uid://baya7flibfovb" path="res://screens/3_editor_screen/face_generator/face_generator.tscn" id="5_kvpue"]
-[ext_resource type="PackedScene" uid="uid://bhj8uojynvwvp" path="res://screens/3_editor_screen/face_generator/random_face_ui.tscn" id="6_ecjwu"]
 
 [node name="Editor" type="Node2D" node_paths=PackedStringArray("mask")]
 script = ExtResource("1_31cdr")
@@ -21,7 +20,7 @@ color = Color(0.184314, 0.345098, 0.619608, 1)
 [node name="Pen" parent="." instance=ExtResource("3_uu0r8")]
 
 [node name="Bat Mask" type="TextureRect" parent="."]
-modulate = Color(0.20784314, 0.050980393, 0.34509805, 1)
+modulate = Color(0, 0, 0.2, 1)
 custom_minimum_size = Vector2(1024, 1024)
 offset_right = 1921.22
 offset_bottom = 1080.0
@@ -33,10 +32,6 @@ stretch_mode = 3
 [node name="FaceGenerator" parent="." instance=ExtResource("5_kvpue")]
 position = Vector2(830, 550)
 scale = Vector2(0.7, 0.7)
-
-[node name="RandomFaceUI" parent="." instance=ExtResource("6_ecjwu")]
-visible = false
-position = Vector2(381, 294)
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

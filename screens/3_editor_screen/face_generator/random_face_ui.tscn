@@ -1,51 +1,75 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhj8uojynvwvp"]
+[gd_scene load_steps=10 format=3 uid="uid://bhj8uojynvwvp"]
 
-[ext_resource type="Texture2D" uid="uid://c61sp40j7mgnh" path="res://screens/3_editor_screen/face_generator/face_button/button_background.png" id="1_mxg2y"]
+[ext_resource type="Script" uid="uid://wev12iel2ij1" path="res://screens/3_editor_screen/face_generator/random_face_ui.gd" id="1_0yh5e"]
+[ext_resource type="Texture2D" uid="uid://dnlnpea2spk5v" path="res://screens/3_editor_screen/face_generator/face_button/button_circle.png" id="1_f451q"]
 [ext_resource type="Script" uid="uid://b26mnkmlfkueb" path="res://screens/3_editor_screen/face_generator/generate_face_button.gd" id="2_6gjhm"]
 [ext_resource type="Script" uid="uid://bas0dj70l2tum" path="res://screens/3_editor_screen/face_generator/remove_face_button.gd" id="3_6gjhm"]
+[ext_resource type="Texture2D" uid="uid://dwyjfd68xo2dv" path="res://screens/3_editor_screen/face_generator/face_parts/eye_22.png" id="3_mddjk"]
 [ext_resource type="Texture2D" uid="uid://drdmy8ohfmqyu" path="res://screens/3_editor_screen/face_generator/face_parts/eye_1.png" id="3_mxg2y"]
 [ext_resource type="FontFile" uid="uid://dfl6qybu25wok" path="res://fonts/Chubby Fun Regular.ttf" id="6_f451q"]
+[ext_resource type="Texture2D" uid="uid://dokfgrfaxoklg" path="res://screens/3_editor_screen/face_generator/face_parts/nose_7.png" id="6_qvtc0"]
+[ext_resource type="Texture2D" uid="uid://c80bkau3s6hqv" path="res://screens/3_editor_screen/face_generator/face_parts/mouth_13.png" id="7_v05um"]
 
 [node name="RandomFaceUI" type="Node2D"]
+script = ExtResource("1_0yh5e")
+open_eyes = ExtResource("3_mxg2y")
+closed_eyes = ExtResource("3_mddjk")
 
 [node name="GenerateFaceButton" type="TextureButton" parent="."]
-self_modulate = Color(0, 0.6062226, 0.6070126, 1)
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.4, 0.4)
-texture_normal = ExtResource("1_mxg2y")
+self_modulate = Color(0.8509804, 0.17254902, 0.53333336, 1)
+offset_left = 150.0
+offset_right = 414.0
+offset_bottom = 265.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("1_f451q")
 script = ExtResource("2_6gjhm")
 
-[node name="Sprite2D" type="Sprite2D" parent="GenerateFaceButton"]
+[node name="LeftEye" type="Sprite2D" parent="GenerateFaceButton"]
 position = Vector2(0, 50)
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_mxg2y")
+centered = false
+flip_h = true
+
+[node name="RightEye" type="Sprite2D" parent="GenerateFaceButton"]
+position = Vector2(130, 50)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_mxg2y")
+centered = false
+flip_h = true
+
+[node name="Nose" type="Sprite2D" parent="GenerateFaceButton"]
+position = Vector2(97, 100)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_qvtc0")
 centered = false
 
-[node name="Sprite2D2" type="Sprite2D" parent="GenerateFaceButton"]
-position = Vector2(140, 50)
-texture = ExtResource("3_mxg2y")
-centered = false
+[node name="Mouth" type="Sprite2D" parent="GenerateFaceButton"]
+self_modulate = Color(1, 0.40392157, 1, 1)
+position = Vector2(130, 200)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_v05um")
 
 [node name="RemoveFaceButton" type="TextureButton" parent="."]
-self_modulate = Color(0, 0.60784316, 0.60784316, 1)
-offset_left = 150.0
-offset_right = 483.0
-offset_bottom = 334.0
-scale = Vector2(0.4, 0.4)
-texture_normal = ExtResource("1_mxg2y")
+self_modulate = Color(0.2784314, 0.12941177, 0.5803922, 1)
+offset_left = 74.0
+offset_top = -52.0
+offset_right = 338.0
+offset_bottom = 213.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("1_f451q")
 script = ExtResource("3_6gjhm")
 
-[node name="Off" type="Label" parent="RemoveFaceButton"]
+[node name="Label" type="Label" parent="RemoveFaceButton"]
 layout_mode = 0
-offset_left = 25.000008
-offset_top = 65.0
-offset_right = 299.0
-offset_bottom = 278.0
+offset_left = 30.0
+offset_top = 100.0
+offset_right = 227.0
+offset_bottom = 147.0
 theme_override_fonts/font = ExtResource("6_f451q")
-theme_override_font_sizes/font_size = 58
+theme_override_font_sizes/font_size = 59
 text = "Off"
 horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="pressed" from="GenerateFaceButton" to="GenerateFaceButton" method="_on_pressed"]
 [connection signal="pressed" from="RemoveFaceButton" to="RemoveFaceButton" method="_on_pressed"]
