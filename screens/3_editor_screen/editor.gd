@@ -54,8 +54,9 @@ func screenshot():
 	assert(load_err == OK, "Failed to load image at: ")
 	Global.finished_atlus = ImageTexture.create_from_image(image)
 	
-	Global.game_controller.change_2d_scene("res://screens/4_finished_screen/polygon_bat.tscn", true, false)
+	Global.game_controller.change_2d_scene("res://screens/5_cave_screen/cave_screen.tscn", true, false)
 	Global.game_controller.change_gui_scene("res://screens/empty_gui.tscn", true, false)
+	GlobalSignal.new_bat_created.emit()
 
 func on_set_background_color(color) -> void:
 	background = get_node("Background")
