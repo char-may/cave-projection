@@ -97,6 +97,12 @@ pause_time = 1.5
 out_time = 0.2
 splash_screen = NodePath("LightsOut")
 
+[node name="Cutout2" type="Sprite2D" parent="."]
+self_modulate = Color(0.23137255, 0.13725491, 0.5411765, 1)
+position = Vector2(-594, -3)
+texture = ExtResource("5_f3wds")
+centered = false
+
 [node name="LightsOut" type="AnimatedSprite2D" parent="."]
 position = Vector2(960, 540)
 scale = Vector2(0.5, 0.5)

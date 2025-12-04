@@ -19,6 +19,12 @@
 wait_time = 0.5
 autostart = true
 
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(652, 332)
+color = Color(0.23137255, 0.13725491, 0.5411765, 1)
+polygon = PackedVector2Array(-793.7262, -624.63165, -834.79126, 957.1277, 1673.9375, 897.4975, 1759.3481, -480.1326)
+uv = PackedVector2Array(-197, -82, -210.77203, 451.76404, 807.443, 454.42603, 783.485, -99.27001)
+
 [node name="inner" type="Polygon2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.545098)
 color = Color(0.176068, 0.0257348, 0.293074, 1)
