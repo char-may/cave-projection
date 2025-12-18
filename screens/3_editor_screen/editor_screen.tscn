@@ -26,15 +26,21 @@ custom_minimum_size = Vector2(1024, 1024)
 offset_right = 1921.22
 offset_bottom = 1080.0
 pivot_offset = Vector2(912, 1560)
-texture = ExtResource("4_qshlb")
+texture = ExtResource("3_qi21q")
 expand_mode = 3
 stretch_mode = 3
 
-[node name="FaceGenerator" parent="." instance=ExtResource("5_kvpue")]
+[node name="BatFaceGen" parent="." instance=ExtResource("5_kvpue")]
+visible = false
 position = Vector2(830, 550)
 scale = Vector2(0.7, 0.7)
 
+[node name="TardigradeFaceGen" parent="." instance=ExtResource("5_kvpue")]
+position = Vector2(1198, 310)
+rotation = -0.38920844
+
 [node name="TardigradeOverlay" type="TextureRect" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("6_31cdr")

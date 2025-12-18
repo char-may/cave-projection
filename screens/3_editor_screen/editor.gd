@@ -5,6 +5,9 @@ class_name Editor extends Node2D
 
 @onready var creature_mask : TextureRect = $CreatureMask
 @onready var tardigrade_overlay : TextureRect = $TardigradeOverlay
+@onready var bat_face_gen : Node2D = $BatFaceGen
+@onready var tardigrade_face_gen : Node2D = $TardigradeFaceGen
+
 @export var bat_mask : CompressedTexture2D
 @export var tardigrade_mask : CompressedTexture2D
 
@@ -26,11 +29,15 @@ func _ready():
 		Global.CreatureType.BAT:
 			#Do bat stuff
 			creature_mask.texture = bat_mask
+			bat_face_gen.visible = true
 			tardigrade_overlay.visible = false
+			tardigrade_face_gen.visible = false
 		Global.CreatureType.TARDIGRADE:
 			#Do tardigrade stuff
 			creature_mask.texture = tardigrade_mask
+			tardigrade_face_gen.visible = true
 			tardigrade_overlay.visible = true
+			bat_face_gen.visible = false
 		Global.CreatureType.SALAMANDER:
 			creature_mask.texture = bat_mask
 			tardigrade_overlay.visible = false

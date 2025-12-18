@@ -9,6 +9,22 @@ extends Node2D
 @export var nose : Sprite2D
 @export var mouth : Sprite2D
 
+func _ready() -> void:
+	match Global.creature_editing:
+		Global.CreatureType.BAT:
+			left_eye.visible = true
+			right_eye.visible = true
+			nose.visible = true
+			mouth.visible = true
+		Global.CreatureType.TARDIGRADE:
+			left_eye.visible = true
+			right_eye.visible = false
+			nose.visible = false
+			mouth.visible = false
+		Global.CreatureType.SALAMANDER:
+			pass
+		Global.CreatureType.MONSTER:
+			pass
 func _process(_delta):
 	if Input.is_action_just_pressed("generate_face"):
 		print("event triggered")
