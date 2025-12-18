@@ -4,6 +4,7 @@ class_name Editor extends Node2D
 # Exports drawings, loads scene ui and handles transitions
 
 @onready var creature_mask : TextureRect = $CreatureMask
+@onready var tardigrade_overlay : TextureRect = $TardigradeOverlay
 @export var bat_mask : CompressedTexture2D
 @export var tardigrade_mask : CompressedTexture2D
 
@@ -25,15 +26,18 @@ func _ready():
 		Global.CreatureType.BAT:
 			#Do bat stuff
 			creature_mask.texture = bat_mask
+			tardigrade_overlay.visible = false
 		Global.CreatureType.TARDIGRADE:
 			#Do tardigrade stuff
 			creature_mask.texture = tardigrade_mask
+			tardigrade_overlay.visible = true
 		Global.CreatureType.SALAMANDER:
-			pass
-			#Do Salamander stuff
+			creature_mask.texture = bat_mask
+			tardigrade_overlay.visible = false
 		Global.CreatureType.MONSTER:
-			pass
-			#Do Monster Stuff
+			creature_mask.texture = bat_mask
+			tardigrade_overlay.visible = false
+
 	# Create export directory
 	var dir = DirAccess.open("user://")
 	dir.make_dir("exports")

@@ -31,7 +31,7 @@ position = Vector2(0, 705)
 position = Vector2(0, 875)
 
 [node name="TardigradeUI" type="Node2D" parent="."]
-position = Vector2(0, -575)
+position = Vector2(0, -550)
 
 [node name="Crayon" parent="TardigradeUI" instance=ExtResource("1_7k3nc")]
 position = Vector2(0, 600)
