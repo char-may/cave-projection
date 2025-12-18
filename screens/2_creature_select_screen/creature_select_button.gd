@@ -56,6 +56,7 @@ func _on_pressed() -> void:
 func bat_selected():
 	Global.creature_editing = Global.CreatureType.BAT
 	select_label.visible = false
+	confirm_label.text = "Choose Bat?"
 	tardigrade_button.visible = false
 	salamander_button.visible = false
 	monster_button.visible = false
@@ -67,6 +68,7 @@ func bat_selected():
 func tardigrade_selected():
 	Global.creature_editing = Global.CreatureType.TARDIGRADE
 	select_label.visible = false
+	confirm_label.text = "Choose Tardigrade?"
 	bat_button.visible = false
 	salamander_button.visible = false
 	monster_button.visible = false
@@ -78,6 +80,7 @@ func tardigrade_selected():
 func salamander_selected():
 	Global.creature_editing = Global.CreatureType.SALAMANDER
 	select_label.visible = false
+	confirm_label.text = "Choose Salamander?"
 	bat_button.visible = false
 	tardigrade_button.visible = false
 	monster_button.visible = false
@@ -89,6 +92,7 @@ func salamander_selected():
 func monster_selected():
 	Global.creature_editing = Global.CreatureType.MONSTER
 	select_label.visible = false
+	confirm_label.text = "Choose Monster?"
 	bat_button.visible = false
 	tardigrade_button.visible = false
 	salamander_button.visible = false
