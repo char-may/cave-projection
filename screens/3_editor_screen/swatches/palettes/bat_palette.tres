@@ -5,8 +5,8 @@
 [resource]
 script = ExtResource("1_3buuu")
 color1 = Color(0.85098, 0.172549, 0.533333, 1)
-color2 = Color(1, 1, 0, 1)
-color3 = Color(0.39607844, 0.8745098, 0.0627451, 1)
-color4 = Color(0.988235, 0.45098, 0.266667, 1)
+color2 = Color(1, 1, 0.29803923, 1)
+color3 = Color(0.03137255, 0.5568628, 0.8156863, 1)
+color4 = Color(0.98462945, 0.58192235, 0.22538164, 1)
 background = Color(0.2784314, 0.12941177, 0.5803922, 1)
 metadata/_custom_type_script = "uid://dvu6vb20cod4n"
