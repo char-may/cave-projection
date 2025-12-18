@@ -1,0 +1,82 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0n25apmfcdrw"]
+
+[ext_resource type="Texture2D" uid="uid://ydb4urrbr6yt" path="res://screens/4_finished_screen/tardigrade_atlas_ref.png" id="1_22ttg"]
+
+[node name="AnimatedTardigrade" type="Node2D"]
+
+[node name="CenterPoint" type="Node2D" parent="."]
+
+[node name="Polygons" type="Node2D" parent="CenterPoint"]
+
+[node name="Body" type="Polygon2D" parent="CenterPoint/Polygons"]
+texture = ExtResource("1_22ttg")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(385.4353, 910.1806, 402.3695, 955.3385, 382.35635, 963.0359, 350.54056, 912.2333, 303.84793, 946.6159, 278.19003, 927.1159, 347.46637, 873.74744, 331.0453, 836.2869, 335.6644, 768.5521, 353.62494, 699.78894, 443.94214, 502.22614, 491.6643, 426.7921, 594.8091, 344.17368, 722.58545, 292.34473, 840.09863, 276.43683, 974.0313, 288.7527, 1057.163, 306.71323, 1119.255, 326.72638, 1119.255, 286.1869, 1168.5182, 244.62111, 1228.0446, 211.26584, 1293.7235, 200.48969, 1360.9473, 214.8581, 1399.9473, 248.21338, 1427.6577, 281.56863, 1438.9473, 299.52917, 1457.9341, 284.13443, 1478.9736, 280.54233, 1499.4999, 287.72653, 1524.6447, 310.81866, 1531.8289, 338.52917, 1534.3947, 383.17395, 1508.738, 409.34338, 1490.7773, 414.98813, 1492.3169, 489.90918, 1472.3037, 541.225, 1419.9629, 592.0256, 1370.1865, 602.2887, 1311.1733, 621.2756, 1330.6733, 651.5519, 1349.6602, 749.56506, 1352.2251, 804.47266, 1413.2909, 831.15686, 1399.9487, 858.35425, 1336.8303, 831.67004, 1336.8303, 836.80164, 1369.6724, 874.77527, 1340.9355, 895.30164, 1308.0935, 826.53845, 1221.8829, 800.3674, 1143.3698, 758.28845, 1026.3698, 659.2489, 1033.0408, 779.84106, 1028.9355, 822.43317, 995.0671, 900.4332, 1025.3447, 952.2596, 1006.87103, 964.5754, 966.84467, 899.9175, 954.01575, 965.08856, 925.2789, 955.8517, 935.54205, 885.0359, 881.15063, 839.8813, 834.45325, 779.8418, 812.38745, 710.56726, 808.79535, 721.8567, 799.5585, 780.8699, 757.48004, 850.14355, 658.9537, 949.18304, 682.55896, 990.74884, 659.46686, 1003.57776, 628.1642, 955.85406, 606.6116, 1003.0646, 584.5458, 994.34094, 611.74316, 927.6304, 586.08527, 880.41986, 566.58527, 811.1435, 552.73, 745.4593, 524.5063, 792.1567, 487.04575, 833.7225, 443.42703, 867.07654, 320.68195, 910.505, 364.68195, 887.505, 381.68195, 936.505, 367.68195, 820.505, 416.68195, 829.505, 383.68195, 741.50494, 479.68195, 756.50494, 555.68195, 695.50494, 430.68195, 658.505, 514.68195, 573.50494, 618.68195, 478.50494, 722.68195, 432.50497, 839.68195, 412.50497, 970.68195, 419.50497, 1121.682, 449.50497, 666.68195, 603.505, 800.68195, 551.505, 1000.682, 570.505, 672.68195, 701.50494, 612.68195, 764.505, 756.68195, 769.505, 619.68195, 839.505, 692.68195, 853.505, 635.68195, 923.505, 654.68195, 968.505, 606.68195, 970.505, 902.68195, 645.505, 869.68195, 731.505, 982.68195, 708.505, 984.68195, 784.505, 913.68195, 807.505, 963.68195, 872.505, 941.68195, 937.505, 1005.68195, 937.505, 1163.6819, 585.505, 1145.6819, 689.505, 1283.6819, 650.505, 1295.6819, 709.505, 1236.6819, 765.505, 1320.6819, 797.505, 1394.682, 838.505, 1344.682, 877.505, 1215.6819, 475.50497, 1228.6819, 308.50494, 1351.682, 270.50494, 1411.682, 360.50494, 1477.682, 320.50494, 1486.682, 368.50494, 1445.682, 451.50497, 1341.682, 521.505, 1304.682, 389.50497)
+uv = PackedVector2Array(385.4353, 910.1806, 402.3695, 955.3385, 382.35635, 963.0359, 350.54056, 912.2333, 303.84793, 946.6159, 278.19003, 927.1159, 347.46637, 873.74744, 331.0453, 836.2869, 335.6644, 768.5521, 353.62494, 699.78894, 443.94214, 502.22614, 491.6643, 426.7921, 594.8091, 344.17368, 722.58545, 292.34473, 840.09863, 276.43683, 974.0313, 288.7527, 1057.163, 306.71323, 1119.255, 326.72638, 1119.255, 286.1869, 1168.5182, 244.62111, 1228.0446, 211.26584, 1293.7235, 200.48969, 1360.9473, 214.8581, 1399.9473, 248.21338, 1427.6577, 281.56863, 1438.9473, 299.52917, 1457.9341, 284.13443, 1478.9736, 280.54233, 1499.4999, 287.72653, 1524.6447, 310.81866, 1531.8289, 338.52917, 1534.3947, 383.17395, 1508.738, 409.34338, 1490.7773, 414.98813, 1492.3169, 489.90918, 1472.3037, 541.225, 1419.9629, 592.0256, 1370.1865, 602.2887, 1311.1733, 621.2756, 1330.6733, 651.5519, 1349.6602, 749.56506, 1352.2251, 804.47266, 1413.2909, 831.15686, 1399.9487, 858.35425, 1336.8303, 831.67004, 1336.8303, 836.80164, 1369.6724, 874.77527, 1340.9355, 895.30164, 1308.0935, 826.53845, 1221.8829, 800.3674, 1143.3698, 758.28845, 1026.3698, 659.2489, 1033.0408, 779.84106, 1028.9355, 822.43317, 995.0671, 900.4332, 1025.3447, 952.2596, 1006.87103, 964.5754, 966.84467, 899.9175, 954.01575, 965.08856, 925.2789, 955.8517, 935.54205, 885.0359, 881.15063, 839.8813, 834.45325, 779.8418, 812.38745, 710.56726, 808.79535, 721.8567, 799.5585, 780.8699, 757.48004, 850.14355, 658.9537, 949.18304, 682.55896, 990.74884, 659.46686, 1003.57776, 628.1642, 955.85406, 606.6116, 1003.0646, 584.5458, 994.34094, 611.74316, 927.6304, 586.08527, 880.41986, 566.58527, 811.1435, 552.73, 745.4593, 524.5063, 792.1567, 487.04575, 833.7225, 443.42703, 867.07654, 320.68195, 910.505, 364.68195, 887.505, 381.68195, 936.505, 367.68195, 820.505, 416.68195, 829.505, 383.68195, 741.50494, 479.68195, 756.50494, 555.68195, 695.50494, 430.68195, 658.505, 514.68195, 573.50494, 618.68195, 478.50494, 722.68195, 432.50497, 839.68195, 412.50497, 970.68195, 419.50497, 1121.682, 449.50497, 666.68195, 603.505, 800.68195, 551.505, 1000.682, 570.505, 672.68195, 701.50494, 612.68195, 764.505, 756.68195, 769.505, 619.68195, 839.505, 692.68195, 853.505, 635.68195, 923.505, 654.68195, 968.505, 606.68195, 970.505, 902.68195, 645.505, 869.68195, 731.505, 982.68195, 708.505, 984.68195, 784.505, 913.68195, 807.505, 963.68195, 872.505, 941.68195, 937.505, 1005.68195, 937.505, 1163.6819, 585.505, 1145.6819, 689.505, 1283.6819, 650.505, 1295.6819, 709.505, 1236.6819, 765.505, 1320.6819, 797.505, 1394.682, 838.505, 1344.682, 877.505, 1215.6819, 475.50497, 1228.6819, 308.50494, 1351.682, 270.50494, 1411.682, 360.50494, 1477.682, 320.50494, 1486.682, 368.50494, 1445.682, 451.50497, 1341.682, 521.505, 1304.682, 389.50497)
+polygons = [PackedInt32Array(5, 80, 4), PackedInt32Array(4, 3, 80), PackedInt32Array(80, 6, 5), PackedInt32Array(6, 3, 80), PackedInt32Array(3, 81, 6), PackedInt32Array(0, 81, 3), PackedInt32Array(2, 82, 1), PackedInt32Array(1, 0, 82), PackedInt32Array(2, 3, 82), PackedInt32Array(82, 0, 3), PackedInt32Array(81, 84, 0), PackedInt32Array(79, 84, 0), PackedInt32Array(81, 83, 84), PackedInt32Array(6, 83, 81), PackedInt32Array(6, 7, 83), PackedInt32Array(7, 8, 85, 83), PackedInt32Array(84, 85, 83), PackedInt32Array(84, 86, 85), PackedInt32Array(78, 86, 84, 79), PackedInt32Array(86, 77, 78), PackedInt32Array(77, 76, 86), PackedInt32Array(9, 88, 85, 8), PackedInt32Array(87, 86, 85, 88), PackedInt32Array(87, 76, 86), PackedInt32Array(88, 89, 10, 9), PackedInt32Array(89, 87, 88), PackedInt32Array(87, 95, 89), PackedInt32Array(89, 90, 11, 10), PackedInt32Array(95, 90, 89), PackedInt32Array(91, 12, 11, 90), PackedInt32Array(91, 92, 13, 12), PackedInt32Array(92, 14, 13), PackedInt32Array(92, 93, 15, 14), PackedInt32Array(15, 16, 93), PackedInt32Array(93, 94, 17, 16), PackedInt32Array(96, 91, 90, 95), PackedInt32Array(96, 92, 91), PackedInt32Array(96, 97, 93, 92), PackedInt32Array(97, 94, 93), PackedInt32Array(114, 94, 97), PackedInt32Array(114, 122, 94), PackedInt32Array(50, 115, 118, 49), PackedInt32Array(50, 115, 51), PackedInt32Array(43, 120, 42), PackedInt32Array(41, 120, 42), PackedInt32Array(44, 41, 120), PackedInt32Array(120, 43, 44), PackedInt32Array(45, 44, 48), PackedInt32Array(48, 121, 45), PackedInt32Array(47, 121, 48), PackedInt32Array(46, 121, 45), PackedInt32Array(121, 47, 46), PackedInt32Array(44, 119, 41), PackedInt32Array(119, 48, 44), PackedInt32Array(119, 118, 48), PackedInt32Array(49, 118, 48), PackedInt32Array(40, 41, 119), PackedInt32Array(119, 117, 40), PackedInt32Array(119, 118, 117), PackedInt32Array(40, 39, 117), PackedInt32Array(39, 116, 117), PackedInt32Array(115, 116, 117, 118), PackedInt32Array(38, 39, 116), PackedInt32Array(116, 114, 115), PackedInt32Array(38, 122, 114, 116), PackedInt32Array(114, 51, 115), PackedInt32Array(97, 51, 114), PackedInt32Array(71, 105, 72), PackedInt32Array(105, 70, 71), PackedInt32Array(72, 73, 105), PackedInt32Array(73, 70, 105), PackedInt32Array(69, 104, 68), PackedInt32Array(69, 70, 104), PackedInt32Array(104, 67, 68), PackedInt32Array(103, 70, 73), PackedInt32Array(103, 104, 70), PackedInt32Array(103, 67, 104), PackedInt32Array(73, 74, 101), PackedInt32Array(73, 103, 101), PackedInt32Array(103, 102, 101), PackedInt32Array(103, 67, 102), PackedInt32Array(67, 66, 102), PackedInt32Array(74, 75, 99, 101), PackedInt32Array(102, 99, 101), PackedInt32Array(102, 100, 66), PackedInt32Array(100, 65, 66), PackedInt32Array(99, 98, 100, 102), PackedInt32Array(99, 76, 75), PackedInt32Array(87, 99, 76), PackedInt32Array(98, 87, 99), PackedInt32Array(98, 95, 87), PackedInt32Array(65, 64, 100), PackedInt32Array(64, 98, 100), PackedInt32Array(63, 98, 64), PackedInt32Array(95, 63, 98), PackedInt32Array(63, 96, 95), PackedInt32Array(63, 106, 96), PackedInt32Array(63, 107, 106), PackedInt32Array(106, 97, 96), PackedInt32Array(106, 51, 97), PackedInt32Array(106, 108, 51), PackedInt32Array(107, 108, 106), PackedInt32Array(107, 110, 109, 108), PackedInt32Array(107, 62, 63), PackedInt32Array(61, 110, 107, 62), PackedInt32Array(60, 110, 61), PackedInt32Array(59, 58, 112), PackedInt32Array(58, 57, 112), PackedInt32Array(60, 59, 112), PackedInt32Array(60, 57, 112), PackedInt32Array(60, 111, 57), PackedInt32Array(111, 54, 57), PackedInt32Array(54, 113, 57), PackedInt32Array(56, 113, 55), PackedInt32Array(56, 57, 113), PackedInt32Array(55, 54, 113), PackedInt32Array(111, 110, 60), PackedInt32Array(111, 109, 110), PackedInt32Array(54, 53, 109, 111), PackedInt32Array(53, 52, 109), PackedInt32Array(52, 51, 108, 109), PackedInt32Array(37, 129, 38), PackedInt32Array(37, 36, 129), PackedInt32Array(35, 129, 36), PackedInt32Array(35, 128, 34), PackedInt32Array(35, 129, 128), PackedInt32Array(38, 129, 122), PackedInt32Array(33, 128, 34), PackedInt32Array(33, 127, 32), PackedInt32Array(32, 31, 127), PackedInt32Array(31, 30, 127), PackedInt32Array(30, 126, 127), PackedInt32Array(30, 29, 126), PackedInt32Array(28, 126, 29), PackedInt32Array(27, 28, 126), PackedInt32Array(27, 26, 126), PackedInt32Array(26, 25, 126), PackedInt32Array(127, 125, 126), PackedInt32Array(33, 125, 127), PackedInt32Array(125, 25, 126), PackedInt32Array(24, 25, 125), PackedInt32Array(24, 124, 23), PackedInt32Array(24, 124, 125), PackedInt32Array(124, 22, 23), PackedInt32Array(124, 21, 22), PackedInt32Array(124, 123, 20, 21), PackedInt32Array(125, 130, 123, 124), PackedInt32Array(128, 125, 33), PackedInt32Array(129, 130, 125, 128), PackedInt32Array(130, 122, 129), PackedInt32Array(123, 19, 20), PackedInt32Array(123, 18, 19), PackedInt32Array(123, 17, 18), PackedInt32Array(122, 123, 130), PackedInt32Array(122, 17, 123), PackedInt32Array(122, 94, 17)]
+internal_vertex_count = 51
+
+[node name="Skeleton2D" type="Skeleton2D" parent="CenterPoint"]
+
+[node name="Body" type="Bone2D" parent="CenterPoint/Skeleton2D"]
+position = Vector2(811, 437)
+rest = Transform2D(1, 0, 0, 1, 854, 505)
+
+[node name="Shoulder" type="Bone2D" parent="CenterPoint/Skeleton2D/Body"]
+position = Vector2(311, -20)
+rest = Transform2D(1, 0, 0, 1, 311, -20)
+
+[node name="Head" type="Bone2D" parent="CenterPoint/Skeleton2D/Body/Shoulder"]
+position = Vector2(217, -21)
+rest = Transform2D(1, 0, 0, 1, 171, -120)
+auto_calculate_length_and_angle = false
+length = 194.321
+bone_angle = -19.815996
+
+[node name="RightKnee" type="Bone2D" parent="CenterPoint/Skeleton2D/Body/Shoulder"]
+position = Vector2(61, 229)
+rest = Transform2D(1, 0, 0, 1, 51, 185)
+
+[node name="RightAnkle" type="Bone2D" parent="CenterPoint/Skeleton2D/Body/Shoulder/RightKnee"]
+position = Vector2(138, 153)
+rest = Transform2D(1, 0, 0, 1, 106, 120)
+auto_calculate_length_and_angle = false
+length = 34.771
+bone_angle = 59.44999
+
+[node name="Butt" type="Bone2D" parent="CenterPoint/Skeleton2D/Body"]
+position = Vector2(-237, 148)
+rest = Transform2D(1, 0, 0, 1, -291, 108)
+
+[node name="SecondLeftKnee" type="Bone2D" parent="CenterPoint/Skeleton2D/Body/Butt"]
+position = Vector2(108, 157)
+rest = Transform2D(1, 0, 0, 1, 114, 168)
+
+[node name="SecondLeftAnkle" type="Bone2D" parent="CenterPoint/Skeleton2D/Body/Butt/SecondLeftKnee"]
+position = Vector2(-39, 177)
+rest = Transform2D(1, 0, 0, 1, -29, 148)
+auto_calculate_length_and_angle = false
+length = 34.771
+bone_angle = 112.29398
+
+[node name="LeftKnee" type="Bone2D" parent="CenterPoint/Skeleton2D/Body/Butt"]
+position = Vector2(-129, 148)
+rest = Transform2D(1, 0, 0, 1, -126, 117)
+
+[node name="LeftAnkle" type="Bone2D" parent="CenterPoint/Skeleton2D/Body/Butt/LeftKnee"]
+position = Vector2(-67, 136)
+rest = Transform2D(1, 0, 0, 1, -66, 154)
+auto_calculate_length_and_angle = false
+length = 44.156
+bone_angle = 118.89899
+
+[node name="SecondRightKnee" type="Bone2D" parent="CenterPoint/Skeleton2D/Body"]
+position = Vector2(105, 242)
+rest = Transform2D(1, 0, 0, 1, 74, 211)
+
+[node name="SecondRight" type="Bone2D" parent="CenterPoint/Skeleton2D/Body/SecondRightKnee"]
+position = Vector2(54, 183)
+rest = Transform2D(1, 0, 0, 1, 34, 137)
+auto_calculate_length_and_angle = false
+length = 34.771
+bone_angle = 92.47699

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cidewxkeseb7t"
-path="res://.godot/imported/new_bat_atlus_ref.png-696533c1c7cccab1b367dca070c73225.ctex"
+uid="uid://ydb4urrbr6yt"
+path="res://.godot/imported/tardigrade_atlas_ref.png-160c01c30e5bfd621a8ae881c68a960a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screens/4_finished_screen/new_bat_atlus_ref.png"
-dest_files=["res://.godot/imported/new_bat_atlus_ref.png-696533c1c7cccab1b367dca070c73225.ctex"]
+source_file="res://screens/4_finished_screen/tardigrade_atlas_ref.png"
+dest_files=["res://.godot/imported/tardigrade_atlas_ref.png-160c01c30e5bfd621a8ae881c68a960a.ctex"]
 
 [params]
 

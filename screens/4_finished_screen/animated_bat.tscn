@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bj4xoxso15sex" path="res://screens/4_finished_screen/set_atlus.gd" id="1_25tsd"]
 [ext_resource type="Script" uid="uid://blm1pvtue6d8o" path="res://utils/wiggle.gd" id="1_raw7o"]
-[ext_resource type="Texture2D" uid="uid://cidewxkeseb7t" path="res://screens/4_finished_screen/new_bat_atlus_ref.png" id="1_sjjwa"]
+[ext_resource type="Texture2D" uid="uid://cidewxkeseb7t" path="res://screens/4_finished_screen/bat_atlus_ref.png" id="1_sjjwa"]
 
 [sub_resource type="Animation" id="Animation_sjjwa"]
 resource_name = "FLY"
@@ -348,11 +348,11 @@ rest = Transform2D(0.024990536, -0.9996877, 0.9996877, 0.024990536, 966, 766)
 [node name="WingL" type="Bone2D" parent="CenterPoint/Skeleton2D/Head"]
 position = Vector2(207.53546, -181.24303)
 rotation = -0.05855912
-scale = Vector2(0.99999934, 0.99999934)
+scale = Vector2(0.9999993, 0.9999993)
 rest = Transform2D(0.9982859, -0.058525655, 0.058525655, 0.9982859, 207.53546, -181.24303)
 auto_calculate_length_and_angle = false
 length = 550.0
-bone_angle = -72.66099
+bone_angle = -72.66098
 
 [node name="WingR" type="Bone2D" parent="CenterPoint/Skeleton2D/Head"]
 position = Vector2(221.20561, 165.52364)
