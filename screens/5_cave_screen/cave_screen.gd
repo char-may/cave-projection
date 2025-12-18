@@ -12,4 +12,3 @@ func on_bat_created():
 
 	#var new_bat2 = bat_scene.instantiate()
 	#self.add_child(new_bat2)
-	

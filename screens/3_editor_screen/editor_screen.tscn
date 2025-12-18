@@ -1,15 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bs4k256ad277m"]
+[gd_scene load_steps=5 format=3 uid="uid://bs4k256ad277m"]
 
 [ext_resource type="Script" uid="uid://b471rqmp7x52o" path="res://screens/3_editor_screen/editor.gd" id="1_31cdr"]
-[ext_resource type="PackedScene" uid="uid://be5j41pobgpmj" path="res://screens/4_finished_screen/polygon_bat.tscn" id="2_vxveq"]
 [ext_resource type="PackedScene" uid="uid://c7uvpsnt6urh7" path="res://screens/3_editor_screen/pen.tscn" id="3_uu0r8"]
-[ext_resource type="Texture2D" uid="uid://ck8e311k81e2c" path="res://screens/3_editor_screen/bat/even_larger_bat_mask.png" id="4_qshlb"]
+[ext_resource type="Texture2D" uid="uid://ck8e311k81e2c" path="res://screens/3_editor_screen/bat/bat_mask.png" id="4_qshlb"]
 [ext_resource type="PackedScene" uid="uid://baya7flibfovb" path="res://screens/3_editor_screen/face_generator/face_generator.tscn" id="5_kvpue"]
 
 [node name="Editor" type="Node2D" node_paths=PackedStringArray("mask")]
 script = ExtResource("1_31cdr")
 mask = NodePath("Bat Mask")
-confirm_scene = ExtResource("2_vxveq")
 
 [node name="Background" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(1900, 1060)

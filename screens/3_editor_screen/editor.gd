@@ -4,7 +4,6 @@ class_name Editor extends Node2D
 # Exports drawings, loads scene ui and handles transitions
 
 @export var mask : Control
-@export var confirm_scene : PackedScene
 var background
 var export_count = 0
 

@@ -162,6 +162,57 @@ _data = {
 &"RESET": SubResource("Animation_raw7o")
 }
 
+[sub_resource type="Animation" id="Animation_ppjgt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterPoint:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterPoint:active")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CenterPoint:frequency")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CenterPoint:amplitude")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_25tsd"]
 resource_name = "SCALE"
 length = 6.0
@@ -212,57 +263,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 600.0]
-}
-
-[sub_resource type="Animation" id="Animation_ppjgt"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CenterPoint:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CenterPoint:active")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CenterPoint:frequency")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("CenterPoint:amplitude")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d0fx0"]
@@ -348,11 +348,11 @@ rest = Transform2D(0.024990536, -0.9996877, 0.9996877, 0.024990536, 966, 766)
 [node name="WingL" type="Bone2D" parent="CenterPoint/Skeleton2D/Head"]
 position = Vector2(207.53546, -181.24303)
 rotation = -0.05855912
-scale = Vector2(0.9999994, 0.9999994)
+scale = Vector2(0.99999934, 0.99999934)
 rest = Transform2D(0.9982859, -0.058525655, 0.058525655, 0.9982859, 207.53546, -181.24303)
 auto_calculate_length_and_angle = false
 length = 550.0
-bone_angle = -72.660995
+bone_angle = -72.66099
 
 [node name="WingR" type="Bone2D" parent="CenterPoint/Skeleton2D/Head"]
 position = Vector2(221.20561, 165.52364)
@@ -368,14 +368,14 @@ position = Vector2(-22.842676, -113.464584)
 rest = Transform2D(1, 0, 0, 1, -22.842676, -113.464584)
 auto_calculate_length_and_angle = false
 length = 62.927
-bone_angle = 178.34898
+bone_angle = 178.34897
 
 [node name="FootR" type="Bone2D" parent="CenterPoint/Skeleton2D/Head"]
 position = Vector2(-19.419106, 103.51762)
 rest = Transform2D(1, 0, 0, 1, -19.419106, 103.51762)
 auto_calculate_length_and_angle = false
 length = 62.927
-bone_angle = 178.34898
+bone_angle = 178.34897
 
 [node name="FlyingAnimation" type="AnimationPlayer" parent="."]
 libraries = {
