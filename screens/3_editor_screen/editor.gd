@@ -3,7 +3,10 @@ class_name Editor extends Node2D
 # Editor:
 # Exports drawings, loads scene ui and handles transitions
 
-@export var mask : Control
+@onready var creature_mask : TextureRect = $CreatureMask
+@export var bat_mask : CompressedTexture2D
+@export var tardigrade_mask : CompressedTexture2D
+
 var background
 var export_count = 0
 
@@ -17,6 +20,20 @@ func _ready():
 	background = get_node("Background")
 	background.color = Global.background_color
 	
+	#Set creature mask
+	match Global.creature_editing:
+		Global.CreatureType.BAT:
+			#Do bat stuff
+			creature_mask.texture = bat_mask
+		Global.CreatureType.TARDIGRADE:
+			#Do tardigrade stuff
+			creature_mask.texture = tardigrade_mask
+		Global.CreatureType.SALAMANDER:
+			pass
+			#Do Salamander stuff
+		Global.CreatureType.MONSTER:
+			pass
+			#Do Monster Stuff
 	# Create export directory
 	var dir = DirAccess.open("user://")
 	dir.make_dir("exports")
@@ -26,10 +43,6 @@ func _ready():
 		export_count += 1
 
 	print ("Number of files already in exports folder: %d" % export_count)
-	
-# todo : why am i doing this?
-#func _process(_delta: float) -> void:
-	#background.color = Global.background_color
 	
 	
 func _input(event):
