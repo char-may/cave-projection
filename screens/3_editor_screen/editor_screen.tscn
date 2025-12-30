@@ -1,16 +1,16 @@
 [gd_scene load_steps=7 format=3 uid="uid://bs4k256ad277m"]
 
 [ext_resource type="Script" uid="uid://b471rqmp7x52o" path="res://screens/3_editor_screen/editor.gd" id="1_31cdr"]
-[ext_resource type="Texture2D" uid="uid://1a28wd3kjyfp" path="res://screens/3_editor_screen/tardigrade/tardigrade_mask.png" id="3_qi21q"]
 [ext_resource type="PackedScene" uid="uid://c7uvpsnt6urh7" path="res://screens/3_editor_screen/pen.tscn" id="3_uu0r8"]
 [ext_resource type="Texture2D" uid="uid://ck8e311k81e2c" path="res://screens/3_editor_screen/bat/bat_mask.png" id="4_qshlb"]
 [ext_resource type="PackedScene" uid="uid://baya7flibfovb" path="res://screens/3_editor_screen/face_generator/face_generator.tscn" id="5_kvpue"]
-[ext_resource type="Texture2D" uid="uid://dygn52hde3g8o" path="res://screens/3_editor_screen/tardigrade/tardigrade_mouth.png" id="6_31cdr"]
+[ext_resource type="Texture2D" uid="uid://dhrigopj34oha" path="res://screens/3_editor_screen/tardigrade/new_tardigrade_mask.png" id="5_vxveq"]
+[ext_resource type="Texture2D" uid="uid://f7pdjv07an3b" path="res://screens/3_editor_screen/tardigrade/tardigrade_new_mouth_outline.png" id="6_31cdr"]
 
 [node name="Editor" type="Node2D"]
 script = ExtResource("1_31cdr")
 bat_mask = ExtResource("4_qshlb")
-tardigrade_mask = ExtResource("3_qi21q")
+tardigrade_mask = ExtResource("5_vxveq")
 
 [node name="Background" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(1900, 1060)
@@ -26,7 +26,7 @@ custom_minimum_size = Vector2(1024, 1024)
 offset_right = 1921.22
 offset_bottom = 1080.0
 pivot_offset = Vector2(912, 1560)
-texture = ExtResource("3_qi21q")
+texture = ExtResource("5_vxveq")
 expand_mode = 3
 stretch_mode = 3
 
@@ -36,11 +36,10 @@ position = Vector2(830, 550)
 scale = Vector2(0.7, 0.7)
 
 [node name="TardigradeFaceGen" parent="." instance=ExtResource("5_kvpue")]
-position = Vector2(1198, 310)
+position = Vector2(1393, 160)
 rotation = -0.38920844
 
 [node name="TardigradeOverlay" type="TextureRect" parent="."]
-visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("6_31cdr")

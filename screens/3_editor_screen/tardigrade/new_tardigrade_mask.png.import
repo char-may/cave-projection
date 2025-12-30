@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ydb4urrbr6yt"
-path="res://.godot/imported/tardigrade_atlas_ref.png-160c01c30e5bfd621a8ae881c68a960a.ctex"
+uid="uid://dhrigopj34oha"
+path="res://.godot/imported/new_tardigrade_mask.png-d1d9c5d6a2e62e92dad053644a708f8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screens/4_finished_screen/tardigrade_atlas_ref.png"
-dest_files=["res://.godot/imported/tardigrade_atlas_ref.png-160c01c30e5bfd621a8ae881c68a960a.ctex"]
+source_file="res://screens/3_editor_screen/tardigrade/new_tardigrade_mask.png"
+dest_files=["res://.godot/imported/new_tardigrade_mask.png-d1d9c5d6a2e62e92dad053644a708f8d.ctex"]
 
 [params]
 
