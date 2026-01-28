@@ -1,7 +1,7 @@
 extends Node2D
 
-@export var frequency: float = 4.0   # How many "wiggles" per second
-@export var amplitude: float = 30.0  # Max distance from the original position
+@export var frequency: float = 5.0   # How many "wiggles" per second
+@export var amplitude: float = 800.0  # Max distance from the original position
 @export var active: bool = false
 
 var noise := FastNoiseLite.new()

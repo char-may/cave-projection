@@ -104,8 +104,17 @@ func screenshot():
 	
 	Global.game_controller.change_2d_scene("res://screens/5_cave_screen/cave_screen.tscn", true, false)
 	Global.game_controller.change_gui_scene("res://screens/empty_gui.tscn", true, false)
-	GlobalSignal.new_bat_created.emit()
-
+	
+	match Global.creature_editing:
+		Global.CreatureType.BAT:
+			GlobalSignal.new_bat_created.emit()
+		Global.CreatureType.TARDIGRADE:
+			GlobalSignal.new_tardigrade_created.emit()
+		Global.CreatureType.SALAMANDER:
+			GlobalSignal.new_bat_created.emit()
+		Global.CreatureType.MONSTER:
+			GlobalSignal.new_bat_created.emit()
+			
 func on_set_background_color(color) -> void:
 	background = get_node("Background")
 	background.color = color

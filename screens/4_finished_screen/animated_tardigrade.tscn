@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://bl6c4dwyd4hi8" path="res://screens/3_editor_screen/tardigrade/tardigrade_atlus_ref_bg.png" id="1_22ttg"]
 [ext_resource type="Script" uid="uid://bj4xoxso15sex" path="res://screens/4_finished_screen/set_atlus.gd" id="1_fidtp"]
+[ext_resource type="Script" uid="uid://blm1pvtue6d8o" path="res://utils/wiggle.gd" id="2_retoa"]
+[ext_resource type="Script" uid="uid://bxj0w5vqevxp1" path="res://screens/5_cave_screen/boing.gd" id="4_dmkxs"]
 
 [sub_resource type="Animation" id="Animation_22ttg"]
 resource_name = "Idle"
@@ -161,11 +163,114 @@ _data = {
 &"RESET": SubResource("Animation_fidtp")
 }
 
-[node name="AnimatedTardigrade" type="Node2D" unique_id=1150676927]
+[sub_resource type="Animation" id="Animation_dmkxs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterPoint:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterPoint:active")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ikrmj"]
+resource_name = "Rotate"
+length = 30.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterPoint:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [0.0, 6.283185307179586]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterPoint:active")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m1pal"]
+_data = {
+&"RESET": SubResource("Animation_dmkxs"),
+&"Rotate": SubResource("Animation_ikrmj")
+}
+
+[sub_resource type="Animation" id="Animation_retoa"]
+resource_name = "Boing"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterPoint:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.03333333, 0.13333334, 0.26666668, 0.5, 0.8, 1.2500151),
+"transitions": PackedFloat32Array(-2, -2, -2, -2, -2, -2, -2),
+"update": 0,
+"values": [Vector2(0.25, 0.25), Vector2(0.27, 0.27), Vector2(0.25, 0.25), Vector2(0.26, 0.26), Vector2(0.25, 0.25), Vector2(0.255, 0.255), Vector2(0.25, 0.25)]
+}
+
+[sub_resource type="Animation" id="Animation_m1pal"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterPoint:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.25, 0.25)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dmkxs"]
+_data = {
+&"Boing": SubResource("Animation_retoa"),
+&"RESET": SubResource("Animation_m1pal")
+}
+
+[node name="AnimatedTardigrade" type="Node2D" unique_id=1150676927 node_paths=PackedStringArray("polygons")]
 script = ExtResource("1_fidtp")
+polygons = NodePath("CenterPoint/Polygons")
 
 [node name="CenterPoint" type="Node2D" parent="." unique_id=863718095]
 position = Vector2(960, 540)
+scale = Vector2(0.25, 0.25)
+script = ExtResource("2_retoa")
+frequency = 1.0
 
 [node name="Polygons" type="Node2D" parent="CenterPoint" unique_id=1729043460]
 
@@ -245,7 +350,7 @@ bone_angle = -19.817
 [node name="FrontLeg" type="Bone2D" parent="CenterPoint/Skeleton2D/Body" unique_id=1069415558]
 position = Vector2(406, 120)
 rotation = -0.093906276
-scale = Vector2(0.99999994, 0.99999994)
+scale = Vector2(0.9999998, 0.9999998)
 rest = Transform2D(1, 0, 0, 1, 406, 120)
 auto_calculate_length_and_angle = false
 length = 278.79
@@ -253,6 +358,7 @@ bone_angle = 52.842987
 
 [node name="MidFrontLeg" type="Bone2D" parent="CenterPoint/Skeleton2D/Body" unique_id=2038480338]
 position = Vector2(104, 165)
+scale = Vector2(0.9999999, 0.9999999)
 rest = Transform2D(1, 0, 0, 1, 104, 165)
 auto_calculate_length_and_angle = false
 length = 241.618
@@ -268,7 +374,7 @@ bone_angle = 99.08298
 
 [node name="BackLeg" type="Bone2D" parent="CenterPoint/Skeleton2D/Body" unique_id=901592182]
 position = Vector2(-378, 187)
-scale = Vector2(0.9999998, 0.9999998)
+scale = Vector2(0.99999976, 0.99999976)
 rest = Transform2D(1, 0, 0, 1, -378, 187)
 auto_calculate_length_and_angle = false
 length = 250.633
@@ -277,4 +383,17 @@ bone_angle = 118.89899
 [node name="IdleAnimation" type="AnimationPlayer" parent="." unique_id=193743982]
 libraries/ = SubResource("AnimationLibrary_retoa")
 autoplay = &"Idle"
-speed_scale = 1.75
+
+[node name="RotateAnimation" type="AnimationPlayer" parent="." unique_id=194468053]
+libraries/ = SubResource("AnimationLibrary_m1pal")
+autoplay = &"Rotate"
+
+[node name="BoingAnimation" type="AnimationPlayer" parent="." unique_id=1019590681]
+libraries/ = SubResource("AnimationLibrary_dmkxs")
+
+[node name="Timer" type="Timer" parent="." unique_id=1064593362]
+wait_time = 10.0
+autostart = true
+script = ExtResource("4_dmkxs")
+
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
