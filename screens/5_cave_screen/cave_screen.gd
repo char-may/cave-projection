@@ -63,7 +63,7 @@ func create_random_tardigrade():
 	var tardigrade_images: PackedStringArray = []
 	var path = "user://"
 	var dir = DirAccess.open(path)
-	dir.make_dir("exports/tardigradess")
+	dir.make_dir("exports/tardigrades")
 	dir = DirAccess.open("user://exports/tardigrades/")
 	dir.list_dir_begin()
 	while true:
