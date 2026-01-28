@@ -4,12 +4,13 @@ class_name Editor extends Node2D
 # Exports drawings, loads scene ui and handles transitions
 
 @onready var creature_mask : TextureRect = $CreatureMask
-@onready var tardigrade_overlay : TextureRect = $TardigradeOverlay
+
 @onready var bat_face_gen : Node2D = $BatFaceGen
 @onready var tardigrade_face_gen : Node2D = $TardigradeFaceGen
 
 @export var bat_mask : CompressedTexture2D
 @export var tardigrade_mask : CompressedTexture2D
+@onready var tardigrade_overlay : TextureRect = $TardigradeOverlay
 
 var background
 var export_count = 0
@@ -24,36 +25,50 @@ func _ready():
 	background = get_node("Background")
 	background.color = Global.background_color
 	
+	# Create export directory
+	var dir = DirAccess.open("user://")
+	
 	#Set creature mask
 	match Global.creature_editing:
 		Global.CreatureType.BAT:
 			#Do bat stuff
+			dir.make_dir("exports/bats")
+			dir = DirAccess.open("user://exports/bats/")
 			creature_mask.texture = bat_mask
 			bat_face_gen.visible = true
 			tardigrade_overlay.visible = false
 			tardigrade_face_gen.visible = false
 		Global.CreatureType.TARDIGRADE:
 			#Do tardigrade stuff
+			dir.make_dir("exports/tardigrades")
+			dir = DirAccess.open("user://exports/tardigrades/")
 			creature_mask.texture = tardigrade_mask
 			tardigrade_face_gen.visible = true
 			tardigrade_overlay.visible = true
 			bat_face_gen.visible = false
 		Global.CreatureType.SALAMANDER:
+			#Do bat stuff
+			dir.make_dir("exports/bats")
+			dir = DirAccess.open("user://exports/bats/")
 			creature_mask.texture = bat_mask
+			bat_face_gen.visible = true
 			tardigrade_overlay.visible = false
+			tardigrade_face_gen.visible = false
 		Global.CreatureType.MONSTER:
+			#Do bat stuff
+			dir.make_dir("exports/bats/")
+			dir = DirAccess.open("user://exports/bats")
 			creature_mask.texture = bat_mask
+			bat_face_gen.visible = true
 			tardigrade_overlay.visible = false
+			tardigrade_face_gen.visible = false
 
-	# Create export directory
-	var dir = DirAccess.open("user://")
-	dir.make_dir("exports")
-	dir = DirAccess.open("user://exports")
 	# Set counter to the current number of files
 	for n in dir.get_files():
 		export_count += 1
 
 	print ("Number of files already in exports folder: %d" % export_count)
+	print(OS.get_data_dir())
 	
 	
 func _input(event):
@@ -68,7 +83,17 @@ func screenshot():
 	# Save image to the user directory
 	var viewport = get_viewport()
 	var img = viewport.get_texture().get_image()
-	var path = "user://exports/export"+str(export_count)+".png"
+	var path = ""
+	match Global.creature_editing:
+		Global.CreatureType.BAT:
+			path = "user://exports/bats/export"+str(export_count)+".png"
+		Global.CreatureType.TARDIGRADE:
+			path = "user://exports/tardigrades/export"+str(export_count)+".png"
+		Global.CreatureType.SALAMANDER:
+			path = "user://exports/bats/export"+str(export_count)+".png"
+		Global.CreatureType.MONSTER:
+			path = "user://exports/bats/export"+str(export_count)+".png"
+
 	img.save_png(path)
 	
 	# Save image texture to global

@@ -1,8 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cw5vkd0vwqp0y"]
+[gd_scene format=3 uid="uid://cw5vkd0vwqp0y"]
 
 [ext_resource type="Script" uid="uid://ccunnoxitkua1" path="res://screens/5_cave_screen/cave_screen.gd" id="1_k6v64"]
 [ext_resource type="PackedScene" uid="uid://fwic88x8tvm6" path="res://screens/4_finished_screen/animated_bat.tscn" id="2_t2onl"]
 
-[node name="CaveScreen" type="Node2D"]
+[node name="CaveScreen" type="Node2D" unique_id=2077961266]
 script = ExtResource("1_k6v64")
 bat_scene = ExtResource("2_t2onl")
