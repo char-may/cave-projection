@@ -52,9 +52,9 @@ func create_random_bat():
 	# Create bat
 	var new_bat_scene := preload("res://screens/4_finished_screen/animated_bat.tscn")
 	var new_bat = new_bat_scene.instantiate()
-	var random_scale = randf_range(0.3, 1.0)
-	new_bat.scale = Vector2(random_scale, random_scale)
-	new_bat.position = Vector2(randf_range(0, 50), randf_range(0, 50))
+	var random_scale = randf_range(0.1, 0.25)
+	var bat_center = new_bat.get_node("CenterPoint")
+	bat_center.scale = Vector2(random_scale, random_scale)
 	self.add_child(new_bat)
 
 
