@@ -288,7 +288,7 @@ rest = Transform2D(0.024990536, -0.9996877, 0.9996877, 0.024990536, 966, 766)
 [node name="WingL" type="Bone2D" parent="CenterPoint/Skeleton2D/Head" unique_id=864980582]
 position = Vector2(207.53546, -181.24303)
 rotation = -0.05855912
-scale = Vector2(0.9999994, 0.9999994)
+scale = Vector2(0.99999934, 0.99999934)
 rest = Transform2D(0.9982859, -0.058525655, 0.058525655, 0.9982859, 207.53546, -181.24303)
 auto_calculate_length_and_angle = false
 length = 550.0
@@ -323,4 +323,3 @@ speed_scale = 1.25
 
 [node name="WiggleDelay" type="AnimationPlayer" parent="." unique_id=1428214356]
 libraries/ = SubResource("AnimationLibrary_d0fx0")
-autoplay = &"DELAY"

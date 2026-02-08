@@ -8,3 +8,17 @@
 script = ExtResource("1_k6v64")
 bat_scene = ExtResource("2_t2onl")
 tardigrade_scene = ExtResource("3_sw0ie")
+
+[node name="BatSpawns" type="Node2D" parent="." unique_id=1835914659]
+
+[node name="BatSpawn1" type="Marker2D" parent="BatSpawns" unique_id=1407066445]
+position = Vector2(152, 528)
+
+[node name="BatSpawn2" type="Marker2D" parent="BatSpawns" unique_id=781291386]
+position = Vector2(668, 532)
+
+[node name="BatSpawn3" type="Marker2D" parent="BatSpawns" unique_id=352253566]
+position = Vector2(1216, 536)
+
+[node name="BatSpawn4" type="Marker2D" parent="BatSpawns" unique_id=400770349]
+position = Vector2(1680, 532)

@@ -3,9 +3,11 @@ extends Node2D
 @export var bat_scene : PackedScene
 @export var tardigrade_scene : PackedScene
 
+
 func _ready() -> void:
 	GlobalSignal.new_bat_created.connect(on_bat_created)
 	GlobalSignal.new_tardigrade_created.connect(on_tardigrade_created)
+
 
 func _process(_delta: float) -> void:
 	if (Input.is_action_just_pressed("make_bat")):
@@ -52,9 +54,14 @@ func create_random_bat():
 	# Create bat
 	var new_bat_scene := preload("res://screens/4_finished_screen/animated_bat.tscn")
 	var new_bat = new_bat_scene.instantiate()
-	var random_scale = randf_range(0.1, 0.25)
+	
+	# set random spawn point
 	var bat_center = new_bat.get_node("CenterPoint")
-	bat_center.scale = Vector2(random_scale, random_scale)
+	var spawn_node_position: Vector2 = get_spawn_node_pos()
+	bat_center.global_position = spawn_node_position
+	
+	#var random_scale = randf_range(0.1, 0.25)
+	#bat_center.scale = Vector2(random_scale, random_scale)
 	self.add_child(new_bat)
 
 
@@ -92,3 +99,8 @@ func create_random_tardigrade():
 	new_tardigrade.scale = Vector2(random_scale, random_scale)
 	new_tardigrade.position = Vector2(randf_range(0, 50), randf_range(0, 50))
 	self.add_child(new_tardigrade)
+	
+func get_spawn_node_pos() -> Vector2:
+	var spawn_points = $BatSpawns.get_children()
+	var spawn_node = spawn_points.pick_random()
+	return spawn_node.global_position
