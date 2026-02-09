@@ -12,13 +12,16 @@ tardigrade_scene = ExtResource("3_sw0ie")
 [node name="BatSpawns" type="Node2D" parent="." unique_id=1835914659]
 
 [node name="BatSpawn1" type="Marker2D" parent="BatSpawns" unique_id=1407066445]
-position = Vector2(152, 528)
+position = Vector2(172, 174)
 
 [node name="BatSpawn2" type="Marker2D" parent="BatSpawns" unique_id=781291386]
-position = Vector2(668, 532)
+position = Vector2(172, 914)
 
 [node name="BatSpawn3" type="Marker2D" parent="BatSpawns" unique_id=352253566]
-position = Vector2(1216, 536)
+position = Vector2(954, 516)
 
 [node name="BatSpawn4" type="Marker2D" parent="BatSpawns" unique_id=400770349]
-position = Vector2(1680, 532)
+position = Vector2(1671, 161)
+
+[node name="BatSpawn5" type="Marker2D" parent="BatSpawns" unique_id=382743347]
+position = Vector2(1686, 887)
