@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://do7821ibxfo4l"]
+
+[ext_resource type="Script" uid="uid://ds1hurflnoefj" path="res://screens/drawing_screen/1_splash_screen/splash_screen_manager.gd" id="1_e2qbx"]
+[ext_resource type="Texture2D" uid="uid://bjft60yw4ftdp" path="res://screens/drawing_screen/1_splash_screen/splash_logo/lights_out_1.png" id="2_dpkmb"]
+[ext_resource type="Texture2D" uid="uid://t02y8jj1t10u" path="res://screens/drawing_screen/1_splash_screen/splash_logo/lights_out_2.png" id="3_f3wds"]
+[ext_resource type="Texture2D" uid="uid://c42biwwt3wwpv" path="res://screens/drawing_screen/1_splash_screen/splash_logo/lights_out_3.png" id="4_7px8g"]
+[ext_resource type="Texture2D" uid="uid://cgjgw1806afhh" path="res://screens/drawing_screen/1_splash_screen/splashcutout.png" id="5_f3wds"]
+[ext_resource type="PackedScene" uid="uid://ccvp4u5y1fcjd" path="res://screens/drawing_screen/1_splash_screen/poly_bat/poly_bat.tscn" id="6_7px8g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5how5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dpkmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f3wds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7px8g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_5how5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PolyBat:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(396, 723)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PolyBat2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(585, 690)]
+}
+
+[sub_resource type="Animation" id="Animation_7px8g"]
+resource_name = "poly_bat_1"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PolyBat:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(585, 690), Vector2(1255, 341)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PolyBat2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(585, 690), Vector2(1321, 506)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qshu0"]
+_data = {
+&"RESET": SubResource("Animation_5how5"),
+&"poly_bat_1": SubResource("Animation_7px8g")
+}
+
+[node name="SplashScreenManager" type="Control" node_paths=PackedStringArray("splash_screen")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e2qbx")
+pause_time = 1.5
+out_time = 0.2
+splash_screen = NodePath("LightsOut")
+
+[node name="Cutout2" type="Sprite2D" parent="."]
+self_modulate = Color(0.23137255, 0.13725491, 0.5411765, 1)
+position = Vector2(-594, -3)
+texture = ExtResource("5_f3wds")
+centered = false
+
+[node name="LightsOut" type="AnimatedSprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_5how5")
+frame_progress = 0.133076
+
+[node name="Cutout" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+texture = ExtResource("5_f3wds")
+centered = false
+
+[node name="PolyBat" parent="." instance=ExtResource("6_7px8g")]
+position = Vector2(396, 723)
+scale = Vector2(0.25, 0.25)
+
+[node name="PolyBat2" parent="." instance=ExtResource("6_7px8g")]
+position = Vector2(585, 690)
+scale = Vector2(0.25, 0.25)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qshu0")
+}
+autoplay = "poly_bat_1"

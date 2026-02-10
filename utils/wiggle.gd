@@ -2,6 +2,7 @@ extends Node2D
 
 @export var frequency: float = 5.0   # How many "wiggles" per second
 @export var target_amplitude: float = 800.0  # Max distance from the original position
+@export var tween_duration: float = 2.0 # Time to 
 
 var amplitude = 0.0
 
@@ -10,16 +11,12 @@ var noise_offset_x: float = 0.0
 var noise_offset_y: float = 0.0
 var initial_position: Vector2
 
-# Animation stuff
-# var tween_time : float = 1
-# var transition_type : Tween.TransitionType
-
 func _ready():
 	initial_position = position
 	
 	#start tween amplitude from 0 to target
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, 'amplitude', target_amplitude, 2).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(self, 'amplitude', target_amplitude, tween_duration).set_trans(Tween.TRANS_SINE)
 	
 	# Initialize the FastNoiseLite object
 	noise.seed = randi() # A random seed ensures a new pattern each time

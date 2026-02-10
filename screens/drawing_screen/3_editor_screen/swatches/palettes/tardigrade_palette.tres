@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Palette" format=3 uid="uid://0iyp6dvv8no8"]
+
+[ext_resource type="Script" uid="uid://dvu6vb20cod4n" path="res://screens/drawing_screen/3_editor_screen/swatches/palettes/Palette.gd" id="1_r2l6w"]
+
+[resource]
+script = ExtResource("1_r2l6w")
+color1 = Color(0.0821658, 0.67638224, 0.5583865, 1)
+color2 = Color(0.188235, 0.188235, 0.490196, 1)
+color3 = Color(0.89624685, 0.74254614, 0.9410116, 1)
+color4 = Color(0.67418826, 0.79220885, 1, 1)
+background = Color(0.2148208, 0.45605075, 0.73890185, 1)
+metadata/_custom_type_script = "uid://dvu6vb20cod4n"

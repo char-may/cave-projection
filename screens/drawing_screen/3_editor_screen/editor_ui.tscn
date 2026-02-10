@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://d0th37sj1iex5"]
+
+[ext_resource type="PackedScene" uid="uid://bibgvxgs8mtvv" path="res://screens/drawing_screen/3_editor_screen/tools/crayon/crayon.tscn" id="1_7k3nc"]
+[ext_resource type="Script" uid="uid://t2kdacvt86n2" path="res://screens/drawing_screen/3_editor_screen/editor_ui.gd" id="1_j0pnp"]
+[ext_resource type="PackedScene" uid="uid://dph6j3f84v3jn" path="res://screens/drawing_screen/3_editor_screen/tools/paintbrush/paintbrush.tscn" id="2_41ahv"]
+[ext_resource type="PackedScene" uid="uid://eaolgqxnb08" path="res://screens/drawing_screen/3_editor_screen/tools/eraser/eraser.tscn" id="3_vfx3x"]
+[ext_resource type="PackedScene" uid="uid://bhj8uojynvwvp" path="res://screens/drawing_screen/3_editor_screen/face_generator/random_face_ui.tscn" id="4_uvwnc"]
+
+[node name="EditorUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j0pnp")
+metadata/_edit_vertical_guides_ = [137.0]
+
+[node name="RandomFaceUI" parent="." instance=ExtResource("4_uvwnc")]
+position = Vector2(1619, 692)
+
+[node name="BatUI" type="Node2D" parent="."]
+
+[node name="Crayon" parent="BatUI" instance=ExtResource("1_7k3nc")]
+position = Vector2(0, 600)
+
+[node name="Paintbrush" parent="BatUI" instance=ExtResource("2_41ahv")]
+position = Vector2(0, 705)
+
+[node name="Eraser" parent="BatUI" instance=ExtResource("3_vfx3x")]
+position = Vector2(0, 875)
+
+[node name="TardigradeUI" type="Node2D" parent="."]
+position = Vector2(0, -550)
+
+[node name="Crayon" parent="TardigradeUI" instance=ExtResource("1_7k3nc")]
+position = Vector2(0, 600)
+
+[node name="Paintbrush" parent="TardigradeUI" instance=ExtResource("2_41ahv")]
+position = Vector2(0, 705)
+
+[node name="Eraser" parent="TardigradeUI" instance=ExtResource("3_vfx3x")]
+position = Vector2(0, 875)

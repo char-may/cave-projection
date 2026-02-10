@@ -15,7 +15,7 @@ func _init() -> void:
 func _ready() -> void:
 	#Add exports for default 2d and gui scene to load
 	
-	Global.game_controller.change_gui_scene("res://screens/1_splash_screen/splash_screen_manager.tscn")
+	Global.game_controller.change_gui_scene("res://screens/drawing_screen/1_splash_screen/splash_screen_manager.tscn")
 
 func change_gui_scene(new_scene: String, delete: bool = true, keep_running: bool = false) -> void:
 		if current_gui_scene != null:
