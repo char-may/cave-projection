@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c3656hxqib1hs"]
 
 [ext_resource type="Script" uid="uid://b0wo85v3wafxc" path="res://game_controller/game_controller.gd" id="1_3iy47"]
+[ext_resource type="Script" uid="uid://eyluwftdy0u0" path="res://game_controller/multi_screen/load_window.gd" id="2_xgdi0"]
 
 [node name="GameController" type="Node2D" unique_id=1544040718 node_paths=PackedStringArray("world_2d", "gui")]
 script = ExtResource("1_3iy47")
@@ -10,3 +11,13 @@ gui = NodePath("GUI")
 [node name="World2D" type="Node2D" parent="." unique_id=1931093878]
 
 [node name="GUI" type="Node" parent="." unique_id=293366033]
+
+[node name="Cave" type="Window" parent="." unique_id=354095634]
+oversampling_override = 1.0
+title = "Cave"
+size = Vector2i(1920, 1080)
+content_scale_mode = 2
+content_scale_aspect = 1
+script = ExtResource("2_xgdi0")
+
+[connection signal="close_requested" from="Cave" to="Cave" method="_on_close_requested"]
