@@ -15,6 +15,7 @@ gui = NodePath("GUI")
 [node name="Cave" type="Window" parent="." unique_id=354095634]
 oversampling_override = 1.0
 title = "Cave"
+position = Vector2i(0, 36)
 size = Vector2i(1920, 1080)
 content_scale_mode = 2
 content_scale_aspect = 1

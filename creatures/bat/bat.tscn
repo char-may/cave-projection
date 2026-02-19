@@ -166,7 +166,7 @@ script = ExtResource("1_4kvp8")
 
 [node name="CenterPoint" type="Node2D" parent="." unique_id=273554386]
 position = Vector2(965, 604)
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.175, 0.175)
 script = ExtResource("2_ithft")
 target_amplitude = 250.0
 
@@ -232,7 +232,7 @@ rest = Transform2D(0.024990536, -0.9996877, 0.9996877, 0.024990536, 966, 766)
 [node name="WingL" type="Bone2D" parent="CenterPoint/Skeleton2D/Head" unique_id=864980582]
 position = Vector2(207.53546, -181.24303)
 rotation = -0.05855912
-scale = Vector2(0.9999996, 0.9999996)
+scale = Vector2(0.99999946, 0.99999946)
 rest = Transform2D(0.9982859, -0.058525655, 0.058525655, 0.9982859, 207.53546, -181.24303)
 auto_calculate_length_and_angle = false
 length = 550.0
