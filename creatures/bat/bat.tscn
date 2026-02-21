@@ -10,7 +10,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CenterPoint/Skeleton2D/Head/WingL:position")
+tracks/0/path = NodePath("Container/Skeleton2D/Head/WingL:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -22,7 +22,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CenterPoint/Skeleton2D/Head/WingL:rotation")
+tracks/1/path = NodePath("Container/Skeleton2D/Head/WingL:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -34,7 +34,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CenterPoint/Skeleton2D/Head/WingR:position")
+tracks/2/path = NodePath("Container/Skeleton2D/Head/WingR:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -46,7 +46,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("CenterPoint/Skeleton2D/Head/WingR:rotation")
+tracks/3/path = NodePath("Container/Skeleton2D/Head/WingR:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -58,7 +58,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("CenterPoint/Skeleton2D/Head:position")
+tracks/4/path = NodePath("Container/Skeleton2D/Head:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -70,7 +70,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("CenterPoint/Skeleton2D/Head:rotation")
+tracks/5/path = NodePath("Container/Skeleton2D/Head:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -85,7 +85,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CenterPoint/Skeleton2D/Head/WingL:position")
+tracks/0/path = NodePath("Container/Skeleton2D/Head/WingL:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -97,7 +97,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CenterPoint/Skeleton2D/Head/WingL:rotation")
+tracks/1/path = NodePath("Container/Skeleton2D/Head/WingL:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -109,7 +109,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CenterPoint/Skeleton2D/Head/WingR:position")
+tracks/2/path = NodePath("Container/Skeleton2D/Head/WingR:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -121,7 +121,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("CenterPoint/Skeleton2D/Head/WingR:rotation")
+tracks/3/path = NodePath("Container/Skeleton2D/Head/WingR:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -133,7 +133,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("CenterPoint/Skeleton2D/Head:position")
+tracks/4/path = NodePath("Container/Skeleton2D/Head:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -145,7 +145,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("CenterPoint/Skeleton2D/Head:rotation")
+tracks/5/path = NodePath("Container/Skeleton2D/Head:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -161,19 +161,18 @@ _data = {
 &"RESET": SubResource("Animation_raw7o")
 }
 
-[node name="AnimatedBat" type="Node2D" unique_id=2131518630]
+[node name="Bat" type="Node2D" unique_id=2131518630]
+scale = Vector2(0.175, 0.175)
 script = ExtResource("1_4kvp8")
 
-[node name="CenterPoint" type="Node2D" parent="." unique_id=273554386]
-position = Vector2(965, 604)
-scale = Vector2(0.175, 0.175)
+[node name="Container" type="Node2D" parent="." unique_id=273554386]
 script = ExtResource("2_ithft")
 target_amplitude = 250.0
 
-[node name="Polygons" type="Node2D" parent="CenterPoint" unique_id=48708985]
+[node name="Polygons" type="Node2D" parent="Container" unique_id=48708985]
 position = Vector2(-965, -739)
 
-[node name="Head" type="Polygon2D" parent="CenterPoint/Polygons" unique_id=1749659657]
+[node name="Head" type="Polygon2D" parent="Container/Polygons" unique_id=1749659657]
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(959.38495, 802.466, 834.38495, 785.466, 790.38495, 763.466, 761.38495, 659.466, 748.38495, 562.466, 756.38495, 513.466, 786.38495, 463.466, 827.38495, 430.466, 850.38495, 417.466, 862.38495, 417.466, 871.38495, 429.466, 874.38495, 463.466, 878.38495, 490.466, 906.38495, 506.466, 959.38495, 509.466, 1010.38495, 506.466, 1042.385, 491.466, 1046.385, 471.466, 1049.385, 427.466, 1059.385, 415.466, 1070.6925, 414.71463, 1096.1384, 426.66647, 1138.1626, 463.2931, 1167.3704, 514.66504, 1174.2004, 565.8911, 1163.9548, 658.7985, 1133.2192, 766.0316, 1088.2631, 789.76935, 850.0529, 437.71603, 827.7389, 478.2119, 1070.7141, 436.06314, 1097.9869, 483.1706, 961.62317, 575.7326, 956.66455, 688.9558, 825.2595, 566.6417, 848.4, 706.31116, 1080.6315, 712.9227, 1112.0365, 567.46814)
 uv = PackedVector2Array(959.38495, 802.466, 834.38495, 785.466, 790.38495, 763.466, 761.38495, 659.466, 748.38495, 562.466, 756.38495, 513.466, 786.38495, 463.466, 827.38495, 430.466, 850.38495, 417.466, 862.38495, 417.466, 871.38495, 429.466, 874.38495, 463.466, 878.38495, 490.466, 906.38495, 506.466, 959.38495, 509.466, 1010.38495, 506.466, 1042.385, 491.466, 1046.385, 471.466, 1049.385, 427.466, 1059.385, 415.466, 1070.6925, 414.71463, 1096.1384, 426.66647, 1138.1626, 463.2931, 1167.3704, 514.66504, 1174.2004, 565.8911, 1163.9548, 658.7985, 1133.2192, 766.0316, 1088.2631, 789.76935, 850.0529, 437.71603, 827.7389, 478.2119, 1070.7141, 436.06314, 1097.9869, 483.1706, 961.62317, 575.7326, 956.66455, 688.9558, 825.2595, 566.6417, 848.4, 706.31116, 1080.6315, 712.9227, 1112.0365, 567.46814)
@@ -181,7 +180,7 @@ polygons = [PackedInt32Array(4, 34, 5), PackedInt32Array(6, 29, 5), PackedInt32A
 bones = ["Head", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Head/WingL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Head/WingR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Head/FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Head/FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 internal_vertex_count = 10
 
-[node name="WingL" type="Polygon2D" parent="CenterPoint/Polygons" unique_id=820352350]
+[node name="WingL" type="Polygon2D" parent="Container/Polygons" unique_id=820352350]
 show_behind_parent = true
 position = Vector2(78, 114)
 skeleton = NodePath("../../Skeleton2D")
@@ -191,7 +190,7 @@ polygons = [PackedInt32Array(19, 25, 20), PackedInt32Array(18, 25, 19), PackedIn
 bones = ["Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Head/WingL", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Head/WingR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Head/FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Head/FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 internal_vertex_count = 8
 
-[node name="WingR" type="Polygon2D" parent="CenterPoint/Polygons" unique_id=1188188927]
+[node name="WingR" type="Polygon2D" parent="Container/Polygons" unique_id=1188188927]
 show_behind_parent = true
 position = Vector2(-79, 114)
 skeleton = NodePath("../../Skeleton2D")
@@ -201,7 +200,7 @@ polygons = [PackedInt32Array(31, 1, 0), PackedInt32Array(31, 24, 0), PackedInt32
 bones = ["Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Head/WingL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Head/WingR", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Head/FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Head/FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 internal_vertex_count = 8
 
-[node name="FootL" type="Polygon2D" parent="CenterPoint/Polygons" unique_id=1094076865]
+[node name="FootL" type="Polygon2D" parent="Container/Polygons" unique_id=1094076865]
 show_behind_parent = true
 position = Vector2(24, -38)
 skeleton = NodePath("../../Skeleton2D")
@@ -211,7 +210,7 @@ polygons = [PackedInt32Array(10, 0, 1), PackedInt32Array(10, 9, 0), PackedInt32A
 bones = ["Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Head/WingL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Head/WingR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Head/FootL", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Head/FootR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 internal_vertex_count = 2
 
-[node name="FootR" type="Polygon2D" parent="CenterPoint/Polygons" unique_id=1715483121]
+[node name="FootR" type="Polygon2D" parent="Container/Polygons" unique_id=1715483121]
 show_behind_parent = true
 position = Vector2(-41, -38)
 skeleton = NodePath("../../Skeleton2D")
@@ -221,24 +220,24 @@ polygons = [PackedInt32Array(10, 1, 0), PackedInt32Array(10, 2, 1), PackedInt32A
 bones = ["Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Head/WingL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Head/WingR", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Head/FootL", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Head/FootR", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]
 internal_vertex_count = 2
 
-[node name="Skeleton2D" type="Skeleton2D" parent="CenterPoint" unique_id=825155997]
+[node name="Skeleton2D" type="Skeleton2D" parent="Container" unique_id=825155997]
 position = Vector2(-965, -739)
 
-[node name="Head" type="Bone2D" parent="CenterPoint/Skeleton2D" unique_id=217494345]
+[node name="Head" type="Bone2D" parent="Container/Skeleton2D" unique_id=217494345]
 position = Vector2(966, 766)
 rotation = -1.5458032
 rest = Transform2D(0.024990536, -0.9996877, 0.9996877, 0.024990536, 966, 766)
 
-[node name="WingL" type="Bone2D" parent="CenterPoint/Skeleton2D/Head" unique_id=864980582]
+[node name="WingL" type="Bone2D" parent="Container/Skeleton2D/Head" unique_id=864980582]
 position = Vector2(207.53546, -181.24303)
 rotation = -0.05855912
-scale = Vector2(0.99999946, 0.99999946)
+scale = Vector2(0.9999999, 0.9999999)
 rest = Transform2D(0.9982859, -0.058525655, 0.058525655, 0.9982859, 207.53546, -181.24303)
 auto_calculate_length_and_angle = false
 length = 550.0
 bone_angle = -72.66097
 
-[node name="WingR" type="Bone2D" parent="CenterPoint/Skeleton2D/Head" unique_id=349177886]
+[node name="WingR" type="Bone2D" parent="Container/Skeleton2D/Head" unique_id=349177886]
 position = Vector2(221.20561, 165.52364)
 rotation = -0.39075723
 rest = Transform2D(1, 0, 0, 1, 221.20561, 165.52364)
@@ -246,14 +245,14 @@ auto_calculate_length_and_angle = false
 length = 550.0
 bone_angle = 72.659996
 
-[node name="FootL" type="Bone2D" parent="CenterPoint/Skeleton2D/Head" unique_id=937332632]
+[node name="FootL" type="Bone2D" parent="Container/Skeleton2D/Head" unique_id=937332632]
 position = Vector2(-22.842676, -113.464584)
 rest = Transform2D(1, 0, 0, 1, -22.842676, -113.464584)
 auto_calculate_length_and_angle = false
 length = 62.927
 bone_angle = 178.34897
 
-[node name="FootR" type="Bone2D" parent="CenterPoint/Skeleton2D/Head" unique_id=843110192]
+[node name="FootR" type="Bone2D" parent="Container/Skeleton2D/Head" unique_id=843110192]
 position = Vector2(-19.419106, 103.51762)
 rest = Transform2D(1, 0, 0, 1, -19.419106, 103.51762)
 auto_calculate_length_and_angle = false

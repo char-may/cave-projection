@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cpuanptp05hei" path="res://creatures/creature.gd" id="1_oxxok"]
 [ext_resource type="Script" uid="uid://blm1pvtue6d8o" path="res://utils/wiggle.gd" id="2_dncal"]
 [ext_resource type="Script" uid="uid://bxj0w5vqevxp1" path="res://creatures/tardigrade/boing.gd" id="3_f2s73"]
+[ext_resource type="Script" uid="uid://cf4mgnqnkvi2b" path="res://creatures/tardigrade/label.gd" id="4_kjw63"]
 
 [sub_resource type="Animation" id="Animation_22ttg"]
 resource_name = "Idle"
@@ -11,7 +12,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CenterPoint/Skeleton2D/Body:position")
+tracks/0/path = NodePath("Container/Skeleton2D/Body:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -23,7 +24,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CenterPoint/Skeleton2D/Body/FrontLeg:rotation")
+tracks/1/path = NodePath("Container/Skeleton2D/Body/FrontLeg:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -35,7 +36,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CenterPoint/Skeleton2D/Body/MidFrontLeg:rotation")
+tracks/2/path = NodePath("Container/Skeleton2D/Body/MidFrontLeg:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -47,7 +48,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("CenterPoint/Skeleton2D/Body/MidBackLeg:rotation")
+tracks/3/path = NodePath("Container/Skeleton2D/Body/MidBackLeg:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -59,7 +60,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("CenterPoint/Skeleton2D/Body/BackLeg:rotation")
+tracks/4/path = NodePath("Container/Skeleton2D/Body/BackLeg:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -71,7 +72,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("CenterPoint/Skeleton2D/Body/Head:rotation")
+tracks/5/path = NodePath("Container/Skeleton2D/Body/Head:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -86,7 +87,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CenterPoint/Skeleton2D/Body:position")
+tracks/0/path = NodePath("Container/Skeleton2D/Body:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -98,7 +99,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CenterPoint/Skeleton2D/Body/FrontLeg:rotation")
+tracks/1/path = NodePath("Container/Skeleton2D/Body/FrontLeg:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -110,7 +111,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CenterPoint/Skeleton2D/Body/MidFrontLeg:rotation")
+tracks/2/path = NodePath("Container/Skeleton2D/Body/MidFrontLeg:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -122,7 +123,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("CenterPoint/Skeleton2D/Body/MidBackLeg:rotation")
+tracks/3/path = NodePath("Container/Skeleton2D/Body/MidBackLeg:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -134,7 +135,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("CenterPoint/Skeleton2D/Body/BackLeg:rotation")
+tracks/4/path = NodePath("Container/Skeleton2D/Body/BackLeg:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -146,7 +147,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("CenterPoint/Skeleton2D/Body/Head:rotation")
+tracks/5/path = NodePath("Container/Skeleton2D/Body/Head:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -167,7 +168,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CenterPoint:rotation")
+tracks/0/path = NodePath("Container:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -184,7 +185,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CenterPoint:rotation")
+tracks/0/path = NodePath("Container:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -206,14 +207,14 @@ length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CenterPoint:scale")
+tracks/0/path = NodePath("Container:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.03333333, 0.13333334, 0.26666668, 0.5, 0.8, 1.2500151),
 "transitions": PackedFloat32Array(-2, -2, -2, -2, -2, -2, -2),
 "update": 0,
-"values": [Vector2(0.25, 0.25), Vector2(0.27, 0.27), Vector2(0.25, 0.25), Vector2(0.26, 0.26), Vector2(0.25, 0.25), Vector2(0.255, 0.255), Vector2(0.25, 0.25)]
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1), Vector2(1.05, 1.05), Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_m1pal"]
@@ -221,14 +222,14 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CenterPoint:scale")
+tracks/0/path = NodePath("Container:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.25, 0.25)]
+"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dmkxs"]
@@ -237,19 +238,18 @@ _data = {
 &"RESET": SubResource("Animation_m1pal")
 }
 
-[node name="AnimatedTardigrade" type="Node2D" unique_id=1150676927]
+[node name="Tardigrade" type="Node2D" unique_id=1150676927]
+scale = Vector2(0.175, 0.175)
 script = ExtResource("1_oxxok")
 
-[node name="CenterPoint" type="Node2D" parent="." unique_id=863718095]
-position = Vector2(960, 540)
-scale = Vector2(0.25, 0.25)
+[node name="Container" type="Node2D" parent="." unique_id=863718095]
 script = ExtResource("2_dncal")
 frequency = 1.0
 tween_duration = 10.0
 
-[node name="Polygons" type="Node2D" parent="CenterPoint" unique_id=1729043460]
+[node name="Polygons" type="Node2D" parent="Container" unique_id=1729043460]
 
-[node name="Body" type="Polygon2D" parent="CenterPoint/Polygons" unique_id=183239447]
+[node name="Body" type="Polygon2D" parent="Container/Polygons" unique_id=183239447]
 position = Vector2(-924, -404)
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(545.2014, 601.6952, 454.36066, 547.7371, 499.43954, 450.7492, 526.7601, 390.64404, 575.2516, 320.29633, 651.749, 251.312, 748.05396, 203.50105, 845.0388, 174.81772, 951.58887, 165.93855, 1066.3352, 175.50073, 1181.0814, 206.23634, 1259.6279, 255.4133, 1359.3467, 373.57117, 1391.4482, 509.49084, 1305.389, 559.35114, 1118.2434, 556.6191, 1033.5497, 610.57715, 901.72815, 623.5544, 771.27625, 620.1383, 645.6018, 636.53064, 538.39905, 521.34705, 628.7927, 387.85873, 697.1135, 529.7558, 789.6094, 315.3336, 891.565, 489.8144, 983.0099, 289.0575, 1084.9655, 467.74268, 1184.819, 319.5391, 1276.2637, 454.0785)
@@ -258,7 +258,7 @@ polygons = [PackedInt32Array(0, 20, 1), PackedInt32Array(20, 2, 1), PackedInt32A
 bones = ["Body", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Body/Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Body/FrontLeg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Body/MidFrontLeg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Body/MidBackLeg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Body/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 internal_vertex_count = 9
 
-[node name="FrontLeg" type="Polygon2D" parent="CenterPoint/Polygons" unique_id=227575568]
+[node name="FrontLeg" type="Polygon2D" parent="Container/Polygons" unique_id=227575568]
 position = Vector2(-950, -490)
 rotation = 0.0010778599
 skeleton = NodePath("../../Skeleton2D")
@@ -268,7 +268,7 @@ polygons = [PackedInt32Array(17, 33, 16), PackedInt32Array(17, 18, 33), PackedIn
 bones = ["Body", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Body/Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Body/FrontLeg", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Body/MidFrontLeg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Body/MidBackLeg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Body/BackLeg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 internal_vertex_count = 10
 
-[node name="MidBackLeg" type="Polygon2D" parent="CenterPoint/Polygons" unique_id=844033086]
+[node name="MidBackLeg" type="Polygon2D" parent="Container/Polygons" unique_id=844033086]
 position = Vector2(-926, -509)
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(655.25476, 676.05817, 696.3922, 649.7641, 739.2261, 640.85803, 790.5419, 640.85803, 849.0673, 649.7641, 887.6602, 664.1834, 892.7494, 682.4196, 888.9325, 714.2269, 857.1244, 767.2383, 828.28577, 809.22394, 772.3049, 869.4458, 754.0744, 888.10156, 743.4719, 898.70404, 755.1348, 911.8404, 762.8197, 926.7196, 762.979, 938.0047, 753.4956, 951.0853, 741.723, 959.7513, 728.31537, 957.46216, 709.18494, 933.4265, 699.21094, 946.83417, 685.14923, 956.1541, 671.41455, 955.0095, 660.62305, 934.73456, 667.9768, 913.1432, 681.38446, 896.3019, 687.7613, 885.01984, 670.2545, 856.8866, 660.39874, 817.50336, 654.5358, 785.70593, 644.72205, 704.39136, 713.9878, 700.51074, 820.5379, 710.7559, 708.52386, 764.029, 777.50824, 775.6402, 726.2822, 833.69635, 716.72003, 891.0695, 684.6184, 927.9523, 741.30853, 934.09937)
@@ -277,7 +277,7 @@ polygons = [PackedInt32Array(20, 37, 21), PackedInt32Array(20, 19, 37), PackedIn
 bones = ["Body", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Body/Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Body/FrontLeg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Body/MidFrontLeg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Body/MidBackLeg", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Body/BackLeg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 internal_vertex_count = 8
 
-[node name="MidFrontLeg" type="Polygon2D" parent="CenterPoint/Polygons" unique_id=997973287]
+[node name="MidFrontLeg" type="Polygon2D" parent="Container/Polygons" unique_id=997973287]
 position = Vector2(-940, -508)
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(1063.1796, 614.2979, 1105.0493, 614.2979, 1138.229, 629.3078, 1157.9789, 664.5942, 1157.978, 723.3165, 1149.0233, 800.7353, 1141.649, 838.13074, 1127.6925, 869.20386, 1120.5825, 892.6403, 1138.4886, 911.6016, 1138.4886, 930.0348, 1131.3788, 942.148, 1120.5822, 948.46796, 1111.3656, 947.4147, 1087.6658, 924.2415, 1071.6025, 946.62463, 1061.596, 948.7313, 1048.4294, 940.3047, 1040.0028, 931.35144, 1037.8961, 913.44495, 1049.2194, 881.58185, 1004.18964, 834.70807, 961.26843, 773.8805, 935.4641, 712.78674, 944.41736, 676.9737, 980.76105, 648.7963, 1019.99744, 627.9931, 987.083, 698.85, 1095.3474, 674.88306, 1039.9756, 781.4946, 1102.7855, 784.8004, 1081.2979, 844.30457, 1084.6036, 893.06494, 1058.9838, 917.0319, 1117.6615, 917.8584)
@@ -286,7 +286,7 @@ polygons = [PackedInt32Array(15, 33, 14), PackedInt32Array(16, 15, 33), PackedIn
 bones = ["Body", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Body/Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Body/FrontLeg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Body/MidFrontLeg", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Body/MidBackLeg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Body/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 internal_vertex_count = 8
 
-[node name="BackLeg" type="Polygon2D" parent="CenterPoint/Polygons" unique_id=1614470419]
+[node name="BackLeg" type="Polygon2D" parent="Container/Polygons" unique_id=1614470419]
 position = Vector2(-872, -452)
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(406.5136, 589.6873, 446.37878, 586.7186, 508.29706, 602.4102, 561.73334, 632.09705, 583.7864, 660.5116, 590.99603, 683.837, 548.16254, 737.6969, 527.80585, 761.44635, 488.79132, 795.37085, 434.0827, 830.99506, 421.36005, 853.04517, 430.2661, 873.40186, 428.14563, 892.9103, 415.4227, 904.78503, 395.4901, 900.54407, 364.53098, 866.6163, 346.2948, 887.39703, 329.3309, 890.3657, 314.91156, 881.45966, 310.6706, 866.19214, 313.63928, 849.65234, 329.75497, 833.11255, 349.2635, 817.84503, 377.2539, 801.30524, 373.0142, 773.3178, 372.5901, 696.1321, 391.6738, 610.0434, 437.62598, 634.00073, 538.029, 670.20044, 423.2827, 703.6681, 479.97284, 736.45276, 423.96573, 764.4563, 398.0112, 817.04834, 374.78876, 844.3689, 330.39288, 861.4442, 402.7923, 871.00476)
@@ -295,7 +295,7 @@ polygons = [PackedInt32Array(13, 35, 12), PackedInt32Array(13, 14, 35), PackedIn
 bones = ["Body", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Body/Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Body/FrontLeg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Body/MidFrontLeg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Body/MidBackLeg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Body/BackLeg", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1)]
 internal_vertex_count = 9
 
-[node name="Head" type="Polygon2D" parent="CenterPoint/Polygons" unique_id=472908399]
+[node name="Head" type="Polygon2D" parent="Container/Polygons" unique_id=472908399]
 position = Vector2(-1050, -362)
 skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(1512, 468, 1436.5211, 428.82324, 1372.3179, 368.71808, 1332.7031, 308.6129, 1317.6768, 258.75293, 1310.8467, 215.04007, 1310.8467, 169.27817, 1336.8011, 133.76505, 1362.0726, 108.49355, 1393.4912, 85.95411, 1429.0079, 69.56179, 1459.0605, 64.09768, 1510.2865, 63.414673, 1546.4862, 70.244804, 1580.637, 88.00315, 1614.1045, 114.64068, 1638.6931, 141.27818, 1640.603, 141.40251, 1651.7543, 127.733246, 1676.0352, 123.056915, 1699.9565, 131.68904, 1728.7339, 157.94843, 1737.0051, 188.5246, 1737.7267, 236.1835, 1709.8486, 266.2199, 1704.4528, 268.37823, 1695.1001, 277.19128, 1699.0564, 323.05743, 1685.2065, 370.89993, 1659.6682, 413.52795, 1624.5957, 442.30533, 1575.6749, 457.95398, 1373.7744, 177.02031, 1435.2485, 136.92851, 1524.7869, 130.24655, 1590.9382, 160.9836, 1643.7258, 170.33835, 1675.1311, 150.29245, 1717.8956, 187.71146, 1704.5317, 235.15341, 1675.1311, 255.86751, 1653.0806, 320.01437, 1620.3374, 396.85785, 1525.4535, 430.9359, 1452.6243, 370.13065, 1387.1409, 283.9333, 1474.6747, 209.76346, 1552.1855, 320.68408, 1591.6091, 231.14575)
@@ -304,19 +304,19 @@ polygons = [PackedInt32Array(0, 43, 31), PackedInt32Array(31, 42, 43), PackedInt
 bones = ["Body", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Body/Head", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "Body/FrontLeg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Body/MidFrontLeg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Body/MidBackLeg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Body/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 internal_vertex_count = 17
 
-[node name="Skeleton2D" type="Skeleton2D" parent="CenterPoint" unique_id=1206814641]
+[node name="Skeleton2D" type="Skeleton2D" parent="Container" unique_id=1206814641]
 
-[node name="Body" type="Bone2D" parent="CenterPoint/Skeleton2D" unique_id=1313105999]
+[node name="Body" type="Bone2D" parent="Container/Skeleton2D" unique_id=1313105999]
 rest = Transform2D(1, 0, 0, 1, 0, 0)
 
-[node name="Head" type="Bone2D" parent="CenterPoint/Skeleton2D/Body" unique_id=432589796]
+[node name="Head" type="Bone2D" parent="Container/Skeleton2D/Body" unique_id=432589796]
 position = Vector2(370, -77)
 rest = Transform2D(1, 0, 0, 1, 370, -77)
 auto_calculate_length_and_angle = false
 length = 325.715
 bone_angle = -19.817
 
-[node name="FrontLeg" type="Bone2D" parent="CenterPoint/Skeleton2D/Body" unique_id=1069415558]
+[node name="FrontLeg" type="Bone2D" parent="Container/Skeleton2D/Body" unique_id=1069415558]
 position = Vector2(406, 120)
 rotation = -0.093906276
 rest = Transform2D(1, 0, 0, 1, 406, 120)
@@ -324,21 +324,21 @@ auto_calculate_length_and_angle = false
 length = 278.79
 bone_angle = 52.842983
 
-[node name="MidFrontLeg" type="Bone2D" parent="CenterPoint/Skeleton2D/Body" unique_id=2038480338]
+[node name="MidFrontLeg" type="Bone2D" parent="Container/Skeleton2D/Body" unique_id=2038480338]
 position = Vector2(104, 165)
 rest = Transform2D(1, 0, 0, 1, 104, 165)
 auto_calculate_length_and_angle = false
 length = 241.618
 bone_angle = 79.26598
 
-[node name="MidBackLeg" type="Bone2D" parent="CenterPoint/Skeleton2D/Body" unique_id=1212891131]
+[node name="MidBackLeg" type="Bone2D" parent="Container/Skeleton2D/Body" unique_id=1212891131]
 position = Vector2(-164, 208)
 rest = Transform2D(1, 0, 0, 1, -164, 208)
 auto_calculate_length_and_angle = false
 length = 231.862
 bone_angle = 99.08298
 
-[node name="BackLeg" type="Bone2D" parent="CenterPoint/Skeleton2D/Body" unique_id=901592182]
+[node name="BackLeg" type="Bone2D" parent="Container/Skeleton2D/Body" unique_id=901592182]
 position = Vector2(-378, 187)
 scale = Vector2(0.9999999, 0.9999999)
 rest = Transform2D(1, 0, 0, 1, -378, 187)
@@ -361,5 +361,13 @@ libraries/ = SubResource("AnimationLibrary_dmkxs")
 wait_time = 10.0
 autostart = true
 script = ExtResource("3_f2s73")
+
+[node name="Debug" type="Label" parent="." unique_id=1954281822]
+offset_top = -400.0
+offset_right = 337.0
+offset_bottom = -263.0
+theme_override_font_sizes/font_size = 100
+text = "1.0, 1.0"
+script = ExtResource("4_kjw63")
 
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

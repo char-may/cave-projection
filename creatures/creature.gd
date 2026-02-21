@@ -1,7 +1,6 @@
 class_name Creature extends Node2D
 
-@onready var center_point = $CenterPoint
-@onready var polygons = $CenterPoint/Polygons
+@onready var polygons = $Container/Polygons
 
 # constructor
 func _init():
