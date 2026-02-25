@@ -263,7 +263,7 @@ bone_angle = 178.34897
 [node name="FlyingAnimation" type="AnimationPlayer" parent="." unique_id=1223353855]
 libraries/ = SubResource("AnimationLibrary_25tsd")
 autoplay = &"FLY"
-speed_scale = 1.25
+speed_scale = 1.5
 
 [node name="DestinationPosition" type="Marker2D" parent="." unique_id=139665280]
 position = Vector2(7314.285, 3017.1426)

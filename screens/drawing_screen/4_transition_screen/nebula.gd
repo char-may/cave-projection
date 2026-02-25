@@ -9,4 +9,4 @@ extends Node2D
 
 func _process(delta):
 	# Rotate sprite around its own center
-	nebula_sprite += rotation_speed * delta
+	nebula_sprite.rotation += rotation_speed * delta
