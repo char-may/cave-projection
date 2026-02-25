@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cshi421aqhrpq"]
+
+[ext_resource type="PackedScene" uid="uid://fwic88x8tvm6" path="res://creatures/bat/bat.tscn" id="1_f2e02"]
+[ext_resource type="PackedScene" uid="uid://155fqypfh8ve" path="res://creatures/bat/alt_bat.tscn" id="2_acbo0"]
+
+[node name="BatCompare" type="Node2D" unique_id=215495240]
+
+[node name="Bat" parent="." unique_id=2131518630 instance=ExtResource("1_f2e02")]
+position = Vector2(-556, -12.9999695)
+
+[node name="Bat2" parent="." unique_id=339438469 instance=ExtResource("2_acbo0")]
+position = Vector2(105, -3)
