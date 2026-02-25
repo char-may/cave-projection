@@ -241,6 +241,7 @@ _data = {
 [node name="Tardigrade" type="Node2D" unique_id=1150676927]
 scale = Vector2(0.175, 0.175)
 script = ExtResource("1_oxxok")
+creature_type = 1
 
 [node name="Container" type="Node2D" parent="." unique_id=863718095]
 script = ExtResource("2_dncal")

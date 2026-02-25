@@ -164,10 +164,11 @@ _data = {
 [node name="Bat" type="Node2D" unique_id=2131518630]
 scale = Vector2(0.175, 0.175)
 script = ExtResource("1_4kvp8")
+moving = true
 
 [node name="Container" type="Node2D" parent="." unique_id=273554386]
 script = ExtResource("2_ithft")
-target_amplitude = 250.0
+target_amplitude = 2000.0
 
 [node name="Polygons" type="Node2D" parent="Container" unique_id=48708985]
 position = Vector2(-965, -739)
@@ -231,7 +232,7 @@ rest = Transform2D(0.024990536, -0.9996877, 0.9996877, 0.024990536, 966, 766)
 [node name="WingL" type="Bone2D" parent="Container/Skeleton2D/Head" unique_id=864980582]
 position = Vector2(207.53546, -181.24303)
 rotation = -0.05855912
-scale = Vector2(0.99999994, 0.99999994)
+scale = Vector2(0.99999815, 0.99999815)
 rest = Transform2D(0.9982859, -0.058525655, 0.058525655, 0.9982859, 207.53546, -181.24303)
 auto_calculate_length_and_angle = false
 length = 550.0
@@ -263,3 +264,6 @@ bone_angle = 178.34897
 libraries/ = SubResource("AnimationLibrary_25tsd")
 autoplay = &"FLY"
 speed_scale = 1.25
+
+[node name="DestinationPosition" type="Marker2D" parent="." unique_id=139665280]
+position = Vector2(7314.285, 3017.1426)
