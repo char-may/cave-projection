@@ -267,3 +267,4 @@ autoplay = &"FLY"
 speed_scale = 1.5
 
 [node name="DestinationPosition" type="Marker2D" parent="." unique_id=139665280]
+visible = false
