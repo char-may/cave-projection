@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1ajcgb2qi6p1"
-path="res://.godot/imported/caveref1.png-01465b5f744526bceee8fbb76561af67.ctex"
+uid="uid://eulj7kyan2e6"
+path="res://.godot/imported/nebula_vector.png-c9fb6b18959557f03b63d8807994f53c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://reference/caveref1.png"
-dest_files=["res://.godot/imported/caveref1.png-01465b5f744526bceee8fbb76561af67.ctex"]
+source_file="res://screens/drawing_screen/4_transition_screen/nebula_vector.png"
+dest_files=["res://.godot/imported/nebula_vector.png-c9fb6b18959557f03b63d8807994f53c.ctex"]
 
 [params]
 
