@@ -57,8 +57,15 @@ func create_random_bat():
 	# Pick spawn
 	var bat_spawn_points = $BatSpawns.get_children()
 	var bat_spawn_node = bat_spawn_points.pick_random()
-	new_bat.global_position = bat_spawn_node.position
 	self.add_child(new_bat)
+	print(new_bat.destination_position)
+	new_bat.destination_position = bat_spawn_node.global_position
+	print(new_bat.destination_position)
+	print(bat_spawn_node.position)
+	new_bat.moving = true
+	print(new_bat.moving)
+
+
 
 
 func create_random_tardigrade():
