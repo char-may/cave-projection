@@ -14,9 +14,9 @@ func _init():
 func _ready():
 	set_texture(Global.finished_atlus)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# handle movement
-	go_there(delta)
+	go_there()
 	
 # set texture of all polygons
 func set_texture(texture: ImageTexture) -> void:
@@ -25,7 +25,7 @@ func set_texture(texture: ImageTexture) -> void:
 			if p is Polygon2D:
 				p.texture = texture
 
-func go_there(_delta) -> void:
+func go_there() -> void:
 	if moving:
 		var tween = create_tween()
 		tween.tween_property(self, "global_position", destination_position, move_speed).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)

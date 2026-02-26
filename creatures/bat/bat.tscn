@@ -232,7 +232,7 @@ rest = Transform2D(0.024990536, -0.9996877, 0.9996877, 0.024990536, 966, 766)
 [node name="WingL" type="Bone2D" parent="Container/Skeleton2D/Head" unique_id=864980582]
 position = Vector2(207.53546, -181.24303)
 rotation = -0.05855912
-scale = Vector2(0.9999971, 0.9999971)
+scale = Vector2(0.999997, 0.999997)
 rest = Transform2D(0.9982859, -0.058525655, 0.058525655, 0.9982859, 207.53546, -181.24303)
 auto_calculate_length_and_angle = false
 length = 550.0
