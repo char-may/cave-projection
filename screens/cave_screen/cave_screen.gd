@@ -3,7 +3,6 @@ extends Node2D
 @export var bat_scene : PackedScene
 @export var tardigrade_scene : PackedScene
 
-
 func _ready() -> void:
 	GlobalSignal.new_bat_created.connect(create_bat)
 	GlobalSignal.new_tardigrade_created.connect(on_tardigrade_created)

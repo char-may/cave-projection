@@ -4,7 +4,7 @@ class_name Creature extends Node2D
 @onready var destination_position = $DestinationPosition.global_position
 
 @export var creature_type : Global.CreatureType = Global.CreatureType.BAT
-@export var move_speed : float = 200.0
+@export var move_speed : float = 1.0
 @export var moving : bool = false
 
 # constructor
@@ -25,8 +25,8 @@ func set_texture(texture: ImageTexture) -> void:
 			if p is Polygon2D:
 				p.texture = texture
 
-func go_there(delta) -> void:
+func go_there(_delta) -> void:
 	if moving:
-		global_position = global_position.move_toward(destination_position, delta * move_speed)
-	if global_position == destination_position:
+		var tween = create_tween()
+		tween.tween_property(self, "global_position", destination_position, move_speed).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 		moving = false

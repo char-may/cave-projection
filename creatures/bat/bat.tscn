@@ -164,7 +164,7 @@ _data = {
 [node name="Bat" type="Node2D" unique_id=2131518630]
 scale = Vector2(0.175, 0.175)
 script = ExtResource("1_4kvp8")
-moving = true
+move_speed = 6.0
 
 [node name="Container" type="Node2D" parent="." unique_id=273554386]
 script = ExtResource("2_ithft")
@@ -232,7 +232,7 @@ rest = Transform2D(0.024990536, -0.9996877, 0.9996877, 0.024990536, 966, 766)
 [node name="WingL" type="Bone2D" parent="Container/Skeleton2D/Head" unique_id=864980582]
 position = Vector2(207.53546, -181.24303)
 rotation = -0.05855912
-scale = Vector2(0.9999981, 0.9999981)
+scale = Vector2(0.9999971, 0.9999971)
 rest = Transform2D(0.9982859, -0.058525655, 0.058525655, 0.9982859, 207.53546, -181.24303)
 auto_calculate_length_and_angle = false
 length = 550.0
@@ -241,7 +241,7 @@ bone_angle = -72.66097
 [node name="WingR" type="Bone2D" parent="Container/Skeleton2D/Head" unique_id=349177886]
 position = Vector2(221.20561, 165.52364)
 rotation = -0.39075723
-scale = Vector2(0.99999994, 0.99999994)
+scale = Vector2(0.9999999, 0.9999999)
 rest = Transform2D(1, 0, 0, 1, 221.20561, 165.52364)
 auto_calculate_length_and_angle = false
 length = 550.0
@@ -267,4 +267,3 @@ autoplay = &"FLY"
 speed_scale = 1.5
 
 [node name="DestinationPosition" type="Marker2D" parent="." unique_id=139665280]
-visible = false
