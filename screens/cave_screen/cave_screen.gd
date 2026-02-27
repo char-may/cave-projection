@@ -1,8 +1,5 @@
 extends Node2D
 
-@export var bat_scene : PackedScene
-@export var tardigrade_scene : PackedScene
-
 func _ready() -> void:
 	GlobalSignal.new_bat_created.connect(create_bat)
 	GlobalSignal.new_tardigrade_created.connect(create_tardigrade)
@@ -18,10 +15,26 @@ func _process(_delta: float) -> void:
 func create_bat():
 	var new_bat_scene := preload("res://creatures/bat/bat.tscn")
 	var new_bat = new_bat_scene.instantiate()
-	# Pick spawn
+	
+	# spawn nebula
+	var new_nebula_scene := preload("res://screens/drawing_screen/4_transition_screen/nebula.tscn")
+	var new_nebula = new_nebula_scene.instantiate()
+	new_nebula.global_position = $CreatureSpawn.global_position
+	self.add_child(new_nebula)
+	
+	# delay then spawn bat - tween in scale
+	await get_tree().create_timer(1.0).timeout
+	var starting_scale = new_bat.scale
+	new_bat.scale = Vector2(0,0) # zero for tweening
+	new_bat.global_position = $CreatureSpawn.global_position
+	self.add_child(new_bat)
+	var bat_scale_in = create_tween()
+	bat_scale_in.tween_property(new_bat,"scale", starting_scale, 1).set_trans(Tween.TRANS_CUBIC)
+	await bat_scale_in.finished
+	
+	# pick and move to spawn
 	var bat_spawn_points = $BatSpawns.get_children()
 	var bat_spawn_node = bat_spawn_points.pick_random()
-	self.add_child(new_bat)
 	new_bat.destination_position = bat_spawn_node.global_position
 	new_bat.moving = true
 

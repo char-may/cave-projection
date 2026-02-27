@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cpuanptp05hei" path="res://creatures/creature.gd" id="1_oxxok"]
 [ext_resource type="Script" uid="uid://blm1pvtue6d8o" path="res://utils/wiggle.gd" id="2_dncal"]
-[ext_resource type="Script" uid="uid://bxj0w5vqevxp1" path="res://creatures/tardigrade/boing.gd" id="3_f2s73"]
+[ext_resource type="Script" uid="uid://bxj0w5vqevxp1" path="res://creatures/tardigrade/boing_timer.gd" id="3_f2s73"]
 [ext_resource type="Script" uid="uid://cf4mgnqnkvi2b" path="res://creatures/tardigrade/label.gd" id="4_kjw63"]
 
 [sub_resource type="Animation" id="Animation_22ttg"]
@@ -359,7 +359,7 @@ autoplay = &"Rotate"
 [node name="BoingAnimation" type="AnimationPlayer" parent="." unique_id=1019590681]
 libraries/ = SubResource("AnimationLibrary_dmkxs")
 
-[node name="Timer" type="Timer" parent="." unique_id=1064593362]
+[node name="BoingTimer" type="Timer" parent="." unique_id=1064593362]
 wait_time = 10.0
 autostart = true
 script = ExtResource("3_f2s73")
@@ -374,4 +374,4 @@ script = ExtResource("4_kjw63")
 
 [node name="DestinationPosition" type="Marker2D" parent="." unique_id=1462587721]
 
-[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
+[connection signal="timeout" from="BoingTimer" to="BoingTimer" method="_on_timeout"]

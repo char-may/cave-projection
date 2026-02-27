@@ -1,13 +1,9 @@
 [gd_scene format=3 uid="uid://cw5vkd0vwqp0y"]
 
 [ext_resource type="Script" uid="uid://ccunnoxitkua1" path="res://screens/cave_screen/cave_screen.gd" id="1_k6v64"]
-[ext_resource type="PackedScene" uid="uid://fwic88x8tvm6" path="res://creatures/bat/bat.tscn" id="2_t2onl"]
-[ext_resource type="PackedScene" uid="uid://d0n25apmfcdrw" path="res://creatures/tardigrade/tardigrade.tscn" id="3_sw0ie"]
 
 [node name="CaveScreen" type="Node2D" unique_id=2077961266]
 script = ExtResource("1_k6v64")
-bat_scene = ExtResource("2_t2onl")
-tardigrade_scene = ExtResource("3_sw0ie")
 
 [node name="Scenery" type="Node2D" parent="." unique_id=541471690]
 
@@ -56,3 +52,6 @@ position = Vector2(486, 876)
 
 [node name="TardigradeSpawn3" type="Marker2D" parent="TardigradeSpawns" unique_id=572409246]
 position = Vector2(1428, 576)
+
+[node name="CreatureSpawn" type="Marker2D" parent="." unique_id=534270507]
+position = Vector2(960, 540)
