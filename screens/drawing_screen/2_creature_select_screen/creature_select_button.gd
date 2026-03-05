@@ -11,24 +11,16 @@ class_name CreatureSelectButton extends TextureButton
 @export var monster_button : CreatureSelectButton
 
 @onready var grid = $".."
-@onready var confirm_label = $"../../ConfirmLabel"
 @onready var select_label = $"../../SelectLabel"
-@onready var yep_button = $"../../YepButton"
-@onready var nope_button = $"../../NopeButton"
+@onready var confirm_label = $"../../ConfirmLabel"
 var current_frame : Texture2D
-
 
 func _ready() -> void:	
 	pressed.connect(_on_pressed)
 	current_frame = frame_a
 	texture_normal = current_frame
-	confirm_label.visible = false
 	select_label.visible = true
-	yep_button.visible = false
-	nope_button.visible = false
-
-func _process(_delta: float) -> void:
-	pass
+	confirm_label.visible = false
 
 func _on_timer_timeout() -> void:
 	if current_frame == frame_a:
@@ -106,5 +98,4 @@ func grid_tween():
 	tween.tween_property(grid, "rotation_degrees", 360.0, .7).set_trans(Tween.TRANS_EXPO)
 	await get_tree().create_timer(.5).timeout
 	confirm_label.visible = true
-	yep_button.visible = true
-	nope_button.visible = true
+	Global.game_controller.change_gui_scene("res://screens/drawing_screen/2_creature_select_screen/creature_select_confirm_ui.tscn", true, false)

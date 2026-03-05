@@ -14,7 +14,7 @@ func _init() -> void:
 
 func _ready() -> void:
 	# Load splash screen
-	Global.game_controller.change_gui_scene("res://screens/drawing_screen/1_splash_screen/splash_screen_manager.tscn")
+	Global.game_controller.change_2d_scene("res://screens/drawing_screen/1_splash_screen/splash_screen_manager.tscn")
 
 func change_gui_scene(new_scene: String, delete: bool = true, keep_running: bool = false) -> void:
 		if current_gui_scene != null:
@@ -29,6 +29,9 @@ func change_gui_scene(new_scene: String, delete: bool = true, keep_running: bool
 		current_gui_scene = new
 		
 # Add clear_gui_scene which just does delete, keep_running, and remove without setting a new scene
+func clear_gui_scene() -> void:
+	if current_gui_scene != null:
+		current_gui_scene.queue_free()
 
 func change_2d_scene(new_scene: String, delete: bool = true, keep_running: bool = false) -> void:
 		if current_2d_scene != null:

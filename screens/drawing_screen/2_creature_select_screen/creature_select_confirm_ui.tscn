@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://b0w8l1215rxby"]
+
+[ext_resource type="Script" uid="uid://dcq0celel76yb" path="res://screens/drawing_screen/2_creature_select_screen/confirm_ui.gd" id="1_massu"]
+[ext_resource type="Texture2D" uid="uid://cia25qrfkyyl7" path="res://screens/drawing_screen/2_creature_select_screen/button_art/cloudbutton.png" id="2_mlbmn"]
+[ext_resource type="Script" uid="uid://blabtspyn1x67" path="res://screens/drawing_screen/2_creature_select_screen/confirm_button.gd" id="3_eoysi"]
+[ext_resource type="FontFile" uid="uid://dfl6qybu25wok" path="res://fonts/Chubby Fun Regular.ttf" id="4_m11yt"]
+
+[node name="CreatureSelectConfirmUI" type="Control" unique_id=456152088]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_massu")
+on_confirm_2d_scene = "res://screens/drawing_screen/3_editor_screen/editor_screen.tscn"
+reload_on_return = true
+scene_to_reload = "res://screens/drawing_screen/2_creature_select_screen/creature_select_screen.tscn"
+
+[node name="Timer" type="Timer" parent="." unique_id=2074032516]
+wait_time = 0.5
+autostart = true
+
+[node name="YepButton" type="TextureButton" parent="." unique_id=1976439527]
+layout_mode = 0
+offset_left = 1248.0
+offset_top = 432.0
+offset_right = 1732.0
+offset_bottom = 779.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_mlbmn")
+script = ExtResource("3_eoysi")
+
+[node name="Label" type="Label" parent="YepButton" unique_id=1527449743]
+self_modulate = Color(0.128419, 0.237052, 0.459198, 1)
+layout_mode = 0
+offset_left = 150.0
+offset_top = 115.0
+offset_right = 348.0
+offset_bottom = 236.0
+theme_override_fonts/font = ExtResource("4_m11yt")
+theme_override_font_sizes/font_size = 103
+text = "Yep"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NopeButton" type="TextureButton" parent="." unique_id=943525996]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 432.0
+offset_right = 895.0
+offset_bottom = 779.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_mlbmn")
+script = ExtResource("3_eoysi")
+
+[node name="Label" type="Label" parent="NopeButton" unique_id=2019772282]
+self_modulate = Color(0.128419, 0.237052, 0.459198, 1)
+layout_mode = 0
+offset_left = 115.0
+offset_top = 115.0
+offset_right = 378.0
+offset_bottom = 236.0
+theme_override_fonts/font = ExtResource("4_m11yt")
+theme_override_font_sizes/font_size = 103
+text = "Nope"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="Timer" to="YepButton" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="NopeButton" method="_on_timer_timeout"]
+[connection signal="pressed" from="YepButton" to="." method="_on_confirm"]
+[connection signal="pressed" from="NopeButton" to="." method="_on_return"]

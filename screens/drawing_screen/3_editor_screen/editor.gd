@@ -103,7 +103,7 @@ func screenshot():
 	Global.finished_atlus = ImageTexture.create_from_image(image)
 	
 	Global.game_controller.change_2d_scene("res://screens/drawing_screen/1_splash_screen/splash_screen_manager.tscn", true, false)
-	Global.game_controller.change_gui_scene("res://screens/empty_gui.tscn", true, false)
+	Global.game_controller.clear_gui_scene()
 	
 	match Global.creature_editing:
 		Global.CreatureType.BAT:
