@@ -5,8 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://dph6j3f84v3jn" path="res://screens/drawing_screen/3_editor_screen/tools/paintbrush/paintbrush.tscn" id="2_41ahv"]
 [ext_resource type="PackedScene" uid="uid://eaolgqxnb08" path="res://screens/drawing_screen/3_editor_screen/tools/eraser/eraser.tscn" id="3_vfx3x"]
 [ext_resource type="PackedScene" uid="uid://bhj8uojynvwvp" path="res://screens/drawing_screen/3_editor_screen/face_generator/random_face_ui.tscn" id="4_uvwnc"]
+[ext_resource type="PackedScene" uid="uid://b3ffaiipxd611" path="res://screens/drawing_screen/3_editor_screen/finished_drawing_ui.tscn" id="6_jqywc"]
 
-[node name="EditorUI" type="Control"]
+[node name="EditorUI" type="Control" unique_id=1141473094]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,28 +17,31 @@ grow_vertical = 2
 script = ExtResource("1_j0pnp")
 metadata/_edit_vertical_guides_ = [137.0]
 
-[node name="RandomFaceUI" parent="." instance=ExtResource("4_uvwnc")]
+[node name="RandomFaceUI" parent="." unique_id=1772224847 instance=ExtResource("4_uvwnc")]
 position = Vector2(1619, 692)
 
-[node name="BatUI" type="Node2D" parent="."]
+[node name="BatUI" type="Node2D" parent="." unique_id=46532278]
 
-[node name="Crayon" parent="BatUI" instance=ExtResource("1_7k3nc")]
+[node name="Crayon" parent="BatUI" unique_id=423260308 instance=ExtResource("1_7k3nc")]
 position = Vector2(0, 600)
 
-[node name="Paintbrush" parent="BatUI" instance=ExtResource("2_41ahv")]
+[node name="Paintbrush" parent="BatUI" unique_id=118698899 instance=ExtResource("2_41ahv")]
 position = Vector2(0, 705)
 
-[node name="Eraser" parent="BatUI" instance=ExtResource("3_vfx3x")]
+[node name="Eraser" parent="BatUI" unique_id=1003614966 instance=ExtResource("3_vfx3x")]
 position = Vector2(0, 875)
 
-[node name="TardigradeUI" type="Node2D" parent="."]
+[node name="TardigradeUI" type="Node2D" parent="." unique_id=1253650324]
 position = Vector2(0, -550)
 
-[node name="Crayon" parent="TardigradeUI" instance=ExtResource("1_7k3nc")]
+[node name="Crayon" parent="TardigradeUI" unique_id=625641827 instance=ExtResource("1_7k3nc")]
 position = Vector2(0, 600)
 
-[node name="Paintbrush" parent="TardigradeUI" instance=ExtResource("2_41ahv")]
+[node name="Paintbrush" parent="TardigradeUI" unique_id=829337201 instance=ExtResource("2_41ahv")]
 position = Vector2(0, 705)
 
-[node name="Eraser" parent="TardigradeUI" instance=ExtResource("3_vfx3x")]
+[node name="Eraser" parent="TardigradeUI" unique_id=1728347419 instance=ExtResource("3_vfx3x")]
 position = Vector2(0, 875)
+
+[node name="FinishedDrawingUI" parent="." unique_id=1066061781 instance=ExtResource("6_jqywc")]
+position = Vector2(963, 176)
