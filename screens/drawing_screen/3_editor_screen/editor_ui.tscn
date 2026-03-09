@@ -44,4 +44,4 @@ position = Vector2(0, 705)
 position = Vector2(0, 875)
 
 [node name="FinishedDrawingUI" parent="." unique_id=1066061781 instance=ExtResource("6_jqywc")]
-position = Vector2(963, 176)
+position = Vector2(960, 220)

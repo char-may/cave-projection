@@ -5,43 +5,108 @@
 [ext_resource type="FontFile" uid="uid://dfl6qybu25wok" path="res://fonts/Chubby Fun Regular.ttf" id="2_6pmth"]
 [ext_resource type="Texture2D" uid="uid://eulj7kyan2e6" path="res://screens/drawing_screen/4_transition_screen/nebula_vector.png" id="2_dl6jy"]
 
+[sub_resource type="Animation" id="Animation_764q7"]
+resource_name = "BUTTONS"
+length = 0.23333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ConfirmButton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(-2, 0.5),
+"update": 0,
+"values": [Vector2(-66, -85), Vector2(108, -85)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BackButton:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(-66, -85), Vector2(-240, -85)]
+}
+
+[sub_resource type="Animation" id="Animation_dl6jy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ConfirmButton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(108, -85)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BackButton:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-240, -85)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i5oaj"]
+_data = {
+&"BUTTONS": SubResource("Animation_764q7"),
+&"RESET": SubResource("Animation_dl6jy")
+}
+
+[sub_resource type="Animation" id="Animation_i5oaj"]
+resource_name = "BOUNCE"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ConfirmLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5007416, 1),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector2(-237, -181), Vector2(-237, -190), Vector2(-237, -181)]
+}
+
+[sub_resource type="Animation" id="Animation_aij3d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ConfirmLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-237, -181)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_idjf1"]
+_data = {
+&"BOUNCE": SubResource("Animation_i5oaj"),
+&"RESET": SubResource("Animation_aij3d")
+}
+
 [node name="FinishedDrawingUI" type="Node2D" unique_id=1066061781]
 script = ExtResource("1_rnuad")
 nebula_rotation_speed = 0.25
 nebula_scale_to = Vector2(0.15, 0.15)
-
-[node name="CaveButton" type="TextureButton" parent="." unique_id=2038356297]
-self_modulate = Color(0, 0, 0, 0)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -134.0
-offset_top = -151.0
-offset_right = 130.0
-offset_bottom = 114.0
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("1_gnra2")
-metadata/_edit_use_anchors_ = true
-
-[node name="NebulaSprite" type="Sprite2D" parent="CaveButton" unique_id=974227541]
-position = Vector2(133, 131)
-scale = Vector2(1e-05, 1e-05)
-texture = ExtResource("2_dl6jy")
-
-[node name="CaveLabel" type="Label" parent="CaveButton" unique_id=816321529]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 2.0
-offset_right = 265.33337
-offset_bottom = 262.0
-theme_override_fonts/font = ExtResource("2_6pmth")
-theme_override_font_sizes/font_size = 75
-text = "?"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="ConfirmButton" type="TextureButton" parent="." unique_id=204706910]
 self_modulate = Color(0.44313726, 0.24705882, 0.68235296, 1)
@@ -86,17 +151,57 @@ yet"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="PortalButton" type="TextureButton" parent="." unique_id=2038356297]
+self_modulate = Color(0, 0, 0, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.0
+offset_top = -151.0
+offset_right = 130.0
+offset_bottom = 114.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_gnra2")
+metadata/_edit_use_anchors_ = true
+
+[node name="NebulaSprite" type="Sprite2D" parent="PortalButton" unique_id=974227541]
+position = Vector2(133, 131)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("2_dl6jy")
+
+[node name="PortalLabel" type="Label" parent="PortalButton" unique_id=816321529]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 265.33337
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("2_6pmth")
+theme_override_font_sizes/font_size = 75
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="ConfirmLabel" type="Label" parent="." unique_id=1921166766]
 offset_left = -237.0
-offset_top = -151.0
+offset_top = -181.0
 offset_right = 719.0
-offset_bottom = -56.999985
+offset_bottom = -86.999985
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("2_6pmth")
 theme_override_font_sizes/font_size = 80
-text = "Enter Portal"
+text = "Enter the portal?"
 horizontal_alignment = 1
 
-[connection signal="pressed" from="CaveButton" to="." method="_on_cave_button_pressed"]
+[node name="ButtonAnimation" type="AnimationPlayer" parent="." unique_id=1360535636]
+libraries/ = SubResource("AnimationLibrary_i5oaj")
+
+[node name="ConfirmLabelAnimation" type="AnimationPlayer" parent="." unique_id=499734380]
+libraries/ = SubResource("AnimationLibrary_idjf1")
+autoplay = &"BOUNCE"
+
 [connection signal="pressed" from="ConfirmButton" to="." method="_on_confirm_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="PortalButton" to="." method="_on_portal_button_pressed"]
