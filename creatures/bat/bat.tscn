@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://fwic88x8tvm6"]
 
-[ext_resource type="Script" uid="uid://cpuanptp05hei" path="res://creatures/creature.gd" id="1_4kvp8"]
+[ext_resource type="Script" uid="uid://c6ydv5waq481i" path="res://creatures/bat/bat.gd" id="1_ovyqp"]
 [ext_resource type="Script" uid="uid://blm1pvtue6d8o" path="res://utils/wiggle.gd" id="2_ithft"]
 
 [sub_resource type="Animation" id="Animation_sjjwa"]
@@ -161,9 +161,11 @@ _data = {
 &"RESET": SubResource("Animation_raw7o")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ovyqp"]
+
 [node name="Bat" type="Node2D" unique_id=2131518630]
 scale = Vector2(0.175, 0.175)
-script = ExtResource("1_4kvp8")
+script = ExtResource("1_ovyqp")
 move_speed = 6.0
 
 [node name="Container" type="Node2D" parent="." unique_id=273554386]
@@ -232,7 +234,7 @@ rest = Transform2D(0.024990536, -0.9996877, 0.9996877, 0.024990536, 966, 766)
 [node name="WingL" type="Bone2D" parent="Container/Skeleton2D/Head" unique_id=864980582]
 position = Vector2(207.53546, -181.24303)
 rotation = -0.05855912
-scale = Vector2(0.9999969, 0.9999969)
+scale = Vector2(0.99999654, 0.99999654)
 rest = Transform2D(0.9982859, -0.058525655, 0.058525655, 0.9982859, 207.53546, -181.24303)
 auto_calculate_length_and_angle = false
 length = 550.0
@@ -267,3 +269,10 @@ autoplay = &"FLY"
 speed_scale = 1.5
 
 [node name="DestinationPosition" type="Marker2D" parent="." unique_id=139665280]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=674292996]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1648283937]
+position = Vector2(0, -125.71429)
+scale = Vector2(45, 45)
+shape = SubResource("CircleShape2D_ovyqp")
