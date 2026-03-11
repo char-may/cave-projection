@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c6ydv5waq481i" path="res://creatures/bat/bat.gd" id="1_ovyqp"]
 [ext_resource type="Script" uid="uid://blm1pvtue6d8o" path="res://utils/wiggle.gd" id="2_ithft"]
+[ext_resource type="FontFile" uid="uid://dfl6qybu25wok" path="res://fonts/Chubby Fun Regular.ttf" id="3_hyt8w"]
 
 [sub_resource type="Animation" id="Animation_sjjwa"]
 resource_name = "FLY"
@@ -234,7 +235,7 @@ rest = Transform2D(0.024990536, -0.9996877, 0.9996877, 0.024990536, 966, 766)
 [node name="WingL" type="Bone2D" parent="Container/Skeleton2D/Head" unique_id=864980582]
 position = Vector2(207.53546, -181.24303)
 rotation = -0.05855912
-scale = Vector2(0.99999654, 0.99999654)
+scale = Vector2(0.9999961, 0.9999961)
 rest = Transform2D(0.9982859, -0.058525655, 0.058525655, 0.9982859, 207.53546, -181.24303)
 auto_calculate_length_and_angle = false
 length = 550.0
@@ -263,6 +264,26 @@ auto_calculate_length_and_angle = false
 length = 62.927
 bone_angle = 178.34897
 
+[node name="Label" type="Label" parent="Container" unique_id=2112407294]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.999996
+offset_top = -639.9999
+offset_right = 45.000004
+offset_bottom = -347.99988
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(40, 150)
+theme_override_fonts/font = ExtResource("3_hyt8w")
+theme_override_font_sizes/font_size = 250
+text = "!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="FlyingAnimation" type="AnimationPlayer" parent="." unique_id=1223353855]
 libraries/ = SubResource("AnimationLibrary_25tsd")
 autoplay = &"FLY"
@@ -276,3 +297,5 @@ speed_scale = 1.5
 position = Vector2(0, -125.71429)
 scale = Vector2(45, 45)
 shape = SubResource("CircleShape2D_ovyqp")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
