@@ -109,7 +109,8 @@ nebula_rotation_speed = 0.25
 nebula_scale_to = Vector2(0.15, 0.15)
 
 [node name="ConfirmButton" type="TextureButton" parent="." unique_id=204706910]
-self_modulate = Color(0.44313726, 0.24705882, 0.68235296, 1)
+visible = false
+self_modulate = Color(0.8509804, 0.17254902, 0.53333336, 1)
 offset_left = 108.0
 offset_top = -85.0
 offset_right = 372.0
@@ -130,7 +131,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BackButton" type="TextureButton" parent="." unique_id=380726087]
-self_modulate = Color(0.7777454, 0.29249153, 0.36413744, 1)
+visible = false
+self_modulate = Color(0.2784314, 0.12941177, 0.5803922, 1)
 offset_left = -240.0
 offset_top = -85.0
 offset_right = 24.0
@@ -152,6 +154,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PortalButton" type="TextureButton" parent="." unique_id=2038356297]
+visible = false
 self_modulate = Color(0, 0, 0, 0)
 anchors_preset = 8
 anchor_left = 0.5
@@ -185,6 +188,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ConfirmLabel" type="Label" parent="." unique_id=1921166766]
+visible = false
 offset_left = -237.0
 offset_top = -181.0
 offset_right = 719.0
