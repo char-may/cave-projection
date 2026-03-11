@@ -17,7 +17,7 @@ func create_bat():
 	var new_bat = new_bat_scene.instantiate()
 	
 	# spawn nebula
-	var new_nebula_scene := preload("res://screens/drawing_screen/4_transition_screen/nebula.tscn")
+	var new_nebula_scene := preload("res://screens/shared/nebula.tscn")
 	var new_nebula = new_nebula_scene.instantiate()
 	new_nebula.global_position = $CreatureSpawn.global_position
 	self.add_child(new_nebula)

@@ -13,7 +13,7 @@ extends Node2D
 @export var nebula_scale_in_time = 2.0
 
 func _ready() -> void:
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(3).timeout
 	portal_button.visible = true
 	portal_button.disabled = false
 	portal_label.visible = true
@@ -44,13 +44,18 @@ func _on_portal_button_pressed() -> void:
 	button_animation.play("BUTTONS")
 
 func _on_confirm_button_pressed() -> void:
+	GlobalSignal.finished_drawing.emit()
+	
 	var big_nebula = create_tween()
-	big_nebula.tween_property(nebula_sprite,"scale", Vector2(5.0, 5.0), nebula_scale_in_time).set_trans(Tween.TRANS_CUBIC)
+	big_nebula.tween_property(nebula_sprite,"scale", Vector2(5.0, 5.0), 1.3).set_trans(Tween.TRANS_CUBIC)
 	portal_button.visible = true
 	portal_label.visible = false
 	confirm_button.visible = false
 	confirm_label.visible = false
 	back_button.visible = false
+	await big_nebula.finished
+	Global.game_controller.clear_gui_scene()
+	Global.game_controller.change_2d_scene("res://screens/drawing_screen/4_transition_screen/transition_scene.tscn", true, false)
 
 func _on_back_button_pressed() -> void:
 	portal_button.visible = true

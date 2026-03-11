@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dnlnpea2spk5v" path="res://screens/drawing_screen/3_editor_screen/face_generator/face_button/button_circle.png" id="1_gnra2"]
 [ext_resource type="Script" uid="uid://btfysesu6xeox" path="res://screens/drawing_screen/3_editor_screen/finished_drawing_ui.gd" id="1_rnuad"]
 [ext_resource type="FontFile" uid="uid://dfl6qybu25wok" path="res://fonts/Chubby Fun Regular.ttf" id="2_6pmth"]
-[ext_resource type="Texture2D" uid="uid://eulj7kyan2e6" path="res://screens/drawing_screen/4_transition_screen/nebula_vector.png" id="2_dl6jy"]
+[ext_resource type="Texture2D" uid="uid://eulj7kyan2e6" path="res://screens/shared/nebula_vector.png" id="2_dl6jy"]
 
 [sub_resource type="Animation" id="Animation_764q7"]
 resource_name = "BUTTONS"

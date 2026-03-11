@@ -1,3 +1,40 @@
 [gd_scene format=3 uid="uid://bpo4q1vr3750p"]
 
+[ext_resource type="Script" uid="uid://dt7qtxvhe8hud" path="res://screens/drawing_screen/4_transition_screen/transition_scene.gd" id="1_elb5o"]
+[ext_resource type="FontFile" uid="uid://dfl6qybu25wok" path="res://fonts/Chubby Fun Regular.ttf" id="2_2wuuf"]
+[ext_resource type="Texture2D" uid="uid://eulj7kyan2e6" path="res://screens/shared/nebula_vector.png" id="3_o1wfh"]
+
 [node name="TransitionScene" type="Node2D" unique_id=566354650]
+script = ExtResource("1_elb5o")
+
+[node name="Background" type="Polygon2D" parent="." unique_id=1228125724]
+color = Color(0.20784314, 0.12156863, 0.49019608, 1)
+polygon = PackedVector2Array(-104, -84, -101, 1126, 2036, 1123, 2028, -84)
+
+[node name="Portal" type="Node2D" parent="." unique_id=1129837474]
+position = Vector2(960, 540)
+
+[node name="Sprite2D" type="Sprite2D" parent="Portal" unique_id=1204479084]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_o1wfh")
+
+[node name="CreatureContainer" type="Node2D" parent="." unique_id=1865235593]
+position = Vector2(960, 540)
+
+[node name="Label" type="Label" parent="CreatureContainer" unique_id=1135393370]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -420.0
+offset_top = -300.0
+offset_right = 420.0
+offset_bottom = -241.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_2wuuf")
+theme_override_font_sizes/font_size = 50
+text = "Hey..."
+horizontal_alignment = 1
+vertical_alignment = 1

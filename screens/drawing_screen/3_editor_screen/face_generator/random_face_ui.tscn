@@ -10,12 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://dokfgrfaxoklg" path="res://screens/drawing_screen/3_editor_screen/face_generator/face_parts/nose_7.png" id="6_qvtc0"]
 [ext_resource type="Texture2D" uid="uid://c80bkau3s6hqv" path="res://screens/drawing_screen/3_editor_screen/face_generator/face_parts/mouth_13.png" id="7_v05um"]
 
-[node name="RandomFaceUI" type="Node2D"]
+[node name="RandomFaceUI" type="Node2D" unique_id=637352519]
 script = ExtResource("1_0yh5e")
 open_eyes = ExtResource("3_mxg2y")
 closed_eyes = ExtResource("3_mddjk")
 
-[node name="GenerateFaceButton" type="TextureButton" parent="."]
+[node name="GenerateFaceButton" type="TextureButton" parent="." unique_id=1735756218]
 self_modulate = Color(0.8509804, 0.17254902, 0.53333336, 1)
 offset_left = 150.0
 offset_right = 414.0
@@ -24,33 +24,33 @@ scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("1_f451q")
 script = ExtResource("2_6gjhm")
 
-[node name="LeftEye" type="Sprite2D" parent="GenerateFaceButton"]
+[node name="LeftEye" type="Sprite2D" parent="GenerateFaceButton" unique_id=509196035]
 position = Vector2(0, 50)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_mxg2y")
 centered = false
 flip_h = true
 
-[node name="RightEye" type="Sprite2D" parent="GenerateFaceButton"]
+[node name="RightEye" type="Sprite2D" parent="GenerateFaceButton" unique_id=1734286341]
 position = Vector2(130, 50)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_mxg2y")
 centered = false
 flip_h = true
 
-[node name="Nose" type="Sprite2D" parent="GenerateFaceButton"]
+[node name="Nose" type="Sprite2D" parent="GenerateFaceButton" unique_id=1707579806]
 position = Vector2(97, 100)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_qvtc0")
 centered = false
 
-[node name="Mouth" type="Sprite2D" parent="GenerateFaceButton"]
+[node name="Mouth" type="Sprite2D" parent="GenerateFaceButton" unique_id=153484076]
 self_modulate = Color(1, 0.40392157, 1, 1)
 position = Vector2(130, 200)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_v05um")
 
-[node name="RemoveFaceButton" type="TextureButton" parent="."]
+[node name="RemoveFaceButton" type="TextureButton" parent="." unique_id=1184119169]
 self_modulate = Color(0.2784314, 0.12941177, 0.5803922, 1)
 offset_left = 74.0
 offset_top = -52.0
@@ -60,7 +60,7 @@ scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("1_f451q")
 script = ExtResource("3_6gjhm")
 
-[node name="Label" type="Label" parent="RemoveFaceButton"]
+[node name="Label" type="Label" parent="RemoveFaceButton" unique_id=1731585124]
 layout_mode = 0
 offset_left = 30.0
 offset_top = 100.0

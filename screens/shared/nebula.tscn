@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://brjrpowra7e2q"]
 
-[ext_resource type="Script" uid="uid://ddtkmbrqjstqv" path="res://screens/drawing_screen/4_transition_screen/nebula.gd" id="1_d2nu3"]
-[ext_resource type="Texture2D" uid="uid://eulj7kyan2e6" path="res://screens/drawing_screen/4_transition_screen/nebula_vector.png" id="1_tjqhc"]
+[ext_resource type="Script" uid="uid://ddtkmbrqjstqv" path="res://screens/shared/nebula.gd" id="1_d2nu3"]
+[ext_resource type="Texture2D" uid="uid://eulj7kyan2e6" path="res://screens/shared/nebula_vector.png" id="1_tjqhc"]
 
 [node name="Nebula" type="Node2D" unique_id=84436422]
 script = ExtResource("1_d2nu3")

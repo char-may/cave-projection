@@ -19,6 +19,8 @@ var export_count = 0
 # just store all 4 masks as editor properties
 
 func _ready():
+	GlobalSignal.finished_drawing.connect(screenshot)
+	
 	# Add editor UI to game
 	Global.game_controller.change_gui_scene("res://screens/drawing_screen/3_editor_screen/editor_ui.tscn", true, false)
 	
@@ -70,12 +72,6 @@ func _ready():
 	print ("Number of files already in exports folder: %d" % export_count)
 	print(OS.get_data_dir())
 	
-	
-func _input(event):
-	# TODO Change this action to something like "export" when UI is finished
-	if event.is_action_pressed("screenshot"):
-		screenshot()
-	
 func screenshot():
 	await RenderingServer.frame_post_draw
 	export_count += 1
@@ -101,20 +97,7 @@ func screenshot():
 	var load_err := image.load(path)
 	assert(load_err == OK, "Failed to load image at: ")
 	Global.finished_atlus = ImageTexture.create_from_image(image)
-	
-	Global.game_controller.change_2d_scene("res://screens/drawing_screen/1_splash_screen/splash_screen_manager.tscn", true, false)
-	Global.game_controller.clear_gui_scene()
-	
-	match Global.creature_editing:
-		Global.CreatureType.BAT:
-			GlobalSignal.new_bat_created.emit()
-		Global.CreatureType.TARDIGRADE:
-			GlobalSignal.new_tardigrade_created.emit()
-		Global.CreatureType.SALAMANDER:
-			GlobalSignal.new_bat_created.emit()
-		Global.CreatureType.MONSTER:
-			GlobalSignal.new_bat_created.emit()
-			
+
 func on_set_background_color(color) -> void:
 	background = get_node("Background")
 	background.color = color
