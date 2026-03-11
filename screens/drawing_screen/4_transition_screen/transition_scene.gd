@@ -8,7 +8,7 @@ extends Node2D
 var creature_rotating : bool = false
 
 const portal_rotation_speed = 1.0 # Radians per second
-const creature_container_rotation_speed = 8.0 # Radians per second
+const creature_container_rotation_speed = 10.0 # Radians per second
 const portal_starting_scale = Vector2(3.0,3.0)
 const portal_scale_to = Vector2(1.5,1.5)
 const portal_scale_time = 0.75
@@ -17,7 +17,19 @@ const creature_container_starting_scale = Vector2(0.0, 0.0)
 const creature_container_scale_to = Vector2(1.0, 1.0)
 const creature_container_scale_time = 0.75
 
+var greeting_text: Array = ["Hey...", "Oh hi!", "Sup...", "Bonjour!", "Hello!", "Aloha!"]
+var question_text: Array = ["Who turned out the lights?", "I'm... alive?", "What's your name?",
+"Where am I?", "What's this black spinny thing?", "Is it time for lunch?"]
+var exclamation_text: Array = ["I think it's going to swallow me up now!", "Nothing out of the ordinary here!",
+"This looks... fun!", "I read about this somewhere!", "My bags are packed!"]
+var goodbye_text: Array = ["Bye bye!", "Hasta luego!", "Toodle-oo!", "See ya!", "Sayonara!", "Until next time!"]
+
+var rng #random number generator
+
 func _ready() -> void:
+	rng = RandomNumberGenerator.new()
+	rng.randomize()
+	
 	label.visible = false
 	portal_sprite.scale = portal_starting_scale
 	creature_container.scale = creature_container_starting_scale
@@ -41,19 +53,19 @@ func _ready() -> void:
 	#creature dialog (add randomized options)
 	await scale_creature_container.finished
 	label.visible = true
-	label.text = "Hey..."
+	var random_text: String = greeting_text.pick_random()
+	label.text = random_text
 	await get_tree().create_timer(2).timeout
-	label.text = "Who turned out the lights?"
+	random_text = question_text.pick_random()
+	label.text = random_text
 	await get_tree().create_timer(2).timeout
 	label.text = "..."
 	await get_tree().create_timer(.5).timeout
-	label.text = "...get it?"
-	await get_tree().create_timer(1).timeout
-	label.text = "Well... Anyway..."
-	await get_tree().create_timer(1).timeout
-	label.text = "I think it's going to swallow me up now!"
-	await get_tree().create_timer(1.5).timeout
-	label.text = "Bye bye!"
+	random_text = exclamation_text.pick_random()
+	label.text = random_text
+	await get_tree().create_timer(2).timeout
+	random_text = goodbye_text.pick_random()
+	label.text = random_text
 	await get_tree().create_timer(2).timeout
 	label.visible = false
 	creature_rotating = true
