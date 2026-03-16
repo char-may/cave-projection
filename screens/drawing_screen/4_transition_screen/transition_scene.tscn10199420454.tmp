@@ -11,6 +11,13 @@ script = ExtResource("1_elb5o")
 color = Color(0.20784314, 0.12156863, 0.49019608, 1)
 polygon = PackedVector2Array(-104, -84, -101, 1126, 2036, 1123, 2028, -84)
 
+[node name="BackgroundPortal" type="Node2D" parent="." unique_id=396560125]
+position = Vector2(960, 540)
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundPortal" unique_id=2116152758]
+self_modulate = Color(0.65882355, 0, 0.5019608, 0.5882353)
+texture = ExtResource("2_o1wfh")
+
 [node name="Portal" type="Node2D" parent="." unique_id=1129837474]
 position = Vector2(960, 540)
 
