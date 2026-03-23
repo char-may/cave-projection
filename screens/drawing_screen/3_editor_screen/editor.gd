@@ -56,7 +56,7 @@ func _ready():
 			bat_face_gen.visible = true
 			tardigrade_overlay.visible = false
 			tardigrade_face_gen.visible = false
-		Global.CreatureType.MONSTER:
+		Global.CreatureType.BIGGUY:
 			#Do bat stuff
 			dir.make_dir("exports/bats/")
 			dir = DirAccess.open("user://exports/bats")
@@ -87,9 +87,9 @@ func screenshot():
 			path = "user://exports/tardigrades/export"+str(export_count)+".png"
 		Global.CreatureType.SALAMANDER:
 			path = "user://exports/bats/export"+str(export_count)+".png"
-		Global.CreatureType.MONSTER:
+		Global.CreatureType.BIGGUY:
 			path = "user://exports/bats/export"+str(export_count)+".png"
-
+	
 	img.save_png(path)
 	
 	# Save image texture to global

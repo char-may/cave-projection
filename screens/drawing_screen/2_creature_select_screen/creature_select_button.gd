@@ -8,7 +8,7 @@ class_name CreatureSelectButton extends TextureButton
 @export var bat_button : CreatureSelectButton
 @export var tardigrade_button : CreatureSelectButton
 @export var salamander_button : CreatureSelectButton
-@export var monster_button : CreatureSelectButton
+@export var bigguy_button : CreatureSelectButton
 
 @onready var grid = $".."
 @onready var select_label = $"../../SelectLabel"
@@ -42,8 +42,8 @@ func _on_pressed() -> void:
 			tardigrade_selected()
 		Global.CreatureType.SALAMANDER:
 			salamander_selected()
-		Global.CreatureType.MONSTER:
-			monster_selected()
+		Global.CreatureType.BIGGUY:
+			bigguy_selected()
 
 func bat_selected():
 	Global.creature_editing = Global.CreatureType.BAT
@@ -51,7 +51,7 @@ func bat_selected():
 	confirm_label.text = "Choose Bat?"
 	tardigrade_button.visible = false
 	salamander_button.visible = false
-	monster_button.visible = false
+	bigguy_button.visible = false
 	grid.columns = 1
 	poly1.position = Vector2(365,260)
 	poly2.position = Vector2(365,260)
@@ -63,7 +63,7 @@ func tardigrade_selected():
 	confirm_label.text = "Choose Tardigrade?"
 	bat_button.visible = false
 	salamander_button.visible = false
-	monster_button.visible = false
+	bigguy_button.visible = false
 	grid.columns = 1
 	poly1.position = Vector2(380,260)
 	poly2.position = Vector2(380,260)
@@ -75,16 +75,16 @@ func salamander_selected():
 	confirm_label.text = "Choose Salamander?"
 	bat_button.visible = false
 	tardigrade_button.visible = false
-	monster_button.visible = false
+	bigguy_button.visible = false
 	grid.columns = 1
 	poly1.position = Vector2(365,265)
 	poly2.position = Vector2(365,265)
 	grid_tween()
 
-func monster_selected():
-	Global.creature_editing = Global.CreatureType.MONSTER
+func bigguy_selected():
+	Global.creature_editing = Global.CreatureType.BIGGUY
 	select_label.visible = false
-	confirm_label.text = "Choose Monster?"
+	confirm_label.text = "Choose Big Guy?"
 	bat_button.visible = false
 	tardigrade_button.visible = false
 	salamander_button.visible = false

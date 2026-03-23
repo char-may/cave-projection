@@ -23,7 +23,7 @@ func _ready() -> void:
 			mouth.visible = false
 		Global.CreatureType.SALAMANDER:
 			pass
-		Global.CreatureType.MONSTER:
+		Global.CreatureType.BIGGUY:
 			pass
 func _process(_delta):
 	if Input.is_action_just_pressed("generate_face"):

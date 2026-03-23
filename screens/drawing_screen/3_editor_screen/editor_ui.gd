@@ -13,6 +13,6 @@ func _ready() -> void:
 		Global.CreatureType.SALAMANDER:
 			bat_ui.visible = false
 			tardigrade_ui.visible = false
-		Global.CreatureType.MONSTER:
+		Global.CreatureType.BIGGUY:
 			bat_ui.visible = false
 			tardigrade_ui.visible = false

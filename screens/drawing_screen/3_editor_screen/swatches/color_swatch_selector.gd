@@ -8,7 +8,7 @@ class_name ColorSwatchSelector extends GridContainer
 @export var bat_palette : Resource
 @export var tardigrade_palette : Resource
 @export var salamander_palette : Resource
-@export var monster_palette : Resource
+@export var bigguy_palette : Resource
 
 @export var swatch_1 : ColorButton
 @export var swatch_2 : ColorButton
@@ -81,8 +81,8 @@ func set_active_palette() -> void:
 			active_palette = tardigrade_palette
 		Global.CreatureType.SALAMANDER:
 			active_palette = salamander_palette
-		Global.CreatureType.MONSTER:
-			active_palette = monster_palette
+		Global.CreatureType.BIGGUY:
+			active_palette = bigguy_palette
 
 func _on_tree_entered() -> void:
 	GlobalSignal.drawing_tool_selected.connect(on_drawing_tool_selected)

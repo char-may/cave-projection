@@ -71,8 +71,8 @@ func _ready() -> void:
 			tardigrade_selected()
 		Global.CreatureType.SALAMANDER:
 			salamander_selected()
-		Global.CreatureType.MONSTER:
-			monster_selected()
+		Global.CreatureType.BIGGUY:
+			bigguy_selected()
 	
 	var scale_creature_container = create_tween()
 	scale_creature_container.tween_property(creature_container,"scale", creature_container_scale_to, creature_container_scale_time).set_trans(Tween.TRANS_CUBIC)
@@ -151,7 +151,7 @@ func tardigrade_selected():
 	pass
 func salamander_selected():
 	pass
-func monster_selected():
+func bigguy_selected():
 	pass
 
 func send_to_cave():
@@ -162,5 +162,5 @@ func send_to_cave():
 			GlobalSignal.new_tardigrade_created.emit()
 		Global.CreatureType.SALAMANDER:
 			GlobalSignal.new_bat_created.emit()
-		Global.CreatureType.MONSTER:
+		Global.CreatureType.BIGGUY:
 			GlobalSignal.new_bat_created.emit()

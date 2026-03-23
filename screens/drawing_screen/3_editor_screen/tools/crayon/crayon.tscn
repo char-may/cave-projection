@@ -9,9 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://djll1o2lfqhvg" path="res://screens/drawing_screen/3_editor_screen/tools/crayon/crayon_tip.png" id="5_akq8t"]
 [ext_resource type="Resource" uid="uid://0iyp6dvv8no8" path="res://screens/drawing_screen/3_editor_screen/swatches/palettes/tardigrade_palette.tres" id="6_e1d6b"]
 [ext_resource type="Resource" uid="uid://ireoi6w82o7i" path="res://screens/drawing_screen/3_editor_screen/swatches/palettes/salamander_palette.tres" id="7_go2pc"]
-[ext_resource type="Resource" uid="uid://cvo2xbkjteglr" path="res://screens/drawing_screen/3_editor_screen/swatches/palettes/monster_palette.tres" id="8_l6q72"]
+[ext_resource type="Resource" uid="uid://cvo2xbkjteglr" path="res://screens/drawing_screen/3_editor_screen/swatches/palettes/bigguy_palette.tres" id="8_l6q72"]
 [ext_resource type="Script" uid="uid://x6e3qri4aas5" path="res://screens/drawing_screen/3_editor_screen/swatches/color_button.gd" id="9_dkyp4"]
-
 
 [node name="Crayon" type="Node2D" unique_id=1108678362]
 
@@ -66,7 +65,7 @@ script = ExtResource("4_jxclw")
 bat_palette = ExtResource("5_75xud")
 tardigrade_palette = ExtResource("6_e1d6b")
 salamander_palette = ExtResource("7_go2pc")
-monster_palette = ExtResource("8_l6q72")
+bigguy_palette = ExtResource("8_l6q72")
 swatch_1 = NodePath("Swatch1")
 swatch_2 = NodePath("Swatch2")
 swatch_3 = NodePath("Swatch3")

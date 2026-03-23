@@ -49,7 +49,7 @@ theme_override_constants/h_separation = 100
 theme_override_constants/v_separation = 100
 columns = 2
 
-[node name="BatButton" type="TextureButton" parent="GridContainer" unique_id=1008598220 node_paths=PackedStringArray("poly1", "poly2", "bat_button", "tardigrade_button", "salamander_button", "monster_button")]
+[node name="BatButton" type="TextureButton" parent="GridContainer" unique_id=1008598220 node_paths=PackedStringArray("poly1", "poly2", "bat_button", "tardigrade_button", "salamander_button", "bigguy_button")]
 self_modulate = Color(0.235294, 0.388235, 0.698039, 1)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -64,7 +64,7 @@ poly2 = NodePath("Poly2")
 bat_button = NodePath(".")
 tardigrade_button = NodePath("../TardigradeButton")
 salamander_button = NodePath("../SalamanderButton")
-monster_button = NodePath("../MonsterButton")
+bigguy_button = NodePath("../BigGuyButton")
 
 [node name="Poly1" type="Polygon2D" parent="GridContainer/BatButton" unique_id=224045378]
 show_behind_parent = true
@@ -75,7 +75,7 @@ visible = false
 show_behind_parent = true
 polygon = PackedVector2Array(60.7501, 193.5, 25.7501, 246, 80.7501, 283.5, 122, 331, 177, 296, 228.25, 307.25, 257, 264.75, 295.75, 299.75, 338.25, 284.75, 388.25, 301, 422, 283.5, 448.25, 302.25, 500.75, 296, 560.75, 334.75, 597, 273.5, 643.25, 252.25, 630.75, 197.25, 550.75, 156, 447, 152.25, 380.75, 109.75, 340.75, 141, 299.5, 108.5, 242, 152.25, 195.75, 147.25, 142, 152.25)
 
-[node name="TardigradeButton" type="TextureButton" parent="GridContainer" unique_id=253862077 node_paths=PackedStringArray("poly1", "poly2", "bat_button", "tardigrade_button", "salamander_button", "monster_button")]
+[node name="TardigradeButton" type="TextureButton" parent="GridContainer" unique_id=253862077 node_paths=PackedStringArray("poly1", "poly2", "bat_button", "tardigrade_button", "salamander_button", "bigguy_button")]
 self_modulate = Color(0.235294, 0.388235, 0.698039, 1)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -91,7 +91,7 @@ poly2 = NodePath("Poly2")
 bat_button = NodePath("../BatButton")
 tardigrade_button = NodePath(".")
 salamander_button = NodePath("../SalamanderButton")
-monster_button = NodePath("../MonsterButton")
+bigguy_button = NodePath("../BigGuyButton")
 
 [node name="Poly1" type="Polygon2D" parent="GridContainer/TardigradeButton" unique_id=1055711645]
 show_behind_parent = true
@@ -102,7 +102,7 @@ visible = false
 show_behind_parent = true
 polygon = PackedVector2Array(142.75, 87.25, 261.5, 33.5, 389, 42.25, 489, -1.49998, 570.25, 36, 622.75, 66, 611.5, 148.5, 592.75, 213.5, 552.75, 246, 570.25, 306, 521.5, 351, 414, 299.75, 405.25, 372.25, 356.5, 398.5, 280.25, 339.75, 209, 414.75, 130.25, 399.75, 136.5, 343.5, 44, 401, -9.75, 346, 35.25, 296, 87.75, 148.5)
 
-[node name="SalamanderButton" type="TextureButton" parent="GridContainer" unique_id=1742680681 node_paths=PackedStringArray("poly1", "poly2", "bat_button", "tardigrade_button", "salamander_button", "monster_button")]
+[node name="SalamanderButton" type="TextureButton" parent="GridContainer" unique_id=1742680681 node_paths=PackedStringArray("poly1", "poly2", "bat_button", "tardigrade_button", "salamander_button", "bigguy_button")]
 self_modulate = Color(0.235294, 0.388235, 0.698039, 1)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -118,7 +118,7 @@ poly2 = NodePath("Poly2")
 bat_button = NodePath("../BatButton")
 tardigrade_button = NodePath("../TardigradeButton")
 salamander_button = NodePath(".")
-monster_button = NodePath("../MonsterButton")
+bigguy_button = NodePath("../BigGuyButton")
 
 [node name="Poly1" type="Polygon2D" parent="GridContainer/SalamanderButton" unique_id=225111436]
 show_behind_parent = true
@@ -129,7 +129,7 @@ visible = false
 show_behind_parent = true
 polygon = PackedVector2Array(134.5, 31.75, 163.25, 91.75, 107, 159.25, 134.5, 184.25, 200.75, 140.5, 214.5, 93, 260.75, 89.25, 298.25, 98.0001, 308.25, 121.75, 402, 134.25, 397, 106.75, 447, 43, 517, 53, 543.25, 23, 617, 18, 659.5, 41.7501, 654.5, 118, 618.25, 183, 577, 205.5, 607, 230.5, 578.25, 311.75, 519.5, 296.75, 454.5, 285.5, 395.75, 304.25, 312, 296.75, 333.25, 350.5, 312, 384.25, 249.5, 391.75, 184.5, 304.25, 94.5001, 296.75, 25.7501, 229.25, 12.0001, 128)
 
-[node name="MonsterButton" type="TextureButton" parent="GridContainer" unique_id=1678175263 node_paths=PackedStringArray("poly1", "poly2", "bat_button", "tardigrade_button", "salamander_button", "monster_button")]
+[node name="BigGuyButton" type="TextureButton" parent="GridContainer" unique_id=1678175263 node_paths=PackedStringArray("poly1", "poly2", "bat_button", "tardigrade_button", "salamander_button", "bigguy_button")]
 self_modulate = Color(0.235294, 0.388235, 0.698039, 1)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -145,13 +145,13 @@ poly2 = NodePath("Poly2")
 bat_button = NodePath("../BatButton")
 tardigrade_button = NodePath("../TardigradeButton")
 salamander_button = NodePath("../SalamanderButton")
-monster_button = NodePath(".")
+bigguy_button = NodePath(".")
 
-[node name="Poly1" type="Polygon2D" parent="GridContainer/MonsterButton" unique_id=591517481]
+[node name="Poly1" type="Polygon2D" parent="GridContainer/BigGuyButton" unique_id=591517481]
 show_behind_parent = true
 polygon = PackedVector2Array(479, 140.5, 499, 250.5, 499, 308, 589, 315.5, 616.5, 349.25, 580.25, 389.25, 499, 386.75, 451.5, 373, 132.75, 378, 107.75, 398, 46.5, 385.5, 15.25, 345.5, 51.5, 314.25, 120.25, 313, 132.75, 221.75, 117.75, 190.5, 154, 100.5, 216.5, 41.7501, 332.75, 16.7501, 329, 48.0001, 421.5, 64.2501)
 
-[node name="Poly2" type="Polygon2D" parent="GridContainer/MonsterButton" unique_id=2132581160]
+[node name="Poly2" type="Polygon2D" parent="GridContainer/BigGuyButton" unique_id=2132581160]
 visible = false
 show_behind_parent = true
 polygon = PackedVector2Array(465.25, 120.5, 496.5, 200.5, 505.25, 256.75, 486.5, 275.5, 495.25, 315.5, 589, 315.5, 607.75, 348, 580.25, 381.75, 499, 386.75, 451.5, 373, 132.75, 378, 91.5, 389.25, 46.5, 385.5, 15.25, 345.5, 51.5, 314.25, 120.25, 313, 126.5, 223, 134, 166.75, 179, 90.5, 261.5, 45.5, 310.25, 36.75, 331.5, 61.75, 405.25, 73)
@@ -193,4 +193,4 @@ autostart = true
 [connection signal="timeout" from="Timer" to="GridContainer/BatButton" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="GridContainer/TardigradeButton" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="GridContainer/SalamanderButton" method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer" to="GridContainer/MonsterButton" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="GridContainer/BigGuyButton" method="_on_timer_timeout"]

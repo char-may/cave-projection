@@ -8,12 +8,12 @@
 [ext_resource type="Resource" uid="uid://bijw1n8mua3f1" path="res://screens/drawing_screen/3_editor_screen/swatches/palettes/bat_palette.tres" id="6_px1jp"]
 [ext_resource type="Resource" uid="uid://0iyp6dvv8no8" path="res://screens/drawing_screen/3_editor_screen/swatches/palettes/tardigrade_palette.tres" id="7_4almj"]
 [ext_resource type="Resource" uid="uid://ireoi6w82o7i" path="res://screens/drawing_screen/3_editor_screen/swatches/palettes/salamander_palette.tres" id="8_5fxjs"]
-[ext_resource type="Resource" uid="uid://cvo2xbkjteglr" path="res://screens/drawing_screen/3_editor_screen/swatches/palettes/monster_palette.tres" id="9_csnck"]
+[ext_resource type="Resource" uid="uid://cvo2xbkjteglr" path="res://screens/drawing_screen/3_editor_screen/swatches/palettes/bigguy_palette.tres" id="9_csnck"]
 [ext_resource type="Script" uid="uid://x6e3qri4aas5" path="res://screens/drawing_screen/3_editor_screen/swatches/color_button.gd" id="10_76iw3"]
 
-[node name="Paintbrush" type="Node2D"]
+[node name="Paintbrush" type="Node2D" unique_id=1415463335]
 
-[node name="PaintbrushButton" type="TextureButton" parent="." node_paths=PackedStringArray("outlines", "brush", "paint")]
+[node name="PaintbrushButton" type="TextureButton" parent="." unique_id=2068157540 node_paths=PackedStringArray("outlines", "brush", "paint")]
 self_modulate = Color(0.2, 0.2, 0.2, 1)
 offset_left = -232.0
 offset_right = 512.0
@@ -27,21 +27,21 @@ type = 1
 tool_size = 90
 slide_offset = Vector2(100, 0)
 
-[node name="Outlines" type="Sprite2D" parent="PaintbrushButton"]
+[node name="Outlines" type="Sprite2D" parent="PaintbrushButton" unique_id=907391837]
 visible = false
 texture = ExtResource("2_rep74")
 centered = false
 
-[node name="Brush" type="Sprite2D" parent="PaintbrushButton"]
+[node name="Brush" type="Sprite2D" parent="PaintbrushButton" unique_id=1445902736]
 show_behind_parent = true
 texture = ExtResource("3_ob0yx")
 centered = false
 
-[node name="Paint" type="Sprite2D" parent="PaintbrushButton"]
+[node name="Paint" type="Sprite2D" parent="PaintbrushButton" unique_id=1950925946]
 texture = ExtResource("4_27f68")
 centered = false
 
-[node name="SwatchSelector" type="GridContainer" parent="PaintbrushButton" node_paths=PackedStringArray("swatch_1", "swatch_2", "swatch_3", "swatch_4", "swatch_5", "swatch_6")]
+[node name="SwatchSelector" type="GridContainer" parent="PaintbrushButton" unique_id=709183532 node_paths=PackedStringArray("swatch_1", "swatch_2", "swatch_3", "swatch_4", "swatch_5", "swatch_6")]
 layout_mode = 0
 offset_left = 800.0
 offset_top = 90.0
@@ -55,7 +55,7 @@ script = ExtResource("5_t1yp5")
 bat_palette = ExtResource("6_px1jp")
 tardigrade_palette = ExtResource("7_4almj")
 salamander_palette = ExtResource("8_5fxjs")
-monster_palette = ExtResource("9_csnck")
+bigguy_palette = ExtResource("9_csnck")
 swatch_1 = NodePath("Swatch1")
 swatch_2 = NodePath("Swatch2")
 swatch_3 = NodePath("Swatch3")
@@ -63,41 +63,41 @@ swatch_4 = NodePath("Swatch4")
 swatch_5 = NodePath("Swatch5")
 swatch_6 = NodePath("Swatch6")
 
-[node name="Swatch1" type="Button" parent="PaintbrushButton/SwatchSelector"]
+[node name="Swatch1" type="Button" parent="PaintbrushButton/SwatchSelector" unique_id=681605021]
 layout_mode = 2
 flat = true
 script = ExtResource("10_76iw3")
 color = Color(0.85098, 0.172549, 0.533333, 1)
 
-[node name="Swatch2" type="Button" parent="PaintbrushButton/SwatchSelector"]
+[node name="Swatch2" type="Button" parent="PaintbrushButton/SwatchSelector" unique_id=457416476]
 custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
 flat = true
 script = ExtResource("10_76iw3")
 color = Color(0.188235, 0.188235, 0.490196, 1)
 
-[node name="Swatch3" type="Button" parent="PaintbrushButton/SwatchSelector"]
+[node name="Swatch3" type="Button" parent="PaintbrushButton/SwatchSelector" unique_id=1682504114]
 custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
 flat = true
 script = ExtResource("10_76iw3")
 color = Color(0.745098, 0.87451, 0.0627451, 1)
 
-[node name="Swatch4" type="Button" parent="PaintbrushButton/SwatchSelector"]
+[node name="Swatch4" type="Button" parent="PaintbrushButton/SwatchSelector" unique_id=1590854795]
 custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
 flat = true
 script = ExtResource("10_76iw3")
 color = Color(0.988235, 0.45098, 0.266667, 1)
 
-[node name="Swatch5" type="Button" parent="PaintbrushButton/SwatchSelector"]
+[node name="Swatch5" type="Button" parent="PaintbrushButton/SwatchSelector" unique_id=473358915]
 custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
 flat = true
 script = ExtResource("10_76iw3")
 color = Color(0, 0, 0, 1)
 
-[node name="Swatch6" type="Button" parent="PaintbrushButton/SwatchSelector"]
+[node name="Swatch6" type="Button" parent="PaintbrushButton/SwatchSelector" unique_id=514161886]
 custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
 flat = true

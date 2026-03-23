@@ -4,7 +4,7 @@ enum CreatureType {
 	BAT,
 	TARDIGRADE,
 	SALAMANDER,
-	MONSTER
+	BIGGUY
 }
 
 enum ToolType {
