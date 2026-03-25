@@ -34,12 +34,6 @@ var question_text: Array = [
 	"What's this weird spinny thing?",
 	"Is it time for lunch?"]
 
-var subject_change_text: Array = [
-	"Anyway...",
-	"On that note...",
-	"Okay... so...",
-	"If you say so!"]
-
 var exclamation_text: Array = [
 	"I think it's going to swallow me up now!",
 	"This looks... fun!",
@@ -82,10 +76,6 @@ func _ready() -> void:
 	#creature dialog (add randomized options)
 	await scale_creature_container.finished
 	label.visible = true
-	label.text = "Oh..."
-	await get_tree().create_timer(1).timeout
-	label.text = ""
-	await get_tree().create_timer(.5).timeout
 	var random_text: String = greeting_text.pick_random()
 	label.text = random_text
 	
@@ -97,22 +87,14 @@ func _ready() -> void:
 	
 	await get_tree().create_timer(2).timeout
 	label.text = ""
-	await get_tree().create_timer(.5).timeout
-	label.text = "..."
-	await get_tree().create_timer(2).timeout
-	label.text = ""
-	await get_tree().create_timer(.5).timeout
-	random_text = subject_change_text.pick_random()
-	label.text = random_text
-	
-	await get_tree().create_timer(1).timeout
-	label.text = ""
+
 	await get_tree().create_timer(.5).timeout
 	random_text = exclamation_text.pick_random()
 	label.text = random_text
 	
 	await get_tree().create_timer(3).timeout
 	label.text = ""
+	
 	await get_tree().create_timer(.5).timeout
 	random_text = goodbye_text.pick_random()
 	label.text = random_text
