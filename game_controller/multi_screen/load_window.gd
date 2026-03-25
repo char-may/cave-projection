@@ -7,7 +7,7 @@ func _ready():
 	var cave = cave_screen.instantiate()
 	add_child(cave)
 	self.visible = true
-	self.position = Vector2i(1920, 0)
+	self.position = Vector2i(0, 0)
 	self.title = "Cave"
 	self.size = Vector2(1920, 1080)
 

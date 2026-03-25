@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var portal_sprite = $Portal/Sprite2D
-@onready var background_portal_sprite = $BackgroundPortal/Sprite2D
 @onready var creature_container = $CreatureContainer
 @onready var label = $CreatureContainer/Label
 
@@ -79,8 +78,6 @@ func _ready() -> void:
 
 	var scale_portal = create_tween()
 	scale_portal.tween_property(portal_sprite,"scale", portal_scale_to, portal_scale_time).set_trans(Tween.TRANS_CUBIC)
-
-	var scale_background_portal = create_tween()
 	
 	#creature dialog (add randomized options)
 	await scale_creature_container.finished
