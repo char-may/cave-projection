@@ -67,7 +67,7 @@ func screenshot():
 
 	match Global.creature_editing:
 		Global.CreatureType.BAT:
-			dir.make_dir("exports/bats")
+			#dir.make_dir("exports/bats")
 			dir = DirAccess.open("user://exports/bats/")
 			export_count = 0
 			for n in dir.get_files():
@@ -76,7 +76,7 @@ func screenshot():
 			print ("Number of files already in bats exports folder: %d" % export_count)
 			print(OS.get_data_dir())
 		Global.CreatureType.TARDIGRADE:
-			dir.make_dir("exports/tardigrades")
+			#dir.make_dir("exports/tardigrades")
 			dir = DirAccess.open("user://exports/tardigrades/")
 			export_count = 0
 			for n in dir.get_files():
@@ -85,7 +85,7 @@ func screenshot():
 			print ("Number of files already in tardigrades exports folder: %d" % export_count)
 			print(OS.get_data_dir())
 		Global.CreatureType.SALAMANDER:
-			dir.make_dir("exports/salamanders")
+			#dir.make_dir("exports/salamanders")
 			dir = DirAccess.open("user://exports/salamanders/")
 			for n in dir.get_files():
 				export_count += 1
@@ -93,7 +93,7 @@ func screenshot():
 			print ("Number of files already in salamanders exports folder: %d" % export_count)
 			print(OS.get_data_dir())
 		Global.CreatureType.BIGGUY:
-			dir.make_dir("exports/bigguys/")
+			#dir.make_dir("exports/bigguys/")
 			dir = DirAccess.open("user://exports/bigguys")
 			for n in dir.get_files():
 				export_count += 1
