@@ -4,6 +4,7 @@ extends Node2D
 @onready var creature_container = $CreatureContainer
 @onready var label = $CreatureContainer/Label
 
+var creature_transitioning = null
 var creature_rotating : bool = false
 
 const portal_rotation_speed = 1.0 # Radians per second
@@ -103,6 +104,11 @@ func _ready() -> void:
 	label.visible = false
 	creature_rotating = true
 	
+	# stop animation while transitioning
+	for child in creature_transitioning.get_children():
+		if child is AnimationPlayer:
+			child.stop()
+	
 	var goodbye_portal = create_tween()
 	goodbye_portal.tween_property(portal_sprite,"scale", Vector2(0,0), goodbye_portal_scale_time).set_trans(Tween.TRANS_CUBIC)
 	var goodbye_creature = create_tween()
@@ -121,6 +127,7 @@ func bat_selected():
 	# spawn bat
 	var new_bat_scene := preload("res://creatures/bat/bat.tscn")
 	var new_bat = new_bat_scene.instantiate()
+	creature_transitioning = new_bat
 	new_bat.scale = Vector2(.35, .35)
 	var new_bat_container = new_bat.get_node("Container")
 	new_bat_container.disabled = true #turn off wiggle animation

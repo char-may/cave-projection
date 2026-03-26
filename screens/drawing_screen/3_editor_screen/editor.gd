@@ -27,52 +27,36 @@ func _ready():
 	background = get_node("Background")
 	background.color = Global.background_color
 	
-	# Create export directory
-	var dir = DirAccess.open("user://")
-	
 	#Set creature mask
 	match Global.creature_editing:
 		Global.CreatureType.BAT:
 			#Do bat stuff
-			dir.make_dir("exports/bats")
-			dir = DirAccess.open("user://exports/bats/")
 			creature_mask.texture = bat_mask
 			bat_face_gen.visible = true
 			tardigrade_overlay.visible = false
 			tardigrade_face_gen.visible = false
 		Global.CreatureType.TARDIGRADE:
 			#Do tardigrade stuff
-			dir.make_dir("exports/tardigrades")
-			dir = DirAccess.open("user://exports/tardigrades/")
 			creature_mask.texture = tardigrade_mask
 			tardigrade_face_gen.visible = true
 			tardigrade_overlay.visible = true
 			bat_face_gen.visible = false
 		Global.CreatureType.SALAMANDER:
-			#Do bat stuff
-			dir.make_dir("exports/bats")
-			dir = DirAccess.open("user://exports/bats/")
-			creature_mask.texture = bat_mask
+			#Do salamander stuff
+			creature_mask.texture = bat_mask #**** update ******
 			bat_face_gen.visible = true
 			tardigrade_overlay.visible = false
 			tardigrade_face_gen.visible = false
 		Global.CreatureType.BIGGUY:
-			#Do bat stuff
-			dir.make_dir("exports/bats/")
-			dir = DirAccess.open("user://exports/bats")
+			#Do big guy stuff
 			creature_mask.texture = bat_mask
 			bat_face_gen.visible = true
 			tardigrade_overlay.visible = false
 			tardigrade_face_gen.visible = false
-
-	# Set counter to the current number of files
-	for n in dir.get_files():
-		export_count += 1
-
-	print ("Number of files already in exports folder: %d" % export_count)
-	print(OS.get_data_dir())
 	
 func screenshot():
+	var dir = DirAccess.open("user://")
+	
 	await RenderingServer.frame_post_draw
 	export_count += 1
 	
@@ -80,15 +64,42 @@ func screenshot():
 	var viewport = get_viewport()
 	var img = viewport.get_texture().get_image()
 	var path = ""
+
 	match Global.creature_editing:
 		Global.CreatureType.BAT:
+			dir.make_dir("exports/bats")
+			dir = DirAccess.open("user://exports/bats/")
+			export_count = 0
+			for n in dir.get_files():
+				export_count += 1
 			path = "user://exports/bats/export"+str(export_count)+".png"
+			print ("Number of files already in bats exports folder: %d" % export_count)
+			print(OS.get_data_dir())
 		Global.CreatureType.TARDIGRADE:
+			dir.make_dir("exports/tardigrades")
+			dir = DirAccess.open("user://exports/tardigrades/")
+			export_count = 0
+			for n in dir.get_files():
+				export_count += 1
 			path = "user://exports/tardigrades/export"+str(export_count)+".png"
+			print ("Number of files already in tardigrades exports folder: %d" % export_count)
+			print(OS.get_data_dir())
 		Global.CreatureType.SALAMANDER:
-			path = "user://exports/bats/export"+str(export_count)+".png"
+			dir.make_dir("exports/salamanders")
+			dir = DirAccess.open("user://exports/salamanders/")
+			for n in dir.get_files():
+				export_count += 1
+			path = "user://exports/salamanders/export"+str(export_count)+".png"
+			print ("Number of files already in salamanders exports folder: %d" % export_count)
+			print(OS.get_data_dir())
 		Global.CreatureType.BIGGUY:
-			path = "user://exports/bats/export"+str(export_count)+".png"
+			dir.make_dir("exports/bigguys/")
+			dir = DirAccess.open("user://exports/bigguys")
+			for n in dir.get_files():
+				export_count += 1
+			path = "user://exports/bigguys/export"+str(export_count)+".png"
+			print ("Number of files already in big guys exports folder: %d" % export_count)
+			print(OS.get_data_dir())
 	
 	img.save_png(path)
 	
