@@ -55,3 +55,5 @@ position = Vector2(1428, 576)
 
 [node name="CreatureSpawn" type="Marker2D" parent="." unique_id=534270507]
 position = Vector2(960, 540)
+
+[node name="BatsContainer" type="Node" parent="." unique_id=564651138]

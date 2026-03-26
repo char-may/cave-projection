@@ -1,5 +1,9 @@
 extends Node2D
 
+@onready var bats_container = $BatsContainer
+
+const max_bats : int = 3
+
 func _ready() -> void:
 	GlobalSignal.new_bat_created.connect(create_bat)
 	GlobalSignal.new_tardigrade_created.connect(create_tardigrade)
@@ -27,7 +31,7 @@ func create_bat():
 	var starting_scale = new_bat.scale
 	new_bat.scale = Vector2(0,0) # zero for tweening
 	new_bat.global_position = $CreatureSpawn.global_position
-	self.add_child(new_bat)
+	bats_container.add_child(new_bat)
 	var bat_scale_in = create_tween()
 	bat_scale_in.tween_property(new_bat,"scale", starting_scale, 1).set_trans(Tween.TRANS_CUBIC)
 	await bat_scale_in.finished
@@ -37,6 +41,13 @@ func create_bat():
 	var bat_spawn_node = bat_spawn_points.pick_random()
 	new_bat.destination_position = bat_spawn_node.global_position
 	new_bat.moving = true
+	
+	# check for max bats
+	var bat_count = bats_container.get_child_count()
+	if bat_count > max_bats:
+		print("We have too many bats, sending oldest away!")
+		var first_child = bats_container.get_child(0)
+		first_child.queue_free() # *** make an actual transition (fly off screen first)
 
 func create_tardigrade():
 	var new_tardigrade_scene := preload("res://creatures/tardigrade/tardigrade.tscn")
