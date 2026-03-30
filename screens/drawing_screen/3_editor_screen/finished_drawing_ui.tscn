@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dnlnpea2spk5v" path="res://screens/drawing_screen/3_editor_screen/face_generator/face_button/button_circle.png" id="1_gnra2"]
 [ext_resource type="Script" uid="uid://btfysesu6xeox" path="res://screens/drawing_screen/3_editor_screen/finished_drawing_ui.gd" id="1_rnuad"]
 [ext_resource type="FontFile" uid="uid://dfl6qybu25wok" path="res://fonts/Chubby Fun Regular.ttf" id="2_6pmth"]
-[ext_resource type="Texture2D" uid="uid://bfvyfc7rng06d" path="res://screens/shared/nebula_white.png" id="4_764q7"]
+[ext_resource type="Texture2D" uid="uid://bfvyfc7rng06d" path="res://screens/shared/portal_white.png" id="4_764q7"]
 
 [sub_resource type="Animation" id="Animation_764q7"]
 resource_name = "BUTTONS"
@@ -105,9 +105,8 @@ _data = {
 
 [node name="FinishedDrawingUI" type="Node2D" unique_id=1066061781]
 script = ExtResource("1_rnuad")
-nebula_rotation_speed = 0.25
-nebula_scale_to = Vector2(0.15, 0.15)
-nebulabg_scale_to = Vector2(0.16, 0.16)
+portal_scale_to = Vector2(0.15, 0.15)
+portalbg_scale_to = Vector2(0.16, 0.16)
 
 [node name="ConfirmButton" type="TextureButton" parent="." unique_id=204706910]
 visible = false
@@ -171,13 +170,13 @@ grow_vertical = 2
 texture_normal = ExtResource("1_gnra2")
 metadata/_edit_use_anchors_ = true
 
-[node name="NebulaSpriteBG" type="Sprite2D" parent="PortalButton" unique_id=868656682]
+[node name="PortalSpriteBG" type="Sprite2D" parent="PortalButton" unique_id=868656682]
 self_modulate = Color(0.2784314, 0.12941177, 0.5803922, 1)
 position = Vector2(133, 131)
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("4_764q7")
 
-[node name="NebulaSprite" type="Sprite2D" parent="PortalButton" unique_id=974227541]
+[node name="PortalSprite" type="Sprite2D" parent="PortalButton" unique_id=974227541]
 self_modulate = Color(0, 0, 0, 1)
 position = Vector2(133, 131)
 scale = Vector2(1e-05, 1e-05)

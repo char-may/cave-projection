@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfvyfc7rng06d"
-path="res://.godot/imported/nebula_white.png-8314662aab886514f279842bae1f399a.ctex"
+uid="uid://eulj7kyan2e6"
+path="res://.godot/imported/portal_vector.png-8839c46f442b443b726ea1fcd10af59b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screens/shared/nebula_white.png"
-dest_files=["res://.godot/imported/nebula_white.png-8314662aab886514f279842bae1f399a.ctex"]
+source_file="res://screens/shared/portal_vector.png"
+dest_files=["res://.godot/imported/portal_vector.png-8839c46f442b443b726ea1fcd10af59b.ctex"]
 
 [params]
 

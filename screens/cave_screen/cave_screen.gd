@@ -20,11 +20,11 @@ func create_bat():
 	var new_bat_scene := preload("res://creatures/bat/bat.tscn")
 	var new_bat = new_bat_scene.instantiate()
 	
-	# spawn nebula
-	var new_nebula_scene := preload("res://screens/shared/nebula.tscn")
-	var new_nebula = new_nebula_scene.instantiate()
-	new_nebula.global_position = $CreatureSpawn.global_position
-	self.add_child(new_nebula)
+	# spawn portal
+	var new_portal_scene := preload("res://screens/shared/portal.tscn")
+	var new_portal = new_portal_scene.instantiate()
+	new_portal.global_position = $CreatureSpawn.global_position
+	self.add_child(new_portal)
 	
 	# delay then spawn bat - tween in scale
 	await get_tree().create_timer(1.0).timeout

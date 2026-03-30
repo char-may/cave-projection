@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dt7qtxvhe8hud" path="res://screens/drawing_screen/4_transition_screen/transition_scene.gd" id="1_elb5o"]
 [ext_resource type="FontFile" uid="uid://dfl6qybu25wok" path="res://fonts/Chubby Fun Regular.ttf" id="2_2wuuf"]
-[ext_resource type="Texture2D" uid="uid://bfvyfc7rng06d" path="res://screens/shared/nebula_white.png" id="2_o1wfh"]
+[ext_resource type="Texture2D" uid="uid://bfvyfc7rng06d" path="res://screens/shared/portal_white.png" id="2_o1wfh"]
 
 [node name="TransitionScene" type="Node2D" unique_id=566354650]
 script = ExtResource("1_elb5o")
