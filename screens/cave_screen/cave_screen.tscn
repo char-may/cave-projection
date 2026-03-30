@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cw5vkd0vwqp0y"]
 
-[ext_resource type="Script" uid="uid://ccunnoxitkua1" path="res://screens/cave_screen/cave_screen.gd" id="1_k6v64"]
+[ext_resource type="Script" uid="uid://drgs28dimdubd" path="res://screens/cave_screen/bats_container.gd" id="2_0xn84"]
+[ext_resource type="Script" uid="uid://cwl62ialnf1gl" path="res://screens/cave_screen/tardigrades_container.gd" id="3_u6t5p"]
 
 [node name="CaveScreen" type="Node2D" unique_id=2077961266]
-script = ExtResource("1_k6v64")
 
 [node name="Scenery" type="Node2D" parent="." unique_id=541471690]
 
@@ -57,3 +57,7 @@ position = Vector2(1428, 576)
 position = Vector2(960, 540)
 
 [node name="BatsContainer" type="Node" parent="." unique_id=564651138]
+script = ExtResource("2_0xn84")
+
+[node name="TardigradesContainer" type="Node" parent="." unique_id=823374988]
+script = ExtResource("3_u6t5p")
