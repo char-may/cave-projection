@@ -3,9 +3,9 @@ class_name Creature extends Node2D
 @onready var polygons = $Container/Polygons
 @onready var destination_position = $DestinationPosition.global_position
 
-@export var creature_type : Global.CreatureType = Global.CreatureType.BAT
-@export var move_speed : float = 1.0
-@export var moving : bool = false
+var creature_type : Global.CreatureType = Global.CreatureType.BAT
+const move_speed : float = 25
+var moving : bool = false
 
 # constructor
 func _init():

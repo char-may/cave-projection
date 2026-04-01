@@ -1,8 +1,21 @@
 class_name Bat extends Creature
 @onready var label = $Container/Label
 
-var label_text: Array = ["!", "?", "hi!", "oh hi!", "pardon me", "sup...", "nice drawing!", "have you seen pete?", "walking feet!",
-"hey buddy!", "hiya!", "where are we?", "nice cave isn't it?" ]
+var yap_text: Array = [
+	"!",
+	"?",
+	"hi!",
+	"oh hi!",
+	"pardon me",
+	"sup...",
+	"nice drawing!",
+	"do you know pete?",
+	"walking feet!",
+	"hey buddy!",
+	"hiya!",
+	"where are we?",
+	"nice cave isn't it?"]
+
 var talking : bool = false
 var rng #random number generator
 
@@ -16,13 +29,11 @@ func _on_area_2d_area_entered(_area: Area2D) -> void:
 	if !talking:
 		talking = true
 		var random_time = rng.randf_range(0.1, .5)
-		var random_text: String = label_text.pick_random()
+		var random_yap: String = yap_text.pick_random()
 		await get_tree().create_timer(random_time).timeout
-		label.text = random_text
+		label.text = random_yap
 		label.visible = true
 		random_time = rng.randf_range(1.0, 3.0)
 		await get_tree().create_timer(random_time).timeout
 		label.visible = false
 		talking = false
-	else:
-		pass

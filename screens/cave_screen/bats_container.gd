@@ -1,14 +1,29 @@
 extends Node
 
-const max_bats : int = 3
+const max_bats_on_screen : int = 6
+var rng
+
+var min_rotate_time: float = 15.0
+var max_rotate_time: float = 35.0
+
+@onready var bat_timer : Timer = $"../BatTimer"
+@onready var leaving_spawn = $"../LeavingSpawn"
 
 func _ready() -> void:
 	GlobalSignal.new_bat_created.connect(create_bat)
+	rng = RandomNumberGenerator.new()
+	rng.randomize()
+	start_random_timer()
 	
 func _process(_delta: float) -> void:
 	if (Input.is_action_just_pressed("create_bat")):
 		Global.select_random_texture("bat")
 		create_bat()
+	
+func start_random_timer():
+	# Set a random time between 1 and 5 seconds
+	bat_timer.wait_time = rng.randf_range(min_rotate_time, max_rotate_time)
+	bat_timer.start()
 	
 func create_bat():
 	var new_bat_scene := preload("res://creatures/bat/bat.tscn")
@@ -26,6 +41,7 @@ func create_bat():
 	new_bat.scale = Vector2(0,0) # zero for tweening
 	new_bat.global_position = $"../CreatureSpawn".global_position
 	add_child(new_bat)
+	spawn_talk(new_bat)
 	var bat_scale_in = create_tween()
 	bat_scale_in.tween_property(new_bat,"scale", starting_scale, 1).set_trans(Tween.TRANS_CUBIC)
 	await bat_scale_in.finished
@@ -36,9 +52,31 @@ func create_bat():
 	new_bat.destination_position = bat_spawn_node.global_position
 	new_bat.moving = true
 	
-	# check for max bats
+	# check for max bats - ** add transition **
 	var bat_count = get_child_count()
-	if bat_count > max_bats:
-		print("We have too many bats, sending oldest away!")
+	if bat_count > max_bats_on_screen:
 		var first_child = get_child(0)
-		first_child.queue_free() # *** make an actual transition (fly off screen first)
+		first_child.queue_free()
+	
+func _on_bat_timer_timeout() -> void:
+	start_random_timer()
+	if get_child_count() > 0:
+		bat_swap()
+	
+func bat_swap() -> void: # move random bat to random spawn point
+	var random_child = get_children().pick_random()
+	if random_child is Bat:
+		var bat_spawn_points = $"../BatSpawns".get_children()
+		var bat_spawn_node = bat_spawn_points.pick_random()
+		if !random_child.moving:
+			random_child.destination_position = bat_spawn_node.global_position
+			random_child.moving = true
+	
+func spawn_talk(target) -> void:
+	# Say "?" when spawning
+	target.talking = true
+	target.label.text = "?"
+	target.label.visible = true
+	await get_tree().create_timer(2.0).timeout
+	target.label.visible = false
+	target.talking = false
