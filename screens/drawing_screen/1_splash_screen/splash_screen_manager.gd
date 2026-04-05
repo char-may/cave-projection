@@ -11,6 +11,7 @@ extends Control
 @export var splash_screen : AnimatedSprite2D
 
 func _ready() -> void:
+	Global.selected_tool = Global.ToolType.CRAYON #reset default tool to crayon on reset
 	splash_screen.play()
 	fade()
 	pass

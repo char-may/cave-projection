@@ -33,9 +33,10 @@ func _ready() -> void:
 	# Set tool defaults
 	if type == Global.selected_tool:
 		active = true
-		var swatch_selector = get_node("SwatchSelector")
-		default_color = swatch_selector.active_palette.color1
-		Global.active_color = default_color
+		if  has_node("SwatchSelector"): #exclude eraser
+			var swatch_selector = get_node("SwatchSelector")
+			default_color = swatch_selector.active_palette.color1
+			Global.active_color = default_color
 		Global.tool_size = tool_size
 		slide_in()
 	

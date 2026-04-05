@@ -8,6 +8,7 @@ var max_rotate_time: float = 35.0
 
 @onready var bat_timer : Timer = $"../BatTimer"
 @onready var leaving_spawn = $"../LeavingSpawn"
+const puff = preload("res://screens/cave_screen/puff.tscn")
 
 func _ready() -> void:
 	GlobalSignal.new_bat_created.connect(create_bat)
@@ -52,10 +53,16 @@ func create_bat():
 	new_bat.destination_position = bat_spawn_node.global_position
 	new_bat.moving = true
 	
-	# check for max bats - ** add transition **
+	# check for max bats, remove first child (with puff effect)
 	var bat_count = get_child_count()
 	if bat_count > max_bats_on_screen:
+		# remove bat
 		var first_child = get_child(0)
+		# do puff
+		var puff_instance = puff.instantiate()
+		first_child.add_child(puff_instance)
+		first_child.visible = false
+		await get_tree().create_timer(5.0).timeout
 		first_child.queue_free()
 	
 func _on_bat_timer_timeout() -> void:

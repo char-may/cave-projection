@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bjibnlntxppeb"]
+
+[ext_resource type="Script" uid="uid://dwcgnei7iu6j7" path="res://screens/cave_screen/puff.gd" id="1_mt2v0"]
+[ext_resource type="Texture2D" uid="uid://cia25qrfkyyl7" path="res://screens/drawing_screen/2_creature_select_screen/button_art/cloudbutton.png" id="2_olcll"]
+
+[sub_resource type="Curve" id="Curve_taekf"]
+_data = [Vector2(0, 0.6979011), 0.0, 0.0, 0, 0, Vector2(0.047101445, 1), -9.400504e-07, -9.400504e-07, 0, 0, Vector2(0.3478261, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_2xbqr"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.6847826, -1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Puff" type="Node2D" unique_id=1423791791]
+script = ExtResource("1_mt2v0")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=165675634]
+emitting = false
+texture = ExtResource("2_olcll")
+lifetime = 3.0
+one_shot = true
+speed_scale = 0.5
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 75.0
+initial_velocity_max = 100.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+scale_amount_curve = SubResource("Curve_taekf")
+color = Color(0.32941177, 0, 0.5529412, 1)
+hue_variation_min = -0.1
+hue_variation_max = 0.1
+hue_variation_curve = SubResource("Curve_2xbqr")
