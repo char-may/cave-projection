@@ -10,10 +10,12 @@ signal swatch_color_selected(color : Color)
 @warning_ignore("unused_signal")
 signal finished_drawing
 
-
 # Cave
 @warning_ignore("unused_signal")
 signal new_bat_created
 
 @warning_ignore("unused_signal")
 signal new_tardigrade_created
+
+@warning_ignore("unused_signal")
+signal do_puff

@@ -16,6 +16,9 @@ enum ToolType {
 var game_controller : GameController
 var is_first_run = true # used in game controller to see if reset or first run, for file cleanup
 
+# preload scene to memory at compile time
+const PUFF = preload("res://screens/cave_screen/puff.tscn") # puff effect
+
 # Editor stuff
 var creature_editing : CreatureType = CreatureType.BAT
 var finished_atlus : ImageTexture = null

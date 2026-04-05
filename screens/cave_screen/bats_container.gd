@@ -8,7 +8,6 @@ var max_rotate_time: float = 35.0
 
 @onready var bat_timer : Timer = $"../BatTimer"
 @onready var leaving_spawn = $"../LeavingSpawn"
-const puff = preload("res://screens/cave_screen/puff.tscn")
 
 func _ready() -> void:
 	GlobalSignal.new_bat_created.connect(create_bat)
@@ -20,6 +19,8 @@ func _process(_delta: float) -> void:
 	if (Input.is_action_just_pressed("create_bat")):
 		Global.select_random_texture("bat")
 		create_bat()
+	if (Input.is_action_just_pressed("space")):
+		destroy_first_child()
 	
 func start_random_timer():
 	# Set a random time between 1 and 5 seconds
@@ -56,15 +57,22 @@ func create_bat():
 	# check for max bats, remove first child (with puff effect)
 	var bat_count = get_child_count()
 	if bat_count > max_bats_on_screen:
-		# remove bat
-		var first_child = get_child(0)
-		# do puff
-		var puff_instance = puff.instantiate()
-		first_child.add_child(puff_instance)
-		first_child.visible = false
-		await get_tree().create_timer(5.0).timeout
-		first_child.queue_free()
+		destroy_first_child()
 	
+func destroy_first_child() -> void:
+	# check if children exist
+	if get_child_count() > 0:
+		var first_child = get_child(0)
+		# do puff and destroy child
+		var puff_instance = Global.PUFF.instantiate()
+		if first_child.has_node("Container"):
+			puff_instance.position = first_child.get_node("Container").global_position
+			add_child(puff_instance)
+			GlobalSignal.do_puff.emit()
+			first_child.queue_free()
+			await get_tree().create_timer(3.0).timeout
+			puff_instance.queue_free()
+		
 func _on_bat_timer_timeout() -> void:
 	start_random_timer()
 	if get_child_count() > 0:

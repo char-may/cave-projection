@@ -16,9 +16,9 @@ point_count = 2
 script = ExtResource("1_mt2v0")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=165675634]
-emitting = false
+scale = Vector2(2, 2)
 texture = ExtResource("2_olcll")
-lifetime = 3.0
+lifetime = 2.5
 one_shot = true
 speed_scale = 0.5
 explosiveness = 1.0
@@ -26,8 +26,8 @@ spread = 180.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 75.0
 initial_velocity_max = 100.0
-scale_amount_min = 0.1
-scale_amount_max = 0.2
+scale_amount_min = 0.2
+scale_amount_max = 0.3
 scale_amount_curve = SubResource("Curve_taekf")
 color = Color(0.32941177, 0, 0.5529412, 1)
 hue_variation_min = -0.1

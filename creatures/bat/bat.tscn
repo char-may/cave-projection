@@ -167,7 +167,6 @@ _data = {
 [node name="Bat" type="Node2D" unique_id=2131518630]
 scale = Vector2(0.175, 0.175)
 script = ExtResource("1_ovyqp")
-move_speed = 6.0
 
 [node name="Container" type="Node2D" parent="." unique_id=273554386]
 script = ExtResource("2_ithft")
