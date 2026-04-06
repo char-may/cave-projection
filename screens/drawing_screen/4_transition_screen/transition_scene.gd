@@ -132,9 +132,23 @@ func bat_selected():
 	var new_bat_container = new_bat.get_node("Container")
 	new_bat_container.disabled = true #turn off wiggle animation
 	get_node("CreatureContainer").add_child(new_bat)
-
+	
 func tardigrade_selected():
-	pass
+	var new_tardigrade_scene := preload("res://creatures/tardigrade/tardigrade.tscn")
+	var new_tardigrade = new_tardigrade_scene.instantiate()
+	new_tardigrade.scale = Vector2(.35, .35)
+	creature_transitioning = new_tardigrade
+	
+	# disable wiggle, rotate, and boing animations during transition
+	var new_tardigrade_container = new_tardigrade.get_node("Container")
+	new_tardigrade_container.disabled = true #turn off wiggle animation
+	var new_tardigrade_rotate_anim = new_tardigrade.get_node("RotateAnimation")
+	new_tardigrade_rotate_anim.queue_free()
+	var new_tardigrade_boing_timer = new_tardigrade.get_node("BoingTimer")
+	new_tardigrade_boing_timer.queue_free()
+	
+	get_node("CreatureContainer").add_child(new_tardigrade)
+	
 func salamander_selected():
 	pass
 func bigguy_selected():

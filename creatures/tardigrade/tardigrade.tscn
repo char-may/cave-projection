@@ -241,8 +241,6 @@ _data = {
 [node name="Tardigrade" type="Node2D" unique_id=1150676927]
 scale = Vector2(0.175, 0.175)
 script = ExtResource("1_oxxok")
-creature_type = 1
-move_speed = 10.0
 
 [node name="Container" type="Node2D" parent="." unique_id=863718095]
 script = ExtResource("2_dncal")
@@ -365,6 +363,7 @@ autostart = true
 script = ExtResource("3_f2s73")
 
 [node name="Debug" type="Label" parent="." unique_id=1954281822]
+visible = false
 offset_top = -400.0
 offset_right = 337.0
 offset_bottom = -263.0

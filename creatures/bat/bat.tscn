@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c6ydv5waq481i" path="res://creatures/bat/bat.gd" id="1_ovyqp"]
 [ext_resource type="Script" uid="uid://blm1pvtue6d8o" path="res://utils/wiggle.gd" id="2_ithft"]
 [ext_resource type="FontFile" uid="uid://dfl6qybu25wok" path="res://fonts/Chubby Fun Regular.ttf" id="3_hyt8w"]
+[ext_resource type="Texture2D" uid="uid://c4w323vdp0kyi" path="res://screens/drawing_screen/3_editor_screen/face_generator/face_parts/eye_8.png" id="4_3qcqk"]
 
 [sub_resource type="Animation" id="Animation_sjjwa"]
 resource_name = "FLY"
@@ -291,10 +292,18 @@ speed_scale = 1.5
 [node name="DestinationPosition" type="Marker2D" parent="." unique_id=139665280]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=674292996]
+scale = Vector2(0.9999998, 0.9999998)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1648283937]
 position = Vector2(0, -125.71429)
 scale = Vector2(45, 45)
 shape = SubResource("CircleShape2D_ovyqp")
+
+[node name="CollisionReference" type="Sprite2D" parent="." unique_id=1175404290]
+visible = false
+show_behind_parent = true
+position = Vector2(5.7142854, -137.14285)
+scale = Vector2(9, 9)
+texture = ExtResource("4_3qcqk")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
