@@ -21,33 +21,54 @@ const creature_container_scale_to = Vector2(1.0, 1.0)
 const creature_container_scale_time = 0.75
 
 var greeting_text: Array = [
-	"Hey...",
+	"Hey!",
 	"Hi!",
 	"Sup!",
 	"Bonjour!",
 	"Hello!",
 	"Aloha!"]
 	
+var tardigrade_greeting_text: Array = [
+	"Blub blub!",
+	"Bla-blub!",
+	"Blub!"
+]
+	
 var question_text: Array = [
 	"Who turned out the lights?",
 	"I'm... alive?",
 	"Where am I?",
 	"What's this weird spinny thing?",
-	"Is it time for lunch?"]
+	"Is it time for lunch?",
+	"Did you draw me?",
+	"Which way to the lights out exhibit?",
+	"It's so... dark in here!"]
 
+var tardigrade_question_text: Array = [
+	"Blub blu-blub?",
+	"Blub... blub?",
+	"Blub-a-blub-a-blub?",
+	"A-blub-bla-blub?",
+	"... blub-blub?"
+]
 var exclamation_text: Array = [
 	"I think it's going to swallow me up now!",
 	"This looks... fun!",
 	"I think I read about this somewhere!",
-	"I'm glad I packed my bags!"]
+	"I'm glad I packed my bags!",
+	"Let's take a look inside!",
+	"I see something on the other side!",
+	"I hear my friends calling!",
+	"Here we go!",
+	"I'm not scared..."]
 	
-var goodbye_text: Array = [
-	"Bye bye!",
- 	"Hasta luego!",
-	"Toodle-oo!",
-	"See ya!",
-	"Sayonara!"]
-
+var tardigrade_explamation_text: Array = [
+	"Blub-o-blub!",
+	"O blub ba-blub!",
+	"Bluuuuub!",
+	"Ba ba ba blubbbb!",
+	"O blub ba-blub blub!"
+]
 var rng #random number generator
 
 func _ready() -> void:
@@ -77,28 +98,36 @@ func _ready() -> void:
 	#creature dialog (add randomized options)
 	await scale_creature_container.finished
 	label.visible = true
-	var random_text: String = greeting_text.pick_random()
-	label.text = random_text
+	var random_text: String
+	
+	if Global.creature_editing == Global.CreatureType.TARDIGRADE:
+		random_text = tardigrade_greeting_text.pick_random()
+		label.text = random_text
+	else:
+		random_text = greeting_text.pick_random()
+		label.text = random_text
 	
 	await get_tree().create_timer(2).timeout
 	label.text = ""
 	await get_tree().create_timer(.5).timeout
-	random_text = question_text.pick_random()
-	label.text = random_text
+	
+	if Global.creature_editing == Global.CreatureType.TARDIGRADE:
+		random_text = tardigrade_question_text.pick_random()
+		label.text = random_text
+	else:
+		random_text = question_text.pick_random()
+		label.text = random_text
 	
 	await get_tree().create_timer(2).timeout
 	label.text = ""
-
 	await get_tree().create_timer(.5).timeout
-	random_text = exclamation_text.pick_random()
-	label.text = random_text
 	
-	await get_tree().create_timer(3).timeout
-	label.text = ""
-	
-	await get_tree().create_timer(.5).timeout
-	random_text = goodbye_text.pick_random()
-	label.text = random_text
+	if Global.creature_editing == Global.CreatureType.TARDIGRADE:
+		random_text = tardigrade_explamation_text.pick_random()
+		label.text = random_text
+	else:
+		random_text = exclamation_text.pick_random()
+		label.text = random_text
 	
 	await get_tree().create_timer(2).timeout
 	label.visible = false

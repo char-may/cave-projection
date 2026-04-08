@@ -243,6 +243,7 @@ scale = Vector2(0.175, 0.175)
 script = ExtResource("1_qvpkg")
 
 [node name="Container" type="Node2D" parent="." unique_id=863718095]
+position = Vector2(-62.85714, -160)
 script = ExtResource("2_va5vy")
 frequency = 1.0
 tween_duration = 10.0
@@ -330,7 +331,7 @@ rotation = -1.5589852
 rest = Transform2D(0.011810819, -0.99993026, 0.99993026, 0.011810819, 292.893, -122.263504)
 auto_calculate_length_and_angle = false
 length = 243.333
-bone_angle = 79.99998
+bone_angle = 79.99997
 
 [node name="MidBackLeg" type="Bone2D" parent="Container/Skeleton2D/Body" unique_id=1035972271]
 position = Vector2(301.41873, 123.56862)
