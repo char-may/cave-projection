@@ -134,7 +134,7 @@ func bat_selected():
 	get_node("CreatureContainer").add_child(new_bat)
 	
 func tardigrade_selected():
-	var new_tardigrade_scene := preload("res://creatures/tardigrade/tardigrade.tscn")
+	var new_tardigrade_scene := preload("res://creatures/tardigrade/new_tardigrade.tscn")
 	var new_tardigrade = new_tardigrade_scene.instantiate()
 	new_tardigrade.scale = Vector2(.35, .35)
 	creature_transitioning = new_tardigrade

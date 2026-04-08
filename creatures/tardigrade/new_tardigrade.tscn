@@ -70,6 +70,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [-0.0051812534, -0.11081574, -0.0051812534]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Container/Skeleton2D/Body/Head:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.51, 5),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [0.0, 0.14922859, 0.0]
+}
 
 [sub_resource type="Animation" id="Animation_fidtp"]
 length = 0.001
@@ -128,6 +140,18 @@ tracks/4/path = NodePath("Container/Skeleton2D/Body/BackLeg:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Container/Skeleton2D/Body/Head:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -304,7 +328,7 @@ position = Vector2(272.60214, -339.66116)
 rest = Transform2D(1, 0, 0, 1, 272.60214, -339.66116)
 auto_calculate_length_and_angle = false
 length = 283.451
-bone_angle = -37.64699
+bone_angle = -37.646988
 
 [node name="MidFrontLeg" type="Bone2D" parent="Container/Skeleton2D/Body" unique_id=1092387494]
 position = Vector2(292.893, -122.263504)
@@ -312,7 +336,7 @@ rotation = -1.5589852
 rest = Transform2D(0.011810819, -0.99993026, 0.99993026, 0.011810819, 292.893, -122.263504)
 auto_calculate_length_and_angle = false
 length = 243.333
-bone_angle = 79.999985
+bone_angle = 79.99998
 
 [node name="MidBackLeg" type="Bone2D" parent="Container/Skeleton2D/Body" unique_id=1035972271]
 position = Vector2(301.41873, 123.56862)
