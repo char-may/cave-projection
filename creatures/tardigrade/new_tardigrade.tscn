@@ -10,9 +10,129 @@
 resource_name = "Idle"
 length = 5.0
 loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Container/Skeleton2D/Body:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.6, 5),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -74), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Container/Skeleton2D/Body/FrontLeg:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.6046429, 5),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [-0.093906276, 0.17498073, -0.093906276]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Container/Skeleton2D/Body/MidFrontLeg:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.2333333, 5),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [-1.5589852, -1.4116483, -1.5589852]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Container/Skeleton2D/Body/MidBackLeg:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.7, 5),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [0.0, -0.13380621, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Container/Skeleton2D/Body/BackLeg:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.58, 5),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [-0.0051812534, -0.11081574, -0.0051812534]
+}
 
 [sub_resource type="Animation" id="Animation_fidtp"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Container/Skeleton2D/Body:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Container/Skeleton2D/Body/FrontLeg:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Container/Skeleton2D/Body/MidFrontLeg:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5589852]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Container/Skeleton2D/Body/MidBackLeg:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Container/Skeleton2D/Body/BackLeg:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_retoa"]
 _data = {
@@ -184,7 +304,7 @@ position = Vector2(272.60214, -339.66116)
 rest = Transform2D(1, 0, 0, 1, 272.60214, -339.66116)
 auto_calculate_length_and_angle = false
 length = 283.451
-bone_angle = -37.646996
+bone_angle = -37.64699
 
 [node name="MidFrontLeg" type="Bone2D" parent="Container/Skeleton2D/Body" unique_id=1092387494]
 position = Vector2(292.893, -122.263504)
@@ -192,7 +312,7 @@ rotation = -1.5589852
 rest = Transform2D(0.011810819, -0.99993026, 0.99993026, 0.011810819, 292.893, -122.263504)
 auto_calculate_length_and_angle = false
 length = 243.333
-bone_angle = 79.99999
+bone_angle = 79.999985
 
 [node name="MidBackLeg" type="Bone2D" parent="Container/Skeleton2D/Body" unique_id=1035972271]
 position = Vector2(301.41873, 123.56862)
