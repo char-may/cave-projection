@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cw5vkd0vwqp0y"]
 
+[ext_resource type="PackedScene" uid="uid://b85crj23jqo3y" path="res://screens/cave_screen/fairy.tscn" id="1_u6t5p"]
 [ext_resource type="Script" uid="uid://drgs28dimdubd" path="res://screens/cave_screen/bats_container.gd" id="2_0xn84"]
 [ext_resource type="Script" uid="uid://cwl62ialnf1gl" path="res://screens/cave_screen/tardigrades_container.gd" id="3_u6t5p"]
 
@@ -30,6 +31,38 @@ z_index = 1
 position = Vector2(28, 3)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(-106, 28, 68, 17, 29, 280, 13, 399, 37, 614, 14, 697, -75, 650)
+
+[node name="FairyContainer" type="Node" parent="." unique_id=2126195481]
+
+[node name="Fairy" parent="FairyContainer" unique_id=1741703279 instance=ExtResource("1_u6t5p")]
+position = Vector2(783, 799)
+
+[node name="Fairy2" parent="FairyContainer" unique_id=919675110 instance=ExtResource("1_u6t5p")]
+position = Vector2(487, 454)
+
+[node name="Fairy3" parent="FairyContainer" unique_id=1755019801 instance=ExtResource("1_u6t5p")]
+position = Vector2(723, 566)
+
+[node name="Fairy4" parent="FairyContainer" unique_id=1029910226 instance=ExtResource("1_u6t5p")]
+position = Vector2(152, 148)
+
+[node name="Fairy5" parent="FairyContainer" unique_id=624041483 instance=ExtResource("1_u6t5p")]
+position = Vector2(271, 835)
+
+[node name="Fairy6" parent="FairyContainer" unique_id=58213730 instance=ExtResource("1_u6t5p")]
+position = Vector2(1477, 472)
+
+[node name="Fairy7" parent="FairyContainer" unique_id=778512755 instance=ExtResource("1_u6t5p")]
+position = Vector2(1308, 114)
+
+[node name="Fairy8" parent="FairyContainer" unique_id=16352296 instance=ExtResource("1_u6t5p")]
+position = Vector2(1619, 845)
+
+[node name="Fairy9" parent="FairyContainer" unique_id=1226807672 instance=ExtResource("1_u6t5p")]
+position = Vector2(1194, 461)
+
+[node name="Fairy10" parent="FairyContainer" unique_id=1312068401 instance=ExtResource("1_u6t5p")]
+position = Vector2(561, 175)
 
 [node name="BatSpawns" type="Node2D" parent="." unique_id=1835914659]
 

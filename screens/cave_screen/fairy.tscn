@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://b85crj23jqo3y"]
+
+[ext_resource type="Script" uid="uid://blm1pvtue6d8o" path="res://utils/wiggle.gd" id="1_71ptn"]
+[ext_resource type="Script" uid="uid://jc4qgi8i7568" path="res://screens/cave_screen/fairy.gd" id="1_nqee5"]
+[ext_resource type="Texture2D" uid="uid://bnisx63av1uu6" path="res://screens/cave_screen/Fairy.png" id="2_nqee5"]
+
+[sub_resource type="Animation" id="Animation_71ptn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.39215687)]
+}
+
+[sub_resource type="Animation" id="Animation_nqee5"]
+resource_name = "flicker_animation"
+length = 17.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.98, 1.99, 3.01, 3.97, 5, 8.034035, 8.978009, 10.033334, 11.014033, 12.0135355, 12.97602, 13.994032, 14.993534, 16.011547, 17),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.1764706), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 0.1764706), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 0), Color(1, 1, 1, 0.1764706), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 0.1764706), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 0.1764706), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 0.1764706), Color(1, 1, 1, 0.39215687), Color(1, 1, 1, 0.1764706), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ralqa"]
+_data = {
+&"RESET": SubResource("Animation_71ptn"),
+&"flicker_animation": SubResource("Animation_nqee5")
+}
+
+[node name="Fairy" type="Node2D" unique_id=1741703279]
+script = ExtResource("1_nqee5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1322779521]
+self_modulate = Color(1, 1, 1, 0.39215687)
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("2_nqee5")
+script = ExtResource("1_71ptn")
+frequency = 2.0
+target_amplitude = 300.0
+tween_duration = 3.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1728456155]
+libraries/ = SubResource("AnimationLibrary_ralqa")
