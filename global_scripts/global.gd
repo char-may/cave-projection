@@ -33,10 +33,9 @@ func get_drawing_color() -> Color:
 	else:
 		return active_color
 		
+# ***** will use this for auto-populate ******
+
 func select_random_texture(type: String):
-	# sets Global.finished_atlas to a random file from creature directory
-	# currently using input but may need to be a signal for auto-populate
-	
 	var creature_images: PackedStringArray = []
 	var path = "user://"
 	var dir = DirAccess.open(path)
@@ -77,13 +76,10 @@ func select_random_texture(type: String):
 	var image = Image.new()
 	match type:
 		"bat":
-			var load_err := image.load("user://exports/bats/" + random_image_path)
-			assert(load_err == OK, "Failed to load image at: ")
+			image.load("user://exports/bats/" + random_image_path)
 		"tardigrade":
-			var load_err := image.load("user://exports/tardigrades/" + random_image_path)
-			assert(load_err == OK, "Failed to load image at: ")
+			image.load("user://exports/tardigrades/" + random_image_path)
 		_:
-			var load_err := image.load("user://exports/bats/" + random_image_path)
-			assert(load_err == OK, "Failed to load image at: ")
+			image.load("user://exports/bats/" + random_image_path)
 			
 	finished_atlus = ImageTexture.create_from_image(image)
