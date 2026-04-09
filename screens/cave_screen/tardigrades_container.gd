@@ -4,7 +4,7 @@ func _ready() -> void:
 	GlobalSignal.new_tardigrade_created.connect(create_tardigrade)
 	
 func create_tardigrade():
-	var new_tardigrade_scene := preload("res://creatures/tardigrade/new_tardigrade.tscn")
+	var new_tardigrade_scene := preload("res://creatures/tardigrade/tardigrade.tscn")
 	var new_tardigrade = new_tardigrade_scene.instantiate()
 	# Pick spawn
 	var tardigrade_spawn_points = $"../TardigradeSpawns".get_children()

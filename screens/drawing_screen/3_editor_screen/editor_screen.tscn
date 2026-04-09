@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b471rqmp7x52o" path="res://screens/drawing_screen/3_editor_screen/editor.gd" id="1_31cdr"]
 [ext_resource type="PackedScene" uid="uid://c7uvpsnt6urh7" path="res://screens/drawing_screen/3_editor_screen/pen.tscn" id="3_uu0r8"]
 [ext_resource type="Texture2D" uid="uid://ck8e311k81e2c" path="res://screens/drawing_screen/3_editor_screen/masks/bat_mask.png" id="4_qshlb"]
-[ext_resource type="Texture2D" uid="uid://bx0c78gcb3syr" path="res://screens/drawing_screen/3_editor_screen/masks/new_tardigrade_mask.png" id="5_ecyxn"]
+[ext_resource type="Texture2D" uid="uid://bx0c78gcb3syr" path="res://screens/drawing_screen/3_editor_screen/masks/tardigrade_mask.png" id="5_ecyxn"]
 [ext_resource type="PackedScene" uid="uid://baya7flibfovb" path="res://screens/drawing_screen/3_editor_screen/face_generator/face_generator.tscn" id="5_kvpue"]
 [ext_resource type="Texture2D" uid="uid://f7pdjv07an3b" path="res://screens/drawing_screen/3_editor_screen/masks/tardigrade_mouth_outline.png" id="6_31cdr"]
 
