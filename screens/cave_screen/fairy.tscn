@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b85crj23jqo3y"]
 
 [ext_resource type="Script" uid="uid://blm1pvtue6d8o" path="res://utils/wiggle.gd" id="1_71ptn"]
-[ext_resource type="Script" uid="uid://jc4qgi8i7568" path="res://screens/cave_screen/fairy.gd" id="1_nqee5"]
+[ext_resource type="Script" uid="uid://qa8tn3t26fn3" path="res://screens/cave_screen/fairy.gd" id="1_nqee5"]
 [ext_resource type="Texture2D" uid="uid://bnisx63av1uu6" path="res://screens/cave_screen/Fairy.png" id="2_nqee5"]
 
 [sub_resource type="Animation" id="Animation_71ptn"]

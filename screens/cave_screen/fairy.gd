@@ -1,19 +1,51 @@
-extends Node2D
+extends Node
 
-@onready var animation_player = $AnimationPlayer
+@onready var sprite = $Sprite2D
+
+# set random flicker speed
+var flicker_min_speed = 2.0
+var flicker_max_speed = 1.0
+
+# set random scale
+var min_scale = 0.015
+var max_scale = 0.020
 
 func _ready() -> void:
-	play_animation()
+	# set sprite alpha to 0
+	sprite.self_modulate.a = 0.0
 	
-func play_animation() -> void:
-	animation_player.play("flicker_animation")
-	var anim_length = animation_player.current_animation_length
-	var random_time = randf_range(0.0, anim_length)
-	animation_player.advance(random_time)
-	await $AnimationPlayer.animation_finished
+	# set sprite to random uniform scale
+	var random_scale = randf_range(min_scale, max_scale)
+	sprite.scale = Vector2.ONE * random_scale
+	flicker()
 	
-	# once finished, jump to a random position and start over
+func flicker() -> void:
+	# Wait for random delay
+	await get_tree().create_timer(randf_range(5.0, 10.0)).timeout
+	
+	# Set random parameters
+	var random_duration = randf_range(flicker_min_speed, flicker_max_speed)
+	var flicker_burst = randi_range(3, 10)
+	
+	# Do flicker burst cycle
+	for i in range(flicker_burst):
+		print("flicker " + str(i) + " start")
+		var flicker_on = create_tween()
+		flicker_on.tween_property(sprite, "self_modulate:a", .9,random_duration)
+		await flicker_on.finished
+		var flicker_off = create_tween()
+		flicker_off.tween_property(sprite, "self_modulate:a", 0.25, random_duration)
+		await flicker_off.finished
+		print("flicker " + str(i) + " finished")
+	
+	var flicker_reset = create_tween()
+	flicker_reset.tween_property(sprite, "self_modulate:a", 0.0, random_duration)
+	await flicker_reset.finished
+	
+	# Once finished, jump to a random position and restart flicker
 	var x = randf_range(0, 1920)
 	var y = randf_range(0, 1080)
-	position = Vector2(x, y)
-	play_animation()
+	self.position = Vector2(x, y)
+	
+	print("Re-flickering")
+	flicker()
