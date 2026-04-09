@@ -8,6 +8,12 @@ signal drawing_tool_selected
 signal swatch_color_selected(color : Color)
 
 @warning_ignore("unused_signal")
+signal generate_random_face
+
+@warning_ignore("unused_signal")
+signal remove_random_face
+
+@warning_ignore("unused_signal")
 signal finished_drawing
 
 # Cave

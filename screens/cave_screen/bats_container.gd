@@ -16,9 +16,7 @@ func _ready() -> void:
 	start_random_timer()
 	
 func _process(_delta: float) -> void:
-	if (Input.is_action_just_pressed("create_bat")):
-		Global.select_random_texture("bat")
-		create_bat()
+	# For testing
 	if (Input.is_action_just_pressed("space")):
 		destroy_first_child()
 	
