@@ -21,6 +21,7 @@ var rng #random number generator
 
 func _ready():
 	super()
+	move_speed = 25
 	rng = RandomNumberGenerator.new()
 	rng.randomize()
 	label.visible = false

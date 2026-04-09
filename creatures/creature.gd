@@ -4,7 +4,7 @@ class_name Creature extends Node2D
 @onready var destination_position = $DestinationPosition.global_position
 
 var creature_type : Global.CreatureType = Global.CreatureType.BAT
-const move_speed : float = 25
+var move_speed : float = 25
 var moving : bool = false
 
 # constructor

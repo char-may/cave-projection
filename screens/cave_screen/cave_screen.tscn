@@ -34,7 +34,7 @@ polygon = PackedVector2Array(-106, 28, 68, 17, 29, 280, 13, 399, 37, 614, 14, 69
 [node name="BatSpawns" type="Node2D" parent="." unique_id=1835914659]
 
 [node name="BatSpawn1" type="Marker2D" parent="BatSpawns" unique_id=1407066445]
-position = Vector2(241, 348)
+position = Vector2(246, 335)
 
 [node name="BatSpawn2" type="Marker2D" parent="BatSpawns" unique_id=781291386]
 position = Vector2(247, 740)
@@ -46,30 +46,42 @@ position = Vector2(966, 252)
 position = Vector2(1359, 332)
 
 [node name="BatSpawn5" type="Marker2D" parent="BatSpawns" unique_id=382743347]
-position = Vector2(1644, 746)
+position = Vector2(1631, 684)
 
 [node name="BatSpawn6" type="Marker2D" parent="BatSpawns" unique_id=2000194355]
 position = Vector2(501, 550)
 
 [node name="BatSpawn7" type="Marker2D" parent="BatSpawns" unique_id=578873082]
-position = Vector2(1270, 651)
+position = Vector2(1205, 643)
 
 [node name="BatSpawn8" type="Marker2D" parent="BatSpawns" unique_id=490924351]
 position = Vector2(882, 809)
 
 [node name="BatSpawn9" type="Marker2D" parent="BatSpawns" unique_id=432341980]
-position = Vector2(900, 490)
+position = Vector2(887, 430)
 
 [node name="TardigradeSpawns" type="Node2D" parent="." unique_id=136950046]
 
 [node name="TardigradeSpawn1" type="Marker2D" parent="TardigradeSpawns" unique_id=363240910]
-position = Vector2(1131, 591)
+position = Vector2(1162, 265)
 
 [node name="TardigradeSpawn2" type="Marker2D" parent="TardigradeSpawns" unique_id=1627471920]
-position = Vector2(486, 876)
+position = Vector2(431, 762)
 
 [node name="TardigradeSpawn3" type="Marker2D" parent="TardigradeSpawns" unique_id=572409246]
-position = Vector2(1428, 576)
+position = Vector2(1439, 753)
+
+[node name="TardigradeSpawn4" type="Marker2D" parent="TardigradeSpawns" unique_id=1579585306]
+position = Vector2(220, 466)
+
+[node name="TardigradeSpawn5" type="Marker2D" parent="TardigradeSpawns" unique_id=334815118]
+position = Vector2(679, 399)
+
+[node name="TardigradeSpawn6" type="Marker2D" parent="TardigradeSpawns" unique_id=768550106]
+position = Vector2(1587, 490)
+
+[node name="TardigradeSpawn7" type="Marker2D" parent="TardigradeSpawns" unique_id=1124159504]
+position = Vector2(968, 841)
 
 [node name="CreatureSpawn" type="Marker2D" parent="." unique_id=534270507]
 position = Vector2(960, 540)
@@ -85,4 +97,7 @@ script = ExtResource("3_u6t5p")
 
 [node name="BatTimer" type="Timer" parent="." unique_id=1723267219]
 
+[node name="TardigradeTimer" type="Timer" parent="." unique_id=615102590]
+
 [connection signal="timeout" from="BatTimer" to="BatsContainer" method="_on_bat_timer_timeout"]
+[connection signal="timeout" from="TardigradeTimer" to="TardigradesContainer" method="_on_tardigrade_timer_timeout"]

@@ -299,11 +299,7 @@ position = Vector2(0, -125.71429)
 scale = Vector2(45, 45)
 shape = SubResource("CircleShape2D_ovyqp")
 
-[node name="CollisionReference" type="Sprite2D" parent="." unique_id=1175404290]
-visible = false
-show_behind_parent = true
-position = Vector2(5.7142854, -137.14285)
-scale = Vector2(9, 9)
+[node name="EyeOfDebugging" type="Sprite2D" parent="." unique_id=1522573577]
 texture = ExtResource("4_3qcqk")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

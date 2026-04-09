@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://ddvs11mb67g00"]
 
-[ext_resource type="Script" uid="uid://cpuanptp05hei" path="res://creatures/creature.gd" id="1_qvpkg"]
+[ext_resource type="Script" uid="uid://beft264j4scjp" path="res://creatures/tardigrade/tardigrade.gd" id="1_vxrnv"]
 [ext_resource type="Script" uid="uid://blm1pvtue6d8o" path="res://utils/wiggle.gd" id="2_va5vy"]
 [ext_resource type="Script" uid="uid://bxj0w5vqevxp1" path="res://creatures/tardigrade/boing_timer.gd" id="3_nohl6"]
 [ext_resource type="Script" uid="uid://cf4mgnqnkvi2b" path="res://creatures/tardigrade/label.gd" id="4_hsb7s"]
+[ext_resource type="Texture2D" uid="uid://c4w323vdp0kyi" path="res://screens/drawing_screen/3_editor_screen/face_generator/face_parts/eye_8.png" id="5_vxrnv"]
 
 [sub_resource type="Animation" id="Animation_22ttg"]
 resource_name = "Idle"
@@ -240,7 +241,7 @@ _data = {
 
 [node name="Tardigrade" type="Node2D" unique_id=1150676927]
 scale = Vector2(0.175, 0.175)
-script = ExtResource("1_qvpkg")
+script = ExtResource("1_vxrnv")
 
 [node name="Container" type="Node2D" parent="." unique_id=863718095]
 position = Vector2(-62.85714, -160)
@@ -374,5 +375,8 @@ script = ExtResource("4_hsb7s")
 
 [node name="DestinationPosition" type="Marker2D" parent="." unique_id=1462587721]
 visible = false
+
+[node name="EyeOfDebugging" type="Sprite2D" parent="." unique_id=451821184]
+texture = ExtResource("5_vxrnv")
 
 [connection signal="timeout" from="BoingTimer" to="BoingTimer" method="_on_timeout"]
