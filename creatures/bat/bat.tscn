@@ -300,6 +300,7 @@ scale = Vector2(45, 45)
 shape = SubResource("CircleShape2D_ovyqp")
 
 [node name="EyeOfDebugging" type="Sprite2D" parent="." unique_id=1522573577]
+visible = false
 texture = ExtResource("4_3qcqk")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

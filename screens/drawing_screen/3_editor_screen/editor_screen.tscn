@@ -41,11 +41,10 @@ rotation = -0.38920844
 scale = Vector2(0.7, 0.7)
 
 [node name="TardigradeOverlay" type="TextureRect" parent="." unique_id=1880305270]
-visible = false
-offset_left = -67.0
-offset_top = 166.0
-offset_right = 1853.0
-offset_bottom = 1246.0
+offset_left = -65.0
+offset_top = 167.0
+offset_right = 1855.0
+offset_bottom = 1247.0
 texture = ExtResource("6_31cdr")
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
