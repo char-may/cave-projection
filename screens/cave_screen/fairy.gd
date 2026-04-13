@@ -29,14 +29,12 @@ func flicker() -> void:
 	
 	# Do flicker burst cycle
 	for i in range(flicker_burst):
-		print("flicker " + str(i) + " start")
 		var flicker_on = create_tween()
 		flicker_on.tween_property(sprite, "self_modulate:a", .9,random_duration)
 		await flicker_on.finished
 		var flicker_off = create_tween()
 		flicker_off.tween_property(sprite, "self_modulate:a", 0.25, random_duration)
 		await flicker_off.finished
-		print("flicker " + str(i) + " finished")
 	
 	var flicker_reset = create_tween()
 	flicker_reset.tween_property(sprite, "self_modulate:a", 0.0, random_duration)
@@ -47,5 +45,4 @@ func flicker() -> void:
 	var y = randf_range(0, 1080)
 	self.position = Vector2(x, y)
 	
-	print("Re-flickering")
 	flicker()

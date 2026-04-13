@@ -19,7 +19,6 @@ func _init() -> void:
 
 func _ready() -> void:
 	if Global.is_first_run:
-		print("Game just launched")
 		# Do file cleanup on launch
 		file_cleanup()
 		Global.is_first_run = false

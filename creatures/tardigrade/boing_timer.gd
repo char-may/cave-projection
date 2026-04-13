@@ -9,6 +9,6 @@ func _ready():
 
 func _on_timeout() -> void:
 	anim_player.play("Boing")
-	timer.wait_time = randf_range(10.0, 45.0)
+	timer.wait_time = randf_range(20.0, 60.0)
 	timer.start()
 	

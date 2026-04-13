@@ -25,7 +25,3 @@ func _ready() -> void:
 func _process(delta):
 	# Rotate sprite around its own center
 	portal_sprite.rotation += rotation_speed * delta
-
-   # print("Waiting for 2 seconds...")
-   # await get_tree().create_timer(2.0).timeout
-   # print("2 seconds have passed!")

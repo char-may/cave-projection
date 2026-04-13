@@ -2,7 +2,7 @@ extends Node
 
 @onready var tardigrade_timer : Timer = $"../TardigradeTimer"
 
-const max_tardigrades_on_screen : int = 6
+const max_tardigrades_on_screen : int = 4
 var rng
 
 var min_rotate_time: float = 15.0
@@ -42,9 +42,9 @@ func create_tardigrade():
 	new_tardigrade.moving = true
 	
 	# check for max tardigrades, remove first child (with puff effect)
-	#var tardigrade_count = get_child_count()
-	#if tardigrade_count > max_tardigrades_on_screen:
-	#	destroy_first_child()
+	var tardigrade_count = get_child_count()
+	if tardigrade_count > max_tardigrades_on_screen:
+		destroy_first_child()
 	
 func start_random_timer():
 	# Set a random time between 1 and 5 seconds
@@ -52,7 +52,6 @@ func start_random_timer():
 	tardigrade_timer.start()
 	
 func _on_tardigrade_timer_timeout() -> void:
-	print("Timer timed out")
 	start_random_timer()
 	if get_child_count() > 0:
 		tardigrade_swap()
@@ -60,10 +59,22 @@ func _on_tardigrade_timer_timeout() -> void:
 func tardigrade_swap():
 	var random_child = get_children().pick_random()
 	if random_child is Tardigrade:
-		print("we got a tarigrade here")
 		var tardigrade_spawn_points = $"../TardigradeSpawns".get_children()
 		var tardigrade_spawn_node = tardigrade_spawn_points.pick_random()
 		if !random_child.moving:
 			random_child.destination_position = tardigrade_spawn_node.global_position
 			random_child.moving = true
-	
+
+func destroy_first_child() -> void:
+	# check if children exist
+	if get_child_count() > 0:
+		var first_child = get_child(0)
+		# do puff and destroy child
+		var puff_instance = Global.PUFF.instantiate()
+		if first_child.has_node("Container"):
+			puff_instance.position = first_child.get_node("Container").global_position
+			add_child(puff_instance)
+			GlobalSignal.do_puff.emit()
+			first_child.queue_free()
+			await get_tree().create_timer(3.0).timeout
+			puff_instance.queue_free()
