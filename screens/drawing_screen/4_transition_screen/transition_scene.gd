@@ -29,8 +29,8 @@ var greeting_text: Array = [
 	"Aloha!"]
 	
 var tardigrade_greeting_text: Array = [
-	"Blub blub!",
-	"Bla-blub!",
+	"Blub blub...",
+	"Blub-blub!",
 	"Blub!"
 ]
 	
@@ -47,8 +47,6 @@ var question_text: Array = [
 var tardigrade_question_text: Array = [
 	"Blub blu-blub?",
 	"Blub... blub?",
-	"Blub-a-blub-a-blub?",
-	"A-blub-bla-blub?",
 	"... blub-blub?"
 ]
 var exclamation_text: Array = [
@@ -64,10 +62,9 @@ var exclamation_text: Array = [
 	
 var tardigrade_explamation_text: Array = [
 	"Blub-o-blub!",
-	"O blub ba-blub!",
-	"Bluuuuub!",
-	"Ba ba ba blubbbb!",
-	"O blub ba-blub blub!"
+	"Bluuub!",
+	"Ba-blub!",
+	"Blub blub!"
 ]
 var rng #random number generator
 
