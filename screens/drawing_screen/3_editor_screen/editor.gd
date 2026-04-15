@@ -5,12 +5,18 @@ class_name Editor extends Node2D
 
 @onready var creature_mask : TextureRect = $CreatureMask
 
+# Bat
 @onready var bat_face_gen : Node2D = $BatFaceGen
-@onready var tardigrade_face_gen : Node2D = $TardigradeFaceGen
-
 @export var bat_mask : CompressedTexture2D
+
+# Tardigrade
+@onready var tardigrade_face_gen : Node2D = $TardigradeFaceGen
 @export var tardigrade_mask : CompressedTexture2D
 @onready var tardigrade_overlay : TextureRect = $TardigradeOverlay
+
+# Big guy
+@export var bigguy_mask : CompressedTexture2D
+@onready var bigguy_face_gen : Node2D = $BigguyFaceGen
 
 var background
 var export_count = 0
@@ -35,24 +41,28 @@ func _ready():
 			bat_face_gen.visible = true
 			tardigrade_overlay.visible = false
 			tardigrade_face_gen.visible = false
+			bigguy_face_gen.visible = false
 		Global.CreatureType.TARDIGRADE:
 			#Do tardigrade stuff
 			creature_mask.texture = tardigrade_mask
 			tardigrade_face_gen.visible = true
 			tardigrade_overlay.visible = true
 			bat_face_gen.visible = false
+			bigguy_face_gen.visible = false
 		Global.CreatureType.SALAMANDER:
 			#Do salamander stuff
 			creature_mask.texture = bat_mask #**** update ******
 			bat_face_gen.visible = true
 			tardigrade_overlay.visible = false
 			tardigrade_face_gen.visible = false
+			bigguy_face_gen.visible = false
 		Global.CreatureType.BIGGUY:
 			#Do big guy stuff
-			creature_mask.texture = bat_mask
-			bat_face_gen.visible = true
+			creature_mask.texture = bigguy_mask
+			bat_face_gen.visible = false
 			tardigrade_overlay.visible = false
 			tardigrade_face_gen.visible = false
+			bigguy_face_gen.visible = true
 	
 func screenshot():
 	var dir = DirAccess.open("user://")

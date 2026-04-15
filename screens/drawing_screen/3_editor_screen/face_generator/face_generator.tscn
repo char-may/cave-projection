@@ -48,7 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://bca5nw6u2unvm" path="res://screens/drawing_screen/3_editor_screen/face_generator/face_parts/mouth_14.png" id="46_ge0ud"]
 [ext_resource type="Texture2D" uid="uid://fk2ge4blw21y" path="res://screens/drawing_screen/3_editor_screen/face_generator/face_parts/mouth_15.png" id="47_rvpwg"]
 
-[node name="FaceGenerator" type="Node2D" node_paths=PackedStringArray("left_eye", "right_eye", "nose", "mouth")]
+[node name="FaceGenerator" type="Node2D" unique_id=127781319 node_paths=PackedStringArray("left_eye", "right_eye", "nose", "mouth")]
 script = ExtResource("1_q1vyb")
 eye_textures = Array[Texture2D]([ExtResource("2_vvk83"), ExtResource("3_v07fr"), ExtResource("4_w00jv"), ExtResource("5_b8e7t"), ExtResource("6_jt6in"), ExtResource("7_hs85i"), ExtResource("8_6elnc"), ExtResource("9_61k1n"), ExtResource("10_sa5y5"), ExtResource("11_0k44r"), ExtResource("12_uxy66"), ExtResource("13_3u4vu"), ExtResource("14_fuiwj"), ExtResource("15_48n6e"), ExtResource("16_j7yw1"), ExtResource("17_iav20"), ExtResource("18_2mqfm"), ExtResource("19_c23gw"), ExtResource("20_c3860"), ExtResource("21_bjpf5"), ExtResource("22_x5hnl"), ExtResource("23_l47u8")])
 nose_textures = Array[Texture2D]([ExtResource("24_0k44r"), ExtResource("25_uxy66"), ExtResource("26_3u4vu"), ExtResource("27_fuiwj"), ExtResource("28_48n6e"), ExtResource("29_j7yw1"), ExtResource("30_iav20"), ExtResource("31_2mqfm"), ExtResource("32_c23gw")])
@@ -58,19 +58,19 @@ right_eye = NodePath("RightEye")
 nose = NodePath("Nose")
 mouth = NodePath("Mouth")
 
-[node name="LeftEye" type="Sprite2D" parent="."]
+[node name="LeftEye" type="Sprite2D" parent="." unique_id=907184391]
 centered = false
 
-[node name="RightEye" type="Sprite2D" parent="."]
+[node name="RightEye" type="Sprite2D" parent="." unique_id=1854634363]
 position = Vector2(190, 0)
 centered = false
 
-[node name="Mouth" type="Sprite2D" parent="."]
+[node name="Mouth" type="Sprite2D" parent="." unique_id=598482758]
 self_modulate = Color(1, 0.5411765, 0.74509805, 1)
 position = Vector2(30, 190)
 centered = false
 
-[node name="Nose" type="Sprite2D" parent="."]
+[node name="Nose" type="Sprite2D" parent="." unique_id=1076454800]
 self_modulate = Color(1, 0.4745098, 0.3647059, 1)
 position = Vector2(125, 100)
 centered = false

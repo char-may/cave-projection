@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b471rqmp7x52o" path="res://screens/drawing_screen/3_editor_screen/editor.gd" id="1_31cdr"]
 [ext_resource type="PackedScene" uid="uid://c7uvpsnt6urh7" path="res://screens/drawing_screen/3_editor_screen/pen.tscn" id="3_uu0r8"]
 [ext_resource type="Texture2D" uid="uid://uako8b6dtwpp" path="res://screens/drawing_screen/3_editor_screen/masks/tardigrade_mask.png" id="3_w1h04"]
+[ext_resource type="Texture2D" uid="uid://dotbtv0nncr8b" path="res://screens/drawing_screen/3_editor_screen/masks/bigguy_mask.png" id="4_ecyxn"]
 [ext_resource type="Texture2D" uid="uid://ck8e311k81e2c" path="res://screens/drawing_screen/3_editor_screen/masks/bat_mask.png" id="4_qshlb"]
 [ext_resource type="PackedScene" uid="uid://baya7flibfovb" path="res://screens/drawing_screen/3_editor_screen/face_generator/face_generator.tscn" id="5_kvpue"]
 [ext_resource type="Texture2D" uid="uid://f7pdjv07an3b" path="res://screens/drawing_screen/3_editor_screen/masks/tardigrade_mouth_outline.png" id="6_31cdr"]
@@ -11,6 +12,7 @@
 script = ExtResource("1_31cdr")
 bat_mask = ExtResource("4_qshlb")
 tardigrade_mask = ExtResource("3_w1h04")
+bigguy_mask = ExtResource("4_ecyxn")
 
 [node name="Background" type="ColorRect" parent="." unique_id=2078648243]
 custom_minimum_size = Vector2(1900, 1060)
@@ -26,7 +28,7 @@ custom_minimum_size = Vector2(1024, 1024)
 offset_right = 1921.22
 offset_bottom = 1080.0
 pivot_offset = Vector2(912, 1560)
-texture = ExtResource("3_w1h04")
+texture = ExtResource("4_ecyxn")
 expand_mode = 3
 stretch_mode = 3
 
@@ -36,16 +38,22 @@ position = Vector2(830, 550)
 scale = Vector2(0.7, 0.7)
 
 [node name="TardigradeFaceGen" parent="." unique_id=1574743462 instance=ExtResource("5_kvpue")]
+visible = false
 position = Vector2(1373.0001, 329)
 rotation = -0.38920844
 scale = Vector2(0.7, 0.7)
 
 [node name="TardigradeOverlay" type="TextureRect" parent="." unique_id=1880305270]
+visible = false
 offset_left = -65.0
 offset_top = 167.0
 offset_right = 1855.0
 offset_bottom = 1247.0
 texture = ExtResource("6_31cdr")
+
+[node name="BigguyFaceGen" parent="." unique_id=1964973634 instance=ExtResource("5_kvpue")]
+position = Vector2(722, 534)
+scale = Vector2(0.9, 0.9)
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

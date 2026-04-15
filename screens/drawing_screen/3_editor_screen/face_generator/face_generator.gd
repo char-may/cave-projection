@@ -27,7 +27,20 @@ func _ready() -> void:
 		Global.CreatureType.SALAMANDER:
 			pass
 		Global.CreatureType.BIGGUY:
-			pass
+			# positions are original + offset (also scaled up slightly in UI)
+			left_eye.visible = true
+			
+			right_eye.visible = true
+			right_eye.position.x = 125 + 200
+			
+			nose.visible = true
+			nose.position.y = 100 + 30
+			nose.position.x = 97 + 95
+			
+			mouth.visible = true
+			mouth.position.y = 200 + 50
+			mouth.position.x = 100
+			
 
 func generate_random_face() -> void:
 	#Set random eyes

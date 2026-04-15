@@ -24,4 +24,7 @@ signal new_bat_created
 signal new_tardigrade_created
 
 @warning_ignore("unused_signal")
+signal new_bigguy_created
+
+@warning_ignore("unused_signal")
 signal do_puff
