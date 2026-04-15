@@ -7,18 +7,12 @@ var min_rotate_time: float = 15.0
 var max_rotate_time: float = 35.0
 
 @onready var bat_timer : Timer = $"../BatTimer"
-@onready var leaving_spawn = $"../LeavingSpawn"
 
 func _ready() -> void:
 	GlobalSignal.new_bat_created.connect(create_bat)
 	rng = RandomNumberGenerator.new()
 	rng.randomize()
 	start_random_timer()
-	
-func _process(_delta: float) -> void:
-	# For testing
-	if (Input.is_action_just_pressed("space")):
-		destroy_first_child()
 	
 func start_random_timer():
 	# Set a random time between 1 and 5 seconds
