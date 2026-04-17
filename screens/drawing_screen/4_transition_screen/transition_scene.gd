@@ -178,7 +178,13 @@ func tardigrade_selected():
 func salamander_selected():
 	pass
 func bigguy_selected():
-	pass
+	# spawn big guy
+	var new_bigguy_scene := preload("res://creatures/bigguy/bigguy.tscn")
+	var new_bigguy = new_bigguy_scene.instantiate()
+	creature_transitioning = new_bigguy
+	new_bigguy.scale = Vector2(.35, .35)
+	new_bigguy.get_node("AnimationPlayer").stop()
+	get_node("CreatureContainer").add_child(new_bigguy)
 
 func send_to_cave():
 	match Global.creature_editing:
@@ -189,4 +195,4 @@ func send_to_cave():
 		Global.CreatureType.SALAMANDER:
 			GlobalSignal.new_bat_created.emit()
 		Global.CreatureType.BIGGUY:
-			GlobalSignal.new_bat_created.emit()
+			GlobalSignal.new_bigguy_created.emit()

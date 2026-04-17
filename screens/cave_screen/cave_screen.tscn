@@ -29,7 +29,7 @@ polygon = PackedVector2Array(-49, 22, 20, 100, 59, 454, -1, 697, -97, 553)
 
 [node name="BGPos4" type="Node2D" parent="." unique_id=1014126790]
 
-[node name="FairyContainer" type="Node" parent="." unique_id=2126195481]
+[node name="FairyContainer" type="Node2D" parent="." unique_id=1180125687]
 
 [node name="Fairy" parent="FairyContainer" unique_id=1741703279 instance=ExtResource("1_u6t5p")]
 position = Vector2(783, 799)
@@ -106,10 +106,10 @@ position = Vector2(968, 841)
 [node name="CreatureSpawn" type="Marker2D" parent="." unique_id=534270507]
 position = Vector2(960, 540)
 
-[node name="BatsContainer" type="Node" parent="." unique_id=564651138]
+[node name="BatsContainer" type="Node2D" parent="." unique_id=137665182]
 script = ExtResource("2_0xn84")
 
-[node name="TardigradesContainer" type="Node" parent="." unique_id=823374988]
+[node name="TardigradesContainer" type="Node2D" parent="." unique_id=697568142]
 script = ExtResource("3_u6t5p")
 
 [node name="BGPos6" type="Node2D" parent="." unique_id=1029379951]
@@ -124,6 +124,3 @@ polygon = PackedVector2Array(103, 721, 181, 913, 266, 890, 412, 1025, 448, 983, 
 
 [node name="BGManager" type="Node" parent="." unique_id=1436756437]
 script = ExtResource("4_lpb3v")
-
-[connection signal="timeout" from="BatTimer" to="BatsContainer" method="_on_bat_timer_timeout"]
-[connection signal="timeout" from="TardigradeTimer" to="TardigradesContainer" method="_on_tardigrade_timer_timeout"]
