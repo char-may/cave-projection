@@ -182,8 +182,8 @@ func bigguy_selected():
 	var new_bigguy_scene := preload("res://creatures/bigguy/bigguy.tscn")
 	var new_bigguy = new_bigguy_scene.instantiate()
 	creature_transitioning = new_bigguy
+	new_bigguy.transitioning = true
 	new_bigguy.scale = Vector2(.35, .35)
-	new_bigguy.get_node("AnimationPlayer").stop()
 	get_node("CreatureContainer").add_child(new_bigguy)
 
 func send_to_cave():

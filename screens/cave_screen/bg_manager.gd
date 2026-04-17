@@ -12,9 +12,8 @@ const BIG_GUY = preload("res://creatures/bigguy/bigguy.tscn")
 @onready var BGPos5 = $"../BGPos5"
 @onready var BGPos6 = $"../BGPos6"
 
-# child flags
+# for picking random available position
 @onready var positions : Array[Node2D] = [BGPos1, BGPos2, BGPos3, BGPos4, BGPos5, BGPos6]
-
 
 # child transforms
 # x, y, rotation, scale
@@ -28,19 +27,16 @@ const POS6: Array[float] = [1034, 1097, 0, 1]
 func _ready() -> void:
 	GlobalSignal.new_bigguy_created.connect(new_bg)
 	
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("space"):
-		new_bg()
-
 func new_bg() -> void:
+	# find available position and keep only 3 active positions, bumping the oldest
 	positions.shuffle()
 	for pos in positions:
 		if pos.get_child_count() == 0:
-			#print (str(pos) + " has no children")
 			var instance = BIG_GUY.instantiate()
 			set_instance_parameters(pos, instance)
 			pos.add_child(instance)
 			break
+	
 func set_instance_parameters(p, i):
 	match p:
 		BGPos1:
