@@ -25,9 +25,10 @@ const POS5: Array[float] = [1896, 810, -64.9, 0.6]
 const POS6: Array[float] = [1034, 1097, 0, 1]
 
 func _ready() -> void:
-	GlobalSignal.new_bigguy_created.connect(new_bg)
+	GlobalSignal.new_bigguy_created.connect(new_bigguy)
+	GlobalSignal.bigguy_animation_finished.connect(move_bigguy)
 	
-func new_bg() -> void:
+func new_bigguy() -> void:
 	# find available position and keep only 3 active positions, bumping the oldest
 	positions.shuffle()
 	for pos in positions:
@@ -37,6 +38,14 @@ func new_bg() -> void:
 			pos.add_child(instance)
 			break
 	
+func move_bigguy(bg) -> void:
+	print ("Moving " + str(bg))
+	positions.shuffle()
+	for pos in positions:
+		if pos.get_child_count() == 0:
+			set_instance_parameters(pos, bg)
+			bg.reparent(pos)
+			break
 func set_instance_parameters(p, i):
 	match p:
 		BGPos1:

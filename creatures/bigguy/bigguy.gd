@@ -6,7 +6,15 @@ var transitioning : bool = false
 func _ready():
 	super()
 	if not transitioning:
-		anim.play("peek_1") # will later select a random animation
+		play_anim()
+	else:
+		anim.play("transition")
 	
 func animation_finished() -> void:
-	print("Big guy animation finished")
+	GlobalSignal.bigguy_animation_finished.emit(self)
+	await get_tree().create_timer(randf_range(3.0, 10.0)).timeout
+	play_anim()
+
+# this will pick a random animation
+func play_anim() -> void:
+	anim.play("peek_1")
