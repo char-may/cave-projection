@@ -15,6 +15,8 @@ const BIG_GUY = preload("res://creatures/bigguy/bigguy.tscn")
 # for picking random available position
 @onready var positions : Array[Node2D] = [BGPos1, BGPos2, BGPos3, BGPos4, BGPos5, BGPos6]
 
+var active_guys : Array[BigGuy] = []
+
 # child transforms
 # x, y, rotation, scale
 const POS1: Array[float] = [692, 76, 180, 0.4]
@@ -36,6 +38,8 @@ func new_bigguy() -> void:
 			var instance = BIG_GUY.instantiate()
 			set_instance_parameters(pos, instance)
 			pos.add_child(instance)
+			active_guys.push_front(instance)
+			print("active guys " + str(active_guys))
 			break
 	
 func move_bigguy(bg) -> void:
