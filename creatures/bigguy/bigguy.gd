@@ -17,4 +17,6 @@ func animation_finished() -> void:
 
 # this will pick a random animation
 func play_anim() -> void:
-	anim.play("peek_1")
+	var options = ["peek_1", "peek_2"]
+	var random_animation = options.pick_random()
+	anim.play(random_animation)

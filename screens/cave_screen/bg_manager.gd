@@ -42,18 +42,18 @@ func new_bigguy() -> void:
 			set_instance_parameters(pos, instance)
 			pos.add_child(instance)
 			active_guys.push_front(instance)
-			print("active guys " + str(active_guys))
+			#print("active guys " + str(active_guys))
 			break
 	
 func make_room_for_new_bigguy() -> void:
 	var goodbye_guy = active_guys.pop_back()
 	await goodbye_guy.get_node("AnimationPlayer").animation_finished
-	print("saying goodbye to " + str(goodbye_guy))
+	#print("saying goodbye to " + str(goodbye_guy))
 	goodbye_guy.queue_free()
 	#do effect or something?
 	
 func move_bigguy(bg) -> void:
-	print ("Moving " + str(bg))
+	#print ("Moving " + str(bg))
 	positions.shuffle()
 	for pos in positions:
 		if pos.get_child_count() == 0:
@@ -63,37 +63,37 @@ func move_bigguy(bg) -> void:
 func set_instance_parameters(p, i):
 	match p:
 		BGPos1:
-			print("BGPos1 Picked")
+			#print("BGPos1 Picked")
 			i.position.x = POS1[0]
 			i.position.y = POS1[1]
 			i.rotation_degrees = POS1[2]
 			i.scale = Vector2(POS1[3], POS1[3])
 		BGPos2:
-			print("BGPos2 Picked")
+			#print("BGPos2 Picked")
 			i.position.x = POS2[0]
 			i.position.y = POS2[1]
 			i.rotation_degrees = POS2[2]
 			i.scale = Vector2(POS2[3], POS2[3])
 		BGPos3:
-			print("BGPos3 Picked")
+			#print("BGPos3 Picked")
 			i.position.x = POS3[0]
 			i.position.y = POS3[1]
 			i.rotation_degrees = POS3[2]
 			i.scale = Vector2(POS3[3], POS3[3])
 		BGPos4:
-			print("BGPos4 Picked")
+			#print("BGPos4 Picked")
 			i.position.x = POS4[0]
 			i.position.y = POS4[1]
 			i.rotation_degrees = POS4[2]
 			i.scale = Vector2(POS4[3], POS4[3])
 		BGPos5:
-			print("BGPos5 Picked")
+			#print("BGPos5 Picked")
 			i.position.x = POS5[0]
 			i.position.y = POS5[1]
 			i.rotation_degrees = POS5[2]
 			i.scale = Vector2(POS5[3], POS5[3])
 		BGPos6:
-			print("BGPos6 Picked")
+			#print("BGPos6 Picked")
 			i.position.x = POS6[0]
 			i.position.y = POS6[1]
 			i.rotation_degrees = POS6[2]
