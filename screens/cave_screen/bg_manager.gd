@@ -32,6 +32,9 @@ func _ready() -> void:
 	
 func new_bigguy() -> void:
 	# find available position and keep only 3 active positions, bumping the oldest
+	if active_guys.size() == 3:
+		make_room_for_new_bigguy()
+	
 	positions.shuffle()
 	for pos in positions:
 		if pos.get_child_count() == 0:
@@ -41,6 +44,13 @@ func new_bigguy() -> void:
 			active_guys.push_front(instance)
 			print("active guys " + str(active_guys))
 			break
+	
+func make_room_for_new_bigguy() -> void:
+	var goodbye_guy = active_guys.pop_back()
+	await goodbye_guy.get_node("AnimationPlayer").animation_finished
+	print("saying goodbye to " + str(goodbye_guy))
+	goodbye_guy.queue_free()
+	#do effect or something?
 	
 func move_bigguy(bg) -> void:
 	print ("Moving " + str(bg))
