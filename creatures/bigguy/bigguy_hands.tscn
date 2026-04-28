@@ -1,56 +1,295 @@
 [gd_scene format=3 uid="uid://cunw4v5ccodt0"]
 
-[ext_resource type="Script" uid="uid://j61e8edknlce" path="res://creatures/bigguy/bg_hand.gd" id="1_iyl7m"]
+[ext_resource type="Script" uid="uid://j61e8edknlce" path="res://creatures/bigguy/bg_hands.gd" id="1_iyl7m"]
+
+[sub_resource type="Animation" id="Animation_iyl7m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Container:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Container/RHand:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Container/LHand:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Container/RHand:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Container/LHand:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_hsa1t"]
+resource_name = "off"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Container:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.17333333, 0.76666665),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -50), Vector2(0, 300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Container/RHand:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, -1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Container/RHand:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Container/LHand:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Container/LHand:z_index")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, -1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.4333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_otyj3"]
+resource_name = "on"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Container:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.1000001),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector2(0, 300), Vector2(0, -100), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Container/RHand:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [-1, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Container/LHand:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [-1, 1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Container/RHand:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Container/LHand:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hsa1t"]
+_data = {
+&"RESET": SubResource("Animation_iyl7m"),
+&"off": SubResource("Animation_hsa1t"),
+&"on": SubResource("Animation_otyj3")
+}
 
 [node name="BigGuyHands" type="Node2D" unique_id=930404044]
+visible = false
 z_index = 1
-
-[node name="RHand" type="Node2D" parent="." unique_id=1063050893]
-position = Vector2(0, 300)
 script = ExtResource("1_iyl7m")
 
-[node name="Finger1" type="Polygon2D" parent="RHand" unique_id=252205274]
+[node name="Container" type="Node2D" parent="." unique_id=450743088]
+
+[node name="RHand" type="Node2D" parent="Container" unique_id=1063050893]
+position = Vector2(0, 300)
+
+[node name="Finger1" type="Polygon2D" parent="Container/RHand" unique_id=252205274]
 position = Vector2(-918, -960)
 polygon = PackedVector2Array(1323.7761, 909.14294, 1338.8527, 890.8066, 1341.705, 884.287, 1368.1907, 874.9151, 1388.5645, 871.2478, 1392.2317, 878.98987, 1408.9382, 890.3991, 1403.641, 903.0308, 1406.4933, 929.92413, 1399.9738, 933.1839, 1392.9819, 972.44824, 1394.93, 979.406, 1379.9014, 1000.5576, 1371.8303, 1008.07196, 1360.9762, 1012.8032, 1350.1221, 1011.4117, 1336.4849, 1002.50574, 1325.909, 989.4252, 1322.8477, 981.9108, 1325.6309, 952.68823, 1321.0814, 946.65247, 1328.3048, 940.1894, 1330.3958, 918.3291, 1356.6282, 891.14624, 1387.9929, 892.2868, 1386.4722, 921.7507, 1351.4957, 921.37054, 1347.1237, 948.93353, 1383.0507, 952.9254, 1377.3466, 979.34546, 1338.9485, 979.1554, 1358.9078, 997.21387)
 uv = PackedVector2Array(1323.7761, 909.14294, 1338.8527, 890.8066, 1341.705, 884.287, 1368.1907, 874.9151, 1388.5645, 871.2478, 1392.2317, 878.98987, 1408.9382, 890.3991, 1403.641, 903.0308, 1406.4933, 929.92413, 1399.9738, 933.1839, 1392.9819, 972.44824, 1394.93, 979.406, 1379.9014, 1000.5576, 1371.8303, 1008.07196, 1360.9762, 1012.8032, 1350.1221, 1011.4117, 1336.4849, 1002.50574, 1325.909, 989.4252, 1322.8477, 981.9108, 1325.6309, 952.68823, 1321.0814, 946.65247, 1328.3048, 940.1894, 1330.3958, 918.3291, 1356.6282, 891.14624, 1387.9929, 892.2868, 1386.4722, 921.7507, 1351.4957, 921.37054, 1347.1237, 948.93353, 1383.0507, 952.9254, 1377.3466, 979.34546, 1338.9485, 979.1554, 1358.9078, 997.21387)
 polygons = [PackedInt32Array(27, 30, 29, 28), PackedInt32Array(28, 25, 26, 27), PackedInt32Array(25, 26, 23, 24), PackedInt32Array(31, 30, 29), PackedInt32Array(31, 15, 14), PackedInt32Array(31, 13, 14), PackedInt32Array(29, 12, 13, 31), PackedInt32Array(29, 10, 11, 12), PackedInt32Array(15, 16, 31), PackedInt32Array(16, 17, 30, 31), PackedInt32Array(17, 18, 30), PackedInt32Array(19, 27, 30, 18), PackedInt32Array(27, 21, 20, 19), PackedInt32Array(27, 26, 22, 21), PackedInt32Array(22, 0, 23, 26), PackedInt32Array(23, 1, 0), PackedInt32Array(23, 3, 2, 1), PackedInt32Array(24, 3, 23), PackedInt32Array(24, 5, 4, 3), PackedInt32Array(24, 7, 6, 5), PackedInt32Array(24, 25, 8, 7), PackedInt32Array(9, 25, 8), PackedInt32Array(28, 10, 9, 25), PackedInt32Array(28, 29, 10)]
 internal_vertex_count = 9
 
-[node name="Finger2" type="Polygon2D" parent="RHand" unique_id=903716517]
+[node name="Finger2" type="Polygon2D" parent="Container/RHand" unique_id=903716517]
 position = Vector2(-910, -966)
 polygon = PackedVector2Array(1430.9592, 902.5192, 1453.0908, 896.51746, 1461.3433, 891.2659, 1475.9725, 896.51746, 1497.3538, 913.39746, 1492.8525, 924.65076, 1495.6096, 937.5045, 1472.1608, 972.85284, 1471.4608, 982.82733, 1465.3306, 993.179, 1462.9557, 1006.76013, 1451.1602, 1021.8222, 1444.481, 1029.5404, 1437.9502, 1031.9895, 1424.9628, 1031.7668, 1411.6786, 1027.9819, 1405.0736, 1020.5606, 1401.8824, 1009.0575, 1403.8143, 996.2927, 1403.8143, 974.6224, 1413.8322, 958.2979, 1420.5111, 920.15375, 1430.8257, 909.8389, 1463.366, 901.5135, 1444.435, 908.67224, 1480.706, 913.6038, 1435.0503, 935.5572, 1472.5939, 943.3523, 1460.6626, 975.96436, 1425.3462, 970.8737, 1449.8478, 1006.50946, 1411.5088, 1000.6234, 1425.8262, 1019.23615)
 uv = PackedVector2Array(1430.9592, 902.5192, 1453.0908, 896.51746, 1461.3433, 891.2659, 1475.9725, 896.51746, 1497.3538, 913.39746, 1492.8525, 924.65076, 1495.6096, 937.5045, 1472.1608, 972.85284, 1471.4608, 982.82733, 1465.3306, 993.179, 1462.9557, 1006.76013, 1451.1602, 1021.8222, 1444.481, 1029.5404, 1437.9502, 1031.9895, 1424.9628, 1031.7668, 1411.6786, 1027.9819, 1405.0736, 1020.5606, 1401.8824, 1009.0575, 1403.8143, 996.2927, 1403.8143, 974.6224, 1413.8322, 958.2979, 1420.5111, 920.15375, 1430.8257, 909.8389, 1463.366, 901.5135, 1444.435, 908.67224, 1480.706, 913.6038, 1435.0503, 935.5572, 1472.5939, 943.3523, 1460.6626, 975.96436, 1425.3462, 970.8737, 1449.8478, 1006.50946, 1411.5088, 1000.6234, 1425.8262, 1019.23615)
 polygons = [PackedInt32Array(32, 31, 30), PackedInt32Array(30, 28, 29, 31), PackedInt32Array(28, 27, 26, 29), PackedInt32Array(27, 25, 24, 26), PackedInt32Array(25, 23, 24), PackedInt32Array(25, 4, 3, 23), PackedInt32Array(23, 1, 2, 3), PackedInt32Array(24, 0, 1, 23), PackedInt32Array(24, 22, 0), PackedInt32Array(24, 26, 21, 22), PackedInt32Array(29, 20, 21, 26), PackedInt32Array(5, 25, 4), PackedInt32Array(5, 25, 27), PackedInt32Array(27, 6, 5), PackedInt32Array(7, 28, 27, 6), PackedInt32Array(8, 28, 7), PackedInt32Array(9, 30, 28), PackedInt32Array(9, 8, 28), PackedInt32Array(10, 30, 9), PackedInt32Array(11, 32, 30, 10), PackedInt32Array(12, 13, 32, 11), PackedInt32Array(13, 32, 14), PackedInt32Array(15, 32, 14), PackedInt32Array(32, 16, 15), PackedInt32Array(31, 17, 16, 32), PackedInt32Array(31, 18, 17), PackedInt32Array(29, 19, 18, 31), PackedInt32Array(29, 20, 19)]
 internal_vertex_count = 10
 
-[node name="Finger3" type="Polygon2D" parent="RHand" unique_id=285078028]
+[node name="Finger3" type="Polygon2D" parent="Container/RHand" unique_id=285078028]
 position = Vector2(-894, -970)
 polygon = PackedVector2Array(1485.687, 964.64233, 1494.1746, 954.19617, 1509.6262, 949.1907, 1532.2596, 957.243, 1546.6232, 970.08307, 1548.7996, 995.32806, 1549.8877, 1000.7688, 1546.8408, 1006.4271, 1549.4524, 1011.4326, 1551.3019, 1017.7193, 1546.8347, 1022.7448, 1543.1492, 1034.2495, 1535.1083, 1044.8589, 1527.0675, 1049.9961, 1521.372, 1051.6713, 1509.4224, 1051.8947, 1500.0414, 1047.6509, 1494.0107, 1041.7319, 1489.2086, 1033.2444, 1486.64, 1023.30505, 1486.64, 1013.81244, 1484.7482, 1010.7554, 1482.007, 1008.72485, 1478.8597, 1002.5318, 1482.6162, 995.52655, 1510.4353, 960.2018, 1497.9493, 979.52545, 1534.5156, 978.93085, 1537.0446, 1000.33453, 1491.8569, 1001.67236, 1501.2214, 1026.1985, 1533.1798, 1026.7931, 1515.045, 1040.9146)
 uv = PackedVector2Array(1485.687, 964.64233, 1494.1746, 954.19617, 1509.6262, 949.1907, 1532.2596, 957.243, 1546.6232, 970.08307, 1548.7996, 995.32806, 1549.8877, 1000.7688, 1546.8408, 1006.4271, 1549.4524, 1011.4326, 1551.3019, 1017.7193, 1546.8347, 1022.7448, 1543.1492, 1034.2495, 1535.1083, 1044.8589, 1527.0675, 1049.9961, 1521.372, 1051.6713, 1509.4224, 1051.8947, 1500.0414, 1047.6509, 1494.0107, 1041.7319, 1489.2086, 1033.2444, 1486.64, 1023.30505, 1486.64, 1013.81244, 1484.7482, 1010.7554, 1482.007, 1008.72485, 1478.8597, 1002.5318, 1482.6162, 995.52655, 1510.4353, 960.2018, 1497.9493, 979.52545, 1534.5156, 978.93085, 1537.0446, 1000.33453, 1491.8569, 1001.67236, 1501.2214, 1026.1985, 1533.1798, 1026.7931, 1515.045, 1040.9146)
 polygons = [PackedInt32Array(26, 27, 28, 29), PackedInt32Array(26, 25, 27), PackedInt32Array(29, 30, 31, 28), PackedInt32Array(30, 32, 31), PackedInt32Array(15, 32, 14), PackedInt32Array(15, 16, 30, 32), PackedInt32Array(14, 13, 31, 32), PackedInt32Array(12, 31, 13), PackedInt32Array(12, 11, 31), PackedInt32Array(17, 30, 16), PackedInt32Array(17, 18, 30), PackedInt32Array(19, 30, 18), PackedInt32Array(20, 30, 19), PackedInt32Array(20, 29, 30), PackedInt32Array(20, 29, 21), PackedInt32Array(21, 22, 29), PackedInt32Array(22, 23, 24, 29), PackedInt32Array(26, 0, 24, 29), PackedInt32Array(25, 1, 0, 26), PackedInt32Array(25, 2, 1), PackedInt32Array(25, 3, 2), PackedInt32Array(27, 4, 3, 25), PackedInt32Array(28, 5, 4, 27), PackedInt32Array(28, 6, 5), PackedInt32Array(7, 28, 6), PackedInt32Array(8, 10, 9), PackedInt32Array(10, 31, 11), PackedInt32Array(10, 31, 8), PackedInt32Array(8, 31, 28, 7)]
 internal_vertex_count = 8
 
-[node name="LHand" type="Node2D" parent="." unique_id=1005737446]
+[node name="LHand" type="Node2D" parent="Container" unique_id=1005737446]
 position = Vector2(0, 300)
-script = ExtResource("1_iyl7m")
 
-[node name="Finger1" type="Polygon2D" parent="LHand" unique_id=1987247732]
+[node name="Finger1" type="Polygon2D" parent="Container/LHand" unique_id=1987247732]
 position = Vector2(-997, -959)
 polygon = PackedVector2Array(512.0635, 890.08057, 529.5882, 878.86475, 532.0416, 871.8549, 554.8237, 875.7103, 580.4098, 884.8232, 588.82166, 899.1934, 598.28503, 909.70825, 590.9246, 920.924, 594.0791, 941.60315, 599.68695, 945.8091, 594.78, 954.92194, 598.29364, 979.9015, 591.70624, 996.4315, 577.0764, 1009.05115, 563.675, 1012.7365, 553.0656, 1010.3913, 543.0145, 1002.35046, 530.0599, 985.7104, 526.3745, 980.34985, 529.0548, 972.4207, 520.12103, 932.99603, 514.8722, 930.98584, 516.6575, 900.2742, 528.978, 894.6635, 547.1718, 891.79083, 567.0414, 890.83325, 550.7627, 914.5331, 559.3808, 949.9631, 564.64746, 988.2658, 544.7779, 978.6901, 585.7139, 972.9447, 537.1174, 940.3874, 577.0958, 929.8542)
 uv = PackedVector2Array(512.0635, 890.08057, 529.5882, 878.86475, 532.0416, 871.8549, 554.8237, 875.7103, 580.4098, 884.8232, 588.82166, 899.1934, 598.28503, 909.70825, 590.9246, 920.924, 594.0791, 941.60315, 599.68695, 945.8091, 594.78, 954.92194, 598.29364, 979.9015, 591.70624, 996.4315, 577.0764, 1009.05115, 563.675, 1012.7365, 553.0656, 1010.3913, 543.0145, 1002.35046, 530.0599, 985.7104, 526.3745, 980.34985, 529.0548, 972.4207, 520.12103, 932.99603, 514.8722, 930.98584, 516.6575, 900.2742, 528.978, 894.6635, 547.1718, 891.79083, 567.0414, 890.83325, 550.7627, 914.5331, 559.3808, 949.9631, 564.64746, 988.2658, 544.7779, 978.6901, 585.7139, 972.9447, 537.1174, 940.3874, 577.0958, 929.8542)
 polygons = [PackedInt32Array(0, 23, 1), PackedInt32Array(22, 23, 0), PackedInt32Array(1, 3, 2), PackedInt32Array(1, 24, 23), PackedInt32Array(24, 3, 1), PackedInt32Array(24, 25, 3), PackedInt32Array(25, 4, 3), PackedInt32Array(25, 5, 4), PackedInt32Array(26, 24, 25), PackedInt32Array(26, 23, 24), PackedInt32Array(26, 22, 23), PackedInt32Array(26, 5, 25), PackedInt32Array(20, 22, 21), PackedInt32Array(20, 26, 22), PackedInt32Array(31, 20, 26), PackedInt32Array(27, 31, 26), PackedInt32Array(27, 32, 26), PackedInt32Array(32, 7, 26), PackedInt32Array(7, 5, 6), PackedInt32Array(7, 26, 5), PackedInt32Array(8, 32, 7), PackedInt32Array(27, 8, 32), PackedInt32Array(10, 8, 9), PackedInt32Array(10, 27, 8), PackedInt32Array(19, 31, 20), PackedInt32Array(19, 27, 31), PackedInt32Array(18, 29, 19), PackedInt32Array(17, 29, 18), PackedInt32Array(29, 27, 19), PackedInt32Array(29, 28, 27), PackedInt32Array(28, 30, 27), PackedInt32Array(30, 10, 27), PackedInt32Array(11, 30, 10), PackedInt32Array(12, 28, 30, 11), PackedInt32Array(28, 13, 12), PackedInt32Array(14, 28, 13), PackedInt32Array(14, 15, 28), PackedInt32Array(15, 16, 28), PackedInt32Array(16, 29, 28), PackedInt32Array(16, 17, 29)]
 internal_vertex_count = 10
 
-[node name="Finger2" type="Polygon2D" parent="LHand" unique_id=1532337302]
+[node name="Finger2" type="Polygon2D" parent="Container/LHand" unique_id=1532337302]
 position = Vector2(-1004, -959)
 polygon = PackedVector2Array(423.1222, 913.0124, 446.82202, 896.1592, 460.2519, 891.9459, 472.62848, 898.26587, 491.32498, 902.4791, 490.53497, 911.16907, 500.54156, 921.17566, 508.70483, 960.93866, 517.3948, 975.15857, 518.7114, 999.385, 519.5468, 1009.9542, 516.9307, 1019.4377, 511.20792, 1026.6321, 497.80026, 1031.7008, 483.7386, 1031.7008, 477.03476, 1029.7386, 470.82147, 1021.7268, 459.37592, 1007.17456, 455.45172, 991.9683, 450.38297, 984.44696, 447.43982, 971.0393, 426.0203, 938.66473, 427.4865, 922.79834, 443.674, 916.5895, 473.92297, 913.8099, 451.03186, 947.656, 483.73346, 943.2413, 465.4243, 974.31006, 496.16376, 972.5115, 476.54282, 1001.9429, 506.6283, 997.03766, 491.74905, 1014.0425)
 uv = PackedVector2Array(423.1222, 913.0124, 446.82202, 896.1592, 460.2519, 891.9459, 472.62848, 898.26587, 491.32498, 902.4791, 490.53497, 911.16907, 500.54156, 921.17566, 508.70483, 960.93866, 517.3948, 975.15857, 518.7114, 999.385, 519.5468, 1009.9542, 516.9307, 1019.4377, 511.20792, 1026.6321, 497.80026, 1031.7008, 483.7386, 1031.7008, 477.03476, 1029.7386, 470.82147, 1021.7268, 459.37592, 1007.17456, 455.45172, 991.9683, 450.38297, 984.44696, 447.43982, 971.0393, 426.0203, 938.66473, 427.4865, 922.79834, 443.674, 916.5895, 473.92297, 913.8099, 451.03186, 947.656, 483.73346, 943.2413, 465.4243, 974.31006, 496.16376, 972.5115, 476.54282, 1001.9429, 506.6283, 997.03766, 491.74905, 1014.0425)
 polygons = [PackedInt32Array(13, 31, 14), PackedInt32Array(31, 15, 14), PackedInt32Array(31, 12, 13), PackedInt32Array(31, 11, 12), PackedInt32Array(31, 10, 11), PackedInt32Array(31, 16, 15), PackedInt32Array(17, 16, 31, 29), PackedInt32Array(31, 30, 29), PackedInt32Array(31, 10, 30), PackedInt32Array(10, 9, 30), PackedInt32Array(29, 18, 17), PackedInt32Array(18, 27, 19), PackedInt32Array(18, 27, 29), PackedInt32Array(29, 28, 27), PackedInt32Array(30, 28, 29), PackedInt32Array(8, 30, 9), PackedInt32Array(8, 28, 30), PackedInt32Array(7, 8, 28), PackedInt32Array(27, 20, 19), PackedInt32Array(27, 26, 25), PackedInt32Array(26, 28, 27), PackedInt32Array(28, 7, 26), PackedInt32Array(6, 26, 7), PackedInt32Array(26, 24, 5, 6), PackedInt32Array(25, 20, 27), PackedInt32Array(25, 21, 20), PackedInt32Array(25, 23, 24, 26), PackedInt32Array(25, 21, 23), PackedInt32Array(21, 22, 23), PackedInt32Array(22, 0, 1, 23), PackedInt32Array(23, 24, 2, 1), PackedInt32Array(24, 3, 2), PackedInt32Array(24, 5, 4, 3)]
 internal_vertex_count = 9
 
-[node name="Finger3" type="Polygon2D" parent="LHand" unique_id=626267911]
+[node name="Finger3" type="Polygon2D" parent="Container/LHand" unique_id=626267911]
 position = Vector2(-1016, -964)
 polygon = PackedVector2Array(389.4029, 958.36334, 411.88007, 949.0332, 426.72348, 954.1224, 436.05362, 965.99713, 438.9508, 996.31995, 441.9237, 1002.4143, 439.5454, 1008.65735, 435.23474, 1012.2248, 433.152, 1029.6171, 429.2873, 1038.3871, 421.70645, 1047.0084, 413.38242, 1051.0217, 405.80157, 1051.4677, 396.2884, 1050.4271, 386.92386, 1044.7787, 379.78897, 1035.2655, 374.1405, 1021.8876, 371.16763, 1018.3201, 374.88373, 1004.7936, 371.90912, 1001.2232, 374.73337, 970.60266, 392.84354, 967.8706, 418.91333, 966.55396, 421.01996, 985.2505, 387.5769, 991.04376, 423.38995, 1001.577, 384.41693, 1010.26697, 418.38666, 1024.2235, 405.48343, 1038.9701, 390.47354, 1027.6469, 404.69342, 1014.2169, 404.16675, 978.6672)
 uv = PackedVector2Array(389.4029, 958.36334, 411.88007, 949.0332, 426.72348, 954.1224, 436.05362, 965.99713, 438.9508, 996.31995, 441.9237, 1002.4143, 439.5454, 1008.65735, 435.23474, 1012.2248, 433.152, 1029.6171, 429.2873, 1038.3871, 421.70645, 1047.0084, 413.38242, 1051.0217, 405.80157, 1051.4677, 396.2884, 1050.4271, 386.92386, 1044.7787, 379.78897, 1035.2655, 374.1405, 1021.8876, 371.16763, 1018.3201, 374.88373, 1004.7936, 371.90912, 1001.2232, 374.73337, 970.60266, 392.84354, 967.8706, 418.91333, 966.55396, 421.01996, 985.2505, 387.5769, 991.04376, 423.38995, 1001.577, 384.41693, 1010.26697, 418.38666, 1024.2235, 405.48343, 1038.9701, 390.47354, 1027.6469, 404.69342, 1014.2169, 404.16675, 978.6672)
 polygons = [PackedInt32Array(0, 21, 1), PackedInt32Array(21, 22, 1), PackedInt32Array(22, 2, 1), PackedInt32Array(22, 3, 2), PackedInt32Array(22, 23, 4, 3), PackedInt32Array(22, 31, 23), PackedInt32Array(22, 21, 31), PackedInt32Array(21, 20, 0), PackedInt32Array(24, 20, 19), PackedInt32Array(24, 31, 21, 20), PackedInt32Array(24, 25, 23, 31), PackedInt32Array(25, 4, 23), PackedInt32Array(5, 25, 4), PackedInt32Array(5, 25, 6), PackedInt32Array(7, 25, 6), PackedInt32Array(7, 27, 8), PackedInt32Array(7, 25, 27), PackedInt32Array(27, 30, 25), PackedInt32Array(30, 24, 25), PackedInt32Array(24, 26, 30), PackedInt32Array(26, 18, 24), PackedInt32Array(18, 19, 24), PackedInt32Array(17, 26, 18), PackedInt32Array(16, 17, 26), PackedInt32Array(29, 16, 26, 30), PackedInt32Array(29, 28, 27, 30), PackedInt32Array(9, 28, 27, 8), PackedInt32Array(10, 28, 9), PackedInt32Array(10, 11, 28), PackedInt32Array(12, 28, 11), PackedInt32Array(12, 28, 13), PackedInt32Array(13, 14, 28), PackedInt32Array(14, 15, 29, 28), PackedInt32Array(15, 16, 29)]
 internal_vertex_count = 11
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1734460264]
+libraries/ = SubResource("AnimationLibrary_hsa1t")

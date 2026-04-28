@@ -50,6 +50,7 @@ func new_bigguy() -> void:
 			var bg_hands_instance = BIG_GUY_HANDS.instantiate()
 			set_instance_parameters(pos, bg_instance)
 			set_instance_parameters(pos, bg_hands_instance)
+			bg_instance.hands = bg_hands_instance
 			pos.add_child(bg_hands_instance)
 			pos.add_child(bg_instance)
 			active_guys.push_front(bg_instance)
@@ -57,26 +58,22 @@ func new_bigguy() -> void:
 	
 func make_room_for_new_bigguy() -> void:
 	var goodbye_guy = active_guys.pop_back()
-	var goodbye_guy_hands = null
-	var current_p = goodbye_guy.get_parent()
-	for child in current_p.get_children():
-		if child is BigGuyHands:
-			goodbye_guy_hands = child
+	var goodbye_guy_hands = goodbye_guy.hands
 	await goodbye_guy.get_node("AnimationPlayer").animation_finished
 	goodbye_guy_hands.queue_free()
 	goodbye_guy.queue_free()
 	
 func move_bigguy(bg) -> void:
-	var current_p = bg.get_parent()
-	var hands = current_p.get_node_or_null("BigGuyHands")
 	positions.shuffle()
 	for pos in positions:
 		if pos.get_child_count() == 0:
 			set_instance_parameters(pos, bg)
 			bg.reparent(pos)
-			if hands != null:
-				set_instance_parameters(pos, hands)
-				hands.reparent(pos)
+			if bg.hands != null:
+				bg.hands.animation_player.play("off")
+				await bg.hands.animation_player.animation_finished
+				set_instance_parameters(pos, bg.hands)
+				bg.hands.reparent(pos)
 			break
 func set_instance_parameters(p, i):
 	match p:
