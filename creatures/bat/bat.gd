@@ -4,17 +4,8 @@ class_name Bat extends Creature
 var yap_text: Array = [
 	"!",
 	"?",
-	"hi!",
-	"oh hi!",
-	"pardon me",
-	"sup...",
-	"nice drawing!",
-	"do you know pete?",
-	"walking feet!",
-	"hey buddy!",
-	"hiya!",
-	"where are we?",
-	"nice cave isn't it?"]
+	"!!",
+	"..."]
 
 var talking : bool = false
 var rng #random number generator

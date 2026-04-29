@@ -17,6 +17,7 @@ script = ExtResource("1_mt2v0")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=165675634]
 scale = Vector2(2, 2)
+emitting = false
 texture = ExtResource("2_olcll")
 lifetime = 2.5
 one_shot = true
