@@ -20,13 +20,11 @@ const creature_container_starting_scale = Vector2(0.0, 0.0)
 const creature_container_scale_to = Vector2(1.0, 1.0)
 const creature_container_scale_time = 0.75
 
-var greeting_text: Array = [
-	"Hey!",
-	"Hi!",
-	"Sup!",
-	"Bonjour!",
+var bat_greeting_text: Array = [
+	"Oi!",
 	"Hello!",
-	"Aloha!"]
+	"Hi!",
+	"Boa tarde!"]
 	
 var tardigrade_greeting_text: Array = [
 	"Blub blub...",
@@ -34,31 +32,22 @@ var tardigrade_greeting_text: Array = [
 	"Blub!"
 ]
 	
-var question_text: Array = [
+var bat_question_text: Array = [
 	"Who turned out the lights?",
-	"I'm... alive?",
-	"Where am I?",
+	"Onde estou?",
 	"What's this weird spinny thing?",
-	"Is it time for lunch?",
-	"Did you draw me?",
-	"Which way to the lights out exhibit?",
-	"It's so... dark in here!"]
+	"Is it time for lunch?"]
 
 var tardigrade_question_text: Array = [
 	"Blub blu-blub?",
 	"Blub... blub?",
 	"... blub-blub?"
 ]
-var exclamation_text: Array = [
-	"I think it's going to swallow me up now!",
-	"This looks... fun!",
-	"I think I read about this somewhere!",
+var bat_exclamation_text: Array = [
+	"This looks fun!",
 	"I'm glad I packed my bags!",
-	"Let's take a look inside!",
-	"I see something on the other side!",
-	"I hear my friends calling!",
 	"Here we go!",
-	"I'm not scared..."]
+	"I'm not scared!"]
 	
 var tardigrade_explamation_text: Array = [
 	"Blub-o-blub!",
@@ -101,7 +90,7 @@ func _ready() -> void:
 		random_text = tardigrade_greeting_text.pick_random()
 		label.text = random_text
 	else:
-		random_text = greeting_text.pick_random()
+		random_text = bat_greeting_text.pick_random()
 		label.text = random_text
 	
 	await get_tree().create_timer(2).timeout
@@ -112,7 +101,7 @@ func _ready() -> void:
 		random_text = tardigrade_question_text.pick_random()
 		label.text = random_text
 	else:
-		random_text = question_text.pick_random()
+		random_text = bat_question_text.pick_random()
 		label.text = random_text
 	
 	await get_tree().create_timer(2).timeout
@@ -123,7 +112,7 @@ func _ready() -> void:
 		random_text = tardigrade_explamation_text.pick_random()
 		label.text = random_text
 	else:
-		random_text = exclamation_text.pick_random()
+		random_text = bat_exclamation_text.pick_random()
 		label.text = random_text
 	
 	await get_tree().create_timer(2).timeout

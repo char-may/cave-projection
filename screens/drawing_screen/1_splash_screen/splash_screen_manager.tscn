@@ -85,7 +85,7 @@ _data = {
 &"poly_bat_1": SubResource("Animation_7px8g")
 }
 
-[node name="SplashScreenManager" type="Control" node_paths=PackedStringArray("splash_screen")]
+[node name="SplashScreenManager" type="Control" unique_id=607089561 node_paths=PackedStringArray("splash_screen")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -97,33 +97,31 @@ pause_time = 1.5
 out_time = 0.2
 splash_screen = NodePath("LightsOut")
 
-[node name="Cutout2" type="Sprite2D" parent="."]
-self_modulate = Color(0.23137255, 0.13725491, 0.5411765, 1)
+[node name="Cutout2" type="Sprite2D" parent="." unique_id=402913053]
+self_modulate = Color(0.16078432, 0.22352941, 0.44705883, 1)
 position = Vector2(-594, -3)
 texture = ExtResource("5_f3wds")
 centered = false
 
-[node name="LightsOut" type="AnimatedSprite2D" parent="."]
+[node name="LightsOut" type="AnimatedSprite2D" parent="." unique_id=507995431]
 position = Vector2(960, 540)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_5how5")
 frame_progress = 0.133076
 
-[node name="Cutout" type="Sprite2D" parent="."]
+[node name="Cutout" type="Sprite2D" parent="." unique_id=256739143]
 self_modulate = Color(0, 0, 0, 1)
 texture = ExtResource("5_f3wds")
 centered = false
 
-[node name="PolyBat" parent="." instance=ExtResource("6_7px8g")]
+[node name="PolyBat" parent="." unique_id=171273954 instance=ExtResource("6_7px8g")]
 position = Vector2(396, 723)
 scale = Vector2(0.25, 0.25)
 
-[node name="PolyBat2" parent="." instance=ExtResource("6_7px8g")]
+[node name="PolyBat2" parent="." unique_id=636904995 instance=ExtResource("6_7px8g")]
 position = Vector2(585, 690)
 scale = Vector2(0.25, 0.25)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_qshu0")
-}
-autoplay = "poly_bat_1"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=902312063]
+libraries/ = SubResource("AnimationLibrary_qshu0")
+autoplay = &"poly_bat_1"

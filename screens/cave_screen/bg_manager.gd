@@ -41,6 +41,7 @@ func _ready() -> void:
 func new_bigguy() -> void:
 	# find available position and keep only 3 active positions, bumping the oldest
 	if active_guys.size() == 3:
+		#print("Active guys: " + str(active_guys))
 		make_room_for_new_bigguy()
 	
 	positions.shuffle()
@@ -58,6 +59,7 @@ func new_bigguy() -> void:
 	
 func make_room_for_new_bigguy() -> void:
 	var goodbye_guy = active_guys.pop_back()
+	#print("Saying goodbye to " + str(goodbye_guy))
 	var goodbye_guy_hands = goodbye_guy.hands
 	await goodbye_guy.get_node("AnimationPlayer").animation_finished
 	goodbye_guy_hands.queue_free()

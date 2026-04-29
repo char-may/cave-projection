@@ -1,6 +1,6 @@
 extends Node
 
-const max_bats_on_screen : int = 6
+const max_bats_on_screen : int = 5
 var rng
 
 var min_rotate_time: float = 15.0

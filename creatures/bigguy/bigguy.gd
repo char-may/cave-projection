@@ -15,7 +15,7 @@ func animation_finished() -> void:
 	if hands != null:
 		hands.off()
 	GlobalSignal.bigguy_animation_finished.emit(self)
-	await get_tree().create_timer(randf_range(10.0, 25.0)).timeout
+	await get_tree().create_timer(randf_range(15.0, 25.0)).timeout
 	play_anim()
 
 # this will pick a random animation

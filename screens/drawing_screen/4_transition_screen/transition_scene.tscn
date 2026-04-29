@@ -8,7 +8,7 @@
 script = ExtResource("1_elb5o")
 
 [node name="Background" type="Polygon2D" parent="." unique_id=1228125724]
-color = Color(0.20784314, 0.12156863, 0.49019608, 1)
+color = Color(0.16078432, 0.22352941, 0.44705883, 1)
 polygon = PackedVector2Array(-104, -84, -101, 1126, 2036, 1123, 2028, -84)
 
 [node name="Portal" type="Node2D" parent="." unique_id=1129837474]

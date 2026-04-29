@@ -2,7 +2,7 @@ extends Node
 
 @onready var tardigrade_timer : Timer = $"../TardigradeTimer"
 
-const max_tardigrades_on_screen : int = 4
+const max_tardigrades_on_screen : int = 5
 var rng
 
 var min_rotate_time: float = 15.0
