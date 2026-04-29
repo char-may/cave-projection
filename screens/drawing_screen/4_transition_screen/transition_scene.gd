@@ -4,6 +4,9 @@ extends Node2D
 @onready var creature_container = $CreatureContainer
 @onready var label = $CreatureContainer/Label
 
+var normal_font = load("res://fonts/Chubby Fun Regular.ttf")
+var bigguy_font = load("res://fonts/Zu-Regular.otf")
+ 
 var creature_transitioning = null
 var creature_rotating : bool = false
 
@@ -18,7 +21,7 @@ const goodbye_portal_scale_time = 1.5
 
 const creature_container_starting_scale = Vector2(0.0, 0.0)
 const creature_container_scale_to = Vector2(1.0, 1.0)
-const creature_container_scale_time = 0.75
+const creature_container_scale_time = 0.65
 
 var bat_greeting_text: Array = [
 	"Oi!",
@@ -61,18 +64,27 @@ func _ready() -> void:
 	rng = RandomNumberGenerator.new()
 	rng.randomize()
 	
+	if label.label_settings == null:
+		label.label_settings = LabelSettings.new()
+	
 	label.visible = false
 	portal_sprite.scale = portal_starting_scale
 	creature_container.scale = creature_container_starting_scale
 
 	match Global.creature_editing:
 		Global.CreatureType.BAT:
+			label.label_settings.font = normal_font
+			label.label_settings.font_size = 50
 			bat_selected()
 		Global.CreatureType.TARDIGRADE:
+			label.label_settings.font = normal_font
+			label.label_settings.font_size = 50
 			tardigrade_selected()
 		Global.CreatureType.SALAMANDER:
 			salamander_selected()
 		Global.CreatureType.BIGGUY:
+			label.label_settings.font = bigguy_font
+			label.label_settings.font_size = 75
 			bigguy_selected()
 	
 	var scale_creature_container = create_tween()
