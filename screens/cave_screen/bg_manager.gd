@@ -83,7 +83,7 @@ func set_instance_parameters(p, i):
 				i.position.y = POS1[1]
 				i.rotation_degrees = POS1[2]
 				i.scale = Vector2(POS1[3], POS1[3])
-			elif i is Node2D:
+			elif i is BigGuyHands:
 				i.position.x = HANDSPOS1[0]
 				i.position.y = HANDSPOS1[1]
 				i.rotation_degrees = HANDSPOS1[2]
@@ -94,7 +94,7 @@ func set_instance_parameters(p, i):
 				i.position.y = POS2[1]
 				i.rotation_degrees = POS2[2]
 				i.scale = Vector2(POS2[3], POS2[3])
-			elif i is Node2D:
+			elif i is BigGuyHands:
 				i.position.x = HANDSPOS2[0]
 				i.position.y = HANDSPOS2[1]
 				i.rotation_degrees = HANDSPOS2[2]
@@ -105,7 +105,7 @@ func set_instance_parameters(p, i):
 				i.position.y = POS3[1]
 				i.rotation_degrees = POS3[2]
 				i.scale = Vector2(POS3[3], POS3[3])
-			elif i is Node2D:
+			elif i is BigGuyHands:
 				i.position.x = HANDSPOS3[0]
 				i.position.y = HANDSPOS3[1]
 				i.rotation_degrees = HANDSPOS3[2]
@@ -116,7 +116,7 @@ func set_instance_parameters(p, i):
 				i.position.y = POS4[1]
 				i.rotation_degrees = POS4[2]
 				i.scale = Vector2(POS4[3], POS4[3])
-			elif i is Node2D:
+			elif i is BigGuyHands:
 				i.position.x = HANDSPOS4[0]
 				i.position.y = HANDSPOS4[1]
 				i.rotation_degrees = HANDSPOS4[2]
@@ -127,7 +127,7 @@ func set_instance_parameters(p, i):
 				i.position.y = POS5[1]
 				i.rotation_degrees = POS5[2]
 				i.scale = Vector2(POS5[3], POS5[3])
-			elif i is Node2D:
+			elif i is BigGuyHands:
 				i.position.x = HANDSPOS5[0]
 				i.position.y = HANDSPOS5[1]
 				i.rotation_degrees = HANDSPOS5[2]
@@ -138,7 +138,7 @@ func set_instance_parameters(p, i):
 				i.position.y = POS6[1]
 				i.rotation_degrees = POS6[2]
 				i.scale = Vector2(POS6[3], POS6[3])
-			elif i is Node2D:
+			elif i is BigGuyHands:
 				i.position.x = HANDSPOS6[0]
 				i.position.y = HANDSPOS6[1]
 				i.rotation_degrees = HANDSPOS6[2]
