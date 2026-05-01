@@ -18,6 +18,10 @@ class_name Editor extends Node2D
 @export var bigguy_mask : CompressedTexture2D
 @onready var bigguy_face_gen : Node2D = $BigguyFaceGen
 
+# Salamander
+@export var salamander_mask : CompressedTexture2D
+@onready var salamander_face_gen : Node2D = $SalamanderFaceGen
+
 var background
 var export_count = 0
 
@@ -42,6 +46,7 @@ func _ready():
 			tardigrade_overlay.visible = false
 			tardigrade_face_gen.visible = false
 			bigguy_face_gen.visible = false
+			salamander_face_gen.visible = false
 		Global.CreatureType.TARDIGRADE:
 			#Do tardigrade stuff
 			creature_mask.texture = tardigrade_mask
@@ -49,13 +54,15 @@ func _ready():
 			tardigrade_overlay.visible = true
 			bat_face_gen.visible = false
 			bigguy_face_gen.visible = false
+			salamander_face_gen.visible = false
 		Global.CreatureType.SALAMANDER:
 			#Do salamander stuff
-			creature_mask.texture = bat_mask #**** update ******
-			bat_face_gen.visible = true
+			creature_mask.texture = salamander_mask
+			bat_face_gen.visible = false
 			tardigrade_overlay.visible = false
 			tardigrade_face_gen.visible = false
 			bigguy_face_gen.visible = false
+			salamander_face_gen.visible = true
 		Global.CreatureType.BIGGUY:
 			#Do big guy stuff
 			creature_mask.texture = bigguy_mask
@@ -63,6 +70,7 @@ func _ready():
 			tardigrade_overlay.visible = false
 			tardigrade_face_gen.visible = false
 			bigguy_face_gen.visible = true
+			salamander_face_gen.visible = false
 	
 func screenshot():
 	var dir = DirAccess.open("user://")

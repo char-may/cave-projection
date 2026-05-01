@@ -25,7 +25,10 @@ func _ready() -> void:
 			nose.visible = false
 			mouth.visible = false
 		Global.CreatureType.SALAMANDER:
-			pass
+			left_eye.visible = true
+			right_eye.visible = true
+			nose.visible = false
+			mouth.visible = true
 		Global.CreatureType.BIGGUY:
 			# positions are original + offset (also scaled up slightly in UI)
 			left_eye.visible = true

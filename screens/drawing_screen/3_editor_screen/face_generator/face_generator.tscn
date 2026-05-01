@@ -59,15 +59,18 @@ nose = NodePath("Nose")
 mouth = NodePath("Mouth")
 
 [node name="LeftEye" type="Sprite2D" parent="." unique_id=907184391]
+texture = ExtResource("2_vvk83")
 centered = false
 
 [node name="RightEye" type="Sprite2D" parent="." unique_id=1854634363]
 position = Vector2(190, 0)
+texture = ExtResource("2_vvk83")
 centered = false
 
 [node name="Mouth" type="Sprite2D" parent="." unique_id=598482758]
 self_modulate = Color(1, 0.5411765, 0.74509805, 1)
 position = Vector2(30, 190)
+texture = ExtResource("40_k21tt")
 centered = false
 
 [node name="Nose" type="Sprite2D" parent="." unique_id=1076454800]
