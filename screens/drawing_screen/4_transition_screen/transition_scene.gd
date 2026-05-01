@@ -81,6 +81,8 @@ func _ready() -> void:
 			label.label_settings.font_size = 50
 			tardigrade_selected()
 		Global.CreatureType.SALAMANDER:
+			label.label_settings.font = normal_font
+			label.label_settings.font_size = 50
 			salamander_selected()
 		Global.CreatureType.BIGGUY:
 			label.label_settings.font = bigguy_font
@@ -177,7 +179,13 @@ func tardigrade_selected():
 	get_node("CreatureContainer").add_child(new_tardigrade)
 	
 func salamander_selected():
-	pass
+	var new_salamander_scene := preload("res://creatures/salamander/salamander.tscn")
+	var new_salamander = new_salamander_scene.instantiate()
+	creature_transitioning = new_salamander
+	new_salamander.transitioning = true
+	new_salamander.scale = Vector2(.35, .35)
+	get_node("CreatureContainer").add_child(new_salamander)
+	
 func bigguy_selected():
 	# spawn big guy
 	var new_bigguy_scene := preload("res://creatures/bigguy/bigguy.tscn")
@@ -194,6 +202,6 @@ func send_to_cave():
 		Global.CreatureType.TARDIGRADE:
 			GlobalSignal.new_tardigrade_created.emit()
 		Global.CreatureType.SALAMANDER:
-			GlobalSignal.new_bat_created.emit()
+			GlobalSignal.new_salamander_created.emit()
 		Global.CreatureType.BIGGUY:
 			GlobalSignal.new_bigguy_created.emit()

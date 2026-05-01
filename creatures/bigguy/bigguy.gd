@@ -1,4 +1,4 @@
-class_name  BigGuy extends Creature
+class_name BigGuy extends Creature
 
 @onready var anim = $AnimationPlayer
 var transitioning : bool = false

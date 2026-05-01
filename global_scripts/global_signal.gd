@@ -27,6 +27,9 @@ signal new_tardigrade_created
 signal new_bigguy_created
 
 @warning_ignore("unused_signal")
+signal new_salamander_created
+
+@warning_ignore("unused_signal")
 signal bigguy_animation_finished(bigguy : BigGuy)
 
 @warning_ignore("unused_signal")
