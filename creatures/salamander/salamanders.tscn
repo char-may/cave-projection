@@ -2,72 +2,118 @@
 
 [ext_resource type="PackedScene" uid="uid://c2jn6jj4r6ihr" path="res://creatures/salamander/salamander.tscn" id="1_6qjru"]
 [ext_resource type="Script" uid="uid://bpqnhooefibny" path="res://creatures/salamander/path_follow_2d.gd" id="1_22es6"]
-[ext_resource type="Texture2D" uid="uid://dpf77e0h3sqb4" path="res://creatures/salamander/Caveref.png" id="1_k1ksb"]
 
-[sub_resource type="Curve2D" id="Curve2D_i4hoh"]
+[sub_resource type="Curve2D" id="Curve2D_4c301"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 129, 736, 0, 0, 0, 0, 287, 720, 0, 0, 0, 0, 397, 824, 0, 0, 0, 0, 603, 778, 0, 0, 0, 0, 727, 888, 0, 0, 0, 0, 435, 792, 0, 0, 0, 0, 231, 830, 0, 0, 0, 0, 77, 786, 0, 0, 0, 0, 149, 924, 0, 0, 0, 0, 691, 924, 0, 0, 0, 0, 903, 952, 0, 0, 0, 0, 1069, 1054, 0, 0, 0, 0, 1007, 1154, 0, 0, 0, 0, 97, 1170, 0, 0, 0, 0, 53, 970, 0, 0, 0, 0, 129, 736, 0, 0, 0, 0, 399, 924, 0, 0, 0, 0, 249, 1028, 0, 0, 0, 0, 515, 1100, 0, 0, 0, 0, 745, 1034, 0, 0, 0, 0, 843, 906, 0, 0, 0, 0, 1005, 932, 0, 0, 0, 0, 909, 1036, 0, 0, 0, 0, 551, 1004, 0, 0, 0, 0, 243, 1092, 0, 0, 0, 0, 129, 994, 0, 0, 0, 0, 289, 688, 0, 0, 0, 0, 129, 736)
+"points": PackedVector2Array(0, 0, 0, 0, -14, 1028, 0, 0, 0, 0, 374, 887, 0, 0, 0, 0, 276, 881, 0, 0, 0, 0, 339, 810, 0, 0, 0, 0, 22, 784, 0, 0, 0, 0, 202, 712, 0, 0, 0, 0, 160, 823, 0, 0, 0, 0, 280, 990, 0, 0, 0, 0, 377, 771, 0, 0, 0, 0, 638, 795, 0, 0, 0, 0, 506, 754, 0, 0, 0, 0, 483, 842, 0, 0, 0, 0, 490, 891, 0, 0, 0, 0, 524, 914, 0, 0, 0, 0, 762, 909, 0, 0, 0, 0, 796, 1006, 0, 0, 0, 0, 588, 831, 0, 0, 0, 0, 437, 828, 0, 0, 0, 0, 140, 866, 0, 0, 0, 0, -14, 1028)
 }
-point_count = 28
+point_count = 20
+
+[sub_resource type="Curve2D" id="Curve2D_r0lhe"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1937, 1039, 0, 0, 0, 0, 1844, 844, 0, 0, 0, 0, 1697, 968, 0, 0, 0, 0, 1577, 777, 0, 0, 0, 0, 1842, 767, 0, 0, 0, 0, 1799, 627, 0, 0, 0, 0, 1873, 643, 0, 0, 0, 0, 1778, 738, 0, 0, 0, 0, 1604, 601, 0, 0, 0, 0, 1609, 751, 0, 0, 0, 0, 1441, 656, 0, 0, 0, 0, 1517, 541, 0, 0, 0, 0, 1585, 541, 0, 0, 0, 0, 1556, 628, 0, 0, 0, 0, 1675, 683, 0, 0, 0, 0, 1388, 702, 0, 0, 0, 0, 1262, 778, 0, 0, 0, 0, 1319, 976, 0, 0, 0, 0, 1415, 764, 0, 0, 0, 0, 1467, 894, 0, 0, 0, 0, 1577, 975, 0, 0, 0, 0, 1765, 828, 0, 0, 0, 0, 1784, 971, 0, 0, 0, 0, 1937, 1039)
+}
+point_count = 24
 
 [sub_resource type="Curve2D" id="Curve2D_tkmv0"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 776, 1148, 0, 0, 0, 0, 690, 1024, 0, 0, 0, 0, 646, 896, 0, 0, 0, 0, 342, 1022, 0, 0, 0, 0, 324, 954, 0, 0, 0, 0, 610, 978, 0, 0, 0, 0, 626, 850, 0, 0, 0, 0, 428, 894, 0, 0, 0, 0, 560, 752, 0, 0, 0, 0, 476, 1046, 0, 0, 0, 0, 374, 922, 0, 0, 0, 0, 186, 1050, 0, 0, 0, 0, 132, 970, 0, 0, 0, 0, -6, 1010, 0, 0, 0, 0, -66, 972, 0, 0, 0, 0, -204, 1040, 0, 0, 0, 0, 102, 1042, 0, 0, 0, 0, 4, 954, 0, 0, 0, 0, 200, 958, 0, 0, 0, 0, 286, 1040, 0, 0, 0, 0, 454, 928, 0, 0, 0, 0, 558, 896, 0, 0, 0, 0, 584, 812, 0, 0, 0, 0, 502, 846, 0, 0, 0, 0, 556, 1002, 0, 0, 0, 0, 776, 1148)
+"points": PackedVector2Array(0, 0, 0, 0, 1834, 1089, 0, 0, 0, 0, 1659, 1003, 0, 0, 0, 0, 1749, 938, 0, 0, 0, 0, 1683, 872, 0, 0, 0, 0, 1388, 1026, 0, 0, 0, 0, 1470, 787, 0, 0, 0, 0, 1383, 852, 0, 0, 0, 0, 1380, 968, 0, 0, 0, 0, 1157, 816, 0, 0, 0, 0, 1330, 845, 0, 0, 0, 0, 1294, 1029, 0, 0, 0, 0, 826, 1026, 0, 0, 0, 0, 910, 834, 0, 0, 0, 0, 1169, 976, 0, 0, 0, 0, 914, 961, 0, 0, 0, 0, 1081, 860, 0, 0, 0, 0, 1205, 905, 0, 0, 0, 0, 1341, 1051, 0, 0, 0, 0, 1834, 1089)
 }
-point_count = 26
+point_count = 19
+
+[sub_resource type="Curve2D" id="Curve2D_wxk0t"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 845, 1083, 0, 0, 0, 0, 806, 998, 0, 0, 0, 0, 565, 899, 0, 0, 0, 0, 643, 832, 0, 0, 0, 0, 700, 865, 0, 0, 0, 0, 591, 964, 0, 0, 0, 0, 749, 920, 0, 0, 0, 0, 622, 1052, 0, 0, 0, 0, 209, 823, 0, 0, 0, 0, 79, 896, 0, 0, 0, 0, 415, 845, 0, 0, 0, 0, 524, 890, 0, 0, 0, 0, 345, 1003, 0, 0, 0, 0, 254, 899, 0, 0, 0, 0, 152, 1030, 0, 0, 0, 0, 40, 907, 0, 0, 0, 0, 7, 759, 0, 0, 0, 0, 86, 786, 0, 0, 0, 0, 140, 954, 0, 0, 0, 0, 410, 907, 0, 0, 0, 0, 547, 943, 0, 0, 0, 0, 478, 1050, 0, 0, 0, 0, 635, 987, 0, 0, 0, 0, 845, 1083)
+}
+point_count = 24
 
 [node name="Salamanders" type="Node2D" unique_id=2076642010]
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=562137626]
-visible = false
-position = Vector2(960, 543)
-texture = ExtResource("1_k1ksb")
-metadata/_edit_lock_ = true
 
 [node name="Container1" type="Node2D" parent="." unique_id=1551815784]
 position = Vector2(0, -100)
 
 [node name="Polygon2D" type="Polygon2D" parent="Container1" unique_id=1028003438]
-color = Color(0.65882355, 0.53333336, 0.74509805, 1)
-polygon = PackedVector2Array(-22, 1200, -16, 708, 295, 662, 411, 762, 631, 724, 717, 828, 1075, 908, 1161, 1054, 1172, 1206)
+color = Color(0.69803923, 0.4862745, 0.7372549, 1)
+polygon = PackedVector2Array(-30, 1136, -20, 780, 60.266968, 696.9066, 204, 676, 276, 784, 376, 742, 436, 762, 536, 726, 634, 742, 704, 842, 846, 948, 882, 1150, 602, 1146)
 
-[node name="Path2D" type="Path2D" parent="Container1" unique_id=666745923]
-curve = SubResource("Curve2D_i4hoh")
+[node name="Path2D" type="Path2D" parent="Container1" unique_id=130811233]
+curve = SubResource("Curve2D_4c301")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Container1/Path2D" unique_id=228055905 node_paths=PackedStringArray("timer")]
-position = Vector2(129, 736)
-rotation = -0.10092178
+[node name="PathFollow2D" type="PathFollow2D" parent="Container1/Path2D" unique_id=1004705915 node_paths=PackedStringArray("timer")]
+position = Vector2(-14, 1028)
+rotation = -0.34856403
 script = ExtResource("1_22es6")
 timer = NodePath("../../Timer1")
 
-[node name="Salamander" parent="Container1/Path2D/PathFollow2D" unique_id=1507839172 instance=ExtResource("1_6qjru")]
-rotation = 0.3041108
-scale = Vector2(0.15, 0.15)
+[node name="Salamander" parent="Container1/Path2D/PathFollow2D" unique_id=1568775574 instance=ExtResource("1_6qjru")]
+scale = Vector2(0.14, 0.14)
 
 [node name="Timer1" type="Timer" parent="Container1" unique_id=1676116493]
 
+[node name="Container4" type="Node2D" parent="." unique_id=290817357]
+
+[node name="Polygon2D" type="Polygon2D" parent="Container4" unique_id=1977882055]
+position = Vector2(0, -50)
+color = Color(0.65882355, 0.53333336, 0.74509805, 1)
+polygon = PackedVector2Array(1113, 1139, 1278, 733, 1367, 723, 1444, 661, 1489, 554, 1597, 549, 1652, 611, 1727, 658, 1844, 632, 1955, 699, 1957, 1147)
+
+[node name="Path2D" type="Path2D" parent="Container4" unique_id=961089052]
+curve = SubResource("Curve2D_r0lhe")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Container4/Path2D" unique_id=597437964 node_paths=PackedStringArray("timer")]
+position = Vector2(1937, 1039)
+rotation = -2.0158126
+script = ExtResource("1_22es6")
+timer = NodePath("../../Timer4")
+
+[node name="Salamander" parent="Container4/Path2D/PathFollow2D" unique_id=1495678847 instance=ExtResource("1_6qjru")]
+scale = Vector2(0.14, 0.14)
+
+[node name="Timer4" type="Timer" parent="Container4" unique_id=2117414338]
+
 [node name="Container2" type="Node2D" parent="." unique_id=1904337049]
-position = Vector2(800, -100)
 
 [node name="Polygon2D" type="Polygon2D" parent="Container2" unique_id=278660818]
-position = Vector2(78, 18)
+position = Vector2(1150, -125)
 color = Color(0.1764706, 0.2509804, 0.57254905, 1)
-polygon = PackedVector2Array(10, 1184, -418, 1184, -221, 870, 195, 934, 485, 696, 629, 920, 765, 1062, 920, 1196, 820, 1194)
+polygon = PackedVector2Array(12, 1224, -446, 1224, -252, 888, -146, 954, 26, 908, 195, 934, 322, 846, 436, 1014, 546, 950, 610, 1006, 690, 1076, 813, 1069, 825, 1180, 819, 1230, 438, 1224)
 
-[node name="Path2D" type="Path2D" parent="Container2" unique_id=238653907]
+[node name="Path2D" type="Path2D" parent="Container2" unique_id=1254708109]
 curve = SubResource("Curve2D_tkmv0")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Container2/Path2D" unique_id=1780157086 node_paths=PackedStringArray("timer")]
-position = Vector2(776, 1148)
-rotation = -2.1771793
+[node name="PathFollow2D" type="PathFollow2D" parent="Container2/Path2D" unique_id=1940100594 node_paths=PackedStringArray("timer")]
+position = Vector2(1834, 1089)
+rotation = -2.6848257
 script = ExtResource("1_22es6")
 timer = NodePath("../../Timer2")
 
-[node name="Salamander" parent="Container2/Path2D/PathFollow2D" unique_id=1568775574 instance=ExtResource("1_6qjru")]
-rotation = 0.3041108
-scale = Vector2(0.15, 0.15)
+[node name="Salamander" parent="Container2/Path2D/PathFollow2D" unique_id=1368442652 instance=ExtResource("1_6qjru")]
+scale = Vector2(0.14, 0.14)
 
-[node name="Timer2" type="Timer" parent="Container2" unique_id=1098031506]
+[node name="Timer2" type="Timer" parent="Container2" unique_id=1633598050]
+
+[node name="Container3" type="Node2D" parent="." unique_id=1265753776]
+
+[node name="Polygon2D" type="Polygon2D" parent="Container3" unique_id=152080206]
+position = Vector2(0, -50)
+color = Color(0.3529412, 0.38039216, 0.81960785, 1)
+polygon = PackedVector2Array(-34, 1129, -34, 789, 43, 773, 168, 858, 216, 829, 290, 895, 430, 833, 529, 907, 648, 798, 965, 1129, 882, 1131)
+
+[node name="Path2D" type="Path2D" parent="Container3" unique_id=13831884]
+curve = SubResource("Curve2D_wxk0t")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Container3/Path2D" unique_id=501220784 node_paths=PackedStringArray("timer")]
+position = Vector2(845, 1083)
+rotation = -2.0009637
+script = ExtResource("1_22es6")
+timer = NodePath("../../Timer3")
+
+[node name="Salamander" parent="Container3/Path2D/PathFollow2D" unique_id=357141930 instance=ExtResource("1_6qjru")]
+scale = Vector2(0.14, 0.14)
+
+[node name="Timer3" type="Timer" parent="Container3" unique_id=824990282]
 
 [connection signal="timeout" from="Container1/Timer1" to="Container1/Path2D/PathFollow2D" method="_on_timer_1_timeout"]
+[connection signal="timeout" from="Container4/Timer4" to="Container4/Path2D/PathFollow2D" method="_on_timer_4_timeout"]
 [connection signal="timeout" from="Container2/Timer2" to="Container2/Path2D/PathFollow2D" method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Container3/Timer3" to="Container3/Path2D/PathFollow2D" method="_on_timer_3_timeout"]

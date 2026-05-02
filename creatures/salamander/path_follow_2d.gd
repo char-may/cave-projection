@@ -12,8 +12,9 @@ func _ready() -> void:
 	start_random_timer()
 
 func start_random_timer():
-	timer.wait_time = randf_range(1, 2.5)
-	timer.start()
+	if timer != null:
+		timer.wait_time = randf_range(0.5, 3.0)
+		timer.start()
 	
 func _process(delta) -> void:
 	if walking:
@@ -28,8 +29,25 @@ func _on_timer_1_timeout() -> void:
 		walking = true
 		anim.play()
 		start_random_timer()
-		
 func _on_timer_2_timeout() -> void:
+	if walking:
+		walking = false
+		anim.stop()
+		start_random_timer()
+	else:
+		walking = true
+		anim.play()
+		start_random_timer()
+func _on_timer_3_timeout() -> void:
+	if walking:
+		walking = false
+		anim.stop()
+		start_random_timer()
+	else:
+		walking = true
+		anim.play()
+		start_random_timer()
+func _on_timer_4_timeout() -> void:
 	if walking:
 		walking = false
 		anim.stop()
