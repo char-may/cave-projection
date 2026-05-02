@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://c2metts50ln2l"]
+
+[ext_resource type="PackedScene" uid="uid://c2jn6jj4r6ihr" path="res://creatures/salamander/salamander.tscn" id="1_6qjru"]
+[ext_resource type="Script" uid="uid://bpqnhooefibny" path="res://creatures/salamander/path_follow_2d.gd" id="1_22es6"]
+[ext_resource type="Texture2D" uid="uid://dpf77e0h3sqb4" path="res://creatures/salamander/Caveref.png" id="1_k1ksb"]
+
+[sub_resource type="Curve2D" id="Curve2D_i4hoh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 129, 736, 0, 0, 0, 0, 287, 720, 0, 0, 0, 0, 397, 824, 0, 0, 0, 0, 603, 778, 0, 0, 0, 0, 727, 888, 0, 0, 0, 0, 435, 792, 0, 0, 0, 0, 231, 830, 0, 0, 0, 0, 77, 786, 0, 0, 0, 0, 149, 924, 0, 0, 0, 0, 691, 924, 0, 0, 0, 0, 903, 952, 0, 0, 0, 0, 1069, 1054, 0, 0, 0, 0, 1007, 1154, 0, 0, 0, 0, 97, 1170, 0, 0, 0, 0, 53, 970, 0, 0, 0, 0, 129, 736, 0, 0, 0, 0, 399, 924, 0, 0, 0, 0, 249, 1028, 0, 0, 0, 0, 515, 1100, 0, 0, 0, 0, 745, 1034, 0, 0, 0, 0, 843, 906, 0, 0, 0, 0, 1005, 932, 0, 0, 0, 0, 909, 1036, 0, 0, 0, 0, 551, 1004, 0, 0, 0, 0, 243, 1092, 0, 0, 0, 0, 129, 994, 0, 0, 0, 0, 289, 688, 0, 0, 0, 0, 129, 736)
+}
+point_count = 28
+
+[sub_resource type="Curve2D" id="Curve2D_tkmv0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 776, 1148, 0, 0, 0, 0, 690, 1024, 0, 0, 0, 0, 646, 896, 0, 0, 0, 0, 342, 1022, 0, 0, 0, 0, 324, 954, 0, 0, 0, 0, 610, 978, 0, 0, 0, 0, 626, 850, 0, 0, 0, 0, 428, 894, 0, 0, 0, 0, 560, 752, 0, 0, 0, 0, 476, 1046, 0, 0, 0, 0, 374, 922, 0, 0, 0, 0, 186, 1050, 0, 0, 0, 0, 132, 970, 0, 0, 0, 0, -6, 1010, 0, 0, 0, 0, -66, 972, 0, 0, 0, 0, -204, 1040, 0, 0, 0, 0, 102, 1042, 0, 0, 0, 0, 4, 954, 0, 0, 0, 0, 200, 958, 0, 0, 0, 0, 286, 1040, 0, 0, 0, 0, 454, 928, 0, 0, 0, 0, 558, 896, 0, 0, 0, 0, 584, 812, 0, 0, 0, 0, 502, 846, 0, 0, 0, 0, 556, 1002, 0, 0, 0, 0, 776, 1148)
+}
+point_count = 26
+
+[node name="Salamanders" type="Node2D" unique_id=2076642010]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=562137626]
+visible = false
+position = Vector2(960, 543)
+texture = ExtResource("1_k1ksb")
+metadata/_edit_lock_ = true
+
+[node name="Container1" type="Node2D" parent="." unique_id=1551815784]
+position = Vector2(0, -100)
+
+[node name="Polygon2D" type="Polygon2D" parent="Container1" unique_id=1028003438]
+color = Color(0.65882355, 0.53333336, 0.74509805, 1)
+polygon = PackedVector2Array(-22, 1200, -16, 708, 295, 662, 411, 762, 631, 724, 717, 828, 1075, 908, 1161, 1054, 1172, 1206)
+
+[node name="Path2D" type="Path2D" parent="Container1" unique_id=666745923]
+curve = SubResource("Curve2D_i4hoh")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Container1/Path2D" unique_id=228055905 node_paths=PackedStringArray("timer")]
+position = Vector2(129, 736)
+rotation = -0.10092178
+script = ExtResource("1_22es6")
+timer = NodePath("../../Timer1")
+
+[node name="Salamander" parent="Container1/Path2D/PathFollow2D" unique_id=1507839172 instance=ExtResource("1_6qjru")]
+rotation = 0.3041108
+scale = Vector2(0.15, 0.15)
+
+[node name="Timer1" type="Timer" parent="Container1" unique_id=1676116493]
+
+[node name="Container2" type="Node2D" parent="." unique_id=1904337049]
+position = Vector2(800, -100)
+
+[node name="Polygon2D" type="Polygon2D" parent="Container2" unique_id=278660818]
+position = Vector2(78, 18)
+color = Color(0.1764706, 0.2509804, 0.57254905, 1)
+polygon = PackedVector2Array(10, 1184, -418, 1184, -221, 870, 195, 934, 485, 696, 629, 920, 765, 1062, 920, 1196, 820, 1194)
+
+[node name="Path2D" type="Path2D" parent="Container2" unique_id=238653907]
+curve = SubResource("Curve2D_tkmv0")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Container2/Path2D" unique_id=1780157086 node_paths=PackedStringArray("timer")]
+position = Vector2(776, 1148)
+rotation = -2.1771793
+script = ExtResource("1_22es6")
+timer = NodePath("../../Timer2")
+
+[node name="Salamander" parent="Container2/Path2D/PathFollow2D" unique_id=1568775574 instance=ExtResource("1_6qjru")]
+rotation = 0.3041108
+scale = Vector2(0.15, 0.15)
+
+[node name="Timer2" type="Timer" parent="Container2" unique_id=1098031506]
+
+[connection signal="timeout" from="Container1/Timer1" to="Container1/Path2D/PathFollow2D" method="_on_timer_1_timeout"]
+[connection signal="timeout" from="Container2/Timer2" to="Container2/Path2D/PathFollow2D" method="_on_timer_2_timeout"]

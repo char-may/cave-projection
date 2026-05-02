@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b85crj23jqo3y" path="res://screens/cave_screen/fairy.tscn" id="1_u6t5p"]
 [ext_resource type="Script" uid="uid://drgs28dimdubd" path="res://screens/cave_screen/bats_container.gd" id="2_0xn84"]
 [ext_resource type="Script" uid="uid://cwl62ialnf1gl" path="res://screens/cave_screen/tardigrades_container.gd" id="3_u6t5p"]
+[ext_resource type="PackedScene" uid="uid://c2metts50ln2l" path="res://creatures/salamander/salamanders.tscn" id="4_llk8y"]
 [ext_resource type="Script" uid="uid://cfg8pvaru0ml6" path="res://screens/cave_screen/bg_manager.gd" id="4_lpb3v"]
 
 [node name="CaveScreen" type="Node2D" unique_id=2077961266]
@@ -20,22 +21,6 @@ uv = PackedVector2Array(-197, -82, -210.77203, 451.76404, 807.443, 454.42603, 78
 [node name="Middleground" type="Polygon2D" parent="." unique_id=565778237]
 color = Color(0.101960786, 0.16078432, 0.3019608, 1)
 polygon = PackedVector2Array(176, 295, 222, 231, 280, 365, 396, 111, 420, 60, 544, 97, 594, 224, 636, 115, 702, 102, 773, 172, 846, 93, 968, 56, 1050, 55, 1084, 143, 1128, 63, 1170, 147, 1290, 133, 1353, 215, 1456, 177, 1520, 214, 1576, 259, 1601, 306, 1613, 262, 1655, 264, 1748, 264, 1783, 322, 1828, 571, 1858, 409, 1913, 480, 1942, 439, 1942, 509, 1963, 553, 1968, 802, 1841, 861, 1777, 709, 1737, 825, 1638, 903, 1579, 853, 1517, 895, 1377, 737, 1080, 817, 1011, 751, 948, 859, 858, 779, 698, 763, 557, 877, 159, 635, 35, 707, -37, 680, -9, 1175, 1983, 1134, 1978, -44, -29, -57, -42, 197, -47, 389, 51, 127, 113, 93)
-
-[node name="SalSpot1" type="Polygon2D" parent="." unique_id=155944246]
-position = Vector2(2783.713, 669.95557)
-rotation = 2.9914944
-scale = Vector2(0.9489169, 1.0514574)
-color = Color(0.65882355, 0.53333336, 0.74509805, 1)
-polygon = PackedVector2Array(2189.522, -12.732422, 1788.9137, 101.64856, 1626.6355, 178.24341, 1565.5646, 140.6889, 1343.9489, 54.58142, 1150.0549, 106.16748, 1009.66064, -111.86157, 1020.92664, -344.52307, 2210.68, -212.81812)
-
-[node name="SalSpot2" type="Polygon2D" parent="." unique_id=1743970586]
-position = Vector2(0, 24)
-color = Color(0.1764706, 0.2509804, 0.57254905, 1)
-polygon = PackedVector2Array(-82, 862, 170, 709, 551, 712, 830, 919, 1073, 919, 1265, 859, 1634, 928, 1844, 874, 1955, 1141, -103, 1120)
-
-[node name="SalSpot3" type="Polygon2D" parent="." unique_id=1617719700]
-color = Color(0.65882355, 0.53333336, 0.74509805, 1)
-polygon = PackedVector2Array(64, 863, 294, 837, 556, 947, 722, 1023, 668, 1115, -44, 1115, -42, 869)
 
 [node name="BGPos3" type="Node2D" parent="." unique_id=1850435678]
 
@@ -123,6 +108,8 @@ script = ExtResource("2_0xn84")
 
 [node name="TardigradesContainer" type="Node2D" parent="." unique_id=697568142]
 script = ExtResource("3_u6t5p")
+
+[node name="Salamanders" parent="." unique_id=2076642010 instance=ExtResource("4_llk8y")]
 
 [node name="BGPos6" type="Node2D" parent="." unique_id=1029379951]
 
