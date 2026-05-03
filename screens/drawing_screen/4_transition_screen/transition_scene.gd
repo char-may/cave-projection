@@ -26,18 +26,22 @@ const creature_container_scale_time = 0.65
 var bat_greeting_text: Array = [
 	"Oi!",
 	"Hello!",
-	"Hi!",
-	"Boa tarde!"]
+	"Hi!"]
 	
 var tardigrade_greeting_text: Array = [
 	"Blub blub...",
 	"Blub-blub!",
 	"Blub!"
 ]
+
+var bigguy_greeting_text: Array = [
+	"Yo!",
+	"Hey!",
+	"Sup!"
+]
 	
 var bat_question_text: Array = [
 	"Who turned out the lights?",
-	"Onde estou?",
 	"What's this weird spinny thing?",
 	"Is it time for lunch?"]
 
@@ -46,17 +50,29 @@ var tardigrade_question_text: Array = [
 	"Blub... blub?",
 	"... blub-blub?"
 ]
+var bigguy_question_text: Array = [
+	"What's your name?",
+	"What's my name?",
+	"What is life?"
+]
+
 var bat_exclamation_text: Array = [
-	"This looks fun!",
+	"This looks like fun!",
 	"I'm glad I packed my bags!",
 	"Here we go!",
 	"I'm not scared!"]
 	
-var tardigrade_explamation_text: Array = [
+var tardigrade_exclamation_text: Array = [
 	"Blub-o-blub!",
 	"Bluuub!",
 	"Ba-blub!",
 	"Blub blub!"
+]
+
+var bigguy_exclamation_text: Array   = [
+	"I'm lost!",
+	"I don't understand!",
+	"I'm hungry!"
 ]
 var rng #random number generator
 
@@ -103,9 +119,15 @@ func _ready() -> void:
 	if Global.creature_editing == Global.CreatureType.TARDIGRADE:
 		random_text = tardigrade_greeting_text.pick_random()
 		label.text = random_text
-	else:
+	elif Global.creature_editing == Global.CreatureType.BIGGUY:
+		random_text = bigguy_greeting_text.pick_random()
+		label.text = random_text
+	elif Global.creature_editing == Global.CreatureType.BAT:
 		random_text = bat_greeting_text.pick_random()
 		label.text = random_text
+	else:
+		random_text = bigguy_greeting_text.pick_random()
+		label.text = random_text 
 	
 	await get_tree().create_timer(2).timeout
 	label.text = ""
@@ -114,20 +136,32 @@ func _ready() -> void:
 	if Global.creature_editing == Global.CreatureType.TARDIGRADE:
 		random_text = tardigrade_question_text.pick_random()
 		label.text = random_text
-	else:
+	elif Global.creature_editing == Global.CreatureType.BIGGUY:
+		random_text = bigguy_question_text.pick_random()
+		label.text = random_text
+	elif Global.creature_editing == Global.CreatureType.BAT:
 		random_text = bat_question_text.pick_random()
 		label.text = random_text
+	else:
+		random_text = bigguy_question_text.pick_random()
+		label.text = random_text 
 	
 	await get_tree().create_timer(2).timeout
 	label.text = ""
 	await get_tree().create_timer(.5).timeout
 	
 	if Global.creature_editing == Global.CreatureType.TARDIGRADE:
-		random_text = tardigrade_explamation_text.pick_random()
+		random_text = tardigrade_exclamation_text.pick_random()
 		label.text = random_text
-	else:
+	elif Global.creature_editing == Global.CreatureType.BIGGUY:
+		random_text = bigguy_exclamation_text.pick_random()
+		label.text = random_text
+	elif Global.creature_editing == Global.CreatureType.BAT:
 		random_text = bat_exclamation_text.pick_random()
 		label.text = random_text
+	else:
+		random_text = bigguy_exclamation_text.pick_random()
+		label.text = random_text 
 	
 	await get_tree().create_timer(2).timeout
 	label.visible = false
