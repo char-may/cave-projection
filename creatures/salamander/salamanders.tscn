@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c2jn6jj4r6ihr" path="res://creatures/salamander/salamander.tscn" id="1_6qjru"]
 [ext_resource type="Script" uid="uid://bpqnhooefibny" path="res://creatures/salamander/path_follow_2d.gd" id="1_22es6"]
+[ext_resource type="Script" uid="uid://c4x8joquw8r6b" path="res://creatures/salamander/salamander_manager.gd" id="1_tkmv0"]
 
 [sub_resource type="Curve2D" id="Curve2D_4c301"]
 _data = {
@@ -9,32 +10,181 @@ _data = {
 }
 point_count = 20
 
+[sub_resource type="Animation" id="Animation_uylcx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 500)]
+}
+
+[sub_resource type="Animation" id="Animation_tkmv0"]
+resource_name = "active"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4, 1.8333334),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector2(0, 500), Vector2(0, -130), Vector2(0, -100)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wxk0t"]
+_data = {
+&"RESET": SubResource("Animation_uylcx"),
+&"active": SubResource("Animation_tkmv0")
+}
+
 [sub_resource type="Curve2D" id="Curve2D_r0lhe"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 1937, 1039, 0, 0, 0, 0, 1844, 844, 0, 0, 0, 0, 1697, 968, 0, 0, 0, 0, 1577, 777, 0, 0, 0, 0, 1842, 767, 0, 0, 0, 0, 1799, 627, 0, 0, 0, 0, 1873, 643, 0, 0, 0, 0, 1778, 738, 0, 0, 0, 0, 1604, 601, 0, 0, 0, 0, 1609, 751, 0, 0, 0, 0, 1441, 656, 0, 0, 0, 0, 1517, 541, 0, 0, 0, 0, 1585, 541, 0, 0, 0, 0, 1556, 628, 0, 0, 0, 0, 1675, 683, 0, 0, 0, 0, 1388, 702, 0, 0, 0, 0, 1262, 778, 0, 0, 0, 0, 1319, 976, 0, 0, 0, 0, 1415, 764, 0, 0, 0, 0, 1467, 894, 0, 0, 0, 0, 1577, 975, 0, 0, 0, 0, 1765, 828, 0, 0, 0, 0, 1784, 971, 0, 0, 0, 0, 1937, 1039)
 }
 point_count = 24
 
+[sub_resource type="Animation" id="Animation_wxk0t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 700)]
+}
+
+[sub_resource type="Animation" id="Animation_4c301"]
+resource_name = "active"
+length = 1.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.99, 1.4),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector2(0, 700), Vector2(0, -30), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r0lhe"]
+_data = {
+&"RESET": SubResource("Animation_wxk0t"),
+&"active": SubResource("Animation_4c301")
+}
+
 [sub_resource type="Curve2D" id="Curve2D_tkmv0"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1834, 1089, 0, 0, 0, 0, 1659, 1003, 0, 0, 0, 0, 1749, 938, 0, 0, 0, 0, 1683, 872, 0, 0, 0, 0, 1388, 1026, 0, 0, 0, 0, 1470, 787, 0, 0, 0, 0, 1383, 852, 0, 0, 0, 0, 1380, 968, 0, 0, 0, 0, 1157, 816, 0, 0, 0, 0, 1330, 845, 0, 0, 0, 0, 1294, 1029, 0, 0, 0, 0, 826, 1026, 0, 0, 0, 0, 910, 834, 0, 0, 0, 0, 1169, 976, 0, 0, 0, 0, 914, 961, 0, 0, 0, 0, 1081, 860, 0, 0, 0, 0, 1205, 905, 0, 0, 0, 0, 1341, 1051, 0, 0, 0, 0, 1834, 1089)
+"points": PackedVector2Array(0, 0, 0, 0, 1834, 1089, 0, 0, 0, 0, 1513, 988.9878, 0, 0, 0, 0, 1749, 938, 0, 0, 0, 0, 1683, 872, 0, 0, 0, 0, 1546, 930.9878, 0, 0, 0, 0, 1470, 787, 0, 0, 0, 0, 1383, 852, 0, 0, 0, 0, 1473, 981.9878, 0, 0, 0, 0, 1157, 816, 0, 0, 0, 0, 1330, 845, 0, 0, 0, 0, 1373, 970.9878, 0, 0, 0, 0, 826, 1026, 0, 0, 0, 0, 910, 834, 0, 0, 0, 0, 1183, 956.9878, 0, 0, 0, 0, 895, 935.9878, 0, 0, 0, 0, 1081, 860, 0, 0, 0, 0, 1205, 905, 0, 0, 0, 0, 1490, 902.9878, 0, 0, 0, 0, 1834, 1089)
 }
 point_count = 19
 
+[sub_resource type="Animation" id="Animation_r0lhe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 400)]
+}
+
+[sub_resource type="Animation" id="Animation_gba4x"]
+resource_name = "active"
+length = 1.7666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9666667, 1.3),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector2(0, 400), Vector2(0, -30), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uwgvn"]
+_data = {
+&"RESET": SubResource("Animation_r0lhe"),
+&"active": SubResource("Animation_gba4x")
+}
+
 [sub_resource type="Curve2D" id="Curve2D_wxk0t"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 845, 1083, 0, 0, 0, 0, 806, 998, 0, 0, 0, 0, 565, 899, 0, 0, 0, 0, 643, 832, 0, 0, 0, 0, 700, 865, 0, 0, 0, 0, 591, 964, 0, 0, 0, 0, 749, 920, 0, 0, 0, 0, 622, 1052, 0, 0, 0, 0, 209, 823, 0, 0, 0, 0, 79, 896, 0, 0, 0, 0, 415, 845, 0, 0, 0, 0, 524, 890, 0, 0, 0, 0, 345, 1003, 0, 0, 0, 0, 254, 899, 0, 0, 0, 0, 152, 1030, 0, 0, 0, 0, 40, 907, 0, 0, 0, 0, 7, 759, 0, 0, 0, 0, 86, 786, 0, 0, 0, 0, 140, 954, 0, 0, 0, 0, 410, 907, 0, 0, 0, 0, 547, 943, 0, 0, 0, 0, 478, 1050, 0, 0, 0, 0, 635, 987, 0, 0, 0, 0, 845, 1083)
+"points": PackedVector2Array(0, 0, 0, 0, 845, 1083, 0, 0, 0, 0, 724, 922, 0, 0, 0, 0, 560, 858, 0, 0, 0, 0, 640, 810, 0, 0, 0, 0, 700, 852, 0, 0, 0, 0, 582, 888, 0, 0, 0, 0, 738, 888, 0, 0, 0, 0, 482, 946, 0, 0, 0, 0, 209, 823, 0, 0, 0, 0, 79, 896, 0, 0, 0, 0, 415, 845, 0, 0, 0, 0, 524, 890, 0, 0, 0, 0, 330, 934, 0, 0, 0, 0, 254, 899, 0, 0, 0, 0, 70, 930, 0, 0, 0, 0, 40, 907, 0, 0, 0, 0, 7, 759, 0, 0, 0, 0, 86, 786, 0, 0, 0, 0, 140, 954, 0, 0, 0, 0, 362, 840, 0, 0, 0, 0, 547, 943, 0, 0, 0, 0, 478, 1050, 0, 0, 0, 0, 624, 954, 0, 0, 0, 0, 845, 1083)
 }
 point_count = 24
 
+[sub_resource type="Animation" id="Animation_uwgvn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 400)]
+}
+
+[sub_resource type="Animation" id="Animation_fpthl"]
+resource_name = "active"
+length = 1.7666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9433334, 1.2),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector2(0, 400), Vector2(0, -30), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v622u"]
+_data = {
+&"RESET": SubResource("Animation_uwgvn"),
+&"active": SubResource("Animation_fpthl")
+}
+
 [node name="Salamanders" type="Node2D" unique_id=2076642010]
+script = ExtResource("1_tkmv0")
 
 [node name="Container1" type="Node2D" parent="." unique_id=1551815784]
-position = Vector2(0, -100)
+position = Vector2(0, 500)
 
 [node name="Polygon2D" type="Polygon2D" parent="Container1" unique_id=1028003438]
 color = Color(0.69803923, 0.4862745, 0.7372549, 1)
-polygon = PackedVector2Array(-30, 1136, -20, 780, 60.266968, 696.9066, 204, 676, 276, 784, 376, 742, 436, 762, 536, 726, 634, 742, 704, 842, 846, 948, 882, 1150, 602, 1146)
+polygon = PackedVector2Array(-24, 1287, -20, 780, 60.266968, 696.9066, 204, 676, 276, 784, 376, 742, 436, 762, 536, 726, 634, 742, 704, 842, 846, 948, 867, 1293, 607, 1293)
 
 [node name="Path2D" type="Path2D" parent="Container1" unique_id=130811233]
 curve = SubResource("Curve2D_4c301")
@@ -46,15 +196,19 @@ script = ExtResource("1_22es6")
 timer = NodePath("../../Timer1")
 
 [node name="Salamander" parent="Container1/Path2D/PathFollow2D" unique_id=1568775574 instance=ExtResource("1_6qjru")]
-scale = Vector2(0.14, 0.14)
+scale = Vector2(0.15, 0.15)
 
 [node name="Timer1" type="Timer" parent="Container1" unique_id=1676116493]
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Container1" unique_id=1494330290]
+libraries/ = SubResource("AnimationLibrary_wxk0t")
+
 [node name="Container4" type="Node2D" parent="." unique_id=290817357]
+position = Vector2(0, 700)
 
 [node name="Polygon2D" type="Polygon2D" parent="Container4" unique_id=1977882055]
 position = Vector2(0, -50)
-color = Color(0.65882355, 0.53333336, 0.74509805, 1)
+color = Color(0.69803923, 0.4862745, 0.7372549, 1)
 polygon = PackedVector2Array(1113, 1139, 1278, 733, 1367, 723, 1444, 661, 1489, 554, 1597, 549, 1652, 611, 1727, 658, 1844, 632, 1955, 699, 1957, 1147)
 
 [node name="Path2D" type="Path2D" parent="Container4" unique_id=961089052]
@@ -67,11 +221,15 @@ script = ExtResource("1_22es6")
 timer = NodePath("../../Timer4")
 
 [node name="Salamander" parent="Container4/Path2D/PathFollow2D" unique_id=1495678847 instance=ExtResource("1_6qjru")]
-scale = Vector2(0.14, 0.14)
+scale = Vector2(0.15, 0.15)
 
 [node name="Timer4" type="Timer" parent="Container4" unique_id=2117414338]
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Container4" unique_id=361579845]
+libraries/ = SubResource("AnimationLibrary_r0lhe")
+
 [node name="Container2" type="Node2D" parent="." unique_id=1904337049]
+position = Vector2(0, 400)
 
 [node name="Polygon2D" type="Polygon2D" parent="Container2" unique_id=278660818]
 position = Vector2(1150, -125)
@@ -83,20 +241,24 @@ curve = SubResource("Curve2D_tkmv0")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Container2/Path2D" unique_id=1940100594 node_paths=PackedStringArray("timer")]
 position = Vector2(1834, 1089)
-rotation = -2.6848257
+rotation = -2.8395603
 script = ExtResource("1_22es6")
 timer = NodePath("../../Timer2")
 
 [node name="Salamander" parent="Container2/Path2D/PathFollow2D" unique_id=1368442652 instance=ExtResource("1_6qjru")]
-scale = Vector2(0.14, 0.14)
+scale = Vector2(0.15, 0.15)
 
 [node name="Timer2" type="Timer" parent="Container2" unique_id=1633598050]
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Container2" unique_id=618498993]
+libraries/ = SubResource("AnimationLibrary_uwgvn")
+
 [node name="Container3" type="Node2D" parent="." unique_id=1265753776]
+position = Vector2(0, 400)
 
 [node name="Polygon2D" type="Polygon2D" parent="Container3" unique_id=152080206]
 position = Vector2(0, -50)
-color = Color(0.3529412, 0.38039216, 0.81960785, 1)
+color = Color(0.1764706, 0.2509804, 0.57254905, 1)
 polygon = PackedVector2Array(-34, 1129, -34, 789, 43, 773, 168, 858, 216, 829, 290, 895, 430, 833, 529, 907, 648, 798, 965, 1129, 882, 1131)
 
 [node name="Path2D" type="Path2D" parent="Container3" unique_id=13831884]
@@ -104,14 +266,17 @@ curve = SubResource("Curve2D_wxk0t")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Container3/Path2D" unique_id=501220784 node_paths=PackedStringArray("timer")]
 position = Vector2(845, 1083)
-rotation = -2.0009637
+rotation = -2.2152905
 script = ExtResource("1_22es6")
 timer = NodePath("../../Timer3")
 
 [node name="Salamander" parent="Container3/Path2D/PathFollow2D" unique_id=357141930 instance=ExtResource("1_6qjru")]
-scale = Vector2(0.14, 0.14)
+scale = Vector2(0.15, 0.15)
 
 [node name="Timer3" type="Timer" parent="Container3" unique_id=824990282]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Container3" unique_id=2118478974]
+libraries/ = SubResource("AnimationLibrary_v622u")
 
 [connection signal="timeout" from="Container1/Timer1" to="Container1/Path2D/PathFollow2D" method="_on_timer_1_timeout"]
 [connection signal="timeout" from="Container4/Timer4" to="Container4/Path2D/PathFollow2D" method="_on_timer_4_timeout"]

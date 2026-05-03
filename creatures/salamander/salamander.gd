@@ -10,3 +10,10 @@ func _ready():
 		for part in body.get_children():
 			if part is Polygon2D:
 				part.texture = Global.finished_atlus
+
+func reload_texture() -> void:
+	if body:
+		body.texture = Global.finished_atlus
+		for part in body.get_children():
+			if part is Polygon2D:
+				part.texture = Global.finished_atlus
