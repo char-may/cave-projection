@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_rkpdl")
-color1 = Color(0.185372, 0.481904, 0, 1)
-color2 = Color(0.188235, 0.188235, 0.490196, 1)
-color3 = Color(0.745098, 0.87451, 0.0627451, 1)
-color4 = Color(0.988235, 0.45098, 0.266667, 1)
-background = Color(0.277336, 0.000861974, 0.483485, 1)
+color1 = Color(0.9490196, 0.7294118, 0.24313726, 1)
+color2 = Color(0.9843137, 0.7254902, 0.8117647, 1)
+color3 = Color(0.8627451, 0.50980395, 0.2627451, 1)
+color4 = Color(0.18431373, 0.5372549, 0.39215687, 1)
+background = Color(0.3882353, 0.29803923, 0.39215687, 1)
 metadata/_custom_type_script = "uid://dvu6vb20cod4n"
