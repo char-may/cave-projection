@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b85crj23jqo3y" path="res://screens/cave_screen/fairy.tscn" id="1_u6t5p"]
 [ext_resource type="Script" uid="uid://drgs28dimdubd" path="res://screens/cave_screen/bats_container.gd" id="2_0xn84"]
 [ext_resource type="Script" uid="uid://cwl62ialnf1gl" path="res://screens/cave_screen/tardigrades_container.gd" id="3_u6t5p"]
+[ext_resource type="PackedScene" uid="uid://cmffrc73nmxid" path="res://creatures/bat/welcome_bat.tscn" id="4_1o6ra"]
 [ext_resource type="PackedScene" uid="uid://c2metts50ln2l" path="res://creatures/salamander/salamanders.tscn" id="4_llk8y"]
 [ext_resource type="Script" uid="uid://cfg8pvaru0ml6" path="res://screens/cave_screen/bg_manager.gd" id="4_lpb3v"]
 
@@ -104,6 +105,9 @@ position = Vector2(968, 841)
 
 [node name="CreatureSpawn" type="Marker2D" parent="." unique_id=534270507]
 position = Vector2(960, 540)
+
+[node name="WelcomeBat" parent="." unique_id=2131518630 instance=ExtResource("4_1o6ra")]
+position = Vector2(606.99994, 531.99994)
 
 [node name="BatsContainer" type="Node2D" parent="." unique_id=137665182]
 script = ExtResource("2_0xn84")
