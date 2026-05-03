@@ -233,7 +233,7 @@ position = Vector2(0, 400)
 
 [node name="Polygon2D" type="Polygon2D" parent="Container2" unique_id=278660818]
 position = Vector2(1150, -125)
-color = Color(0.1764706, 0.2509804, 0.57254905, 1)
+color = Color(0.13243067, 0.19314924, 0.45841515, 1)
 polygon = PackedVector2Array(12, 1224, -446, 1224, -252, 888, -146, 954, 26, 908, 195, 934, 322, 846, 436, 1014, 546, 950, 610, 1006, 690, 1076, 813, 1069, 825, 1180, 819, 1230, 438, 1224)
 
 [node name="Path2D" type="Path2D" parent="Container2" unique_id=1254708109]
@@ -258,7 +258,7 @@ position = Vector2(0, 400)
 
 [node name="Polygon2D" type="Polygon2D" parent="Container3" unique_id=152080206]
 position = Vector2(0, -50)
-color = Color(0.1764706, 0.2509804, 0.57254905, 1)
+color = Color(0.25715384, 0.35333043, 0.7425982, 1)
 polygon = PackedVector2Array(-34, 1129, -34, 789, 43, 773, 168, 858, 216, 829, 290, 895, 430, 833, 529, 907, 648, 798, 965, 1129, 882, 1131)
 
 [node name="Path2D" type="Path2D" parent="Container3" unique_id=13831884]

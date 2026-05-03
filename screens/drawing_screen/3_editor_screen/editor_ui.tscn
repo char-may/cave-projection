@@ -21,6 +21,7 @@ metadata/_edit_vertical_guides_ = [137.0]
 position = Vector2(1619, 692)
 
 [node name="BatUI" type="Node2D" parent="." unique_id=46532278]
+position = Vector2(0, 20)
 
 [node name="Crayon" parent="BatUI" unique_id=423260308 instance=ExtResource("1_7k3nc")]
 position = Vector2(0, 600)
