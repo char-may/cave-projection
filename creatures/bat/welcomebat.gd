@@ -44,7 +44,7 @@ func welcome_dialog():
 	await get_tree().create_timer(1).timeout
 	if is_cancelled: return # Check here
 	
-	label.text = "Welcome to Light's Out!"
+	label.text = "Welcome to Lights Out!"
 	await get_tree().create_timer(3).timeout
 	if is_cancelled: return # Check here
 	
@@ -95,7 +95,7 @@ func welcome_dialog():
 func thank_you() -> void:
 	is_cancelled = true
 	timer.stop()
-	label.visible
+	label.visible = true
 	label.text = ""
 	await get_tree().create_timer(3).timeout
 	label.text = "Oh, a new creature!"
@@ -111,6 +111,10 @@ func thank_you() -> void:
 	label.text = ""
 	await get_tree().create_timer(1).timeout
 	label.text = "I'll let you take it from here!"
+	await get_tree().create_timer(3).timeout
+	label.text = ""
+	await get_tree().create_timer(1).timeout
+	label.text = "Bye bye!"
 	await get_tree().create_timer(3).timeout
 	label.text = ""
 	await get_tree().create_timer(1).timeout
