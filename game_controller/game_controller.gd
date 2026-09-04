@@ -58,10 +58,10 @@ func change_2d_scene(new_scene: String, delete: bool = true, keep_running: bool 
 func file_cleanup() -> void:
 	# make sure export directories exist
 	var dir = DirAccess.open("user://")
-	dir.make_dir(bat_dir)
-	dir.make_dir(tardigrade_dir)
-	dir.make_dir(salamander_dir)
-	dir.make_dir(bigguy_dir)
+	dir.make_dir_recursive(bat_dir)
+	dir.make_dir_recursive(tardigrade_dir)
+	dir.make_dir_recursive(salamander_dir)
+	dir.make_dir_recursive(bigguy_dir)
 	
 	# remove any files
 	dir = DirAccess.open("user://" + bat_dir)
